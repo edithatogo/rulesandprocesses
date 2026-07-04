@@ -25,8 +25,8 @@ Depends on: contracts_20260704 phases 1–4. Requires network (git clones). If u
 - [x] Task: `policyengine_to_pic` / `pic_to_policyengine`
     - [x] Same test pattern; reuse shared internals where dialects agree
     - **Acceptance:** pytest green; round-trips green
-- [ ] Task: Crosswalk remapping option
-    - [ ] Tests first: with crosswalk file, native names remap to PIC IDs both directions; missing mapping raises with the offending name; without crosswalk, `idScheme` recorded
+- [x] Task: Crosswalk remapping option
+    - [x] Tests first: with crosswalk file, native names remap to PIC IDs both directions; missing mapping raises with the offending name; without crosswalk, `idScheme` recorded
     - **Acceptance:** pytest green
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
