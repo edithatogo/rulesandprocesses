@@ -3,6 +3,7 @@
   "type": "feature",
   "status": "in_progress",
   "created_at": "2026-07-04T11:30:00Z",
-  "updated_at": "2026-07-04T20:28:00Z",
+  "updated_at": "2026-07-04T20:42:00Z",
+  "archive_status": "not_archive_eligible_human_gate",
   "description": "Bidirectional converter between OpenFisca YAML tests, PolicyEngine YAML tests, and PIC fixtures, with round-trip guarantees on a documented supported subset. Tool lives here; upstream PRs staged."
 }

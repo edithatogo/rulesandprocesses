@@ -51,4 +51,5 @@ Depends on: contracts_20260704 phases 1–4. Requires network (git clones). If u
     - [x] `external/openfisca/SUBMISSION.md` and `external/policyengine/SUBMISSION.md`: issue text proposing the converter, with corpus statistics; frame as migration/cross-validation utility; PIC as footnote
     - **Acceptance:** both drafts complete
 - [ ] Task: [HUMAN] Open upstream issues (Dylan; one per ecosystem, sequenced — PolicyEngine first given insider standing)
+    > HUMAN-GATE (2026-07-04): Draft issue text is prepared in `external/policyengine/SUBMISSION.md` and `external/openfisca/SUBMISSION.md`. Agents must not open upstream issues. Final track-scope review and `PATH="$PWD/.venv/bin:$PATH" make check` passed; track is not archive-eligible until Dylan opens or explicitly skips the upstream issue gate.
 - [ ] Task: Conductor - User Manual Verification 'Phase 4' (Protocol in workflow.md)
