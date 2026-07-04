@@ -4,10 +4,10 @@ Depends on: contracts_20260704 phases 1–4. Requires network (git clones). If u
 
 ## Phase 1 — Format analysis
 
-- [ ] Task: Document the three dialects
-    - [ ] Clone `openfisca-core` + one country package (`openfisca-aotearoa` preferred, `openfisca-france` fallback); locate the YAML test loader; enumerate its accepted fields from code, not docs
-    - [ ] Clone `policyengine-core` + `policyengine-us`; same analysis
-    - [ ] Write `converters/fixtures/FORMATS.md`: field-by-field comparison table (OpenFisca vs PolicyEngine vs pic-fixtures), citing loader source files at specific commits
+- [x] Task: Document the three dialects
+    - [x] Clone `openfisca-core` + one country package (`openfisca-aotearoa` preferred, `openfisca-france` fallback); locate the YAML test loader; enumerate its accepted fields from code, not docs
+    - [x] Clone `policyengine-core` + `policyengine-us`; same analysis
+    - [x] Write `converters/fixtures/FORMATS.md`: field-by-field comparison table (OpenFisca vs PolicyEngine vs pic-fixtures), citing loader source files at specific commits
     - **Acceptance:** FORMATS.md cites code permalinks; divergences between dialects explicitly listed
 - [ ] Task: Define supported subset
     - [ ] Write `SUPPORTED.md` v0.1 from FORMATS.md; get the mandatory constructs from spec §Deliverables 1

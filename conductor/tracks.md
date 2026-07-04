@@ -10,7 +10,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 - [~] **Track: OIA statutory rules extraction and typed process→rule coupling (for edithatogo/foi-o)**
   *Link: [./tracks/oia_rules_20260704/](./tracks/oia_rules_20260704/)*
 
-- [ ] **Track: OpenFisca ↔ PolicyEngine test fixture converter**
+- [~] **Track: OpenFisca ↔ PolicyEngine test fixture converter**
   *Link: [./tracks/fixture_converter_20260704/](./tracks/fixture_converter_20260704/)*
 
 - [ ] **Track: Engine contributions — trace export, missingness semantics, Axiom validation harness**
