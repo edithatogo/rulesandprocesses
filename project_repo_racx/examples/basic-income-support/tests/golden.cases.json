@@ -1,0 +1,41 @@
+[
+  {
+    "caseId": "adult-under-threshold",
+    "description": "Adult applicant below threshold is eligible and receives payment.",
+    "inputs": {
+      "age": 18,
+      "adjusted_household_income": "39999.99"
+    },
+    "expected": {
+      "eligible": true,
+      "payment_amount": "4000.00"
+    },
+    "sourceRefs": ["akn:example-act/2026/section/14"]
+  },
+  {
+    "caseId": "adult-at-threshold",
+    "description": "Adult applicant at threshold is not eligible under strict less-than rule.",
+    "inputs": {
+      "age": 18,
+      "adjusted_household_income": "40000.00"
+    },
+    "expected": {
+      "eligible": false,
+      "payment_amount": "0.00"
+    },
+    "sourceRefs": ["akn:example-act/2026/section/14"]
+  },
+  {
+    "caseId": "minor-under-threshold",
+    "description": "Minor below threshold is not eligible because age condition fails.",
+    "inputs": {
+      "age": 17,
+      "adjusted_household_income": "30000.00"
+    },
+    "expected": {
+      "eligible": false,
+      "payment_amount": "0.00"
+    },
+    "sourceRefs": ["akn:example-act/2026/section/14"]
+  }
+]

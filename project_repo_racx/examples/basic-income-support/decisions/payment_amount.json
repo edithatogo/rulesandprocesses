@@ -1,0 +1,15 @@
+{
+  "@id": "racx:decision.basic_income_support_payment_amount",
+  "@type": "racx:Decision",
+  "inputs": ["racx:variable.eligible"],
+  "outputs": ["racx:variable.payment_amount"],
+  "expressionProfile": "racx-expression-v0.1",
+  "expression": {
+    "if": [
+      { "var": "eligible" },
+      { "decimal": "4000.00" },
+      { "decimal": "0.00" }
+    ]
+  },
+  "sourceRefs": ["akn:example-act/2026/section/15"]
+}

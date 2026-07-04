@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "@id",
+    "@type",
+    "concept",
+    "dataType"
+  ],
+  "properties": {
+    "@id": {
+      "type": "string"
+    },
+    "@type": {
+      "const": "racx:Variable"
+    },
+    "concept": {
+      "type": "string"
+    },
+    "dataType": {
+      "enum": [
+        "boolean",
+        "integer",
+        "decimal",
+        "money",
+        "string",
+        "date",
+        "enum"
+      ]
+    },
+    "unit": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "period": {
+      "type": "string"
+    },
+    "missingValuePolicy": {
+      "type": "string"
+    },
+    "rounding": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "@id",
+    "@type"
+  ],
+  "properties": {
+    "@id": {
+      "type": "string"
+    },
+    "@type": {
+      "enum": [
+        "racx:ProcessStep",
+        "racx:AutomatedDecisionStep",
+        "racx:HumanReviewStep",
+        "racx:NoticeStep",
+        "racx:PaymentStep"
+      ]
+    },
+    "requiresEvidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "invokesDecision": {
+      "type": "string"
+    },
+    "produces": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "transitions": {
+      "type": "array"
+    },
+    "normativeStatus": {
+      "enum": [
+        "statutory",
+        "regulatory",
+        "policy_guidance",
+        "operational",
+        "technical",
+        "experimental"
+      ]
+    }
+  }
+}

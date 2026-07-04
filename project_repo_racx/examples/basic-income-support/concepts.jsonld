@@ -1,0 +1,20 @@
+[
+  {
+    "@id": "racx:concept.adjusted_household_income",
+    "@type": "racx:Concept",
+    "label": "Adjusted household income",
+    "definition": "Household income after specified disregards and deductions.",
+    "sameAs": [
+      "policyengine:variable.adjusted_household_income",
+      "openfisca:variable.adjusted_household_income"
+    ],
+    "sourceRefs": ["akn:example-act/2026/section/8"]
+  },
+  {
+    "@id": "racx:concept.basic_income_support_eligibility",
+    "@type": "racx:Concept",
+    "label": "Basic income support eligibility",
+    "definition": "Eligibility for the example support payment.",
+    "sourceRefs": ["akn:example-act/2026/section/14"]
+  }
+]

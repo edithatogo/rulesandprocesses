@@ -1,0 +1,9 @@
+{
+  "target": "DMN",
+  "status": "illustrative",
+  "decisions": {
+    "racx:decision.basic_income_support_eligibility": "generated/dmn/basic_income_support_eligibility.dmn.xml",
+    "racx:decision.basic_income_support_payment_amount": "generated/dmn/basic_income_support_payment_amount.dmn.xml"
+  },
+  "profile": "RaCX-Calc declarative subset only"
+}

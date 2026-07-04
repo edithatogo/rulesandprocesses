@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "caseId",
+    "packageId",
+    "packageVersion",
+    "engine",
+    "inputs",
+    "outputs",
+    "steps"
+  ],
+  "properties": {
+    "caseId": {
+      "type": "string"
+    },
+    "packageId": {
+      "type": "string"
+    },
+    "packageVersion": {
+      "type": "string"
+    },
+    "engine": {
+      "type": "object"
+    },
+    "inputs": {
+      "type": "object"
+    },
+    "outputs": {
+      "type": "object"
+    },
+    "steps": {
+      "type": "array"
+    }
+  }
+}

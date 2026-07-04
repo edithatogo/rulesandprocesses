@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "racx": "https://racx.example.org/vocab#",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "schema": "https://schema.org/"
+  },
+  "@id": "racx:package.example.basic_income_support",
+  "@type": "racx:PolicyPackage",
+  "racxVersion": "0.1.0-draft",
+  "packageVersion": "0.1.0",
+  "jurisdiction": "AU-EXAMPLE",
+  "profiles": ["RaCX-Core", "RaCX-Calc", "RaCX-Evidence", "RaCX-Process", "RaCX-Trace"],
+  "files": {
+    "concepts": "concepts.jsonld",
+    "variables": "variables.jsonld",
+    "parameters": ["parameters/income_threshold.json"],
+    "decisions": ["decisions/eligibility.json", "decisions/payment_amount.json"],
+    "evidence": "evidence/evidence_requirements.json",
+    "process": "process/application_process.json",
+    "tests": "tests/golden.cases.json",
+    "traces": ["traces/sample.trace.json"],
+    "mappings": [
+      "mappings/policyengine.mapping.json",
+      "mappings/openfisca.mapping.json",
+      "mappings/dmn.mapping.json",
+      "mappings/xstate.mapping.json"
+    ]
+  }
+}

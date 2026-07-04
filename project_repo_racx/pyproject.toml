@@ -1,0 +1,12 @@
+[project]
+name = "racx-validator"
+version = "0.1.0"
+description = "Skeleton validator for RaCX policy exchange packages"
+requires-python = ">=3.10"
+dependencies = ["jsonschema>=4.0.0"]
+
+[project.scripts]
+racx-validate = "racx_validator.validate:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

@@ -1,0 +1,41 @@
+[
+  {
+    "@id": "racx:variable.age",
+    "@type": "racx:Variable",
+    "concept": "racx:concept.age",
+    "dataType": "integer",
+    "unit": "years",
+    "period": "at_claim_date",
+    "missingValuePolicy": "requires_evidence"
+  },
+  {
+    "@id": "racx:variable.adjusted_household_income",
+    "@type": "racx:Variable",
+    "concept": "racx:concept.adjusted_household_income",
+    "dataType": "money",
+    "unit": "AUD_per_year",
+    "currency": "AUD",
+    "period": "financial_year",
+    "missingValuePolicy": "requires_evidence",
+    "rounding": { "mode": "half_up", "scale": 2 }
+  },
+  {
+    "@id": "racx:variable.eligible",
+    "@type": "racx:Variable",
+    "concept": "racx:concept.basic_income_support_eligibility",
+    "dataType": "boolean",
+    "period": "claim_date",
+    "missingValuePolicy": "derived"
+  },
+  {
+    "@id": "racx:variable.payment_amount",
+    "@type": "racx:Variable",
+    "concept": "racx:concept.payment_amount",
+    "dataType": "money",
+    "unit": "AUD",
+    "currency": "AUD",
+    "period": "claim_period",
+    "missingValuePolicy": "derived",
+    "rounding": { "mode": "half_up", "scale": 2 }
+  }
+]

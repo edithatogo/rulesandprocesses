@@ -1,0 +1,12 @@
+{
+  "engine": "OpenFisca",
+  "status": "illustrative",
+  "variableMappings": {
+    "racx:variable.adjusted_household_income": "openfisca:variable.adjusted_household_income",
+    "racx:variable.eligible": "openfisca:variable.basic_income_support_eligible",
+    "racx:variable.payment_amount": "openfisca:variable.basic_income_support_amount"
+  },
+  "parameterMappings": {
+    "racx:parameter.income_threshold": "openfisca:parameter.basic_income_support.income_threshold"
+  }
+}

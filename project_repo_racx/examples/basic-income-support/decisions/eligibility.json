@@ -1,0 +1,17 @@
+{
+  "@id": "racx:decision.basic_income_support_eligibility",
+  "@type": "racx:Decision",
+  "inputs": [
+    "racx:variable.age",
+    "racx:variable.adjusted_household_income"
+  ],
+  "outputs": ["racx:variable.eligible"],
+  "expressionProfile": "racx-expression-v0.1",
+  "expression": {
+    "and": [
+      { ">=": [{ "var": "age" }, 18] },
+      { "<": [{ "var": "adjusted_household_income" }, { "param": "racx:parameter.income_threshold" }] }
+    ]
+  },
+  "sourceRefs": ["akn:example-act/2026/section/14"]
+}

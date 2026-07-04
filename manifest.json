@@ -1,0 +1,11 @@
+{
+  "package": "racx_fable_review_pack",
+  "created_for": "Dylan",
+  "purpose": "Second-opinion review by Claude Fable 5 of RaCX / Rules-as-Code exchange proposal",
+  "includes_original_pdf": true,
+  "includes_visible_prompts_outputs": true,
+  "includes_hidden_chain_of_thought": false,
+  "main_prompt": "covering_prompt_for_fable5.md",
+  "project_repo": "project_repo_racx/",
+  "notes": "This is an exploratory design pack, not a formal standard or legal opinion."
+}

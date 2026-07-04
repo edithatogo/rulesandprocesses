@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "@id",
+    "@type",
+    "inputs",
+    "outputs"
+  ],
+  "properties": {
+    "@id": {
+      "type": "string"
+    },
+    "@type": {
+      "const": "racx:Decision"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expressionProfile": {
+      "type": "string"
+    },
+    "expression": {
+      "type": "object"
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

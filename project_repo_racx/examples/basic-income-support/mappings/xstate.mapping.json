@@ -1,0 +1,12 @@
+{
+  "target": "XState",
+  "status": "illustrative",
+  "process": {
+    "racx:process_step.collect_evidence": "states.collectEvidence",
+    "racx:process_step.calculate_eligibility": "states.calculateEligibility",
+    "racx:process_step.calculate_payment": "states.calculatePayment",
+    "racx:process_step.issue_approval_notice": "states.issueApprovalNotice",
+    "racx:process_step.issue_refusal_notice": "states.issueRefusalNotice"
+  },
+  "profile": "RaCX-Process simple deterministic subset only"
+}

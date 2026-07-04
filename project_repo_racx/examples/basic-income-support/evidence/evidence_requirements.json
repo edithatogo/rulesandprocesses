@@ -1,0 +1,20 @@
+[
+  {
+    "@id": "racx:evidence.identity",
+    "@type": "racx:EvidenceRequirement",
+    "label": "Verified identity",
+    "acceptableSources": ["identity_provider", "government_id"],
+    "verificationMethod": "automated_or_manual",
+    "confidenceRequired": 0.9,
+    "expiresAfterDays": 365
+  },
+  {
+    "@id": "racx:evidence.income",
+    "@type": "racx:EvidenceRequirement",
+    "label": "Income evidence",
+    "acceptableSources": ["tax_record", "payslip", "statutory_declaration"],
+    "verificationMethod": "document_or_data_match",
+    "confidenceRequired": 0.8,
+    "expiresAfterDays": 90
+  }
+]

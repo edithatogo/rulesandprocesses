@@ -1,0 +1,43 @@
+[
+  {
+    "@id": "racx:process_step.collect_evidence",
+    "@type": "racx:ProcessStep",
+    "normativeStatus": "operational",
+    "requiresEvidence": ["racx:evidence.identity", "racx:evidence.income"],
+    "transitions": [
+      { "event": "EVIDENCE_SUBMITTED", "to": "racx:process_step.calculate_eligibility" }
+    ]
+  },
+  {
+    "@id": "racx:process_step.calculate_eligibility",
+    "@type": "racx:AutomatedDecisionStep",
+    "normativeStatus": "statutory",
+    "requiresEvidence": ["racx:evidence.identity", "racx:evidence.income"],
+    "invokesDecision": "racx:decision.basic_income_support_eligibility",
+    "produces": ["racx:variable.eligible"],
+    "transitions": [
+      { "when": { "var": "eligible" }, "to": "racx:process_step.calculate_payment" },
+      { "when": { "not": [{ "var": "eligible" }] }, "to": "racx:process_step.issue_refusal_notice" }
+    ]
+  },
+  {
+    "@id": "racx:process_step.calculate_payment",
+    "@type": "racx:AutomatedDecisionStep",
+    "normativeStatus": "statutory",
+    "invokesDecision": "racx:decision.basic_income_support_payment_amount",
+    "produces": ["racx:variable.payment_amount"],
+    "transitions": [
+      { "to": "racx:process_step.issue_approval_notice" }
+    ]
+  },
+  {
+    "@id": "racx:process_step.issue_approval_notice",
+    "@type": "racx:NoticeStep",
+    "normativeStatus": "statutory"
+  },
+  {
+    "@id": "racx:process_step.issue_refusal_notice",
+    "@type": "racx:NoticeStep",
+    "normativeStatus": "statutory"
+  }
+]

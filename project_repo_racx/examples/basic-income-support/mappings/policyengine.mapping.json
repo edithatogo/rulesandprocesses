@@ -1,0 +1,12 @@
+{
+  "engine": "PolicyEngine",
+  "status": "illustrative",
+  "variableMappings": {
+    "racx:variable.adjusted_household_income": "policyengine:variable.adjusted_household_income",
+    "racx:variable.eligible": "policyengine:variable.basic_income_support_eligible",
+    "racx:variable.payment_amount": "policyengine:variable.basic_income_support_amount"
+  },
+  "parameterMappings": {
+    "racx:parameter.income_threshold": "policyengine:parameter.basic_income_support.income_threshold"
+  }
+}

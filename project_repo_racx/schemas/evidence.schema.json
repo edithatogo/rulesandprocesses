@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "@id",
+    "@type",
+    "label"
+  ],
+  "properties": {
+    "@id": {
+      "type": "string"
+    },
+    "@type": {
+      "const": "racx:EvidenceRequirement"
+    },
+    "label": {
+      "type": "string"
+    },
+    "acceptableSources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verificationMethod": {
+      "type": "string"
+    },
+    "confidenceRequired": {
+      "type": "number"
+    },
+    "expiresAfterDays": {
+      "type": "integer"
+    }
+  }
+}

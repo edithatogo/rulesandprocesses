@@ -1,0 +1,14 @@
+{
+  "@id": "racx:parameter.income_threshold",
+  "@type": "racx:TemporalParameter",
+  "label": "Income threshold",
+  "unit": "AUD_per_year",
+  "values": [
+    {
+      "from": "2026-07-01",
+      "to": null,
+      "value": "40000.00",
+      "sourceRefs": ["akn:example-act/2026/section/14"]
+    }
+  ]
+}

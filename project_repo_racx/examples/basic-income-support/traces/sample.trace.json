@@ -1,0 +1,30 @@
+{
+  "caseId": "adult-under-threshold",
+  "packageId": "racx:package.example.basic_income_support",
+  "packageVersion": "0.1.0",
+  "engine": {
+    "name": "example-reference-engine",
+    "version": "0.1.0"
+  },
+  "inputs": {
+    "age": 18,
+    "adjusted_household_income": "39999.99"
+  },
+  "outputs": {
+    "eligible": true,
+    "payment_amount": "4000.00"
+  },
+  "steps": [
+    {
+      "stepId": "racx:decision.basic_income_support_eligibility",
+      "sourceRefs": ["akn:example-act/2026/section/14"],
+      "result": true,
+      "parameters": ["racx:parameter.income_threshold@2026-07-01"]
+    },
+    {
+      "stepId": "racx:decision.basic_income_support_payment_amount",
+      "sourceRefs": ["akn:example-act/2026/section/15"],
+      "result": "4000.00"
+    }
+  ]
+}

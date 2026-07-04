@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://racx.example.org/schemas/manifest.schema.json",
+  "type": "object",
+  "required": [
+    "@context",
+    "@id",
+    "@type",
+    "racxVersion",
+    "packageVersion",
+    "jurisdiction",
+    "profiles",
+    "files"
+  ],
+  "properties": {
+    "@context": {
+      "type": [
+        "string",
+        "object",
+        "array"
+      ]
+    },
+    "@id": {
+      "type": "string"
+    },
+    "@type": {
+      "const": "racx:PolicyPackage"
+    },
+    "racxVersion": {
+      "type": "string"
+    },
+    "packageVersion": {
+      "type": "string"
+    },
+    "jurisdiction": {
+      "type": "string"
+    },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "files": {
+      "type": "object"
+    }
+  }
+}
