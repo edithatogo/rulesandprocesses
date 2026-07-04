@@ -4,6 +4,8 @@ Depends on: contracts_20260704 phases 1–4. Requires network (git clones). If u
 
 ## Phase 1 — Format analysis
 
+> CHECKPOINT (2026-07-04): Format analysis is grounded in current upstream loader code at `openfisca-core` commit `4f7f09833afe7e8b6856e8d7a3016c04a931009b` and `policyengine-core` commit `f761573c2a13adecc3826be04af1980d13657e1d`. `openfisca-aotearoa` was unavailable at the expected GitHub URL, so the plan's `openfisca-france` fallback is recorded at commit `6eeee2e09b9f807ab3735ef494a92001a975f4ad`. `FORMATS.md` documents field-level differences and `SUPPORTED.md` defines the v0.1 convert/reject subset. Review validation: `PATH="$PWD/.venv/bin:$PATH" make check` passed with 33 tests and example validation.
+
 - [x] Task: Document the three dialects
     - [x] Clone `openfisca-core` + one country package (`openfisca-aotearoa` preferred, `openfisca-france` fallback); locate the YAML test loader; enumerate its accepted fields from code, not docs
     - [x] Clone `policyengine-core` + `policyengine-us`; same analysis
@@ -12,7 +14,7 @@ Depends on: contracts_20260704 phases 1–4. Requires network (git clones). If u
 - [x] Task: Define supported subset
     - [x] Write `SUPPORTED.md` v0.1 from FORMATS.md; get the mandatory constructs from spec §Deliverables 1
     - **Acceptance:** every row says convertible/rejected and why
-- [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
 ## Phase 2 — Converters (TDD)
 
