@@ -59,9 +59,9 @@ Read `spec.md` first. Follow `conductor/workflow.md` (TDD, one commit per task, 
     - [x] Implement type detection (`conformsTo` field, fallback sniffing), schema validation, and cross-file integrity checks (fixture input IDs ∈ crosswalk; trace parameterVersions ∈ parameters; dataType consistency)
     - [x] CLI entry point `pic-validate` (argparse; exit 1 on failure; human-readable + `--json` output)
     - **Acceptance:** `pic-validate contracts/examples/nz-oia-clocks/` exits 0 once Phase 5 exists; unit tests green meanwhile on synthetic dirs
-- [ ] Task: Implement `pic-diff`
-    - [ ] Tests first: value change, new period, removed parameter, unchanged — all reported correctly
-    - [ ] Implement Markdown + JSON diff output
+- [x] Task: Implement `pic-diff`
+    - [x] Tests first: value change, new period, removed parameter, unchanged — all reported correctly
+    - [x] Implement Markdown + JSON diff output
     - **Acceptance:** pytest green; sample diff committed under `contracts/examples/diffs/`
 - [ ] Task: Wire CI
     - [ ] GitHub Actions workflow: ruff, pytest with coverage gate ≥80% on tools, `pic-validate` over all `examples/valid` (expect pass) and `examples/invalid` (expect fail)
