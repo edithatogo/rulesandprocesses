@@ -54,6 +54,8 @@ Read `spec.md` first. Follow `conductor/workflow.md` (TDD, one commit per task, 
 
 ## Phase 4 — Reference tooling
 
+> CHECKPOINT (2026-07-05): Phase 4 replaced the scaffold placeholders with `pic-validate`, directory referential-integrity checks, `pic-diff`, a valid/invalid example-corpus gate, and GitHub Actions CI. Required integrity failures are tested: unknown fixture ID, unknown trace parameter, and crosswalk/fixture type mismatch. Local validation passed with `PATH=$PWD/.venv/bin:$PATH make check`, including coverage >=80% (observed 88.55%) and example corpus validation. Workflow YAML parsed locally; no `actionlint`/`yamllint` binary was installed.
+
 - [x] Task: Implement `pic-validate`
     - [x] Tests first: detects each contract type; validates valid/invalid corpus; directory mode runs referential-integrity checks and catches the three cases in spec §Acceptance 3
     - [x] Implement type detection (`conformsTo` field, fallback sniffing), schema validation, and cross-file integrity checks (fixture input IDs ∈ crosswalk; trace parameterVersions ∈ parameters; dataType consistency)
@@ -67,7 +69,7 @@ Read `spec.md` first. Follow `conductor/workflow.md` (TDD, one commit per task, 
     - [x] GitHub Actions workflow: ruff, pytest with coverage gate ≥80% on tools, `pic-validate` over all `examples/valid` (expect pass) and `examples/invalid` (expect fail)
     - [x] Make `make check` run the same gate locally
     - **Acceptance:** workflow file lints (yamllint or actionlint if available); `make check` green locally
-- [ ] Task: Conductor - User Manual Verification 'Phase 4' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 4' (Protocol in workflow.md)
 
 ## Phase 5 — Worked example: nz-oia-clocks
 
