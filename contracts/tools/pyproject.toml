@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pic-contracts"
+version = "0.1.0"
+description = "Reference tooling for Policy Interchange Contracts"
+readme = "../../contracts/README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "jsonschema>=4.18",
+  "pyyaml>=6.0",
+]
+
+[project.scripts]
+pic-validate = "pic_contracts.validate_cli:main"
+pic-diff = "pic_contracts.diff_cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pic_contracts"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--strict-markers --strict-config"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.coverage.run]
+branch = true
+source = ["pic_contracts"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+

@@ -4,11 +4,11 @@ Read `spec.md` first. Follow `conductor/workflow.md` (TDD, one commit per task, 
 
 ## Phase 1 — Scaffolding and pic-semantics
 
-- [ ] Task: Scaffold `contracts/` package
-    - [ ] Create `contracts/README.md` (one-page overview: the five contracts, ground rules from spec §Ground rules, links)
-    - [ ] Create `contracts/CONSUMERS.md` (table: contract, version, consumer, status; seed with foi-o/Track 2 as "intended")
-    - [ ] Create root `pyproject.toml` for package `pic_contracts` (src layout: `contracts/tools/src/pic_contracts/`), pytest + ruff config, `jsonschema` and `pyyaml` deps
-    - [ ] Create `Makefile` with `check: lint test validate-examples` targets (validate-examples may be a placeholder script until tools exist)
+- [x] Task: Scaffold `contracts/` package
+    - [x] Create `contracts/README.md` (one-page overview: the five contracts, ground rules from spec §Ground rules, links)
+    - [x] Create `contracts/CONSUMERS.md` (table: contract, version, consumer, status; seed with foi-o/Track 2 as "intended")
+    - [x] Create root `pyproject.toml` for package `pic_contracts` (src layout: `contracts/tools/src/pic_contracts/`), pytest + ruff config, `jsonschema` and `pyyaml` deps
+    - [x] Create `Makefile` with `check: lint test validate-examples` targets (validate-examples may be a placeholder script until tools exist)
     - **Acceptance:** `pip install -e contracts/tools` succeeds; `make check` runs (may trivially pass)
 - [ ] Task: Write `pic-semantics` 0.1.0
     - [ ] Write `contracts/pic-semantics/0.1.0/SPEC.md`: valueState enum + definitions, epistemicStatus enum, the propagation decision table for and/or/not/comparison/arithmetic/if per spec C1, data types, rounding declaration. Include a worked example table showing `unknown AND false = false`, `unknown + 5 = unknown`, `verified_stale < threshold = unknown-with-warning`
