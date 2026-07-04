@@ -1,0 +1,25 @@
+{
+  "conformsTo": "pic-traces/0.1.0",
+  "caseId": "nz-oia/fixture.not_provided_receipt",
+  "packageRef": {"id": "nz-oia-clocks", "version": "0.1.0"},
+  "engine": {"name": "pic-example", "version": "0.1.0"},
+  "timestamp": "2026-07-05T00:00:00Z",
+  "inputs": {
+    "nz-oia/variable.receipt_date": {"valueState": "not_provided"}
+  },
+  "outputs": {
+    "nz-oia/decision.response_deadline": {"valueState": "unknown", "warnings": ["receipt date required"]}
+  },
+  "steps": [
+    {
+      "stepId": "receipt_date_check",
+      "kind": "evidence_check",
+      "refs": {"decision": "nz-oia/decision.response_deadline"},
+      "inputsUsed": ["nz-oia/variable.receipt_date"],
+      "parameterVersions": [],
+      "result": {"valueState": "unknown", "warnings": ["receipt date required"]},
+      "sourceRefs": ["Official Information Act 1982 s 15"]
+    }
+  ]
+}
+

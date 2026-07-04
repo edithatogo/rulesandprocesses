@@ -1,0 +1,10 @@
+{
+  "caseId": "nz-oia/fixture.missing_conforms",
+  "packageRef": {"id": "nz-oia-clocks", "version": "0.1.0"},
+  "engine": {"name": "pic-example", "version": "0.1.0"},
+  "timestamp": "2026-07-05T00:00:00Z",
+  "inputs": {},
+  "outputs": {},
+  "steps": []
+}
+

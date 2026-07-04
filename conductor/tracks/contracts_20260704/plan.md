@@ -43,10 +43,10 @@ Read `spec.md` first. Follow `conductor/workflow.md` (TDD, one commit per task, 
     - [x] `SPEC.md` + `schema.json` per spec C4
     - [x] Valid examples: 2 fixture files (one plain, one exercising `not_provided` and `verified_stale` inputs)
     - **Acceptance:** pytest green
-- [ ] Task: Write `pic-traces` 0.1.0
-    - [ ] Write tests first: step with unknown `kind` rejected; trace without `conformsTo` rejected; equivalence functions (see next) unit-tested with equal/output-only-equal/path-different trace pairs
-    - [ ] `SPEC.md` + `schema.json` per spec C5, including the normative "Vectorized engines" deferral section and the three equivalence levels
-    - [ ] Implement `trace_equivalence(a, b) -> {output: bool, path: bool, semantic: bool, diffs: [...]}` in `pic_contracts.traces`
+- [x] Task: Write `pic-traces` 0.1.0
+    - [x] Write tests first: step with unknown `kind` rejected; trace without `conformsTo` rejected; equivalence functions (see next) unit-tested with equal/output-only-equal/path-different trace pairs
+    - [x] `SPEC.md` + `schema.json` per spec C5, including the normative "Vectorized engines" deferral section and the three equivalence levels
+    - [x] Implement `trace_equivalence(a, b) -> {output: bool, path: bool, semantic: bool, diffs: [...]}` in `pic_contracts.traces`
     - **Acceptance:** pytest green; equivalence function returns correct levels on constructed pairs
 - [ ] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)
 

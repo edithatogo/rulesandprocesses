@@ -1,0 +1,21 @@
+{
+  "conformsTo": "pic-traces/0.1.0",
+  "caseId": "nz-oia/fixture.bad_parameter",
+  "packageRef": {"id": "nz-oia-clocks", "version": "0.1.0"},
+  "engine": {"name": "pic-example", "version": "0.1.0"},
+  "timestamp": "2026-07-05T00:00:00Z",
+  "inputs": {},
+  "outputs": {},
+  "steps": [
+    {
+      "stepId": "bad",
+      "kind": "decision",
+      "refs": {},
+      "inputsUsed": [],
+      "parameterVersions": [{"effectiveFrom": "2026-01-01"}],
+      "result": {"valueState": "unknown"},
+      "sourceRefs": []
+    }
+  ]
+}
+
