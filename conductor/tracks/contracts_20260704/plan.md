@@ -10,10 +10,10 @@ Read `spec.md` first. Follow `conductor/workflow.md` (TDD, one commit per task, 
     - [x] Create root `pyproject.toml` for package `pic_contracts` (src layout: `contracts/tools/src/pic_contracts/`), pytest + ruff config, `jsonschema` and `pyyaml` deps
     - [x] Create `Makefile` with `check: lint test validate-examples` targets (validate-examples may be a placeholder script until tools exist)
     - **Acceptance:** `pip install -e contracts/tools` succeeds; `make check` runs (may trivially pass)
-- [ ] Task: Write `pic-semantics` 0.1.0
-    - [ ] Write `contracts/pic-semantics/0.1.0/SPEC.md`: valueState enum + definitions, epistemicStatus enum, the propagation decision table for and/or/not/comparison/arithmetic/if per spec C1, data types, rounding declaration. Include a worked example table showing `unknown AND false = false`, `unknown + 5 = unknown`, `verified_stale < threshold = unknown-with-warning`
-    - [ ] Write `schema.json` exposing `$defs`: `valueState`, `epistemicStatus`, `dataType`, `rounding`, `valueObject` (`{value?, valueState, epistemicStatus?, currency?}`)
-    - [ ] Write tests: 2 valid + 3 invalid example JSON files instantiating `valueObject`; test that schema accepts/rejects correctly
+- [x] Task: Write `pic-semantics` 0.1.0
+    - [x] Write `contracts/pic-semantics/0.1.0/SPEC.md`: valueState enum + definitions, epistemicStatus enum, the propagation decision table for and/or/not/comparison/arithmetic/if per spec C1, data types, rounding declaration. Include a worked example table showing `unknown AND false = false`, `unknown + 5 = unknown`, `verified_stale < threshold = unknown-with-warning`
+    - [x] Write `schema.json` exposing `$defs`: `valueState`, `epistemicStatus`, `dataType`, `rounding`, `valueObject` (`{value?, valueState, epistemicStatus?, currency?}`)
+    - [x] Write tests: 2 valid + 3 invalid example JSON files instantiating `valueObject`; test that schema accepts/rejects correctly
     - **Acceptance:** pytest green; invalid examples each fail for the intended reason (assert on error path/message)
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
