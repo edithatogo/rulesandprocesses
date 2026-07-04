@@ -54,10 +54,10 @@ Read `spec.md` first. Follow `conductor/workflow.md` (TDD, one commit per task, 
 
 ## Phase 4 — Reference tooling
 
-- [ ] Task: Implement `pic-validate`
-    - [ ] Tests first: detects each contract type; validates valid/invalid corpus; directory mode runs referential-integrity checks and catches the three cases in spec §Acceptance 3
-    - [ ] Implement type detection (`conformsTo` field, fallback sniffing), schema validation, and cross-file integrity checks (fixture input IDs ∈ crosswalk; trace parameterVersions ∈ parameters; dataType consistency)
-    - [ ] CLI entry point `pic-validate` (argparse; exit 1 on failure; human-readable + `--json` output)
+- [x] Task: Implement `pic-validate`
+    - [x] Tests first: detects each contract type; validates valid/invalid corpus; directory mode runs referential-integrity checks and catches the three cases in spec §Acceptance 3
+    - [x] Implement type detection (`conformsTo` field, fallback sniffing), schema validation, and cross-file integrity checks (fixture input IDs ∈ crosswalk; trace parameterVersions ∈ parameters; dataType consistency)
+    - [x] CLI entry point `pic-validate` (argparse; exit 1 on failure; human-readable + `--json` output)
     - **Acceptance:** `pic-validate contracts/examples/nz-oia-clocks/` exits 0 once Phase 5 exists; unit tests green meanwhile on synthetic dirs
 - [ ] Task: Implement `pic-diff`
     - [ ] Tests first: value change, new period, removed parameter, unchanged — all reported correctly

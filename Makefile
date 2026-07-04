@@ -9,4 +9,4 @@ test:
 	cd contracts/tools && uv run --with pytest pytest
 
 validate-examples:
-	cd contracts/tools && uv run pic-validate ../../contracts
+	cd contracts/tools && uv run python -m pic_contracts.validate_examples ../../contracts
