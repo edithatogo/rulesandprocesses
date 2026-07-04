@@ -19,7 +19,7 @@ Depends on: contracts_20260704. Requires network + Python + R. The R requirement
 
 ## Phase 2 — Crosswalk and fixtures
 
-- [ ] Task: Draft crosswalk (`method: ai-proposed`), covering household descriptors (size, ages, earned/unearned income, expenses: shelter, dependent care, medical) and outputs (eligible, allotment)
+- [x] Task: Draft crosswalk (`method: ai-proposed`), covering household descriptors (size, ages, earned/unearned income, expenses: shelter, dependent care, medical) and outputs (eligible, allotment)
     - **Acceptance:** `pic-validate` green
 - [ ] Task: [HUMAN] Crosswalk verification (Dylan; the countable-income and unit-composition rows are the dangerous ones — check definitions in both codebases, not just names)
 - [ ] Task: Curate fixture candidates
