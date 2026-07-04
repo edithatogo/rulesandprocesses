@@ -9,9 +9,9 @@ Depends on: contracts_20260704 phases 1–3. Requires network + engine installs.
     - [x] Read `policyengine-core` source for the tracer; document node contents with permalinks
     - [x] Write `external/policyengine/TRACE_INVESTIGATION.md` incl. the vectorized-derivation feasibility assessment (household: direct; microsim: measure per-case re-execution cost on a 1k-household CPS sample if feasible)
     - **Acceptance:** doc complete with permalinks and measured (or honestly-blocked) microsim numbers
-- [ ] Task: Prototype `to_trace()` projection
-    - [ ] Tests first: household SNAP simulation → pic-traces document that passes `pic-validate`; parameterVersions populated; steps ordered by dependency
-    - [ ] Implement projection in `harness/policyengine_trace/` (here, not upstream yet)
+- [x] Task: Prototype `to_trace()` projection
+    - [x] Tests first: household SNAP simulation → pic-traces document that passes `pic-validate`; parameterVersions populated; steps ordered by dependency
+    - [x] Implement projection in `harness/policyengine_trace/` (here, not upstream yet)
     - **Acceptance:** pytest green; emitted trace validates
 - [ ] Task: Draft upstream issue
     - [ ] `external/policyengine/SUBMISSION_trace.md`: propose versioned trace export; include the prototype as evidence; PIC as footnote

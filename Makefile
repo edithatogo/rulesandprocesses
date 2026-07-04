@@ -1,6 +1,6 @@
-.PHONY: check lint test validate-examples converter-lint converter-test corpus-report-check
+.PHONY: check lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test
 
-check: lint test validate-examples converter-lint converter-test corpus-report-check
+check: lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test
 
 lint:
 	cd contracts/tools && uv run --with ruff ruff check .
@@ -19,3 +19,9 @@ converter-test:
 
 corpus-report-check:
 	PYTHONPATH=converters/fixtures/src uv run --with PyYAML python -m pic_fixture_converters.corpus_report --check
+
+harness-lint:
+	PYTHONPATH=harness:contracts/tools/src uv run --with ruff ruff check harness
+
+harness-test:
+	PYTHONPATH=harness:contracts/tools/src uv run --with pytest --with jsonschema pytest harness/tests
