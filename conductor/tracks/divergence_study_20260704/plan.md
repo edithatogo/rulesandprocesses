@@ -22,6 +22,7 @@ Depends on: contracts_20260704. Requires network + Python + R. The R requirement
 - [x] Task: Draft crosswalk (`method: ai-proposed`), covering household descriptors (size, ages, earned/unearned income, expenses: shelter, dependent care, medical) and outputs (eligible, allotment)
     - **Acceptance:** `pic-validate` green
 - [ ] Task: [HUMAN] Crosswalk verification (Dylan; the countable-income and unit-composition rows are the dangerous ones — check definitions in both codebases, not just names)
+    - > HUMAN-GATE (2026-07-05): Draft crosswalk is prepared at `studies/snap-divergence/crosswalk.json` with all rows and mappings marked `ai-proposed`. Agent must stop here; Dylan verifies countable-income, unit-composition, BBCE, utility, and annual/monthly rows before fixture curation proceeds.
 - [ ] Task: Curate fixture candidates
     - [ ] Extract worked examples from USDA FNS materials + chosen states' policy manuals (cite page/URL per case); AI-propose boundary cases around FPL thresholds, deduction caps, BBCE limits → `fixtures/candidates/`
     - **Acceptance:** ≥60 candidates, all provenance-stamped, `pic-validate` green
