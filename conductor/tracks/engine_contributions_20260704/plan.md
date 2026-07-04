@@ -4,10 +4,10 @@ Depends on: contracts_20260704 phases 1–3. Requires network + engine installs.
 
 ## Phase 1 — C-A: PolicyEngine trace investigation
 
-- [ ] Task: Computation-tree investigation
-    - [ ] Install `policyengine-us` in a venv; run one household simulation (e.g. SNAP for a 3-person household); locate and dump the computation tree / tracer output
-    - [ ] Read `policyengine-core` source for the tracer; document node contents with permalinks
-    - [ ] Write `external/policyengine/TRACE_INVESTIGATION.md` incl. the vectorized-derivation feasibility assessment (household: direct; microsim: measure per-case re-execution cost on a 1k-household CPS sample if feasible)
+- [x] Task: Computation-tree investigation
+    - [x] Install `policyengine-us` in a venv; run one household simulation (e.g. SNAP for a 3-person household); locate and dump the computation tree / tracer output
+    - [x] Read `policyengine-core` source for the tracer; document node contents with permalinks
+    - [x] Write `external/policyengine/TRACE_INVESTIGATION.md` incl. the vectorized-derivation feasibility assessment (household: direct; microsim: measure per-case re-execution cost on a 1k-household CPS sample if feasible)
     - **Acceptance:** doc complete with permalinks and measured (or honestly-blocked) microsim numbers
 - [ ] Task: Prototype `to_trace()` projection
     - [ ] Tests first: household SNAP simulation → pic-traces document that passes `pic-validate`; parameterVersions populated; steps ordered by dependency
