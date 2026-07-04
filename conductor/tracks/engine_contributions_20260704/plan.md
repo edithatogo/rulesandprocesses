@@ -17,6 +17,7 @@ Depends on: contracts_20260704 phases 1–3. Requires network + engine installs.
     - [x] `external/policyengine/SUBMISSION_trace.md`: propose versioned trace export; include the prototype as evidence; PIC as footnote
     - **Acceptance:** draft complete
 - [ ] Task: [HUMAN] Review + submit trace issue
+    - > HUMAN-GATE (2026-07-04): Draft issue is prepared at `external/policyengine/SUBMISSION_trace.md`. Agent must stop here; Dylan reviews/edits and submits upstream if appropriate.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
 ## Phase 2 — C-B: Missingness cases
