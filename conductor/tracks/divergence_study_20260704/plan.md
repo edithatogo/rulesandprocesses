@@ -7,8 +7,8 @@ Depends on: contracts_20260704. Requires network + Python + R. The R requirement
 - [x] Task: PRD reconnaissance
     - [x] Clone PRD; confirm license/citation terms; document SNAP function entry points, parameter vintages, state coverage, and how BBCE/SUA options are modeled → `studies/snap-divergence/PRD_NOTES.md` (permalinks)
     - **Acceptance:** notes name exact R functions + parameter files for SNAP
-- [ ] Task: PolicyEngine SNAP reconnaissance
-    - [ ] Same for `policyengine-us`: SNAP variables, parameters, state options → `PE_NOTES.md`
+- [x] Task: PolicyEngine SNAP reconnaissance
+    - [x] Same for `policyengine-us`: SNAP variables, parameters, state options → `PE_NOTES.md`
     - **Acceptance:** as above
 - [ ] Task: Lock scope
     - [ ] Choose states + policy year where both systems have coverage; write `SCOPE.md` with the rationale and known modeling asymmetries going in
