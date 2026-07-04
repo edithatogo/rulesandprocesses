@@ -38,6 +38,8 @@ Read `spec.md` first. Follow `conductor/workflow.md` (TDD, one commit per task, 
 
 ## Phase 3 — pic-fixtures and pic-traces
 
+> CHECKPOINT (2026-07-05): Phase 3 added `pic-fixtures/0.1.0` with file-level provenance, value-state-aware inputs, expected tolerances, two valid examples, and invalid coverage for float money, missing curator, and bad tolerance. `pic-traces/0.1.0` now covers scalar case-level traces, vectorized-engine deferral, step kind constraints, three invalid examples, and `trace_equivalence` output/path/semantic levels. Validation passed with `PATH=$PWD/.venv/bin:$PATH make check`. Conductor review found no further fixes.
+
 - [x] Task: Write `pic-fixtures` 0.1.0
     - [x] Write tests first: case with float money rejected; case missing `provenance.curator` rejected; `valueState`-only input (no value) accepted for `not_provided`; tolerance parsing
     - [x] `SPEC.md` + `schema.json` per spec C4
@@ -48,7 +50,7 @@ Read `spec.md` first. Follow `conductor/workflow.md` (TDD, one commit per task, 
     - [x] `SPEC.md` + `schema.json` per spec C5, including the normative "Vectorized engines" deferral section and the three equivalence levels
     - [x] Implement `trace_equivalence(a, b) -> {output: bool, path: bool, semantic: bool, diffs: [...]}` in `pic_contracts.traces`
     - **Acceptance:** pytest green; equivalence function returns correct levels on constructed pairs
-- [ ] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3' (Protocol in workflow.md)
 
 ## Phase 4 — Reference tooling
 
