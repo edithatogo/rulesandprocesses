@@ -9,9 +9,9 @@ Depends on: contracts_20260704 phases 1–3. Work is staged under `external/foi-
     - [x] Write `external/foi-o/rules/SOURCES.md`: quoted definitions, section refs, consolidation date, and any ambiguity notes (e.g. exact holiday exclusions in the s 2 working-day definition)
     - [x] If network unavailable: mark BLOCKED, proceed using placeholders clearly tagged `UNVERIFIED`, and add verification to the `[HUMAN]` review task
     - **Acceptance:** SOURCES.md exists; every rule in spec has a verified (or explicitly UNVERIFIED) citation
-- [ ] Task: Read foi-o conventions
-    - [ ] Read foi-o repo: `schemas/json/`, working-day/clock code paths, Pydantic models, test layout, `pyproject` extras
-    - [ ] Write `external/foi-o/rules/DESIGN.md`: where the module sits in foi-o's tree, how it aligns with the Mojo-first/Python-fallback contract, naming conventions to follow
+- [x] Task: Read foi-o conventions
+    - [x] Read foi-o repo: `schemas/json/`, working-day/clock code paths, Pydantic models, test layout, `pyproject` extras
+    - [x] Write `external/foi-o/rules/DESIGN.md`: where the module sits in foi-o's tree, how it aligns with the Mojo-first/Python-fallback contract, naming conventions to follow
     - **Acceptance:** DESIGN.md names exact foi-o paths/modules it integrates with
 - [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
