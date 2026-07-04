@@ -4,6 +4,8 @@ Read `spec.md` first. Follow `conductor/workflow.md` (TDD, one commit per task, 
 
 ## Phase 1 — Scaffolding and pic-semantics
 
+> CHECKPOINT (2026-07-05): Phase 1 scaffold is installed under `contracts/tools` as `pic_contracts`, with root `make check` running lint, tests, and placeholder example validation. `pic-semantics/0.1.0` now has normative value-state/epistemic-status prose, reusable `$defs`, two valid examples, three invalid examples, and schema tests asserting intended rejection reasons. Validation passed with `PATH=$PWD/.venv/bin:$PATH make check`. Direct system `pip install -e contracts/tools` is blocked by this machine's externally managed Python; editable install was verified in repo-local `.venv`.
+
 - [x] Task: Scaffold `contracts/` package
     - [x] Create `contracts/README.md` (one-page overview: the five contracts, ground rules from spec §Ground rules, links)
     - [x] Create `contracts/CONSUMERS.md` (table: contract, version, consumer, status; seed with foi-o/Track 2 as "intended")
@@ -15,7 +17,7 @@ Read `spec.md` first. Follow `conductor/workflow.md` (TDD, one commit per task, 
     - [x] Write `schema.json` exposing `$defs`: `valueState`, `epistemicStatus`, `dataType`, `rounding`, `valueObject` (`{value?, valueState, epistemicStatus?, currency?}`)
     - [x] Write tests: 2 valid + 3 invalid example JSON files instantiating `valueObject`; test that schema accepts/rejects correctly
     - **Acceptance:** pytest green; invalid examples each fail for the intended reason (assert on error path/message)
-- [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
 ## Phase 2 — pic-crosswalk and pic-parameters
 
