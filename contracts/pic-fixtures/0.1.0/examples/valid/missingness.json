@@ -1,0 +1,34 @@
+{
+  "conformsTo": "pic-fixtures/0.1.0",
+  "provenance": {
+    "curator": "PIC Track 1",
+    "method": "ai-proposed",
+    "source": "illustrative missingness sample",
+    "interpreterOfRecord": "pending human review",
+    "disclaimer": "Interpretation, not law."
+  },
+  "cases": [
+    {
+      "caseId": "nz-oia/fixture.not_provided_receipt",
+      "description": "Receipt date not provided yields unknown deadline",
+      "period": "2026",
+      "entities": {"request": {"id": "sample"}},
+      "inputs": {
+        "nz-oia/variable.receipt_date": {"valueState": "not_provided"},
+        "nz-oia/variable.prior_verified_date": {
+          "value": "2026-01-10",
+          "valueState": "verified_stale",
+          "epistemicStatus": "observed"
+        }
+      },
+      "expected": {
+        "nz-oia/decision.response_deadline": {
+          "valueState": "unknown",
+          "warnings": ["receipt date required"]
+        }
+      },
+      "sourceRefs": ["Official Information Act 1982 s 15"]
+    }
+  ]
+}
+

@@ -1,0 +1,24 @@
+{
+  "conformsTo": "pic-fixtures/0.1.0",
+  "provenance": {
+    "curator": "PIC Track 1",
+    "method": "ai-proposed",
+    "source": "negative",
+    "interpreterOfRecord": "pending",
+    "disclaimer": "Interpretation, not law."
+  },
+  "cases": [
+    {
+      "caseId": "us-snap/fixture.float_money",
+      "description": "Float money is invalid",
+      "period": "2026-01",
+      "entities": {},
+      "inputs": {
+        "us-snap/variable.gross_income": {"value": 2100.5, "valueState": "known", "currency": "USD"}
+      },
+      "expected": {"us-snap/variable.net_income": {"value": "1.00", "valueState": "known", "currency": "USD"}},
+      "sourceRefs": ["negative"]
+    }
+  ]
+}
+

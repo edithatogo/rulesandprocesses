@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/edithatogo/rulesandprocesses/contracts/pic-fixtures/0.1.0/schema.json",
+  "title": "PIC fixtures file",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["conformsTo", "provenance", "cases"],
+  "properties": {
+    "conformsTo": {"const": "pic-fixtures/0.1.0"},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "cases": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/case"}}
+  },
+  "$defs": {
+    "picId": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]+(/[a-z0-9_-]+)*(\\.[a-z0-9_]+)+$"
+    },
+    "decimalString": {
+      "$ref": "https://github.com/edithatogo/rulesandprocesses/contracts/pic-semantics/0.1.0/schema.json#/$defs/decimalString"
+    },
+    "valueObject": {
+      "$ref": "https://github.com/edithatogo/rulesandprocesses/contracts/pic-semantics/0.1.0/schema.json#/$defs/valueObject"
+    },
+    "expectedValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["valueState"],
+      "properties": {
+        "value": {
+          "oneOf": [
+            {"type": "boolean"},
+            {"type": "integer"},
+            {"type": "string"}
+          ]
+        },
+        "valueState": {
+          "$ref": "https://github.com/edithatogo/rulesandprocesses/contracts/pic-semantics/0.1.0/schema.json#/$defs/valueState"
+        },
+        "epistemicStatus": {
+          "$ref": "https://github.com/edithatogo/rulesandprocesses/contracts/pic-semantics/0.1.0/schema.json#/$defs/epistemicStatus"
+        },
+        "currency": {"type": "string", "pattern": "^[A-Z]{3}$"},
+        "warnings": {"type": "array", "items": {"type": "string"}},
+        "tolerance": {"$ref": "#/$defs/decimalString"}
+      },
+      "allOf": [
+        {
+          "if": {"required": ["currency"]},
+          "then": {
+            "required": ["value"],
+            "properties": {"value": {"$ref": "#/$defs/decimalString"}}
+          }
+        }
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["curator", "method", "source", "interpreterOfRecord", "disclaimer"],
+      "properties": {
+        "curator": {"type": "string", "minLength": 1},
+        "method": {"type": "string", "enum": ["human", "ai-proposed", "mechanical"]},
+        "source": {"type": "string", "minLength": 1},
+        "interpreterOfRecord": {"type": "string", "minLength": 1},
+        "disclaimer": {"type": "string", "minLength": 1},
+        "notes": {"type": "string"}
+      }
+    },
+    "valueMap": {
+      "type": "object",
+      "propertyNames": {"$ref": "#/$defs/picId"},
+      "additionalProperties": {"$ref": "#/$defs/valueObject"}
+    },
+    "expectedMap": {
+      "type": "object",
+      "propertyNames": {"$ref": "#/$defs/picId"},
+      "additionalProperties": {"$ref": "#/$defs/expectedValue"}
+    },
+    "case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["caseId", "description", "period", "entities", "inputs", "expected", "sourceRefs"],
+      "properties": {
+        "caseId": {"$ref": "#/$defs/picId"},
+        "description": {"type": "string", "minLength": 1},
+        "period": {"type": "string", "minLength": 1},
+        "entities": {"type": "object"},
+        "inputs": {"$ref": "#/$defs/valueMap"},
+        "expected": {"$ref": "#/$defs/expectedMap"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "sourceRefs": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      }
+    }
+  }
+}

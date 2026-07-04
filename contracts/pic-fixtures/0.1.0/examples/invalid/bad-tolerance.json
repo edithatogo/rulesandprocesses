@@ -1,0 +1,29 @@
+{
+  "conformsTo": "pic-fixtures/0.1.0",
+  "provenance": {
+    "curator": "PIC Track 1",
+    "method": "ai-proposed",
+    "source": "negative",
+    "interpreterOfRecord": "pending",
+    "disclaimer": "Interpretation, not law."
+  },
+  "cases": [
+    {
+      "caseId": "us-snap/fixture.bad_tolerance",
+      "description": "Tolerance must be decimal string",
+      "period": "2026-01",
+      "entities": {},
+      "inputs": {"us-snap/variable.gross_income": {"value": "1.00", "valueState": "known", "currency": "USD"}},
+      "expected": {
+        "us-snap/variable.net_income": {
+          "value": "1.00",
+          "valueState": "known",
+          "currency": "USD",
+          "tolerance": 1.0
+        }
+      },
+      "sourceRefs": ["negative"]
+    }
+  ]
+}
+

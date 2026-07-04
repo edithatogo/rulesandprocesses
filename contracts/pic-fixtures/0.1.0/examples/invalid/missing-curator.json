@@ -1,0 +1,21 @@
+{
+  "conformsTo": "pic-fixtures/0.1.0",
+  "provenance": {
+    "method": "ai-proposed",
+    "source": "negative",
+    "interpreterOfRecord": "pending",
+    "disclaimer": "Interpretation, not law."
+  },
+  "cases": [
+    {
+      "caseId": "nz-oia/fixture.missing_curator",
+      "description": "Missing curator is invalid",
+      "period": "2026",
+      "entities": {},
+      "inputs": {"nz-oia/variable.receipt_date": {"valueState": "not_provided"}},
+      "expected": {"nz-oia/decision.response_deadline": {"valueState": "unknown"}},
+      "sourceRefs": ["negative"]
+    }
+  ]
+}
+

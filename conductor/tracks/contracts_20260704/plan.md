@@ -38,10 +38,10 @@ Read `spec.md` first. Follow `conductor/workflow.md` (TDD, one commit per task, 
 
 ## Phase 3 — pic-fixtures and pic-traces
 
-- [ ] Task: Write `pic-fixtures` 0.1.0
-    - [ ] Write tests first: case with float money rejected; case missing `provenance.curator` rejected; `valueState`-only input (no value) accepted for `not_provided`; tolerance parsing
-    - [ ] `SPEC.md` + `schema.json` per spec C4
-    - [ ] Valid examples: 2 fixture files (one plain, one exercising `not_provided` and `verified_stale` inputs)
+- [x] Task: Write `pic-fixtures` 0.1.0
+    - [x] Write tests first: case with float money rejected; case missing `provenance.curator` rejected; `valueState`-only input (no value) accepted for `not_provided`; tolerance parsing
+    - [x] `SPEC.md` + `schema.json` per spec C4
+    - [x] Valid examples: 2 fixture files (one plain, one exercising `not_provided` and `verified_stale` inputs)
     - **Acceptance:** pytest green
 - [ ] Task: Write `pic-traces` 0.1.0
     - [ ] Write tests first: step with unknown `kind` rejected; trace without `conformsTo` rejected; equivalence functions (see next) unit-tested with equal/output-only-equal/path-different trace pairs

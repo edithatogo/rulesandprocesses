@@ -1,0 +1,31 @@
+{
+  "conformsTo": "pic-fixtures/0.1.0",
+  "provenance": {
+    "curator": "PIC Track 1",
+    "method": "ai-proposed",
+    "source": "illustrative sample",
+    "interpreterOfRecord": "pending human review",
+    "disclaimer": "Interpretation, not law."
+  },
+  "cases": [
+    {
+      "caseId": "us-snap/fixture.simple_income",
+      "description": "Simple illustrative income case",
+      "period": "2026-01",
+      "entities": {"household": {"members": 1}},
+      "inputs": {
+        "us-snap/variable.gross_income": {"value": "2100.00", "valueState": "known", "currency": "USD"}
+      },
+      "expected": {
+        "us-snap/variable.net_income": {
+          "value": "1900.00",
+          "valueState": "known",
+          "currency": "USD",
+          "tolerance": "1.00"
+        }
+      },
+      "sourceRefs": ["illustrative Track 1 sample"]
+    }
+  ]
+}
+
