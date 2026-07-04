@@ -45,7 +45,7 @@
       }
     },
     "value": {
-      "oneOf": [
+      "anyOf": [
         {"$ref": "#/$defs/decimalString"},
         {"type": "integer"},
         {"type": "boolean"},

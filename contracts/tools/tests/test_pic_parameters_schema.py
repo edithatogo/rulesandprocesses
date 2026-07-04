@@ -14,6 +14,13 @@ def test_valid_parameters_validate_and_have_consistent_periods() -> None:
         assert validate_parameter_periods(doc) == []
 
 
+def test_decimal_string_parameter_value_is_accepted() -> None:
+    validator = validator_for("pic-parameters")
+    doc = load_json(BASE / "valid" / "threshold.json")
+    doc["parameters"][0]["values"][0]["value"] = "20.00"
+    validator.validate(doc)
+
+
 def test_schema_rejects_float_value() -> None:
     validator = validator_for("pic-parameters")
     errors = list(validator.iter_errors(load_json(BASE / "invalid" / "float-value.json")))
