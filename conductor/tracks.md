@@ -4,5 +4,4 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [x] **Track: Engine contributions — trace export, missingness semantics, Axiom validation harness**
-  *Link: [./tracks/engine_contributions_20260704/](./tracks/engine_contributions_20260704/)*
+- No active tracks remaining. All tracks completed and archived.
