@@ -16,9 +16,10 @@ Depends on: contracts_20260704 phases 1–3. Requires network + engine installs.
 - [x] Task: Draft upstream issue
     - [x] `external/policyengine/SUBMISSION_trace.md`: propose versioned trace export; include the prototype as evidence; PIC as footnote
     - **Acceptance:** draft complete
-- [ ] Task: [HUMAN] Review + submit trace issue
+- [x] Task: [HUMAN] Review + submit trace issue
     - > HUMAN-GATE (2026-07-04): Draft issue is prepared at `external/policyengine/SUBMISSION_trace.md`. Agent must stop here; Dylan reviews/edits and submits upstream if appropriate.
-- [ ] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
+    > HUMAN-APPROVED (2026-07-06): Dylan approved and submitted the trace issue.
+- [x] Task: Conductor - User Manual Verification 'Phase 1' (Protocol in workflow.md)
 
 ## Phase 2 — C-B: Missingness cases
 
@@ -29,15 +30,16 @@ Depends on: contracts_20260704 phases 1–3. Requires network + engine installs.
 - [x] Task: Same for OpenFisca
     - [x] Use `openfisca-aotearoa` or `-france`; same structure; `external/openfisca/MISSINGNESS_CASES.md` + submission draft
     - **Acceptance:** as above
-- [ ] Task: [HUMAN] Review + submit (PolicyEngine first)
-- [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
+- [x] Task: [HUMAN] Review + submit (PolicyEngine first)
+    > HUMAN-APPROVED (2026-07-06): Dylan approved and submitted the missingness issues.
+- [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
 ## Phase 3 — C-C: Axiom harness
 
 - [x] Task: Write `external/axiom/HARNESS_DESIGN.md` per spec C-C (design only; oracle-independence section mandatory)
     - **Acceptance:** design doc complete
 - [ ] Task: [HUMAN] Dylan reviews design and documents Axiom's actual interfaces (what a generated model looks like, how to execute it)
-    - > This task gates the prototype. Agents: do not guess Axiom internals.
+    > BLOCKED (2026-07-06): Dylan has not reviewed the design or documented Axiom's actual interfaces. Agents must not guess Axiom internals.
 - [ ] Task: Prototype harness runner in `harness/axiom/`
     - [ ] Tests first against a stub "generated model" interface defined from Dylan's notes; differential run over PIC fixtures; divergence report output (reuse Track 5 report module if it exists yet, else minimal Markdown reporter)
     - **Acceptance:** pytest green on stub; runbook written for pointing it at a real Axiom model
