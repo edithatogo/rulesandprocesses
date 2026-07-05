@@ -17,7 +17,9 @@ def test_classify_asset_case() -> None:
 
     assert classified["classification"] == "state-option modeling"
     assert "asset-test" in classified["classificationDetail"].lower()
-    assert classified["investigationStatus"] == "draft"
+    assert classified["investigationStatus"] == "source-level-reviewed"
+    assert any("benefits_functions.R" in ref for ref in classified["sourcePermalinks"])
+    assert any("meets_tanf_non_cash_asset_test.py" in ref for ref in classified["sourcePermalinks"])
 
 
 def test_classify_pa_utility_case() -> None:
@@ -25,6 +27,7 @@ def test_classify_pa_utility_case() -> None:
 
     assert classified["classification"] == "deduction handling"
     assert "Heat-and-Eat" in classified["classificationDetail"]
+    assert any("snap_utility_allowance_type.py" in ref for ref in classified["sourcePermalinks"])
 
 
 def test_classify_agreement_is_unchanged() -> None:

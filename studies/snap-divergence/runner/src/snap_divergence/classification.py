@@ -1,4 +1,4 @@
-"""Draft classification for candidate SNAP divergences."""
+"""Source-level classification for candidate SNAP divergences."""
 
 from __future__ import annotations
 
@@ -20,16 +20,34 @@ EVIDENCE_REFS = [
     "studies/snap-divergence/results/comparison-candidate-results.jsonl",
 ]
 
+SOURCE_REFS = {
+    "prd_snap_function": "https://github.com/Research-Division/policy-rules-database/blob/1d8e8674563a7653ec707d18956faa14b016bc5b/functions/benefits_functions.R#L579-L708",
+    "prd_parameter_blob": "https://github.com/Research-Division/policy-rules-database/blob/1d8e8674563a7653ec707d18956faa14b016bc5b/prd_parameters/benefit.parameters.rdata",
+    "pe_snap_eligibility": "https://github.com/PolicyEngine/policyengine-us/blob/fc64cef64ab55c3c48309c7fb304c35e5f3c9184/policyengine_us/variables/gov/usda/snap/eligibility/is_snap_eligible.py#L16-L36",
+    "pe_categorical_eligibility": "https://github.com/PolicyEngine/policyengine-us/blob/fc64cef64ab55c3c48309c7fb304c35e5f3c9184/policyengine_us/variables/gov/usda/snap/eligibility/meets_snap_categorical_eligibility.py#L12-L17",
+    "pe_tanf_non_cash": "https://github.com/PolicyEngine/policyengine-us/blob/fc64cef64ab55c3c48309c7fb304c35e5f3c9184/policyengine_us/variables/gov/hhs/tanf/non_cash/is_tanf_non_cash_eligible.py#L11-L15",
+    "pe_tanf_gross": "https://github.com/PolicyEngine/policyengine-us/blob/fc64cef64ab55c3c48309c7fb304c35e5f3c9184/policyengine_us/variables/gov/hhs/tanf/non_cash/meets_tanf_non_cash_gross_income_test.py#L11-L34",
+    "pe_tanf_asset": "https://github.com/PolicyEngine/policyengine-us/blob/fc64cef64ab55c3c48309c7fb304c35e5f3c9184/policyengine_us/variables/gov/hhs/tanf/non_cash/meets_tanf_non_cash_asset_test.py#L11-L29",
+    "pe_tanf_net": "https://github.com/PolicyEngine/policyengine-us/blob/fc64cef64ab55c3c48309c7fb304c35e5f3c9184/policyengine_us/variables/gov/hhs/tanf/non_cash/meets_tanf_non_cash_net_income_test.py#L11-L24",
+    "pe_gross_parameters": "https://github.com/PolicyEngine/policyengine-us/blob/fc64cef64ab55c3c48309c7fb304c35e5f3c9184/policyengine_us/parameters/gov/hhs/tanf/non_cash/income_limit/gross.yaml#L29-L117",
+    "pe_asset_parameters": "https://github.com/PolicyEngine/policyengine-us/blob/fc64cef64ab55c3c48309c7fb304c35e5f3c9184/policyengine_us/parameters/gov/hhs/tanf/non_cash/asset_limit.yaml#L32-L103",
+    "pe_utility_type": "https://github.com/PolicyEngine/policyengine-us/blob/fc64cef64ab55c3c48309c7fb304c35e5f3c9184/policyengine_us/variables/gov/usda/snap/income/deductions/shelter/snap_utility_allowance_type.py#L20-L39",
+    "pe_always_sua": "https://github.com/PolicyEngine/policyengine-us/blob/fc64cef64ab55c3c48309c7fb304c35e5f3c9184/policyengine_us/parameters/gov/usda/snap/income/deductions/utility/always_standard.yaml#L23-L94",
+    "pe_phone_allowance": "https://github.com/PolicyEngine/policyengine-us/blob/fc64cef64ab55c3c48309c7fb304c35e5f3c9184/policyengine_us/parameters/gov/usda/snap/income/deductions/utility/single/phone.yaml#L358-L368",
+    "pe_allotment_rounding": "https://github.com/PolicyEngine/policyengine-us/blob/fc64cef64ab55c3c48309c7fb304c35e5f3c9184/policyengine_us/variables/gov/usda/snap/snap_expected_contribution.py#L13-L19",
+}
+
 
 def classify_comparison(comparison: dict[str, Any]) -> dict[str, Any]:
     if comparison.get("agreement"):
         return comparison
     case_id = comparison["caseId"]
     classified = dict(comparison)
-    classification, detail = _classification_for_case(case_id)
+    classification, detail, source_refs = _classification_for_case(case_id)
     classified["classification"] = classification
     classified["classificationDetail"] = detail
-    classified["investigationStatus"] = "draft"
+    classified["investigationStatus"] = "source-level-reviewed"
+    classified["sourcePermalinks"] = source_refs
     classified["evidence"] = list(dict.fromkeys(comparison.get("evidence", []) + EVIDENCE_REFS))
     return classified
 
@@ -49,9 +67,9 @@ def write_classification_report(path: Path, rows: list[dict[str, Any]]) -> None:
     for row in divergent:
         counts[row["classification"]] = counts.get(row["classification"], 0) + 1
     lines = [
-        "# SNAP Divergence Draft Classification",
+        "# SNAP Divergence Source-Level Classification",
         "",
-        "This is a draft classification over candidate fixtures. It is not a final claim until fixtures are promoted and each case receives source-level investigation logs.",
+        "This classification is over the 15 held candidate divergences. It is source-level classified, but not a legal adjudication of which engine is correct.",
         "",
         "## Summary",
         "",
@@ -70,14 +88,22 @@ def write_classification_report(path: Path, rows: list[dict[str, Any]]) -> None:
             "",
             "## Cases",
             "",
-            "| Case | Classification | Detail |",
-            "|---|---|---|",
+            "| Case | Classification | Decision-relevant | Detail |",
+            "|---|---|---|---|",
         ],
     )
     for row in divergent:
         lines.append(
-            f"| `{row['caseId']}` | {row['classification']} | {row['classificationDetail']} |",
+            f"| `{row['caseId']}` | {row['classification']} | "
+            f"{str(row['decisionRelevant']).lower()} | {row['classificationDetail']} |",
         )
+    lines.extend(["", "## Source Evidence", ""])
+    for row in divergent:
+        lines.append(f"### `{row['caseId']}`")
+        lines.append("")
+        for ref in row.get("sourcePermalinks", []):
+            lines.append(f"- {ref}")
+        lines.append("")
     path.write_text("\n".join(lines) + "\n")
 
 
@@ -94,38 +120,92 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
-def _classification_for_case(case_id: str) -> tuple[str, str]:
+def _classification_for_case(case_id: str) -> tuple[str, str, list[str]]:
     if "_asset_above_limit" in case_id:
         return (
             "state-option modeling",
-            "Asset-test divergence candidate: PRD zeros the case at the finite asset surface while PolicyEngine still returns a positive SNAP amount. Check PRD totalassets/AssetTest columns against PolicyEngine snap_assets and TANF non-cash asset parameters.",
+            "Asset-test divergence: PRD applies direct SNAP asset-test columns to totalassets in function.snapBenefit, while PolicyEngine routes BBCE through TANF non-cash eligibility and state asset-limit parameters before SNAP categorical eligibility. Legal correctness is not adjudicated here.",
+            [
+                SOURCE_REFS["prd_snap_function"],
+                SOURCE_REFS["prd_parameter_blob"],
+                SOURCE_REFS["pe_snap_eligibility"],
+                SOURCE_REFS["pe_categorical_eligibility"],
+                SOURCE_REFS["pe_tanf_non_cash"],
+                SOURCE_REFS["pe_tanf_asset"],
+                SOURCE_REFS["pe_asset_parameters"],
+            ],
         )
     if case_id.startswith("us-snap/fixture.pa_"):
         return (
             "deduction handling",
-            "Pennsylvania divergence candidate: uniform offset on gross-threshold cases suggests Heat-and-Eat/SUA or utility-deduction handling rather than eligibility flip.",
+            "Pennsylvania Heat-and-Eat/SUA divergence: PRD's snapData has HeatandEatState=Yes and HCSUAValue=778.466, with utility deduction triggered inside function.snapBenefit; PolicyEngine marks PA as always-SUA and uses its utility-allowance parameter table. The observed offset is a deduction/parameter-surface mismatch, not an eligibility flip.",
+            [
+                SOURCE_REFS["prd_snap_function"],
+                SOURCE_REFS["prd_parameter_blob"],
+                SOURCE_REFS["pe_utility_type"],
+                SOURCE_REFS["pe_always_sua"],
+            ],
         )
     if case_id.startswith("us-snap/fixture.tx_"):
         return (
             "state-option modeling",
-            "Texas divergence candidate: BBCE gross threshold and finite asset-limit surface differ between PRD snapData and PolicyEngine TANF non-cash eligibility parameters.",
+            "Texas BBCE divergence: PRD encodes BBCE_State=Yes, GrossIncomeEligibilityFPL=1.65, and AssetTest_nonelddis=5000 in snapData and then applies direct gross/asset gates; PolicyEngine encodes the same state-option surface through TANF non-cash gross, net, and asset tests feeding SNAP categorical eligibility. Legal correctness is not adjudicated here.",
+            [
+                SOURCE_REFS["prd_snap_function"],
+                SOURCE_REFS["prd_parameter_blob"],
+                SOURCE_REFS["pe_snap_eligibility"],
+                SOURCE_REFS["pe_categorical_eligibility"],
+                SOURCE_REFS["pe_tanf_non_cash"],
+                SOURCE_REFS["pe_tanf_gross"],
+                SOURCE_REFS["pe_tanf_net"],
+                SOURCE_REFS["pe_tanf_asset"],
+                SOURCE_REFS["pe_gross_parameters"],
+                SOURCE_REFS["pe_asset_parameters"],
+            ],
         )
     if case_id.startswith("us-snap/fixture.ga_"):
         return (
             "state-option modeling",
-            "Georgia divergence candidate: limited BBCE/gross-limit surface differs across engines; PRD carries BBCE_State with 130 percent gross FPL while PolicyEngine routes through TANF non-cash eligibility.",
+            "Georgia limited-BBCE divergence: PRD snapData carries BBCE_State=Yes but a 1.30 gross-FPL threshold, while PolicyEngine routes the state option through TANF non-cash categorical eligibility with a 1.30 gross threshold and no TANF non-cash net/asset constraint. Legal correctness is not adjudicated here.",
+            [
+                SOURCE_REFS["prd_snap_function"],
+                SOURCE_REFS["prd_parameter_blob"],
+                SOURCE_REFS["pe_snap_eligibility"],
+                SOURCE_REFS["pe_categorical_eligibility"],
+                SOURCE_REFS["pe_tanf_non_cash"],
+                SOURCE_REFS["pe_tanf_gross"],
+                SOURCE_REFS["pe_tanf_net"],
+                SOURCE_REFS["pe_gross_parameters"],
+            ],
         )
     if case_id.startswith("us-snap/fixture.ms_utility"):
         return (
-            "rounding",
-            "Mississippi phone-only utility divergence candidate: small non-decision-relevant allotment difference, likely annual/monthly rounding or limited utility allowance handling.",
+            "deduction handling",
+            "Mississippi phone-only utility divergence: PRD applies the SNAP utility deduction through HCSUA/HCSUAValue when utilities are positive and rounds annual snapValue; PolicyEngine chooses between SUA/LUA/IUA from distinct utility bills and uses the Mississippi phone allowance parameter. The remaining difference is non-decision-relevant.",
+            [
+                SOURCE_REFS["prd_snap_function"],
+                SOURCE_REFS["prd_parameter_blob"],
+                SOURCE_REFS["pe_utility_type"],
+                SOURCE_REFS["pe_always_sua"],
+                SOURCE_REFS["pe_phone_allowance"],
+                SOURCE_REFS["pe_allotment_rounding"],
+            ],
         )
     if case_id.startswith("us-snap/fixture.ms_"):
         return (
             "parameter vintage",
-            "Mississippi non-BBCE divergence candidate: compare federal gross/net/asset thresholds and PRD 2026 snapData values against PolicyEngine FY2026 SNAP parameters.",
+            "Mississippi non-BBCE divergence: PRD snapData has BBCE_State=No, GrossIncomeEligibilityFPL=1.30, finite AssetTest_nonelddis=3000, and non-waived net tests; PolicyEngine represents non-BBCE TANF non-cash eligibility with negative-infinity gross/asset parameters while normal SNAP eligibility uses federal SNAP tests. The result is source-level classified as a parameter-surface/vintage mismatch pending legal adjudication.",
+            [
+                SOURCE_REFS["prd_snap_function"],
+                SOURCE_REFS["prd_parameter_blob"],
+                SOURCE_REFS["pe_snap_eligibility"],
+                SOURCE_REFS["pe_tanf_gross"],
+                SOURCE_REFS["pe_tanf_asset"],
+                SOURCE_REFS["pe_gross_parameters"],
+                SOURCE_REFS["pe_asset_parameters"],
+            ],
         )
-    return ("unclassified", "No draft rule matched this candidate divergence.")
+    return ("unclassified", "No source-level rule matched this candidate divergence.", [])
 
 
 if __name__ == "__main__":
