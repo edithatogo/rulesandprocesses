@@ -29,12 +29,13 @@ Depends on: contracts_20260704 phases 1–3. Requires network + engine installs.
 - [ ] Task: Same for OpenFisca
     - [ ] Use `openfisca-aotearoa` or `-france`; same structure; `external/openfisca/MISSINGNESS_CASES.md` + submission draft
     - **Acceptance:** as above
+    > BLOCKED (2026-07-05): OpenFisca package import fails locally under the active Python because NumPy C extensions cannot load `libcblas.3.dylib`, so I cannot verify runnable missingness cases in this workspace yet.
 - [ ] Task: [HUMAN] Review + submit (PolicyEngine first)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
 ## Phase 3 — C-C: Axiom harness
 
-- [ ] Task: Write `external/axiom/HARNESS_DESIGN.md` per spec C-C (design only; oracle-independence section mandatory)
+- [x] Task: Write `external/axiom/HARNESS_DESIGN.md` per spec C-C (design only; oracle-independence section mandatory)
     - **Acceptance:** design doc complete
 - [ ] Task: [HUMAN] Dylan reviews design and documents Axiom's actual interfaces (what a generated model looks like, how to execute it)
     - > This task gates the prototype. Agents: do not guess Axiom internals.
