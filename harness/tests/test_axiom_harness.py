@@ -8,6 +8,7 @@ from pic_contracts.schema_utils import validator_for
 from axiom import (
     AxiomRuleSpecAdapter,
     RuleSpecTarget,
+    build_rulespec_nz_acc_earners_levy_adapter,
     build_rulespec_nz_gst_adapter,
     generate_report,
     write_reports,
@@ -46,6 +47,36 @@ GST_CASE = {
     },
     "sourceRefs": [
         "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/gst/rate.test.yaml"
+    ],
+}
+
+
+ACC_EARNERS_LEVY_CASE = {
+    "caseId": "nz-acc/fixture.standard_2026_earnings_below_cap",
+    "description": "ACC earners levy standard 2026 earnings below cap.",
+    "period": "2026-04-01/2027-03-31",
+    "entities": {"person": {"type": "Person", "id": "person:1"}},
+    "inputs": {
+        "nz-acc/variable.acc_earnings_for_earners_levy": {
+            "value": "100000",
+            "valueState": "known",
+            "currency": "NZD",
+        }
+    },
+    "expected": {
+        "nz-acc/decision.acc_standard_earners_levy_excluding_gst": {
+            "value": "1520",
+            "valueState": "known",
+            "currency": "NZD",
+        },
+        "nz-acc/decision.acc_standard_earners_levy_including_gst": {
+            "value": "1750",
+            "valueState": "known",
+            "currency": "NZD",
+        },
+    },
+    "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/regulations/acc/earners_levy.test.yaml"
     ],
 }
 
@@ -104,6 +135,83 @@ def test_build_rulespec_nz_gst_compiled_execution_request() -> None:
             ],
         }
     ]
+
+
+def test_build_rulespec_nz_acc_earners_levy_request() -> None:
+    adapter = build_rulespec_nz_acc_earners_levy_adapter()
+
+    request = adapter.build_compiled_request(ACC_EARNERS_LEVY_CASE)
+
+    assert adapter.target.module_path == "nz/regulations/acc/earners_levy.yaml"
+    assert request["dataset"]["inputs"] == [
+        {
+            "name": "nz:regulations/acc/earners_levy#input.acc_earnings_for_earners_levy",
+            "entity": "Person",
+            "entity_id": "person:1",
+            "interval": {"start": "2026-04-01", "end": "2027-03-31"},
+            "value": {"kind": "decimal", "value": "100000"},
+        }
+    ]
+    assert request["queries"] == [
+        {
+            "entity_id": "person:1",
+            "period": {
+                "period_kind": "tax_year",
+                "start": "2026-04-01",
+                "end": "2027-03-31",
+            },
+            "outputs": [
+                "nz:regulations/acc/earners_levy#acc_standard_earners_levy_excluding_gst",
+                "nz:regulations/acc/earners_levy#acc_standard_earners_levy_including_gst",
+            ],
+        }
+    ]
+
+
+def test_acc_earners_levy_runner_exact_match_with_stub_executor() -> None:
+    runner = AxiomHarnessRunner(adapter=build_rulespec_nz_acc_earners_levy_adapter())
+
+    def stub_executor(request: dict[str, Any]) -> dict[str, Any]:
+        assert request["queries"][0]["period"]["period_kind"] == "tax_year"
+        return {
+            "metadata": {"requested_mode": "explain", "actual_mode": "explain"},
+            "results": [
+                {
+                    "entity_id": "person:1",
+                    "period": request["queries"][0]["period"],
+                    "outputs": {
+                        "nz:regulations/acc/earners_levy#acc_standard_earners_levy_excluding_gst": {
+                            "kind": "scalar",
+                            "name": "acc_standard_earners_levy_excluding_gst",
+                            "id": (
+                                "nz:regulations/acc/earners_levy#"
+                                "acc_standard_earners_levy_excluding_gst"
+                            ),
+                            "dtype": "Money",
+                            "unit": "NZD",
+                            "value": {"kind": "decimal", "value": "1520.00"},
+                        },
+                        "nz:regulations/acc/earners_levy#acc_standard_earners_levy_including_gst": {
+                            "kind": "scalar",
+                            "name": "acc_standard_earners_levy_including_gst",
+                            "id": (
+                                "nz:regulations/acc/earners_levy#"
+                                "acc_standard_earners_levy_including_gst"
+                            ),
+                            "dtype": "Money",
+                            "unit": "NZD",
+                            "value": {"kind": "decimal", "value": "1750"},
+                        },
+                    },
+                }
+            ],
+        }
+
+    result = runner.run_case(ACC_EARNERS_LEVY_CASE, executor=stub_executor)
+
+    assert result["status"] == "exact_match"
+    assert result["mismatches"] == []
+    assert result["target"]["module_path"] == "nz/regulations/acc/earners_levy.yaml"
 
 
 def test_runner_exact_match_with_stub_executor() -> None:

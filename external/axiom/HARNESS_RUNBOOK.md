@@ -78,6 +78,35 @@ Statuses are deterministic:
 
 ## Expansion path
 
-After the GST smoke slice works against a local compiled artifact, move to a
-higher-overlap module such as ACC earners levy or income-tax schedule 1. Add a
-new explicit PIC-to-Axiom ID mapping for that slice before running the harness.
+After the GST smoke slice works against a local compiled artifact, use the
+built-in ACC earners levy mapping for a higher-overlap tax/payroll case:
+
+- module: `nz/regulations/acc/earners_levy.yaml`
+- companion test: `nz/regulations/acc/earners_levy.test.yaml`
+- first case: `standard_2026_earnings_below_cap`
+
+Compile it the same way:
+
+```bash
+AXIOM_RULESPEC_REPO_ROOTS=/path/to/rulespec-nz \
+  /path/to/axiom-rules-engine/target/debug/axiom-rules-engine compile \
+  --program /path/to/rulespec-nz/nz/regulations/acc/earners_levy.yaml \
+  --output /tmp/rulespec-nz-acc-earners-levy.compiled.json
+```
+
+Then swap the adapter and artifact:
+
+```python
+from axiom import build_rulespec_nz_acc_earners_levy_adapter
+
+runner = AxiomHarnessRunner(
+    adapter=build_rulespec_nz_acc_earners_levy_adapter(),
+    executor=AxiomCompiledArtifactExecutor(
+        binary_path="/path/to/axiom-rules-engine/target/debug/axiom-rules-engine",
+        artifact_path="/tmp/rulespec-nz-acc-earners-levy.compiled.json",
+    ),
+)
+```
+
+For further expansion, add another explicit PIC-to-Axiom ID mapping before
+running a new module. Do not infer mappings at runtime.

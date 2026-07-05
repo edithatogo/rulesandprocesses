@@ -28,6 +28,15 @@ RULESPEC_NZ_GST_TARGET = RuleSpecTarget(
 )
 
 
+RULESPEC_NZ_ACC_EARNERS_LEVY_TARGET = RuleSpecTarget(
+    repo="TheAxiomFoundation/rulespec-nz",
+    repo_commit="3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+    module_path="nz/regulations/acc/earners_levy.yaml",
+    test_path="nz/regulations/acc/earners_levy.test.yaml",
+    module_id="nz:regulations/acc/earners_levy",
+)
+
+
 RULESPEC_NZ_GST_INPUTS = {
     "nz-gst/variable.gst_exclusive_amount": "nz:statutes/gst/rate#input.gst_exclusive_amount",
     "nz-gst/variable.gst_inclusive_amount": "nz:statutes/gst/rate#input.gst_inclusive_amount",
@@ -37,6 +46,37 @@ RULESPEC_NZ_GST_INPUTS = {
     ),
     "nz-gst/variable.gst_imported_goods_delivered_to_new_zealand_address": (
         "nz:statutes/gst/rate#input.gst_imported_goods_delivered_to_new_zealand_address"
+    ),
+}
+
+
+RULESPEC_NZ_ACC_EARNERS_LEVY_INPUTS = {
+    "nz-acc/variable.acc_earnings_for_earners_levy": (
+        "nz:regulations/acc/earners_levy#input.acc_earnings_for_earners_levy"
+    ),
+    "nz-acc/variable.acc_self_employed_more_than_30_hours_per_week": (
+        "nz:regulations/acc/earners_levy#input.acc_self_employed_more_than_30_hours_per_week"
+    ),
+    "nz-acc/variable.acc_self_employed_earnings_for_earners_levy": (
+        "nz:regulations/acc/earners_levy#input.acc_self_employed_earnings_for_earners_levy"
+    ),
+    "nz-acc/variable.acc_employee_earnings_for_low_self_employed_formula": (
+        "nz:regulations/acc/earners_levy#input.acc_employee_earnings_for_low_self_employed_formula"
+    ),
+    "nz-acc/variable.acc_self_employed_purchases_weekly_compensation": (
+        "nz:regulations/acc/earners_levy#input.acc_self_employed_purchases_weekly_compensation"
+    ),
+    "nz-acc/variable.acc_agreed_weekly_compensation_purchased_annual_amount": (
+        "nz:regulations/acc/earners_levy#input.acc_agreed_weekly_compensation_purchased_annual_amount"
+    ),
+    "nz-acc/variable.acc_invoice_issued_to_self_employed_person_for_acc_act_purposes": (
+        "nz:regulations/acc/earners_levy#input.acc_invoice_issued_to_self_employed_person_for_acc_act_purposes"
+    ),
+    "nz-acc/variable.acc_invoice_includes_earners_levy": (
+        "nz:regulations/acc/earners_levy#input.acc_invoice_includes_earners_levy"
+    ),
+    "nz-acc/variable.acc_self_employed_invoice_acc_levy_amount": (
+        "nz:regulations/acc/earners_levy#input.acc_self_employed_invoice_acc_levy_amount"
     ),
 }
 
@@ -66,6 +106,46 @@ RULESPEC_NZ_GST_OUTPUTS = {
     ),
     "nz-gst/decision.gst_low_value_imported_goods_total_payable": (
         "nz:statutes/gst/rate#gst_low_value_imported_goods_total_payable"
+    ),
+}
+
+
+RULESPEC_NZ_ACC_EARNERS_LEVY_OUTPUTS = {
+    "nz-acc/decision.acc_earners_levy_rate_excluding_gst": (
+        "nz:regulations/acc/earners_levy#acc_earners_levy_rate_excluding_gst"
+    ),
+    "nz-acc/decision.acc_earners_levy_rate_including_gst": (
+        "nz:regulations/acc/earners_levy#acc_earners_levy_rate_including_gst"
+    ),
+    "nz-acc/decision.acc_earners_levy_maximum_earnings": (
+        "nz:regulations/acc/earners_levy#acc_earners_levy_maximum_earnings"
+    ),
+    "nz-acc/decision.acc_levy_cents_rounding_scale": (
+        "nz:regulations/acc/earners_levy#acc_levy_cents_rounding_scale"
+    ),
+    "nz-acc/decision.acc_standard_earners_levy_excluding_gst": (
+        "nz:regulations/acc/earners_levy#acc_standard_earners_levy_excluding_gst"
+    ),
+    "nz-acc/decision.acc_standard_earners_levy_including_gst": (
+        "nz:regulations/acc/earners_levy#acc_standard_earners_levy_including_gst"
+    ),
+    "nz-acc/decision.acc_low_self_employed_minimum_earnings": (
+        "nz:regulations/acc/earners_levy#acc_low_self_employed_minimum_earnings"
+    ),
+    "nz-acc/decision.acc_low_self_employed_minimum_levy_excluding_gst": (
+        "nz:regulations/acc/earners_levy#acc_low_self_employed_minimum_levy_excluding_gst"
+    ),
+    "nz-acc/decision.acc_weekly_compensation_purchase_multiplier": (
+        "nz:regulations/acc/earners_levy#acc_weekly_compensation_purchase_multiplier"
+    ),
+    "nz-acc/decision.acc_weekly_compensation_purchase_levy_excluding_gst": (
+        "nz:regulations/acc/earners_levy#acc_weekly_compensation_purchase_levy_excluding_gst"
+    ),
+    "nz-acc/decision.acc_self_employed_invoice_exempt_amount": (
+        "nz:regulations/acc/earners_levy#acc_self_employed_invoice_exempt_amount"
+    ),
+    "nz-acc/decision.acc_self_employed_invoice_levy_payable_after_exempt_amount": (
+        "nz:regulations/acc/earners_levy#acc_self_employed_invoice_levy_payable_after_exempt_amount"
     ),
 }
 
@@ -176,7 +256,26 @@ def build_rulespec_nz_gst_adapter() -> AxiomRuleSpecAdapter:
     )
 
 
+def build_rulespec_nz_acc_earners_levy_adapter() -> AxiomRuleSpecAdapter:
+    return AxiomRuleSpecAdapter(
+        target=RULESPEC_NZ_ACC_EARNERS_LEVY_TARGET,
+        input_id_map=RULESPEC_NZ_ACC_EARNERS_LEVY_INPUTS,
+        output_id_map=RULESPEC_NZ_ACC_EARNERS_LEVY_OUTPUTS,
+        entity="Person",
+        entity_id="person:1",
+    )
+
+
 def _period(period: str) -> dict[str, str]:
+    if "/" in period:
+        start, end = period.split("/", maxsplit=1)
+        if _is_date(start) and _is_date(end):
+            return {
+                "period_kind": "tax_year",
+                "start": start,
+                "end": end,
+            }
+        raise ValueError(f"unsupported PIC date range for Axiom request: {period}")
     if _is_date(period):
         return {
             "period_kind": "custom",
