@@ -19,6 +19,8 @@ Depends on: contracts_20260704. Requires network + Python + R. The R requirement
 
 ## Phase 2 — Crosswalk and fixtures
 
+> CHECKPOINT (2026-07-06): Phase 2 now has a human-approved crosswalk and 50 human-approved SNAP golden fixtures in `studies/snap-divergence/fixtures/snap-fy2026-fixtures.json`. The promoted set was selected from agreement cases in the runner-backed promotion packet; all promoted cases have known expected eligibility/allotment outputs and `method: human`. The 15 held divergence candidates remain outside the golden set for Phase 4 source-level analysis. Validation: `pic-validate studies/snap-divergence`, approved PolicyEngine/PRD runs, approved comparison, and `make check` passed.
+
 - [x] Task: Draft crosswalk (`method: ai-proposed`), covering household descriptors (size, ages, earned/unearned income, expenses: shelter, dependent care, medical) and outputs (eligible, allotment)
     - **Acceptance:** `pic-validate` green
 - [x] Task: [HUMAN] Crosswalk verification (Dylan; the countable-income and unit-composition rows are the dangerous ones — check definitions in both codebases, not just names)
@@ -32,7 +34,7 @@ Depends on: contracts_20260704. Requires network + Python + R. The R requirement
     > BLOCKED (2026-07-05): Candidate fixtures intentionally carry `unknown` eligibility/allotment outputs. Promotion to golden fixtures requires runner evidence plus Dylan review; proceed to Phase 3 runners so outputs can be produced for the promotion packet.
     > CHECKPOINT (2026-07-05): Runner evidence is now available and a generated promotion review packet is prepared at `studies/snap-divergence/fixtures/FIXTURE_PROMOTION_REVIEW.md`. It recommends 50 agreement cases for human promotion and holds 15 divergence cases for Phase 4 source-level analysis. Remaining gate: Dylan must approve or edit the recommended promotion set before golden fixtures can be written with `method: human`.
     > HUMAN-APPROVED (2026-07-06): Dylan approved proceeding with the recommended 50 agreement cases. Promoted fixtures are now in `studies/snap-divergence/fixtures/snap-fy2026-fixtures.json` with `method: human`; the 15 held divergence cases remain candidates for Phase 4 analysis. Fresh approved-fixture evidence is in `results/policyengine-approved-results.jsonl`, `results/prd-approved-results.jsonl`, and `results/comparison-approved-results.jsonl`.
-- [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
 ## Phase 3 — Runners (TDD)
 
