@@ -4,7 +4,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: OpenFisca ↔ PolicyEngine test fixture converter**
+- [x] **Track: OpenFisca ↔ PolicyEngine test fixture converter**
   *Link: [./tracks/fixture_converter_20260704/](./tracks/fixture_converter_20260704/)*
 
 - [~] **Track: Engine contributions — trace export, missingness semantics, Axiom validation harness**
