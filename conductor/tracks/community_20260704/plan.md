@@ -4,6 +4,8 @@ Gated on outputs of Tracks 2, 3, 5 (see per-phase gates). Agents: check the gate
 
 ## Phase 1 — DBN engagement (gate: Track 2 merged OR Track 5 report drafted)
 
+> GATED (2026-07-05): waiting on Track 2 merge into `foi-o` or Track 5 draft report. Current local evidence is not sufficient for DBN outreach: Track 2 is stopped at `[HUMAN] Fixture curation` before promoted fixtures/rules/submission, and Track 5 is stopped at `[HUMAN] Crosswalk verification` with no `REPORT.md` yet.
+
 - [ ] Task: Draft `external/dbn/EMAIL.md` per spec W-A (reference their cross-sector insights report and AI-Powered RaC report specifically; one offer, one ask)
 - [ ] Task: Create `external/dbn/LOG.md` contact log template
 - [ ] Task: [HUMAN] Send email; log response
