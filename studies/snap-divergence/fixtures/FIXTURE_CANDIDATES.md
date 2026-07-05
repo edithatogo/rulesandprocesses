@@ -44,3 +44,13 @@ The cases are not golden fixtures. They intentionally keep `expected` eligibilit
 2. Replace `unknown` expected outputs only after runner evidence and source review.
 3. Promote at least 40 cases to `fixtures/` with `method: human`.
 4. Record rejected or changed candidates in the Phase 2 checkpoint.
+
+## Promotion Review Packet
+
+Generated review aid: `studies/snap-divergence/fixtures/FIXTURE_PROMOTION_REVIEW.md`.
+
+Current recommendation after Phase 3 runner evidence:
+
+- 50 agreement cases are recommended for human promotion.
+- 15 divergence cases are held for Phase 4 source-level analysis.
+- Dylan approval is still required before any candidate can become a golden fixture.

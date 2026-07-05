@@ -30,6 +30,7 @@ Depends on: contracts_20260704. Requires network + Python + R. The R requirement
     - **Acceptance:** ≥60 candidates, all provenance-stamped, `pic-validate` green
 - [ ] Task: [HUMAN] Fixture promotion (target ≥40 approved)
     > BLOCKED (2026-07-05): Candidate fixtures intentionally carry `unknown` eligibility/allotment outputs. Promotion to golden fixtures requires runner evidence plus Dylan review; proceed to Phase 3 runners so outputs can be produced for the promotion packet.
+    > CHECKPOINT (2026-07-05): Runner evidence is now available and a generated promotion review packet is prepared at `studies/snap-divergence/fixtures/FIXTURE_PROMOTION_REVIEW.md`. It recommends 50 agreement cases for human promotion and holds 15 divergence cases for Phase 4 source-level analysis. Remaining gate: Dylan must approve or edit the recommended promotion set before golden fixtures can be written with `method: human`.
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
 ## Phase 3 — Runners (TDD)
