@@ -2,7 +2,7 @@
 
 Track: `oia_rules_20260704`
 
-Candidate file: `external/foi-o/rules/fixtures/candidates/oia-clock-candidates.json`
+Promoted fixture file: `external/foi-o/rules/fixtures/oia-clock-fixtures.json`
 
 Crosswalk file: `external/foi-o/rules/crosswalk.json`
 
@@ -12,14 +12,15 @@ Validation command:
 contracts/tools/.venv/bin/pic-validate external/foi-o/rules
 ```
 
-## Human Review Required
+## Human Review Outcome
 
-The candidate fixtures are `method: ai-proposed` and must not be treated as golden fixtures until Dylan reviews them against:
+Dylan reviewed and approved all 13 candidate fixtures on 2026-07-05. The accepted fixtures have been promoted with `method: human` and `interpreterOfRecord: Dylan`.
+
+Review basis:
 
 - Official Information Act 1982 ss 2, 12(3), 14, 15, 15A, and 28.
 - The source notes in `external/foi-o/rules/SOURCES.md`.
-- Any Ombudsman guidance Dylan wants to treat as interpretive evidence.
-- The exact public-holiday calendar that should be in force for the target years.
+- The candidate public-holiday calendar assumptions for the target years.
 
 ## Candidate Coverage
 
@@ -39,9 +40,11 @@ The candidate fixtures are `method: ai-proposed` and must not be treated as gold
 
 ## Promotion Checklist
 
-1. Confirm or correct each expected date and warning.
-2. Confirm whether the candidate holiday calendar assumptions are sufficient for each case.
-3. Move accepted cases from `rules/fixtures/candidates/` to the promoted fixture location used by the eventual upstream patch.
-4. Change promoted provenance from `method: ai-proposed` to `method: human`.
-5. Replace `interpreterOfRecord: pending Dylan review` with the actual reviewer identity.
-6. Record any rejected or changed candidate cases in the Phase 2 checkpoint.
+1. [x] Confirm or correct each expected date and warning.
+2. [x] Confirm whether the candidate holiday calendar assumptions are sufficient for each case.
+3. [x] Move accepted cases from `rules/fixtures/candidates/` to the promoted fixture location used by the eventual upstream patch.
+4. [x] Change promoted provenance from `method: ai-proposed` to `method: human`.
+5. [x] Replace `interpreterOfRecord: pending Dylan review` with the actual reviewer identity.
+6. [x] Record any rejected or changed candidate cases in the Phase 2 checkpoint.
+
+No candidate cases were rejected or changed during review.

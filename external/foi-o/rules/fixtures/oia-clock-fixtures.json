@@ -1,12 +1,12 @@
 {
   "conformsTo": "pic-fixtures/0.1.0",
   "provenance": {
-    "curator": "Codex Track 2",
-    "method": "ai-proposed",
+    "curator": "Dylan",
+    "method": "human",
     "source": "Official Information Act 1982 source notes and local foi-o date conventions",
-    "interpreterOfRecord": "pending Dylan review",
-    "disclaimer": "Candidate examples for review only. These are not promoted golden fixtures and are not legal advice.",
-    "notes": "Drafted for oia_rules_20260704 Phase 2 fixture curation."
+    "interpreterOfRecord": "Dylan",
+    "disclaimer": "Human-reviewed fixtures approved by Dylan on 2026-07-05. These are not legal advice.",
+    "notes": "Approved by Dylan during guided review on 2026-07-05."
   },
   "cases": [
     {
@@ -21,11 +21,11 @@
         "nz-oia/decision.response_deadline": {"value": "2026-06-29", "valueState": "known"}
       },
       "provenance": {
-        "curator": "Codex Track 2",
-        "method": "ai-proposed",
+        "curator": "Dylan",
+        "method": "human",
         "source": "OIA source notes plus candidate 2026 holiday calendar",
-        "interpreterOfRecord": "pending Dylan review",
-        "disclaimer": "Candidate fixture; requires human curation before promotion."
+        "interpreterOfRecord": "Dylan",
+        "disclaimer": "Human-reviewed fixture approved by Dylan on 2026-07-05."
       },
       "sourceRefs": ["OIA 1982 s 2, latest as at 2025-04-05", "OIA 1982 s 15, latest as at 2025-04-05"]
     },
@@ -41,11 +41,11 @@
         "nz-oia/decision.transfer_deadline": {"value": "2026-06-15", "valueState": "known"}
       },
       "provenance": {
-        "curator": "Codex Track 2",
-        "method": "ai-proposed",
+        "curator": "Dylan",
+        "method": "human",
         "source": "OIA source notes plus candidate 2026 holiday calendar",
-        "interpreterOfRecord": "pending Dylan review",
-        "disclaimer": "Candidate fixture; requires human curation before promotion."
+        "interpreterOfRecord": "Dylan",
+        "disclaimer": "Human-reviewed fixture approved by Dylan on 2026-07-05."
       },
       "sourceRefs": ["OIA 1982 s 2, latest as at 2025-04-05", "OIA 1982 s 14, latest as at 2025-04-05"]
     },
@@ -61,11 +61,11 @@
         "nz-oia/decision.response_deadline": {"value": "2027-02-15", "valueState": "known"}
       },
       "provenance": {
-        "curator": "Codex Track 2",
-        "method": "ai-proposed",
+        "curator": "Dylan",
+        "method": "human",
         "source": "OIA source notes plus candidate 2026-2027 holiday calendar",
-        "interpreterOfRecord": "pending Dylan review",
-        "disclaimer": "Candidate fixture; requires human curation before promotion."
+        "interpreterOfRecord": "Dylan",
+        "disclaimer": "Human-reviewed fixture approved by Dylan on 2026-07-05."
       },
       "sourceRefs": ["OIA 1982 s 2, latest as at 2025-04-05", "OIA 1982 s 15, latest as at 2025-04-05"]
     },
@@ -81,11 +81,11 @@
         "nz-oia/decision.response_deadline": {"value": "2027-02-12", "valueState": "known"}
       },
       "provenance": {
-        "curator": "Codex Track 2",
-        "method": "ai-proposed",
+        "curator": "Dylan",
+        "method": "human",
         "source": "OIA source notes plus candidate 2026-2027 holiday calendar",
-        "interpreterOfRecord": "pending Dylan review",
-        "disclaimer": "Candidate fixture; requires human curation before promotion."
+        "interpreterOfRecord": "Dylan",
+        "disclaimer": "Human-reviewed fixture approved by Dylan on 2026-07-05."
       },
       "sourceRefs": ["OIA 1982 s 2, latest as at 2025-04-05", "OIA 1982 s 15, latest as at 2025-04-05"]
     },
@@ -104,11 +104,11 @@
         }
       },
       "provenance": {
-        "curator": "Codex Track 2",
-        "method": "ai-proposed",
+        "curator": "Dylan",
+        "method": "human",
         "source": "OIA source notes and PIC value-state propagation requirement",
-        "interpreterOfRecord": "pending Dylan review",
-        "disclaimer": "Candidate fixture; requires human curation before promotion."
+        "interpreterOfRecord": "Dylan",
+        "disclaimer": "Human-reviewed fixture approved by Dylan on 2026-07-05."
       },
       "sourceRefs": ["OIA 1982 s 15, latest as at 2025-04-05"]
     },
@@ -131,11 +131,11 @@
         }
       },
       "provenance": {
-        "curator": "Codex Track 2",
-        "method": "ai-proposed",
+        "curator": "Dylan",
+        "method": "human",
         "source": "OIA source notes plus candidate 2026 holiday calendar",
-        "interpreterOfRecord": "pending Dylan review",
-        "disclaimer": "Candidate fixture; requires human curation before promotion."
+        "interpreterOfRecord": "Dylan",
+        "disclaimer": "Human-reviewed fixture approved by Dylan on 2026-07-05."
       },
       "sourceRefs": ["OIA 1982 s 15, latest as at 2025-04-05", "OIA 1982 s 15A, latest as at 2025-04-05"]
     },
@@ -158,11 +158,11 @@
         }
       },
       "provenance": {
-        "curator": "Codex Track 2",
-        "method": "ai-proposed",
+        "curator": "Dylan",
+        "method": "human",
         "source": "OIA source notes plus candidate 2026 holiday calendar",
-        "interpreterOfRecord": "pending Dylan review",
-        "disclaimer": "Candidate fixture; requires human curation before promotion."
+        "interpreterOfRecord": "Dylan",
+        "disclaimer": "Human-reviewed fixture approved by Dylan on 2026-07-05."
       },
       "sourceRefs": ["OIA 1982 s 15, latest as at 2025-04-05", "OIA 1982 s 15A, latest as at 2025-04-05"]
     },
@@ -185,11 +185,11 @@
         }
       },
       "provenance": {
-        "curator": "Codex Track 2",
-        "method": "ai-proposed",
+        "curator": "Dylan",
+        "method": "human",
         "source": "OIA source notes plus candidate 2026 holiday calendar",
-        "interpreterOfRecord": "pending Dylan review",
-        "disclaimer": "Candidate fixture; requires human curation before promotion."
+        "interpreterOfRecord": "Dylan",
+        "disclaimer": "Human-reviewed fixture approved by Dylan on 2026-07-05."
       },
       "sourceRefs": ["OIA 1982 s 15, latest as at 2025-04-05", "OIA 1982 s 15A, latest as at 2025-04-05"]
     },
@@ -212,11 +212,11 @@
         }
       },
       "provenance": {
-        "curator": "Codex Track 2",
-        "method": "ai-proposed",
+        "curator": "Dylan",
+        "method": "human",
         "source": "OIA source notes",
-        "interpreterOfRecord": "pending Dylan review",
-        "disclaimer": "Candidate fixture; requires human curation before promotion."
+        "interpreterOfRecord": "Dylan",
+        "disclaimer": "Human-reviewed fixture approved by Dylan on 2026-07-05."
       },
       "sourceRefs": ["OIA 1982 s 15A, latest as at 2025-04-05"]
     },
@@ -233,11 +233,11 @@
         "nz-oia/decision.transfer_deadline": {"value": "2026-05-11", "valueState": "known"}
       },
       "provenance": {
-        "curator": "Codex Track 2",
-        "method": "ai-proposed",
+        "curator": "Dylan",
+        "method": "human",
         "source": "OIA source notes plus candidate 2026 holiday calendar",
-        "interpreterOfRecord": "pending Dylan review",
-        "disclaimer": "Candidate fixture; requires human curation before promotion."
+        "interpreterOfRecord": "Dylan",
+        "disclaimer": "Human-reviewed fixture approved by Dylan on 2026-07-05."
       },
       "sourceRefs": ["OIA 1982 s 2, latest as at 2025-04-05", "OIA 1982 s 14, latest as at 2025-04-05"]
     },
@@ -255,11 +255,11 @@
         "nz-oia/decision.deemed_refusal": {"value": true, "valueState": "known"}
       },
       "provenance": {
-        "curator": "Codex Track 2",
-        "method": "ai-proposed",
+        "curator": "Dylan",
+        "method": "human",
         "source": "OIA source notes plus candidate 2026 holiday calendar",
-        "interpreterOfRecord": "pending Dylan review",
-        "disclaimer": "Candidate fixture; requires human curation before promotion."
+        "interpreterOfRecord": "Dylan",
+        "disclaimer": "Human-reviewed fixture approved by Dylan on 2026-07-05."
       },
       "sourceRefs": ["OIA 1982 s 15, latest as at 2025-04-05", "OIA 1982 s 28, latest as at 2025-04-05"]
     },
@@ -277,11 +277,11 @@
         "nz-oia/decision.deemed_refusal": {"value": false, "valueState": "known"}
       },
       "provenance": {
-        "curator": "Codex Track 2",
-        "method": "ai-proposed",
+        "curator": "Dylan",
+        "method": "human",
         "source": "OIA source notes plus candidate 2026 holiday calendar",
-        "interpreterOfRecord": "pending Dylan review",
-        "disclaimer": "Candidate fixture; requires human curation before promotion."
+        "interpreterOfRecord": "Dylan",
+        "disclaimer": "Human-reviewed fixture approved by Dylan on 2026-07-05."
       },
       "sourceRefs": ["OIA 1982 s 15, latest as at 2025-04-05", "OIA 1982 s 28, latest as at 2025-04-05"]
     },
@@ -301,11 +301,11 @@
         }
       },
       "provenance": {
-        "curator": "Codex Track 2",
-        "method": "ai-proposed",
+        "curator": "Dylan",
+        "method": "human",
         "source": "OIA source notes",
-        "interpreterOfRecord": "pending Dylan review",
-        "disclaimer": "Candidate fixture; requires human curation before promotion."
+        "interpreterOfRecord": "Dylan",
+        "disclaimer": "Human-reviewed fixture approved by Dylan on 2026-07-05."
       },
       "sourceRefs": ["OIA 1982 s 12(3), latest as at 2025-04-05"]
     }
