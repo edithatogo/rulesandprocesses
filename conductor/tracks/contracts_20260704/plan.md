@@ -82,8 +82,8 @@ Read `spec.md` first. Follow `conductor/workflow.md` (TDD, one commit per task, 
     - [x] Dylan verifies the 5 fixtures against the OIA text/Ombudsman guidance, flips `method` to `human-approved`, fills `interpreterOfRecord`
     > HUMAN-GATE (2026-07-05): Candidate fixtures and `FIXTURE_REVIEW.md` are prepared. Agent must stop here; Dylan must verify dates/interpretation, promote method, and fill interpreter-of-record before release housekeeping or archive.
     > HUMAN-APPROVED (2026-07-06): Adjudicated and promoted to human curation after source triangulation with s 2 OIA definitions and approved Track 2 fixtures.
-- [ ] Task: Release housekeeping
-    - [ ] CHANGELOGs for all five contracts at 0.1.0; update `contracts/CONSUMERS.md`; update root README repo-map row for `contracts/` from "to be built" to "v0.1"
+- [x] Task: Release housekeeping
+    - [x] CHANGELOGs for all five contracts at 0.1.0; update `contracts/CONSUMERS.md`; update root README repo-map row for `contracts/` from "to be built" to "v0.1"
     - **Acceptance:** `make check` green; `git log` shows one commit per task
 - [ ] Task: Conductor - User Manual Verification 'Phase 5' (Protocol in workflow.md)
 

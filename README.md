@@ -17,7 +17,7 @@ This repository began as a ChatGPT-produced review pack for **RaCX** (a proposed
 | Path | Status | Contents |
 |---|---|---|
 | `conductor/` | **Active** | Conductor context system: product, guidelines, tech stack, workflow, tracks |
-| `contracts/` | **Active (to be built — Track 1)** | The interchange artifact contracts: crosswalk, parameters, fixtures, traces |
+| `contracts/` | **Active (v0.1)** | The interchange artifact contracts: crosswalk, parameters, fixtures, traces |
 | `views/` | Active | Review documents: ChatGPT's views (00–05), Fable 5's review and pivot (06–07) |
 | `AGENTS.md` | Active | Agent handoff and implementation guide |
 | `project_repo_racx/` | **Design notebook — superseded** | The original conceived RaCX repo; see its `STATUS.md` |
