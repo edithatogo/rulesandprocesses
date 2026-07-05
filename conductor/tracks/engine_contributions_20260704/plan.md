@@ -22,9 +22,9 @@ Depends on: contracts_20260704 phases 1–3. Requires network + engine installs.
 
 ## Phase 2 — C-B: Missingness cases
 
-- [ ] Task: Reproduce missingness conflation in PolicyEngine
-    - [ ] Construct 3–5 runnable cases where unprovided input silently defaults (record engine version); verify each actually reproduces before writing it up
-    - [ ] Write `external/policyengine/MISSINGNESS_CASES.md` + `SUBMISSION_missingness.md` issue draft
+- [x] Task: Reproduce missingness conflation in PolicyEngine
+    - [x] Construct 3–5 runnable cases where unprovided input silently defaults (record engine version); verify each actually reproduces before writing it up
+    - [x] Write `external/policyengine/MISSINGNESS_CASES.md` + `SUBMISSION_missingness.md` issue draft
     - **Acceptance:** every case has verified runnable output pasted in
 - [ ] Task: Same for OpenFisca
     - [ ] Use `openfisca-aotearoa` or `-france`; same structure; `external/openfisca/MISSINGNESS_CASES.md` + submission draft
