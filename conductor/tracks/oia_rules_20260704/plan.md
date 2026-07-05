@@ -19,6 +19,8 @@ Depends on: contracts_20260704 phases 1–3. Work is staged under `external/foi-
 
 ## Phase 2 — Parameters and fixtures
 
+> CHECKPOINT (2026-07-05): Phase 2 now has PIC parameters plus 13 human-approved OIA clock fixtures promoted to `external/foi-o/rules/fixtures/oia-clock-fixtures.json`. Dylan approved every candidate during guided review; no cases were rejected or changed. The promoted fixtures validate with `pic-validate` and remain staged in this repo for a future foi-o patch, not submitted upstream. Validation: `contracts/tools/.venv/bin/pic-validate external/foi-o/rules` and `make check` passed.
+
 - [x] Task: Author PIC parameters
     - [x] `working_day_limit` (20), `transfer_limit` (10), `holiday_exclusions` (calendar definition parameter), each with sourceRefs from SOURCES.md, one effective period from current consolidation
     - [x] Validate with `pic-validate`
@@ -31,7 +33,7 @@ Depends on: contracts_20260704 phases 1–3. Work is staged under `external/foi-
     > HUMAN-GATE (2026-07-04): Candidate fixture and crosswalk artifacts are prepared and validate with `pic-validate`, but promotion is reserved for Dylan. Review packet: `external/foi-o/rules/fixtures/FIXTURE_CURATION.md`.
     > HUMAN-APPROVED (2026-07-05): Dylan reviewed and approved all 13 OIA clock fixtures. They were promoted to `external/foi-o/rules/fixtures/oia-clock-fixtures.json` with `method: human` and `interpreterOfRecord: Dylan`.
     - [x] Dylan reviews candidates against statute/Ombudsman guidance, promotes to `rules/fixtures/`, flips `method`, sets `interpreterOfRecord`
-- [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
 ## Phase 3 — Rules module (TDD)
 
