@@ -26,10 +26,9 @@ Depends on: contracts_20260704 phases 1–3. Requires network + engine installs.
     - [x] Construct 3–5 runnable cases where unprovided input silently defaults (record engine version); verify each actually reproduces before writing it up
     - [x] Write `external/policyengine/MISSINGNESS_CASES.md` + `SUBMISSION_missingness.md` issue draft
     - **Acceptance:** every case has verified runnable output pasted in
-- [ ] Task: Same for OpenFisca
-    - [ ] Use `openfisca-aotearoa` or `-france`; same structure; `external/openfisca/MISSINGNESS_CASES.md` + submission draft
+- [x] Task: Same for OpenFisca
+    - [x] Use `openfisca-aotearoa` or `-france`; same structure; `external/openfisca/MISSINGNESS_CASES.md` + submission draft
     - **Acceptance:** as above
-    > BLOCKED (2026-07-05): OpenFisca package import fails locally under the active Python because NumPy C extensions cannot load `libcblas.3.dylib`, so I cannot verify runnable missingness cases in this workspace yet.
 - [ ] Task: [HUMAN] Review + submit (PolicyEngine first)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2' (Protocol in workflow.md)
 
