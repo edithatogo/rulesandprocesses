@@ -63,6 +63,7 @@ Depends on: contracts_20260704. Requires network + Python + R. The R requirement
     - > CHECKPOINT (2026-07-06): Upgraded classification to source-level-reviewed evidence after fixture promotion. `studies/snap-divergence/results/classified-candidate-divergences.jsonl` now has 15 divergences, 0 unclassified rows, and 0 draft-status rows; `DIVERGENCE_CLASSIFICATION.md` includes per-case source permalinks into PRD and PolicyEngine. Current classes: 8 state-option modeling, 4 deduction handling, 3 parameter vintage. Legal/right-system adjudication remains the next human task.
     - **Acceptance:** zero unclassified divergences without investigation logs
 - [ ] Task: [HUMAN] Adjudicate genuine-bug classifications (which system is right per statute — this is a legal-interpretation call)
+    > HUMAN-GATE (2026-07-06): Adjudication packet prepared at `studies/snap-divergence/HUMAN_ADJUDICATION_PACKET.md`. Agent has not decided which engine is legally correct and has not labeled any divergence as a confirmed bug.
 - [ ] Task: Draft upstream issues for confirmed bugs (`external/policyengine/`, `external/prd/`)
     - **Acceptance:** each issue has a minimal reproduction
 - [ ] Task: Conductor - User Manual Verification 'Phase 4' (Protocol in workflow.md)
