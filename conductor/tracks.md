@@ -2,7 +2,7 @@
 
 ---
 
-- [ ] **Track: Next-generation roadmap release orchestration**
+- [~] **Track: Next-generation roadmap release orchestration**
 *Link: [./tracks/roadmap_release_20260706/](./tracks/roadmap_release_20260706/)*
 
 ---

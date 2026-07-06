@@ -50,6 +50,7 @@ Certification levels used by this matrix:
 
 ## Project Configuration Applied
 
+- Added `external/ADOPTION_STATUS.md` as the repo-local adoption ledger for staged and submitted upstream work.
 - Added labels for Conductor tracks, next-generation roadmap work, external gates, CI-required work, human gates, repo-boundary work, adoption, contracts, validation harnesses, service demos, comparative studies, releases, and GitHub project coordination.
 - Added all active roadmap issues to the project.
 - Set active roadmap issue project status to `Todo`.

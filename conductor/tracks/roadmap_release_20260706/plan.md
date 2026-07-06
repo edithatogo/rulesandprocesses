@@ -16,7 +16,7 @@ This track is the final certification track. It can perform Phase 1 early to set
     - [x] Assign milestone and add to `Rules and Processes Integration Dashboard`.
     - [x] Apply labels for Conductor track, workstream, CI, external gate, and human gate.
     - **Acceptance:** GitHub issue/project state is recorded in `conductor/NEXTGEN_RELEASE_STATUS.md`.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - GitHub Coordination Setup' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - GitHub Coordination Setup' (Protocol in workflow.md)
 
 > CHECKPOINT (2026-07-06): GitHub coordination is initialized. Parent roadmap issue #6 exists; track issues #7-#13 are attached as native sub-issues, assigned to the `Next-generation roadmap` milestone, labelled, and added to the Rules and Processes Integration Dashboard. Prior completed issues #1-#5 are closed and marked Done in the project. Remaining Phase 1 work is review/validation only.
 
@@ -27,6 +27,7 @@ This track is the final certification track. It can perform Phase 1 early to set
     - [ ] Confirm GitHub issues reflect actual status.
     - [ ] Confirm external blockers are precise and actionable.
     - **Acceptance:** no track has stale status between local Conductor and GitHub.
+    > BLOCKED (2026-07-06): The roadmap release track cannot finish its audit or final certification until the remaining active child tracks complete their own checks, checkpoints, and any required human/external gates.
 - [ ] Task: Apply roadmap-level fixes
     - [ ] Patch specs/plans where cross-track gaps are discovered.
     - [ ] Update GitHub issue bodies and project fields.

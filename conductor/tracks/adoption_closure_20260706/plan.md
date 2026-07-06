@@ -5,22 +5,23 @@ Also depends on `roadmap_release_20260706` Phase 1 for GitHub issue/project sync
 
 ## Phase 1 - Adoption Inventory
 
-- [ ] Task: Build adoption ledger
-    - [ ] Read every `external/*/SUBMISSION*.md`, `external/dbn/LOG.md`, and archived plan checkpoint that mentions upstream submission.
-    - [ ] Create `external/ADOPTION_STATUS.md` with target, artifact, status, URL, CI state, owner, and next action columns.
-    - [ ] Mark unknown external status as `needs_verification`, not complete.
+- [x] Task: Build adoption ledger
+    - [x] Read every `external/*/SUBMISSION*.md`, `external/dbn/LOG.md`, and archived plan checkpoint that mentions upstream submission.
+    - [x] Create `external/ADOPTION_STATUS.md` with target, artifact, status, URL, CI state, owner, and next action columns.
+    - [x] Mark unknown external status as `needs_verification`, not complete.
     - **Acceptance:** every staged external artifact has one ledger row.
-- [ ] Task: Link adoption ledger to GitHub roadmap issue hierarchy
-    - [ ] Read `conductor/github-planning.md`.
-    - [ ] Add GitHub issue/project URL columns where useful.
-    - [ ] Ensure external-gate and human-gate labels are applied to relevant track issues.
+- [x] Task: Link adoption ledger to GitHub roadmap issue hierarchy
+    - [x] Read `conductor/github-planning.md`.
+    - [x] Add GitHub issue/project URL columns where useful.
+    - [x] Ensure external-gate and human-gate labels are applied to relevant track issues.
     - **Acceptance:** adoption rows can be traced to GitHub issues or explicit non-GitHub contacts.
-- [ ] Task: Verify live external state
-    - [ ] Use GitHub CLI/API for issue/PR state where available.
-    - [ ] Check DBN log and any available mailbox/thread evidence only when the relevant connector/tool is available and authorized.
-    - [ ] Record exact URLs or "not found / not accessible".
+- [x] Task: Verify live external state
+    - [x] Use GitHub CLI/API for issue/PR state where available.
+    - [x] Check DBN log and any available mailbox/thread evidence only when the relevant connector/tool is available and authorized.
+    - [x] Record exact URLs or "not found / not accessible".
     - **Acceptance:** no row remains uninspected unless access is blocked and logged.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Adoption Inventory' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Adoption Inventory' (Protocol in workflow.md)
+
 
 ## Phase 2 - Patch-Ready External Bundles
 
