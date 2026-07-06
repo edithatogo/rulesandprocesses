@@ -12,7 +12,7 @@ I am writing to share the findings of a systematic model-to-model validation stu
 
 We conducted a differential-testing study comparing the SNAP implementations in PolicyEngine (Python) and the Atlanta Fed Policy Rules Database (R) for Federal Fiscal Year 2026 across five states (CA, TX, PA, MS, GA). Our findings show:
 1. **Perfect Agreement on Core Cases:** Across 50 human-curated golden fixtures, the two independent engines achieved a 100% agreement rate on eligibility and allotment values.
-2. **Structural Divergences Documented:** We identified and classified 15 decision-relevant divergences (e.g., state-option BBCE routing and utility trigger differences) resulting from modeling scope and adapter differences rather than code-level programming bugs.
+2. **Structural Divergences Documented:** We identified and classified 15 structural divergences, 14 of them decision-relevant (e.g., state-option BBCE routing and utility trigger differences), resulting from modeling scope and adapter differences rather than code-level programming bugs.
 
 ### Our Offer
 We would be delighted to:

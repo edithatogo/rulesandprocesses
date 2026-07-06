@@ -67,7 +67,7 @@ The remaining 15 cases (23.1%) were held back. All 15 were classified into three
 | **Deduction Handling** | 4 | 3 | Mismatches in utility allowance triggers. Pennsylvania automatic HSUA/LIHEAP triggers and Mississippi phone-only standard utility deductions are handled differently at the adapter interface level. |
 | **Parameter Vintage** | 3 | 3 | Divergences in non-BBCE income thresholds (e.g., Mississippi FPL thresholds). |
 
-All 15 divergences are decision-relevant (flipping eligibility or altering allotments by >$10.00). Importantly, **no divergences represent programming errors (bugs) in either engine**; rather, they arise from acceptable differences in modeling scope (e.g., direct SNAP gates vs. complex TANF categorical routes) or adapter-level assumptions.
+Fourteen of the 15 divergences are decision-relevant (flipping eligibility or altering allotments by >$10.00); the Mississippi phone-only utility allowance case is a smaller, non-decision-relevant adapter-surface difference. Importantly, **no divergences represent programming errors (bugs) in either engine**; rather, they arise from acceptable differences in modeling scope (e.g., direct SNAP gates vs. complex TANF categorical routes) or adapter-level assumptions.
 
 ---
 
