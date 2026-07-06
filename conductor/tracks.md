@@ -32,8 +32,8 @@
 
 ---
 
-- [ ] **Track: Next comparative study selection**
-*Link: [./tracks/comparative_studies_20260706/](./tracks/comparative_studies_20260706/)*
+- [x] **Track: Next comparative study selection**
+*Link: [./archive/comparative_studies_20260706/](./archive/comparative_studies_20260706/)*
 
 ---
 
