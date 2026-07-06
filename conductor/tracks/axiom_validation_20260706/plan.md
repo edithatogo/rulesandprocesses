@@ -15,6 +15,12 @@ Depends on: `repo_boundaries_20260706` Phase 1.
     - **Acceptance:** no case is promoted as validation without source/oracle evidence.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Coverage Selection' (Protocol in workflow.md)
 
+> CHECKPOINT (2026-07-06): Phase 1 now has a locked coverage plan and explicit source-assertion ledger for the first Axiom validation slices.
+> Confirmed-validation candidates are KiwiSaver contributions and NZ Superannuation, both backed by primary-source anchors plus companion evidence.
+> GST, ACC earners levy, and individual income tax remain smoke-only baselines and are not promoted as goldens.
+> Reserve social-security coverage is staged as a follow-on slice; broader deferred social-security surfaces remain out of scope until their source support improves.
+> `make check` passed across contracts, converters, harness, and snap-divergence runner tests.
+
 ## Phase 2 - Fixture And Adapter Expansion
 
 - [ ] Task: Write adapter tests first
