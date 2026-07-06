@@ -1,0 +1,45 @@
+{
+  "conformsTo": "pic-fixtures/0.1.0",
+  "provenance": {
+    "curator": "rulesandprocesses Track 4 Axiom harness",
+    "method": "mechanical",
+    "source": "TheAxiomFoundation/rulespec-nz ACC earners levy companion test standard_2026_earnings_below_cap",
+    "interpreterOfRecord": "TheAxiomFoundation/rulespec-nz",
+    "disclaimer": "Smoke fixture for harness mechanics; not a promoted legal oracle."
+  },
+  "cases": [
+    {
+      "caseId": "nz-acc/fixture.standard_2026_earnings_below_cap",
+      "description": "ACC earners levy standard 2026 earnings below cap.",
+      "period": "2026-04-01/2027-03-31",
+      "entities": {
+        "person": {
+          "type": "Person",
+          "id": "person:1"
+        }
+      },
+      "inputs": {
+        "nz-acc/variable.acc_earnings_for_earners_levy": {
+          "value": "100000",
+          "valueState": "known",
+          "currency": "NZD"
+        }
+      },
+      "expected": {
+        "nz-acc/decision.acc_standard_earners_levy_excluding_gst": {
+          "value": "1520",
+          "valueState": "known",
+          "currency": "NZD"
+        },
+        "nz-acc/decision.acc_standard_earners_levy_including_gst": {
+          "value": "1750",
+          "valueState": "known",
+          "currency": "NZD"
+        }
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/regulations/acc/earners_levy.test.yaml#L1-L15"
+      ]
+    }
+  ]
+}

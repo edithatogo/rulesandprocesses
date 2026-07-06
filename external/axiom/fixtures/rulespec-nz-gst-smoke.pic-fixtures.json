@@ -1,0 +1,50 @@
+{
+  "conformsTo": "pic-fixtures/0.1.0",
+  "provenance": {
+    "curator": "rulesandprocesses Track 4 Axiom harness",
+    "method": "mechanical",
+    "source": "TheAxiomFoundation/rulespec-nz GST companion test add_and_remove_gst",
+    "interpreterOfRecord": "TheAxiomFoundation/rulespec-nz",
+    "disclaimer": "Smoke fixture for harness mechanics; not a promoted legal oracle."
+  },
+  "cases": [
+    {
+      "caseId": "nz-gst/fixture.add_and_remove_gst",
+      "description": "Add and remove GST using the rulespec-nz GST smoke case.",
+      "period": "2026-06-16",
+      "entities": {
+        "supply": {
+          "type": "Supply",
+          "id": "supply:1"
+        }
+      },
+      "inputs": {
+        "nz-gst/variable.gst_exclusive_amount": {
+          "value": "100.00",
+          "valueState": "known",
+          "currency": "NZD"
+        },
+        "nz-gst/variable.gst_inclusive_amount": {
+          "value": "115.00",
+          "valueState": "known",
+          "currency": "NZD"
+        }
+      },
+      "expected": {
+        "nz-gst/decision.gst_component_from_exclusive_amount": {
+          "value": "15.00",
+          "valueState": "known",
+          "currency": "NZD"
+        },
+        "nz-gst/decision.gst_inclusive_amount_from_exclusive_amount": {
+          "value": "115.00",
+          "valueState": "known",
+          "currency": "NZD"
+        }
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/gst/rate.test.yaml#L1-L21"
+      ]
+    }
+  ]
+}

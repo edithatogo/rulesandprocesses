@@ -76,6 +76,25 @@ Statuses are deterministic:
 - `output_mismatch`
 - `adapter_failure`
 
+## Verified live smoke command
+
+The repository includes PIC smoke fixtures and a small runner for the two
+currently mapped `rulespec-nz` slices. After building the engine and compiling
+the two artifacts above, run:
+
+```bash
+PYTHONPATH=harness:contracts/tools/src \
+  uv run --with jsonschema \
+  python external/axiom/run_rulespec_nz_smoke.py
+```
+
+On 2026-07-06 this produced `exact_match` for both:
+
+- `nz-gst/fixture.add_and_remove_gst`
+- `nz-acc/fixture.standard_2026_earnings_below_cap`
+
+The stored report is under `external/axiom/results/rulespec-nz-live-smoke/`.
+
 ## Expansion path
 
 After the GST smoke slice works against a local compiled artifact, use the

@@ -1,0 +1,142 @@
+{
+  "adapter_failures": 0,
+  "exact_matches": 2,
+  "output_mismatches": 0,
+  "results": [
+    {
+      "axiom": {
+        "outputs": {
+          "nz-gst/decision.gst_component_from_exclusive_amount": {
+            "currency": "NZD",
+            "value": "15",
+            "valueState": "known"
+          },
+          "nz-gst/decision.gst_inclusive_amount_from_exclusive_amount": {
+            "currency": "NZD",
+            "value": "115",
+            "valueState": "known"
+          }
+        },
+        "trace": {
+          "nz-gst/decision.gst_component_from_exclusive_amount": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:statutes/gst/rate#gst_component_from_exclusive_amount",
+            "kind": "scalar",
+            "name": "gst_component_from_exclusive_amount",
+            "source": "Goods and Services Tax Act 1985 s 8(1); Inland Revenue GST calculation guidance",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "15"
+            }
+          },
+          "nz-gst/decision.gst_inclusive_amount_from_exclusive_amount": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:statutes/gst/rate#gst_inclusive_amount_from_exclusive_amount",
+            "kind": "scalar",
+            "name": "gst_inclusive_amount_from_exclusive_amount",
+            "source": "Goods and Services Tax Act 1985 s 8(1); Inland Revenue GST calculation guidance",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "115"
+            }
+          }
+        }
+      },
+      "axiom_error": null,
+      "caseId": "nz-gst/fixture.add_and_remove_gst",
+      "expected": {
+        "nz-gst/decision.gst_component_from_exclusive_amount": {
+          "currency": "NZD",
+          "value": "15.00",
+          "valueState": "known"
+        },
+        "nz-gst/decision.gst_inclusive_amount_from_exclusive_amount": {
+          "currency": "NZD",
+          "value": "115.00",
+          "valueState": "known"
+        }
+      },
+      "mismatches": [],
+      "status": "exact_match",
+      "target": {
+        "module_id": "nz:statutes/gst/rate",
+        "module_path": "nz/statutes/gst/rate.yaml",
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "repo_commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "test_path": "nz/statutes/gst/rate.test.yaml"
+      }
+    },
+    {
+      "axiom": {
+        "outputs": {
+          "nz-acc/decision.acc_standard_earners_levy_excluding_gst": {
+            "currency": "NZD",
+            "value": "1520",
+            "valueState": "known"
+          },
+          "nz-acc/decision.acc_standard_earners_levy_including_gst": {
+            "currency": "NZD",
+            "value": "1750",
+            "valueState": "known"
+          }
+        },
+        "trace": {
+          "nz-acc/decision.acc_standard_earners_levy_excluding_gst": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:regulations/acc/earners_levy#acc_standard_earners_levy_excluding_gst",
+            "kind": "scalar",
+            "name": "acc_standard_earners_levy_excluding_gst",
+            "source": "Accident Compensation (Earners' Levy) Regulations 2025 regs 4, 5, and 8",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "1520"
+            }
+          },
+          "nz-acc/decision.acc_standard_earners_levy_including_gst": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:regulations/acc/earners_levy#acc_standard_earners_levy_including_gst",
+            "kind": "scalar",
+            "name": "acc_standard_earners_levy_including_gst",
+            "source": "Inland Revenue ACC earners' levy rates",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "1750"
+            }
+          }
+        }
+      },
+      "axiom_error": null,
+      "caseId": "nz-acc/fixture.standard_2026_earnings_below_cap",
+      "expected": {
+        "nz-acc/decision.acc_standard_earners_levy_excluding_gst": {
+          "currency": "NZD",
+          "value": "1520",
+          "valueState": "known"
+        },
+        "nz-acc/decision.acc_standard_earners_levy_including_gst": {
+          "currency": "NZD",
+          "value": "1750",
+          "valueState": "known"
+        }
+      },
+      "mismatches": [],
+      "status": "exact_match",
+      "target": {
+        "module_id": "nz:regulations/acc/earners_levy",
+        "module_path": "nz/regulations/acc/earners_levy.yaml",
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "repo_commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "test_path": "nz/regulations/acc/earners_levy.test.yaml"
+      }
+    }
+  ],
+  "total": 2
+}
