@@ -1,7 +1,5 @@
 # Project Tracks
 
-This file tracks all major tracks for the project. Each track has its own detailed spec and plan in its respective folder. Tracks are listed in priority order; Tracks 1 and 2 are the critical path. Tracks 3, 4 and 6 can proceed in parallel once Track 1 phase 1 is complete.
-
 ---
 
 - [ ] **Track: Repo relevance boundary catalog**
