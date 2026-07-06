@@ -52,6 +52,73 @@
       "sourceRefs": [
         "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/kiwisaver/contributions.test.yaml"
       ]
+    },
+    {
+      "caseId": "nz-kiwisaver/fixture.government_contribution_cap_from_threshold",
+      "description": "KiwiSaver government contribution cap from threshold.",
+      "period": "2025-07-01/2026-06-30",
+      "entities": {
+        "person": {
+          "type": "Person",
+          "id": "person:1"
+        }
+      },
+      "inputs": {},
+      "expected": {
+        "nz-kiwisaver/decision.kiwisaver_government_contribution_match_rate": {
+          "value": "0.25",
+          "valueState": "known"
+        },
+        "nz-kiwisaver/decision.kiwisaver_government_contribution_member_payment_threshold": {
+          "value": "1042.86",
+          "valueState": "known"
+        },
+        "nz-kiwisaver/decision.kiwisaver_government_contribution_maximum": {
+          "value": "260.72",
+          "valueState": "known",
+          "currency": "NZD"
+        }
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/kiwisaver/contributions.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-kiwisaver/fixture.negative_salary_does_not_create_contributions",
+      "description": "Negative salary does not create KiwiSaver contributions.",
+      "period": "2026-04-01/2027-03-31",
+      "entities": {
+        "person": {
+          "type": "Person",
+          "id": "person:1"
+        }
+      },
+      "inputs": {
+        "nz-kiwisaver/variable.kiwisaver_gross_salary_or_wages": {
+          "value": "-100",
+          "valueState": "known",
+          "currency": "NZD"
+        },
+        "nz-kiwisaver/variable.kiwisaver_selected_employee_contribution_rate": {
+          "value": "0.035",
+          "valueState": "known"
+        }
+      },
+      "expected": {
+        "nz-kiwisaver/decision.kiwisaver_employee_deduction": {
+          "value": "0",
+          "valueState": "known",
+          "currency": "NZD"
+        },
+        "nz-kiwisaver/decision.kiwisaver_minimum_employer_contribution": {
+          "value": "0",
+          "valueState": "known",
+          "currency": "NZD"
+        }
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/kiwisaver/contributions.test.yaml"
+      ]
     }
   ]
 }

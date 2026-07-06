@@ -1,0 +1,1033 @@
+{
+  "adapter_failures": 0,
+  "exact_matches": 10,
+  "output_mismatches": 0,
+  "results": [
+    {
+      "axiom": {
+        "outputs": {
+          "nz-gst/decision.gst_component_from_exclusive_amount": {
+            "currency": "NZD",
+            "value": "15",
+            "valueState": "known"
+          },
+          "nz-gst/decision.gst_inclusive_amount_from_exclusive_amount": {
+            "currency": "NZD",
+            "value": "115",
+            "valueState": "known"
+          }
+        },
+        "trace": {
+          "nz-gst/decision.gst_component_from_exclusive_amount": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:statutes/gst/rate#gst_component_from_exclusive_amount",
+            "kind": "scalar",
+            "name": "gst_component_from_exclusive_amount",
+            "source": "Goods and Services Tax Act 1985 s 8(1); Inland Revenue GST calculation guidance",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "15"
+            }
+          },
+          "nz-gst/decision.gst_inclusive_amount_from_exclusive_amount": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:statutes/gst/rate#gst_inclusive_amount_from_exclusive_amount",
+            "kind": "scalar",
+            "name": "gst_inclusive_amount_from_exclusive_amount",
+            "source": "Goods and Services Tax Act 1985 s 8(1); Inland Revenue GST calculation guidance",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "115"
+            }
+          }
+        }
+      },
+      "axiom_error": null,
+      "caseId": "nz-gst/fixture.add_and_remove_gst",
+      "expected": {
+        "nz-gst/decision.gst_component_from_exclusive_amount": {
+          "currency": "NZD",
+          "value": "15.00",
+          "valueState": "known"
+        },
+        "nz-gst/decision.gst_inclusive_amount_from_exclusive_amount": {
+          "currency": "NZD",
+          "value": "115.00",
+          "valueState": "known"
+        }
+      },
+      "mismatches": [],
+      "status": "exact_match",
+      "target": {
+        "module_id": "nz:statutes/gst/rate",
+        "module_path": "nz/statutes/gst/rate.yaml",
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "repo_commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "test_path": "nz/statutes/gst/rate.test.yaml"
+      }
+    },
+    {
+      "axiom": {
+        "outputs": {
+          "nz-acc/decision.acc_standard_earners_levy_excluding_gst": {
+            "currency": "NZD",
+            "value": "1520",
+            "valueState": "known"
+          },
+          "nz-acc/decision.acc_standard_earners_levy_including_gst": {
+            "currency": "NZD",
+            "value": "1750",
+            "valueState": "known"
+          }
+        },
+        "trace": {
+          "nz-acc/decision.acc_standard_earners_levy_excluding_gst": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:regulations/acc/earners_levy#acc_standard_earners_levy_excluding_gst",
+            "kind": "scalar",
+            "name": "acc_standard_earners_levy_excluding_gst",
+            "source": "Accident Compensation (Earners' Levy) Regulations 2025 regs 4, 5, and 8",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "1520"
+            }
+          },
+          "nz-acc/decision.acc_standard_earners_levy_including_gst": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:regulations/acc/earners_levy#acc_standard_earners_levy_including_gst",
+            "kind": "scalar",
+            "name": "acc_standard_earners_levy_including_gst",
+            "source": "Inland Revenue ACC earners' levy rates",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "1750"
+            }
+          }
+        }
+      },
+      "axiom_error": null,
+      "caseId": "nz-acc/fixture.standard_2026_earnings_below_cap",
+      "expected": {
+        "nz-acc/decision.acc_standard_earners_levy_excluding_gst": {
+          "currency": "NZD",
+          "value": "1520",
+          "valueState": "known"
+        },
+        "nz-acc/decision.acc_standard_earners_levy_including_gst": {
+          "currency": "NZD",
+          "value": "1750",
+          "valueState": "known"
+        }
+      },
+      "mismatches": [],
+      "status": "exact_match",
+      "target": {
+        "module_id": "nz:regulations/acc/earners_levy",
+        "module_path": "nz/regulations/acc/earners_levy.yaml",
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "repo_commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "test_path": "nz/regulations/acc/earners_levy.test.yaml"
+      }
+    },
+    {
+      "axiom": {
+        "outputs": {
+          "nz-income-tax/decision.individual_income_tax_before_credits": {
+            "currency": "NZD",
+            "value": "1638",
+            "valueState": "known"
+          }
+        },
+        "trace": {
+          "nz-income-tax/decision.individual_income_tax_before_credits": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:statutes/income_tax/schedule_1/individual_income_tax#individual_income_tax_before_credits",
+            "kind": "scalar",
+            "name": "individual_income_tax_before_credits",
+            "source": "Income Tax Act 2007 Schedule 1 part A clause 1",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "1638"
+            }
+          }
+        }
+      },
+      "axiom_error": null,
+      "caseId": "nz-income-tax/fixture.first_bracket_upper_bound",
+      "expected": {
+        "nz-income-tax/decision.individual_income_tax_before_credits": {
+          "currency": "NZD",
+          "value": "1638",
+          "valueState": "known"
+        }
+      },
+      "mismatches": [],
+      "status": "exact_match",
+      "target": {
+        "module_id": "nz:statutes/income_tax/schedule_1/individual_income_tax",
+        "module_path": "nz/statutes/income_tax/schedule_1/individual_income_tax.yaml",
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "repo_commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "test_path": "nz/statutes/income_tax/schedule_1/individual_income_tax.test.yaml"
+      }
+    },
+    {
+      "axiom": {
+        "outputs": {
+          "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+            "value": "holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_age_requirement": {
+            "value": "holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_living_alone": {
+            "value": "holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_ordinary_weekly_rate_before_tax": {
+            "currency": "NZD",
+            "value": "647.37",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_residential_requirement": {
+            "value": "holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+            "currency": "NZD",
+            "value": "647.37",
+            "valueState": "known"
+          }
+        },
+        "trace": {
+          "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#nz_super_age_requirement",
+              "nz:statutes/new_zealand_superannuation/core#nz_super_residential_requirement"
+            ],
+            "id": "nz:statutes/new_zealand_superannuation/core#entitled_to_new_zealand_superannuation",
+            "kind": "judgment",
+            "name": "entitled_to_new_zealand_superannuation",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 ss 7 and 8",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_age_requirement": {
+            "dependencies": [],
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_age_requirement",
+            "kind": "judgment",
+            "name": "nz_super_age_requirement",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 7",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_living_alone": {
+            "dependencies": [],
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_living_alone",
+            "kind": "judgment",
+            "name": "nz_super_living_alone",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 4A",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_ordinary_weekly_rate_before_tax": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#nz_super_living_alone"
+            ],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_ordinary_weekly_rate_before_tax",
+            "kind": "scalar",
+            "name": "nz_super_ordinary_weekly_rate_before_tax",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 12 and Schedule 1 Part 1 clause 1",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "647.37"
+            }
+          },
+          "nz-superannuation/decision.nz_super_residential_requirement": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#nz_super_standard_total_time_requirement_years"
+            ],
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_residential_requirement",
+            "kind": "judgment",
+            "name": "nz_super_residential_requirement",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 8",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_standard_total_time_requirement_years",
+            "kind": "scalar",
+            "name": "nz_super_standard_total_time_requirement_years",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 8(4)",
+            "unit": null,
+            "value": {
+              "kind": "integer",
+              "value": 10
+            }
+          },
+          "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#entitled_to_new_zealand_superannuation",
+              "nz:statutes/new_zealand_superannuation/core#nz_super_ordinary_weekly_rate_before_tax"
+            ],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_weekly_amount_before_tax",
+            "kind": "scalar",
+            "name": "nz_super_weekly_amount_before_tax",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 ss 11 and 12 and Schedule 1 Part 1",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "647.37"
+            }
+          }
+        }
+      },
+      "axiom_error": null,
+      "caseId": "nz-superannuation/fixture.single_living_alone_meets_residence",
+      "expected": {
+        "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_age_requirement": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_living_alone": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_ordinary_weekly_rate_before_tax": {
+          "currency": "NZD",
+          "value": "647.37",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_residential_requirement": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+          "currency": "NZD",
+          "value": "647.37",
+          "valueState": "known"
+        }
+      },
+      "mismatches": [],
+      "status": "exact_match",
+      "target": {
+        "module_id": "nz:statutes/new_zealand_superannuation/core",
+        "module_path": "nz/statutes/new_zealand_superannuation/core.yaml",
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "repo_commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "test_path": "nz/statutes/new_zealand_superannuation/core.test.yaml"
+      }
+    },
+    {
+      "axiom": {
+        "outputs": {
+          "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+            "value": "holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_living_alone": {
+            "value": "not_holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_ordinary_weekly_rate_before_tax": {
+            "currency": "NZD",
+            "value": "595.57",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+            "value": 11,
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+            "currency": "NZD",
+            "value": "595.57",
+            "valueState": "known"
+          }
+        },
+        "trace": {
+          "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#nz_super_age_requirement",
+              "nz:statutes/new_zealand_superannuation/core#nz_super_residential_requirement"
+            ],
+            "id": "nz:statutes/new_zealand_superannuation/core#entitled_to_new_zealand_superannuation",
+            "kind": "judgment",
+            "name": "entitled_to_new_zealand_superannuation",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 ss 7 and 8",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_age_requirement": {
+            "dependencies": [],
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_age_requirement",
+            "kind": "judgment",
+            "name": "nz_super_age_requirement",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 7",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_living_alone": {
+            "dependencies": [],
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_living_alone",
+            "kind": "judgment",
+            "name": "nz_super_living_alone",
+            "outcome": "not_holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 4A",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_ordinary_weekly_rate_before_tax": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#nz_super_living_alone"
+            ],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_ordinary_weekly_rate_before_tax",
+            "kind": "scalar",
+            "name": "nz_super_ordinary_weekly_rate_before_tax",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 12 and Schedule 1 Part 1 clause 1",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "595.57"
+            }
+          },
+          "nz-superannuation/decision.nz_super_residential_requirement": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#nz_super_standard_total_time_requirement_years"
+            ],
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_residential_requirement",
+            "kind": "judgment",
+            "name": "nz_super_residential_requirement",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 8",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_standard_total_time_requirement_years",
+            "kind": "scalar",
+            "name": "nz_super_standard_total_time_requirement_years",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 8(4)",
+            "unit": null,
+            "value": {
+              "kind": "integer",
+              "value": 11
+            }
+          },
+          "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#entitled_to_new_zealand_superannuation",
+              "nz:statutes/new_zealand_superannuation/core#nz_super_ordinary_weekly_rate_before_tax"
+            ],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_weekly_amount_before_tax",
+            "kind": "scalar",
+            "name": "nz_super_weekly_amount_before_tax",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 ss 11 and 12 and Schedule 1 Part 1",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "595.57"
+            }
+          }
+        }
+      },
+      "axiom_error": null,
+      "caseId": "nz-superannuation/fixture.single_not_living_alone_uses_lower_single_rate",
+      "expected": {
+        "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_living_alone": {
+          "value": "not_holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_ordinary_weekly_rate_before_tax": {
+          "currency": "NZD",
+          "value": "595.57",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+          "value": "11",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+          "currency": "NZD",
+          "value": "595.57",
+          "valueState": "known"
+        }
+      },
+      "mismatches": [],
+      "status": "exact_match",
+      "target": {
+        "module_id": "nz:statutes/new_zealand_superannuation/core",
+        "module_path": "nz/statutes/new_zealand_superannuation/core.yaml",
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "repo_commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "test_path": "nz/statutes/new_zealand_superannuation/core.test.yaml"
+      }
+    },
+    {
+      "axiom": {
+        "outputs": {
+          "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+            "value": "holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_living_alone": {
+            "value": "not_holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_ordinary_weekly_rate_before_tax": {
+            "currency": "NZD",
+            "value": "492.14",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+            "value": 12,
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+            "currency": "NZD",
+            "value": "492.14",
+            "valueState": "known"
+          }
+        },
+        "trace": {
+          "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#nz_super_age_requirement",
+              "nz:statutes/new_zealand_superannuation/core#nz_super_residential_requirement"
+            ],
+            "id": "nz:statutes/new_zealand_superannuation/core#entitled_to_new_zealand_superannuation",
+            "kind": "judgment",
+            "name": "entitled_to_new_zealand_superannuation",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 ss 7 and 8",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_age_requirement": {
+            "dependencies": [],
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_age_requirement",
+            "kind": "judgment",
+            "name": "nz_super_age_requirement",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 7",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_living_alone": {
+            "dependencies": [],
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_living_alone",
+            "kind": "judgment",
+            "name": "nz_super_living_alone",
+            "outcome": "not_holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 4A",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_ordinary_weekly_rate_before_tax": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#nz_super_living_alone"
+            ],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_ordinary_weekly_rate_before_tax",
+            "kind": "scalar",
+            "name": "nz_super_ordinary_weekly_rate_before_tax",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 12 and Schedule 1 Part 1 clause 1",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "492.14"
+            }
+          },
+          "nz-superannuation/decision.nz_super_residential_requirement": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#nz_super_standard_total_time_requirement_years"
+            ],
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_residential_requirement",
+            "kind": "judgment",
+            "name": "nz_super_residential_requirement",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 8",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_standard_total_time_requirement_years",
+            "kind": "scalar",
+            "name": "nz_super_standard_total_time_requirement_years",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 8(4)",
+            "unit": null,
+            "value": {
+              "kind": "integer",
+              "value": 12
+            }
+          },
+          "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#entitled_to_new_zealand_superannuation",
+              "nz:statutes/new_zealand_superannuation/core#nz_super_ordinary_weekly_rate_before_tax"
+            ],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_weekly_amount_before_tax",
+            "kind": "scalar",
+            "name": "nz_super_weekly_amount_before_tax",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 ss 11 and 12 and Schedule 1 Part 1",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "492.14"
+            }
+          }
+        }
+      },
+      "axiom_error": null,
+      "caseId": "nz-superannuation/fixture.partnered_person_uses_partnered_rate",
+      "expected": {
+        "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_living_alone": {
+          "value": "not_holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_ordinary_weekly_rate_before_tax": {
+          "currency": "NZD",
+          "value": "492.14",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+          "value": "12",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+          "currency": "NZD",
+          "value": "492.14",
+          "valueState": "known"
+        }
+      },
+      "mismatches": [],
+      "status": "exact_match",
+      "target": {
+        "module_id": "nz:statutes/new_zealand_superannuation/core",
+        "module_path": "nz/statutes/new_zealand_superannuation/core.yaml",
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "repo_commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "test_path": "nz/statutes/new_zealand_superannuation/core.test.yaml"
+      }
+    },
+    {
+      "axiom": {
+        "outputs": {
+          "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+            "value": "not_holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_age_requirement": {
+            "value": "holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_residential_requirement": {
+            "value": "not_holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+            "value": 20,
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+            "currency": "NZD",
+            "value": "0",
+            "valueState": "known"
+          }
+        },
+        "trace": {
+          "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#nz_super_age_requirement",
+              "nz:statutes/new_zealand_superannuation/core#nz_super_residential_requirement"
+            ],
+            "id": "nz:statutes/new_zealand_superannuation/core#entitled_to_new_zealand_superannuation",
+            "kind": "judgment",
+            "name": "entitled_to_new_zealand_superannuation",
+            "outcome": "not_holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 ss 7 and 8",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_age_requirement": {
+            "dependencies": [],
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_age_requirement",
+            "kind": "judgment",
+            "name": "nz_super_age_requirement",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 7",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_residential_requirement": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#nz_super_standard_total_time_requirement_years"
+            ],
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_residential_requirement",
+            "kind": "judgment",
+            "name": "nz_super_residential_requirement",
+            "outcome": "not_holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 8",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_standard_total_time_requirement_years",
+            "kind": "scalar",
+            "name": "nz_super_standard_total_time_requirement_years",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 8(4)",
+            "unit": null,
+            "value": {
+              "kind": "integer",
+              "value": 20
+            }
+          },
+          "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#entitled_to_new_zealand_superannuation",
+              "nz:statutes/new_zealand_superannuation/core#nz_super_ordinary_weekly_rate_before_tax"
+            ],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_weekly_amount_before_tax",
+            "kind": "scalar",
+            "name": "nz_super_weekly_amount_before_tax",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 ss 11 and 12 and Schedule 1 Part 1",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "0"
+            }
+          }
+        }
+      },
+      "axiom_error": null,
+      "caseId": "nz-superannuation/fixture.insufficient_residence_blocks_entitlement",
+      "expected": {
+        "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+          "value": "not_holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_age_requirement": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_residential_requirement": {
+          "value": "not_holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+          "value": "20",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+          "currency": "NZD",
+          "value": "0",
+          "valueState": "known"
+        }
+      },
+      "mismatches": [],
+      "status": "exact_match",
+      "target": {
+        "module_id": "nz:statutes/new_zealand_superannuation/core",
+        "module_path": "nz/statutes/new_zealand_superannuation/core.yaml",
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "repo_commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "test_path": "nz/statutes/new_zealand_superannuation/core.test.yaml"
+      }
+    },
+    {
+      "axiom": {
+        "outputs": {
+          "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+            "value": "not_holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_age_requirement": {
+            "value": "not_holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_residential_requirement": {
+            "value": "holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+            "currency": "NZD",
+            "value": "0",
+            "valueState": "known"
+          }
+        },
+        "trace": {
+          "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#nz_super_age_requirement",
+              "nz:statutes/new_zealand_superannuation/core#nz_super_residential_requirement"
+            ],
+            "id": "nz:statutes/new_zealand_superannuation/core#entitled_to_new_zealand_superannuation",
+            "kind": "judgment",
+            "name": "entitled_to_new_zealand_superannuation",
+            "outcome": "not_holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 ss 7 and 8",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_age_requirement": {
+            "dependencies": [],
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_age_requirement",
+            "kind": "judgment",
+            "name": "nz_super_age_requirement",
+            "outcome": "not_holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 7",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_residential_requirement": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#nz_super_standard_total_time_requirement_years"
+            ],
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_residential_requirement",
+            "kind": "judgment",
+            "name": "nz_super_residential_requirement",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 8",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_standard_total_time_requirement_years",
+            "kind": "scalar",
+            "name": "nz_super_standard_total_time_requirement_years",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 8(4)",
+            "unit": null,
+            "value": {
+              "kind": "integer",
+              "value": 10
+            }
+          },
+          "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/core#entitled_to_new_zealand_superannuation",
+              "nz:statutes/new_zealand_superannuation/core#nz_super_ordinary_weekly_rate_before_tax"
+            ],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/core#nz_super_weekly_amount_before_tax",
+            "kind": "scalar",
+            "name": "nz_super_weekly_amount_before_tax",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 ss 11 and 12 and Schedule 1 Part 1",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "0"
+            }
+          }
+        }
+      },
+      "axiom_error": null,
+      "caseId": "nz-superannuation/fixture.compensation_election_blocks_age_requirement",
+      "expected": {
+        "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+          "value": "not_holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_age_requirement": {
+          "value": "not_holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_residential_requirement": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+          "currency": "NZD",
+          "value": "0",
+          "valueState": "known"
+        }
+      },
+      "mismatches": [],
+      "status": "exact_match",
+      "target": {
+        "module_id": "nz:statutes/new_zealand_superannuation/core",
+        "module_path": "nz/statutes/new_zealand_superannuation/core.yaml",
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "repo_commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "test_path": "nz/statutes/new_zealand_superannuation/core.test.yaml"
+      }
+    },
+    {
+      "axiom": {
+        "outputs": {
+          "nz-superannuation/decision.nz_super_hospital_rate_population": {
+            "value": "holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_hospital_reduced_rate_applies": {
+            "value": "holds",
+            "valueState": "known"
+          },
+          "nz-superannuation/decision.nz_super_hospital_weekly_rate_net_after_tax": {
+            "currency": "NZD",
+            "value": "58.34",
+            "valueState": "known"
+          }
+        },
+        "trace": {
+          "nz-superannuation/decision.nz_super_hospital_rate_population": {
+            "dependencies": [],
+            "id": "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_rate_population",
+            "kind": "judgment",
+            "name": "nz_super_hospital_rate_population",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 19(2)",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_hospital_reduced_rate_applies": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_rate_population"
+            ],
+            "id": "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_reduced_rate_applies",
+            "kind": "judgment",
+            "name": "nz_super_hospital_reduced_rate_applies",
+            "outcome": "holds",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 19(3) to (5)",
+            "unit": null
+          },
+          "nz-superannuation/decision.nz_super_hospital_weekly_rate_net_after_tax": {
+            "dependencies": [
+              "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_reduced_rate_applies"
+            ],
+            "dtype": "decimal",
+            "id": "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_weekly_rate_net_after_tax",
+            "kind": "scalar",
+            "name": "nz_super_hospital_weekly_rate_net_after_tax",
+            "source": "New Zealand Superannuation and Retirement Income Act 2001 s 19(4) and Schedule 1 Part 1 clause 3",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "58.34"
+            }
+          }
+        }
+      },
+      "axiom_error": null,
+      "caseId": "nz-superannuation/fixture.hospital_reduced_rate_after_thirteen_weeks",
+      "expected": {
+        "nz-superannuation/decision.nz_super_hospital_rate_population": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_hospital_reduced_rate_applies": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_hospital_weekly_rate_net_after_tax": {
+          "currency": "NZD",
+          "value": "58.34",
+          "valueState": "known"
+        }
+      },
+      "mismatches": [],
+      "status": "exact_match",
+      "target": {
+        "module_id": "nz:statutes/new_zealand_superannuation/special_rates",
+        "module_path": "nz/statutes/new_zealand_superannuation/special_rates.yaml",
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "repo_commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "test_path": "nz/statutes/new_zealand_superannuation/special_rates.test.yaml"
+      }
+    },
+    {
+      "axiom": {
+        "outputs": {
+          "nz-acc/decision.acc_standard_earners_levy_excluding_gst": {
+            "currency": "NZD",
+            "value": "2380.9432",
+            "valueState": "known"
+          },
+          "nz-acc/decision.acc_standard_earners_levy_including_gst": {
+            "currency": "NZD",
+            "value": "2741.22",
+            "valueState": "known"
+          }
+        },
+        "trace": {
+          "nz-acc/decision.acc_standard_earners_levy_excluding_gst": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:regulations/acc/earners_levy#acc_standard_earners_levy_excluding_gst",
+            "kind": "scalar",
+            "name": "acc_standard_earners_levy_excluding_gst",
+            "source": "Accident Compensation (Earners' Levy) Regulations 2025 regs 4, 5, and 8",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "2380.9432"
+            }
+          },
+          "nz-acc/decision.acc_standard_earners_levy_including_gst": {
+            "dependencies": [],
+            "dtype": "decimal",
+            "id": "nz:regulations/acc/earners_levy#acc_standard_earners_levy_including_gst",
+            "kind": "scalar",
+            "name": "acc_standard_earners_levy_including_gst",
+            "source": "Inland Revenue ACC earners' levy rates",
+            "unit": "NZD",
+            "value": {
+              "kind": "decimal",
+              "value": "2741.22"
+            }
+          }
+        }
+      },
+      "axiom_error": null,
+      "caseId": "nz-acc/fixture.standard_2026_earnings_above_cap",
+      "expected": {
+        "nz-acc/decision.acc_standard_earners_levy_excluding_gst": {
+          "currency": "NZD",
+          "value": "2380.9432",
+          "valueState": "known"
+        },
+        "nz-acc/decision.acc_standard_earners_levy_including_gst": {
+          "currency": "NZD",
+          "value": "2741.22",
+          "valueState": "known"
+        }
+      },
+      "mismatches": [],
+      "status": "exact_match",
+      "target": {
+        "module_id": "nz:regulations/acc/earners_levy",
+        "module_path": "nz/regulations/acc/earners_levy.yaml",
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "repo_commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "test_path": "nz/regulations/acc/earners_levy.test.yaml"
+      }
+    }
+  ],
+  "total": 10
+}

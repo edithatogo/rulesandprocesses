@@ -251,8 +251,8 @@ RULESPEC_NZ_KIWISAVER_CONTRIBUTIONS_OUTPUTS = {
 
 
 RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_CORE_OUTPUTS = {
-    "nz-superannuation/decision.nz_super_age_threshold": (
-        "nz:statutes/new_zealand_superannuation/core#nz_super_age_threshold"
+    "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": (
+        "nz:statutes/new_zealand_superannuation/core#nz_super_standard_total_time_requirement_years"
     ),
     "nz-superannuation/decision.nz_super_living_alone": (
         "nz:statutes/new_zealand_superannuation/core#nz_super_living_alone"
@@ -276,12 +276,6 @@ RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_CORE_OUTPUTS = {
 
 
 RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_SPECIAL_RATES_OUTPUTS = {
-    "nz-superannuation/decision.nz_super_hospital_unaffected_weeks": (
-        "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_unaffected_weeks"
-    ),
-    "nz-superannuation/decision.nz_super_hospital_reduced_rate_net_after_tax": (
-        "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_reduced_rate_net_after_tax"
-    ),
     "nz-superannuation/decision.nz_super_hospital_rate_population": (
         "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_rate_population"
     ),

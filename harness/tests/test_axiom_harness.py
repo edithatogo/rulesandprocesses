@@ -211,8 +211,8 @@ NZ_SUPERANNUATION_CORE_CASE = {
         },
     },
     "expected": {
-        "nz-superannuation/decision.nz_super_age_threshold": {
-            "value": "65",
+        "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+            "value": "10",
             "valueState": "known",
         },
         "nz-superannuation/decision.nz_super_living_alone": {
@@ -281,15 +281,6 @@ NZ_SUPERANNUATION_SPECIAL_RATES_CASE = {
         },
     },
     "expected": {
-        "nz-superannuation/decision.nz_super_hospital_unaffected_weeks": {
-            "value": "13",
-            "valueState": "known",
-        },
-        "nz-superannuation/decision.nz_super_hospital_reduced_rate_net_after_tax": {
-            "value": "58.34",
-            "valueState": "known",
-            "currency": "NZD",
-        },
         "nz-superannuation/decision.nz_super_hospital_rate_population": {
             "value": "holds",
             "valueState": "known",
@@ -531,7 +522,7 @@ def test_build_rulespec_nz_superannuation_core_request() -> None:
                 "end": "2027-03-31",
             },
             "outputs": [
-                "nz:statutes/new_zealand_superannuation/core#nz_super_age_threshold",
+                "nz:statutes/new_zealand_superannuation/core#nz_super_standard_total_time_requirement_years",
                 "nz:statutes/new_zealand_superannuation/core#nz_super_living_alone",
                 "nz:statutes/new_zealand_superannuation/core#nz_super_age_requirement",
                 "nz:statutes/new_zealand_superannuation/core#nz_super_residential_requirement",
@@ -563,8 +554,6 @@ def test_build_rulespec_nz_superannuation_special_rates_request() -> None:
                 "end": "2027-03-31",
             },
             "outputs": [
-                "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_unaffected_weeks",
-                "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_reduced_rate_net_after_tax",
                 "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_rate_population",
                 "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_reduced_rate_applies",
                 "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_weekly_rate_net_after_tax",

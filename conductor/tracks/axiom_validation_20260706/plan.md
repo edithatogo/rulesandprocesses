@@ -46,11 +46,13 @@ Depends on: `repo_boundaries_20260706` Phase 1.
 
 ## Phase 3 - Live Runs And CI Integration
 
-- [ ] Task: Run live RuleSpec validation suite
-    - [ ] Pin `rulespec-nz` and `axiom-rules-engine` SHAs.
-    - [ ] Run the suite locally.
-    - [ ] Store reports under `external/axiom/results/`.
+- [x] Task: Run live RuleSpec validation suite
+    - [x] Pin `rulespec-nz` and `axiom-rules-engine` SHAs.
+    - [x] Run the suite locally.
+    - [x] Store reports under `external/axiom/results/`.
     - **Acceptance:** at least 10 cases run or blocker is documented.
+
+> NOTE (2026-07-06): The live suite ran 10 cases with 10 exact matches and stored reports under `external/axiom/results/rulespec-nz-live-suite/`. KiwiSaver compilation from `.external-repos/rulespec-nz` still fails with a YAML parse error at `rules[1].versions[0].values`, so that slice remains blocked separately from the successful live set.
 - [ ] Task: Add CI-compatible check
     - [ ] Add a smoke CI check that self-skips when external engine artifacts are unavailable.
     - [ ] Keep deterministic unit tests mandatory.

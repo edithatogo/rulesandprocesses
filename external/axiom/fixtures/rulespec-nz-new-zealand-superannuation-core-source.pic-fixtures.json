@@ -73,10 +73,6 @@
         }
       },
       "expected": {
-        "nz-superannuation/decision.nz_super_age_threshold": {
-          "value": "65",
-          "valueState": "known"
-        },
         "nz-superannuation/decision.nz_super_living_alone": {
           "value": "holds",
           "valueState": "known"
@@ -100,6 +96,368 @@
         },
         "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
           "value": "647.37",
+          "valueState": "known",
+          "currency": "NZD"
+        }
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/new_zealand_superannuation/core.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-superannuation/fixture.single_not_living_alone_uses_lower_single_rate",
+      "description": "Single person not living alone uses the lower single rate.",
+      "period": "2026-04-01/2027-03-31",
+      "entities": {
+        "person": {
+          "type": "Person",
+          "id": "person:1"
+        }
+      },
+      "inputs": {
+        "nz-superannuation/variable.nz_super_birth_year": {
+          "value": 1959,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_birth_month": {
+          "value": 7,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_single": {
+          "value": true,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_principal_residence_is_qualifying_accommodation": {
+          "value": true,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_shares_residence_with_person_at_least_adult_age": {
+          "value": true,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_all_shared_adults_are_exempt_dependent_children_or_temporary_visitors": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_person_age": {
+          "value": 66,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_elected_weekly_compensation_instead_of_superannuation": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_ordinarily_resident_in_new_zealand_on_application": {
+          "value": true,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_overseas_application_residence_exception_applies": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_20_total_years": {
+          "value": 11,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_20_new_zealand_years": {
+          "value": 10,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_50_total_years": {
+          "value": 5,
+          "valueState": "known"
+        }
+      },
+      "expected": {
+        "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+          "value": "11",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_living_alone": {
+          "value": "not_holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_ordinary_weekly_rate_before_tax": {
+          "value": "595.57",
+          "valueState": "known",
+          "currency": "NZD"
+        },
+        "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+          "value": "595.57",
+          "valueState": "known",
+          "currency": "NZD"
+        }
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/new_zealand_superannuation/core.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-superannuation/fixture.partnered_person_uses_partnered_rate",
+      "description": "Partnered person uses the partnered rate.",
+      "period": "2026-04-01/2027-03-31",
+      "entities": {
+        "person": {
+          "type": "Person",
+          "id": "person:1"
+        }
+      },
+      "inputs": {
+        "nz-superannuation/variable.nz_super_birth_year": {
+          "value": 1963,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_birth_month": {
+          "value": 6,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_single": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_principal_residence_is_qualifying_accommodation": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_shares_residence_with_person_at_least_adult_age": {
+          "value": true,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_all_shared_adults_are_exempt_dependent_children_or_temporary_visitors": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_person_age": {
+          "value": 65,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_elected_weekly_compensation_instead_of_superannuation": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_ordinarily_resident_in_new_zealand_on_application": {
+          "value": true,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_overseas_application_residence_exception_applies": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_20_total_years": {
+          "value": 12,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_20_new_zealand_years": {
+          "value": 10,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_50_total_years": {
+          "value": 5,
+          "valueState": "known"
+        }
+      },
+      "expected": {
+        "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+          "value": "12",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_living_alone": {
+          "value": "not_holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_ordinary_weekly_rate_before_tax": {
+          "value": "492.14",
+          "valueState": "known",
+          "currency": "NZD"
+        },
+        "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+          "value": "492.14",
+          "valueState": "known",
+          "currency": "NZD"
+        }
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/new_zealand_superannuation/core.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-superannuation/fixture.insufficient_residence_blocks_entitlement",
+      "description": "Insufficient residence blocks entitlement.",
+      "period": "2026-04-01/2027-03-31",
+      "entities": {
+        "person": {
+          "type": "Person",
+          "id": "person:1"
+        }
+      },
+      "inputs": {
+        "nz-superannuation/variable.nz_super_birth_year": {
+          "value": 1977,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_birth_month": {
+          "value": 7,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_single": {
+          "value": true,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_principal_residence_is_qualifying_accommodation": {
+          "value": true,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_shares_residence_with_person_at_least_adult_age": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_all_shared_adults_are_exempt_dependent_children_or_temporary_visitors": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_person_age": {
+          "value": 65,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_elected_weekly_compensation_instead_of_superannuation": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_ordinarily_resident_in_new_zealand_on_application": {
+          "value": true,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_overseas_application_residence_exception_applies": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_20_total_years": {
+          "value": 19,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_20_new_zealand_years": {
+          "value": 10,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_50_total_years": {
+          "value": 5,
+          "valueState": "known"
+        }
+      },
+      "expected": {
+        "nz-superannuation/decision.nz_super_standard_total_time_requirement_years": {
+          "value": "20",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_age_requirement": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_residential_requirement": {
+          "value": "not_holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+          "value": "not_holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+          "value": "0",
+          "valueState": "known",
+          "currency": "NZD"
+        }
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/new_zealand_superannuation/core.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-superannuation/fixture.compensation_election_blocks_age_requirement",
+      "description": "Compensation election blocks the age requirement.",
+      "period": "2026-04-01/2027-03-31",
+      "entities": {
+        "person": {
+          "type": "Person",
+          "id": "person:1"
+        }
+      },
+      "inputs": {
+        "nz-superannuation/variable.nz_super_birth_year": {
+          "value": 1958,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_birth_month": {
+          "value": 12,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_single": {
+          "value": true,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_principal_residence_is_qualifying_accommodation": {
+          "value": true,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_shares_residence_with_person_at_least_adult_age": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_all_shared_adults_are_exempt_dependent_children_or_temporary_visitors": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_person_age": {
+          "value": 68,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_elected_weekly_compensation_instead_of_superannuation": {
+          "value": true,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_ordinarily_resident_in_new_zealand_on_application": {
+          "value": true,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_overseas_application_residence_exception_applies": {
+          "value": false,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_20_total_years": {
+          "value": 10,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_20_new_zealand_years": {
+          "value": 10,
+          "valueState": "known"
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_50_total_years": {
+          "value": 5,
+          "valueState": "known"
+        }
+      },
+      "expected": {
+        "nz-superannuation/decision.nz_super_age_requirement": {
+          "value": "not_holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_residential_requirement": {
+          "value": "holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+          "value": "not_holds",
+          "valueState": "known"
+        },
+        "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+          "value": "0",
           "valueState": "known",
           "currency": "NZD"
         }

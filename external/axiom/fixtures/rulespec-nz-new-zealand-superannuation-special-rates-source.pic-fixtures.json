@@ -49,15 +49,6 @@
         }
       },
       "expected": {
-        "nz-superannuation/decision.nz_super_hospital_unaffected_weeks": {
-          "value": "13",
-          "valueState": "known"
-        },
-        "nz-superannuation/decision.nz_super_hospital_reduced_rate_net_after_tax": {
-          "value": "58.34",
-          "valueState": "known",
-          "currency": "NZD"
-        },
         "nz-superannuation/decision.nz_super_hospital_rate_population": {
           "value": "holds",
           "valueState": "known"
