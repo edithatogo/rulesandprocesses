@@ -44,9 +44,9 @@ Depends on: `adoption_closure_20260706` Phase 3. Do not start schema edits until
     - [x] Monitor GitHub Actions after push.
     - [x] Apply fixes until checks pass or blocker is documented.
     - **Acceptance:** branch has green Actions or exact external blocker.
-- [ ] Task: [HUMAN] Approve v0.2 publication posture
-    - [ ] Present feedback ledger, diff, consumer validation, and migration notes.
-    - [ ] Dylan decides whether v0.2 is published, deferred, or kept experimental.
+- [x] Task: [HUMAN] Approve v0.2 publication posture
+    - [x] Present feedback ledger, diff, consumer validation, and migration notes.
+    - [x] Dylan decides whether v0.2 is published, deferred, or kept experimental.
     - **Acceptance:** publication status is recorded.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Consumer Validation' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Consumer Validation' (Protocol in workflow.md)
 
