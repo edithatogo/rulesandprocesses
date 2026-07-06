@@ -3,14 +3,19 @@ from __future__ import annotations
 import json
 from typing import Any
 
+import pytest
+
 from pic_contracts.schema_utils import validator_for
 
 from axiom import (
     AxiomRuleSpecAdapter,
     RuleSpecTarget,
     build_rulespec_nz_acc_earners_levy_adapter,
+    build_rulespec_nz_kiwisaver_contributions_adapter,
     build_rulespec_nz_gst_adapter,
     build_rulespec_nz_individual_income_tax_adapter,
+    build_rulespec_nz_new_zealand_superannuation_core_adapter,
+    build_rulespec_nz_new_zealand_superannuation_special_rates_adapter,
     generate_report,
     write_reports,
 )
@@ -104,6 +109,201 @@ INDIVIDUAL_INCOME_TAX_CASE = {
     "sourceRefs": [
         "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/income_tax/schedule_1/individual_income_tax.test.yaml"
     ],
+}
+
+
+KIWISAVER_CONTRIBUTIONS_CASE = {
+    "caseId": "nz-kiwisaver/fixture.minimum_rates_2026",
+    "description": "KiwiSaver minimum contribution rates for 2026.",
+    "period": "2026-04-01/2027-03-31",
+    "entities": {"person": {"type": "Person", "id": "person:1"}},
+    "inputs": {
+        "nz-kiwisaver/variable.kiwisaver_gross_salary_or_wages": {
+            "value": "100000",
+            "valueState": "known",
+            "currency": "NZD",
+        },
+        "nz-kiwisaver/variable.kiwisaver_selected_employee_contribution_rate": {
+            "value": "0.035",
+            "valueState": "known",
+        },
+    },
+    "expected": {
+        "nz-kiwisaver/decision.kiwisaver_employee_minimum_contribution_rate": {
+            "value": "0.035",
+            "valueState": "known",
+        },
+        "nz-kiwisaver/decision.kiwisaver_employer_minimum_contribution_rate": {
+            "value": "0.035",
+            "valueState": "known",
+        },
+        "nz-kiwisaver/decision.kiwisaver_employee_deduction": {
+            "value": "3500",
+            "valueState": "known",
+            "currency": "NZD",
+        },
+        "nz-kiwisaver/decision.kiwisaver_minimum_employer_contribution": {
+            "value": "3500",
+            "valueState": "known",
+            "currency": "NZD",
+        },
+    },
+}
+
+
+NZ_SUPERANNUATION_CORE_CASE = {
+    "caseId": "nz-superannuation/fixture.single_living_alone_meets_residence",
+    "description": "New Zealand Superannuation core entitlement with living-alone rate.",
+    "period": "2026-04-01/2027-03-31",
+    "entities": {"person": {"type": "Person", "id": "person:1"}},
+    "inputs": {
+        "nz-superannuation/variable.nz_super_birth_year": {
+            "value": "1959",
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_birth_month": {
+            "value": "6",
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_single": {
+            "value": True,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_principal_residence_is_qualifying_accommodation": {
+            "value": True,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_shares_residence_with_person_at_least_adult_age": {
+            "value": False,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_all_shared_adults_are_exempt_dependent_children_or_temporary_visitors": {
+            "value": False,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_person_age": {
+            "value": 66,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_elected_weekly_compensation_instead_of_superannuation": {
+            "value": False,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_ordinarily_resident_in_new_zealand_on_application": {
+            "value": True,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_overseas_application_residence_exception_applies": {
+            "value": False,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_20_total_years": {
+            "value": 10,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_20_new_zealand_years": {
+            "value": 10,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_resident_present_since_age_50_total_years": {
+            "value": 5,
+            "valueState": "known",
+        },
+    },
+    "expected": {
+        "nz-superannuation/decision.nz_super_age_threshold": {
+            "value": "65",
+            "valueState": "known",
+        },
+        "nz-superannuation/decision.nz_super_living_alone": {
+            "value": "holds",
+            "valueState": "known",
+        },
+        "nz-superannuation/decision.nz_super_age_requirement": {
+            "value": "holds",
+            "valueState": "known",
+        },
+        "nz-superannuation/decision.nz_super_residential_requirement": {
+            "value": "holds",
+            "valueState": "known",
+        },
+        "nz-superannuation/decision.entitled_to_new_zealand_superannuation": {
+            "value": "holds",
+            "valueState": "known",
+        },
+        "nz-superannuation/decision.nz_super_ordinary_weekly_rate_before_tax": {
+            "value": "647.37",
+            "valueState": "known",
+            "currency": "NZD",
+        },
+        "nz-superannuation/decision.nz_super_weekly_amount_before_tax": {
+            "value": "647.37",
+            "valueState": "known",
+            "currency": "NZD",
+        },
+    },
+}
+
+
+NZ_SUPERANNUATION_SPECIAL_RATES_CASE = {
+    "caseId": "nz-superannuation/fixture.hospital_reduced_rate_after_thirteen_weeks",
+    "description": "NZ Super special rates when hospital reduced rate applies.",
+    "period": "2026-04-01/2027-03-31",
+    "entities": {"person": {"type": "Person", "id": "person:1"}},
+    "inputs": {
+        "nz-superannuation/variable.nz_super_receives_or_becomes_entitled": {
+            "value": True,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_single": {
+            "value": True,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_in_relationship": {
+            "value": False,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_has_dependent_children": {
+            "value": False,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_patient_in_hospital": {
+            "value": True,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_hospitalisation_weeks": {
+            "value": 14,
+            "valueState": "known",
+        },
+        "nz-superannuation/variable.nz_super_residential_care_funder_pays_contracted_care": {
+            "value": False,
+            "valueState": "known",
+        },
+    },
+    "expected": {
+        "nz-superannuation/decision.nz_super_hospital_unaffected_weeks": {
+            "value": "13",
+            "valueState": "known",
+        },
+        "nz-superannuation/decision.nz_super_hospital_reduced_rate_net_after_tax": {
+            "value": "58.34",
+            "valueState": "known",
+            "currency": "NZD",
+        },
+        "nz-superannuation/decision.nz_super_hospital_rate_population": {
+            "value": "holds",
+            "valueState": "known",
+        },
+        "nz-superannuation/decision.nz_super_hospital_reduced_rate_applies": {
+            "value": "holds",
+            "valueState": "known",
+        },
+        "nz-superannuation/decision.nz_super_hospital_weekly_rate_net_after_tax": {
+            "value": "58.34",
+            "valueState": "known",
+            "currency": "NZD",
+        },
+    },
 }
 
 
@@ -271,6 +471,169 @@ def test_build_rulespec_nz_individual_income_tax_request() -> None:
             ],
         }
     ]
+
+
+def test_build_rulespec_nz_kiwisaver_contributions_request() -> None:
+    adapter = build_rulespec_nz_kiwisaver_contributions_adapter()
+
+    request = adapter.build_compiled_request(KIWISAVER_CONTRIBUTIONS_CASE)
+
+    assert adapter.target.module_path == "nz/statutes/kiwisaver/contributions.yaml"
+    assert request["dataset"]["inputs"] == [
+        {
+            "name": "nz:statutes/kiwisaver/contributions#input.kiwisaver_gross_salary_or_wages",
+            "entity": "Person",
+            "entity_id": "person:1",
+            "interval": {"start": "2026-04-01", "end": "2027-03-31"},
+            "value": {"kind": "decimal", "value": "100000"},
+        },
+        {
+            "name": "nz:statutes/kiwisaver/contributions#input.kiwisaver_selected_employee_contribution_rate",
+            "entity": "Person",
+            "entity_id": "person:1",
+            "interval": {"start": "2026-04-01", "end": "2027-03-31"},
+            "value": {"kind": "decimal", "value": "0.035"},
+        },
+    ]
+    assert request["queries"] == [
+        {
+            "entity_id": "person:1",
+            "period": {
+                "period_kind": "tax_year",
+                "start": "2026-04-01",
+                "end": "2027-03-31",
+            },
+            "outputs": [
+                "nz:statutes/kiwisaver/contributions#kiwisaver_employee_minimum_contribution_rate",
+                "nz:statutes/kiwisaver/contributions#kiwisaver_employer_minimum_contribution_rate",
+                "nz:statutes/kiwisaver/contributions#kiwisaver_employee_deduction",
+                "nz:statutes/kiwisaver/contributions#kiwisaver_minimum_employer_contribution",
+            ],
+        }
+    ]
+
+
+def test_build_rulespec_nz_superannuation_core_request() -> None:
+    adapter = build_rulespec_nz_new_zealand_superannuation_core_adapter()
+
+    request = adapter.build_compiled_request(NZ_SUPERANNUATION_CORE_CASE)
+
+    assert adapter.target.module_path == "nz/statutes/new_zealand_superannuation/core.yaml"
+    assert request["dataset"]["inputs"][0]["name"] == (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_birth_year"
+    )
+    assert request["queries"] == [
+        {
+            "entity_id": "person:1",
+            "period": {
+                "period_kind": "tax_year",
+                "start": "2026-04-01",
+                "end": "2027-03-31",
+            },
+            "outputs": [
+                "nz:statutes/new_zealand_superannuation/core#nz_super_age_threshold",
+                "nz:statutes/new_zealand_superannuation/core#nz_super_living_alone",
+                "nz:statutes/new_zealand_superannuation/core#nz_super_age_requirement",
+                "nz:statutes/new_zealand_superannuation/core#nz_super_residential_requirement",
+                "nz:statutes/new_zealand_superannuation/core#entitled_to_new_zealand_superannuation",
+                "nz:statutes/new_zealand_superannuation/core#nz_super_ordinary_weekly_rate_before_tax",
+                "nz:statutes/new_zealand_superannuation/core#nz_super_weekly_amount_before_tax",
+            ],
+        }
+    ]
+
+
+def test_build_rulespec_nz_superannuation_special_rates_request() -> None:
+    adapter = build_rulespec_nz_new_zealand_superannuation_special_rates_adapter()
+
+    request = adapter.build_compiled_request(NZ_SUPERANNUATION_SPECIAL_RATES_CASE)
+
+    assert adapter.target.module_path == (
+        "nz/statutes/new_zealand_superannuation/special_rates.yaml"
+    )
+    assert request["dataset"]["inputs"][0]["name"] == (
+        "nz:statutes/new_zealand_superannuation/special_rates#input.nz_super_receives_or_becomes_entitled"
+    )
+    assert request["queries"] == [
+        {
+            "entity_id": "person:1",
+            "period": {
+                "period_kind": "tax_year",
+                "start": "2026-04-01",
+                "end": "2027-03-31",
+            },
+            "outputs": [
+                "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_unaffected_weeks",
+                "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_reduced_rate_net_after_tax",
+                "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_rate_population",
+                "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_reduced_rate_applies",
+                "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_weekly_rate_net_after_tax",
+            ],
+        }
+    ]
+
+
+def test_build_compiled_request_rejects_unknown_value_state() -> None:
+    adapter = build_rulespec_nz_gst_adapter()
+    bad_case = {
+        "caseId": "nz-gst/fixture.bad_value_state",
+        "period": "2026-06-16",
+        "entities": {"supply": {"type": "Supply", "id": "supply:1"}},
+        "inputs": {
+            "nz-gst/variable.gst_exclusive_amount": {
+                "value": "100.00",
+                "valueState": "estimated",
+                "currency": "NZD",
+            }
+        },
+        "expected": {},
+    }
+
+    with pytest.raises(ValueError, match="value state"):
+        adapter.build_compiled_request(bad_case)
+
+
+def test_kiwisaver_adapter_rejects_unmapped_pic_ids() -> None:
+    adapter = build_rulespec_nz_kiwisaver_contributions_adapter()
+    bad_case = {
+        "caseId": "nz-kiwisaver/fixture.unmapped_input",
+        "period": "2026-04-01/2027-03-31",
+        "entities": {"person": {"type": "Person", "id": "person:1"}},
+        "inputs": {
+            "nz-kiwisaver/variable.kiwisaver_unknown_input": {
+                "value": "1",
+                "valueState": "known",
+            }
+        },
+        "expected": {},
+    }
+
+    with pytest.raises(KeyError, match="no Axiom input mapping"):
+        adapter.build_compiled_request(bad_case)
+
+
+def test_superannuation_core_adapter_rejects_unmapped_output_ids() -> None:
+    adapter = build_rulespec_nz_new_zealand_superannuation_core_adapter()
+    bad_case = {
+        "caseId": "nz-superannuation/fixture.unmapped_output",
+        "period": "2026-04-01/2027-03-31",
+        "entities": {"person": {"type": "Person", "id": "person:1"}},
+        "inputs": {
+            "nz-superannuation/variable.nz_super_birth_year": {
+                "value": "1959",
+                "valueState": "known",
+            }
+        },
+        "expected": {
+            "nz-superannuation/decision.nz_super_unmapped_output": {
+                "value": "true",
+                "valueState": "known",
+            }
+        },
+    }
+
+    with pytest.raises(KeyError, match="no Axiom output mapping"):
+        adapter.build_compiled_request(bad_case)
 
 
 def test_individual_income_tax_runner_exact_match_with_stub_executor() -> None:

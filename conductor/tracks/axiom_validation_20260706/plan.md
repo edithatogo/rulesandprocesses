@@ -23,9 +23,9 @@ Depends on: `repo_boundaries_20260706` Phase 1.
 
 ## Phase 2 - Fixture And Adapter Expansion
 
-- [ ] Task: Write adapter tests first
-    - [ ] Add failing tests for each new PIC-to-RuleSpec ID mapping.
-    - [ ] Add failure tests for unmapped IDs and bad value states.
+- [x] Task: Write adapter tests first
+    - [x] Add failing tests for each new PIC-to-RuleSpec ID mapping.
+    - [x] Add failure tests for unmapped IDs and bad value states.
     - **Acceptance:** tests fail before implementation and pass after mappings are added.
 - [ ] Task: Add PIC fixture documents
     - [ ] Add source-backed fixture files under `external/axiom/fixtures/`.

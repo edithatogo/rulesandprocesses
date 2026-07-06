@@ -28,6 +28,33 @@ RULESPEC_NZ_GST_TARGET = RuleSpecTarget(
 )
 
 
+RULESPEC_NZ_KIWISAVER_CONTRIBUTIONS_TARGET = RuleSpecTarget(
+    repo="TheAxiomFoundation/rulespec-nz",
+    repo_commit="3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+    module_path="nz/statutes/kiwisaver/contributions.yaml",
+    test_path="nz/statutes/kiwisaver/contributions.test.yaml",
+    module_id="nz:statutes/kiwisaver/contributions",
+)
+
+
+RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_CORE_TARGET = RuleSpecTarget(
+    repo="TheAxiomFoundation/rulespec-nz",
+    repo_commit="3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+    module_path="nz/statutes/new_zealand_superannuation/core.yaml",
+    test_path="nz/statutes/new_zealand_superannuation/core.test.yaml",
+    module_id="nz:statutes/new_zealand_superannuation/core",
+)
+
+
+RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_SPECIAL_RATES_TARGET = RuleSpecTarget(
+    repo="TheAxiomFoundation/rulespec-nz",
+    repo_commit="3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+    module_path="nz/statutes/new_zealand_superannuation/special_rates.yaml",
+    test_path="nz/statutes/new_zealand_superannuation/special_rates.test.yaml",
+    module_id="nz:statutes/new_zealand_superannuation/special_rates",
+)
+
+
 RULESPEC_NZ_ACC_EARNERS_LEVY_TARGET = RuleSpecTarget(
     repo="TheAxiomFoundation/rulespec-nz",
     repo_commit="3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
@@ -55,6 +82,84 @@ RULESPEC_NZ_GST_INPUTS = {
     ),
     "nz-gst/variable.gst_imported_goods_delivered_to_new_zealand_address": (
         "nz:statutes/gst/rate#input.gst_imported_goods_delivered_to_new_zealand_address"
+    ),
+}
+
+
+RULESPEC_NZ_KIWISAVER_CONTRIBUTIONS_INPUTS = {
+    "nz-kiwisaver/variable.kiwisaver_gross_salary_or_wages": (
+        "nz:statutes/kiwisaver/contributions#input.kiwisaver_gross_salary_or_wages"
+    ),
+    "nz-kiwisaver/variable.kiwisaver_selected_employee_contribution_rate": (
+        "nz:statutes/kiwisaver/contributions#input.kiwisaver_selected_employee_contribution_rate"
+    ),
+}
+
+
+RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_CORE_INPUTS = {
+    "nz-superannuation/variable.nz_super_birth_year": (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_birth_year"
+    ),
+    "nz-superannuation/variable.nz_super_birth_month": (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_birth_month"
+    ),
+    "nz-superannuation/variable.nz_super_single": (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_single"
+    ),
+    "nz-superannuation/variable.nz_super_principal_residence_is_qualifying_accommodation": (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_principal_residence_is_qualifying_accommodation"
+    ),
+    "nz-superannuation/variable.nz_super_shares_residence_with_person_at_least_adult_age": (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_shares_residence_with_person_at_least_adult_age"
+    ),
+    "nz-superannuation/variable.nz_super_all_shared_adults_are_exempt_dependent_children_or_temporary_visitors": (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_all_shared_adults_are_exempt_dependent_children_or_temporary_visitors"
+    ),
+    "nz-superannuation/variable.nz_super_person_age": (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_person_age"
+    ),
+    "nz-superannuation/variable.nz_super_elected_weekly_compensation_instead_of_superannuation": (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_elected_weekly_compensation_instead_of_superannuation"
+    ),
+    "nz-superannuation/variable.nz_super_ordinarily_resident_in_new_zealand_on_application": (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_ordinarily_resident_in_new_zealand_on_application"
+    ),
+    "nz-superannuation/variable.nz_super_overseas_application_residence_exception_applies": (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_overseas_application_residence_exception_applies"
+    ),
+    "nz-superannuation/variable.nz_super_resident_present_since_age_20_total_years": (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_resident_present_since_age_20_total_years"
+    ),
+    "nz-superannuation/variable.nz_super_resident_present_since_age_20_new_zealand_years": (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_resident_present_since_age_20_new_zealand_years"
+    ),
+    "nz-superannuation/variable.nz_super_resident_present_since_age_50_total_years": (
+        "nz:statutes/new_zealand_superannuation/core#input.nz_super_resident_present_since_age_50_total_years"
+    ),
+}
+
+
+RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_SPECIAL_RATES_INPUTS = {
+    "nz-superannuation/variable.nz_super_receives_or_becomes_entitled": (
+        "nz:statutes/new_zealand_superannuation/special_rates#input.nz_super_receives_or_becomes_entitled"
+    ),
+    "nz-superannuation/variable.nz_super_single": (
+        "nz:statutes/new_zealand_superannuation/special_rates#input.nz_super_single"
+    ),
+    "nz-superannuation/variable.nz_super_in_relationship": (
+        "nz:statutes/new_zealand_superannuation/special_rates#input.nz_super_in_relationship"
+    ),
+    "nz-superannuation/variable.nz_super_has_dependent_children": (
+        "nz:statutes/new_zealand_superannuation/special_rates#input.nz_super_has_dependent_children"
+    ),
+    "nz-superannuation/variable.nz_super_patient_in_hospital": (
+        "nz:statutes/new_zealand_superannuation/special_rates#input.nz_super_patient_in_hospital"
+    ),
+    "nz-superannuation/variable.nz_super_hospitalisation_weeks": (
+        "nz:statutes/new_zealand_superannuation/special_rates#input.nz_super_hospitalisation_weeks"
+    ),
+    "nz-superannuation/variable.nz_super_residential_care_funder_pays_contracted_care": (
+        "nz:statutes/new_zealand_superannuation/special_rates#input.nz_super_residential_care_funder_pays_contracted_care"
     ),
 }
 
@@ -125,6 +230,66 @@ RULESPEC_NZ_GST_OUTPUTS = {
     ),
     "nz-gst/decision.gst_low_value_imported_goods_total_payable": (
         "nz:statutes/gst/rate#gst_low_value_imported_goods_total_payable"
+    ),
+}
+
+
+RULESPEC_NZ_KIWISAVER_CONTRIBUTIONS_OUTPUTS = {
+    "nz-kiwisaver/decision.kiwisaver_employee_minimum_contribution_rate": (
+        "nz:statutes/kiwisaver/contributions#kiwisaver_employee_minimum_contribution_rate"
+    ),
+    "nz-kiwisaver/decision.kiwisaver_employer_minimum_contribution_rate": (
+        "nz:statutes/kiwisaver/contributions#kiwisaver_employer_minimum_contribution_rate"
+    ),
+    "nz-kiwisaver/decision.kiwisaver_employee_deduction": (
+        "nz:statutes/kiwisaver/contributions#kiwisaver_employee_deduction"
+    ),
+    "nz-kiwisaver/decision.kiwisaver_minimum_employer_contribution": (
+        "nz:statutes/kiwisaver/contributions#kiwisaver_minimum_employer_contribution"
+    ),
+}
+
+
+RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_CORE_OUTPUTS = {
+    "nz-superannuation/decision.nz_super_age_threshold": (
+        "nz:statutes/new_zealand_superannuation/core#nz_super_age_threshold"
+    ),
+    "nz-superannuation/decision.nz_super_living_alone": (
+        "nz:statutes/new_zealand_superannuation/core#nz_super_living_alone"
+    ),
+    "nz-superannuation/decision.nz_super_age_requirement": (
+        "nz:statutes/new_zealand_superannuation/core#nz_super_age_requirement"
+    ),
+    "nz-superannuation/decision.nz_super_residential_requirement": (
+        "nz:statutes/new_zealand_superannuation/core#nz_super_residential_requirement"
+    ),
+    "nz-superannuation/decision.entitled_to_new_zealand_superannuation": (
+        "nz:statutes/new_zealand_superannuation/core#entitled_to_new_zealand_superannuation"
+    ),
+    "nz-superannuation/decision.nz_super_ordinary_weekly_rate_before_tax": (
+        "nz:statutes/new_zealand_superannuation/core#nz_super_ordinary_weekly_rate_before_tax"
+    ),
+    "nz-superannuation/decision.nz_super_weekly_amount_before_tax": (
+        "nz:statutes/new_zealand_superannuation/core#nz_super_weekly_amount_before_tax"
+    ),
+}
+
+
+RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_SPECIAL_RATES_OUTPUTS = {
+    "nz-superannuation/decision.nz_super_hospital_unaffected_weeks": (
+        "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_unaffected_weeks"
+    ),
+    "nz-superannuation/decision.nz_super_hospital_reduced_rate_net_after_tax": (
+        "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_reduced_rate_net_after_tax"
+    ),
+    "nz-superannuation/decision.nz_super_hospital_rate_population": (
+        "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_rate_population"
+    ),
+    "nz-superannuation/decision.nz_super_hospital_reduced_rate_applies": (
+        "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_reduced_rate_applies"
+    ),
+    "nz-superannuation/decision.nz_super_hospital_weekly_rate_net_after_tax": (
+        "nz:statutes/new_zealand_superannuation/special_rates#nz_super_hospital_weekly_rate_net_after_tax"
     ),
 }
 
@@ -210,7 +375,7 @@ class AxiomRuleSpecAdapter:
                 "entity": self.entity,
                 "entity_id": self.entity_id,
                 "interval": interval,
-                "value": _scalar_value(value_object["value"]),
+                "value": _input_value(value_object),
             }
             for pic_id, value_object in pic_case.get("inputs", {}).items()
         ]
@@ -285,6 +450,36 @@ def build_rulespec_nz_gst_adapter() -> AxiomRuleSpecAdapter:
         output_id_map=RULESPEC_NZ_GST_OUTPUTS,
         entity="Supply",
         entity_id="supply:1",
+    )
+
+
+def build_rulespec_nz_kiwisaver_contributions_adapter() -> AxiomRuleSpecAdapter:
+    return AxiomRuleSpecAdapter(
+        target=RULESPEC_NZ_KIWISAVER_CONTRIBUTIONS_TARGET,
+        input_id_map=RULESPEC_NZ_KIWISAVER_CONTRIBUTIONS_INPUTS,
+        output_id_map=RULESPEC_NZ_KIWISAVER_CONTRIBUTIONS_OUTPUTS,
+        entity="Person",
+        entity_id="person:1",
+    )
+
+
+def build_rulespec_nz_new_zealand_superannuation_core_adapter() -> AxiomRuleSpecAdapter:
+    return AxiomRuleSpecAdapter(
+        target=RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_CORE_TARGET,
+        input_id_map=RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_CORE_INPUTS,
+        output_id_map=RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_CORE_OUTPUTS,
+        entity="Person",
+        entity_id="person:1",
+    )
+
+
+def build_rulespec_nz_new_zealand_superannuation_special_rates_adapter() -> AxiomRuleSpecAdapter:
+    return AxiomRuleSpecAdapter(
+        target=RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_SPECIAL_RATES_TARGET,
+        input_id_map=RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_SPECIAL_RATES_INPUTS,
+        output_id_map=RULESPEC_NZ_NEW_ZEALAND_SUPERANNUATION_SPECIAL_RATES_OUTPUTS,
+        entity="Person",
+        entity_id="person:1",
     )
 
 
@@ -367,6 +562,16 @@ def _scalar_value(value: Any) -> dict[str, Any]:
             return {"kind": "date", "value": value}
         return {"kind": "text", "value": value}
     raise TypeError(f"unsupported PIC value for Axiom request: {value!r}")
+
+
+def _input_value(value_object: dict[str, Any]) -> dict[str, Any]:
+    if value_object.get("valueState") != "known":
+        raise ValueError(
+            f"unsupported PIC value state for Axiom request: {value_object.get('valueState')!r}"
+        )
+    if "value" not in value_object:
+        raise ValueError("PIC input is missing a value for Axiom request")
+    return _scalar_value(value_object["value"])
 
 
 def _pic_value(output: dict[str, Any]) -> dict[str, Any]:
