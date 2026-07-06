@@ -4,11 +4,15 @@ on:
   push:
     paths:
       - "contracts/**"
+      - "harness/**"
+      - "external/axiom/**"
       - "Makefile"
       - ".github/workflows/contracts.yml"
   pull_request:
     paths:
       - "contracts/**"
+      - "harness/**"
+      - "external/axiom/**"
       - "Makefile"
       - ".github/workflows/contracts.yml"
 
@@ -39,3 +43,8 @@ jobs:
       - name: Validate example corpora
         run: cd contracts/tools && uv run python -m pic_contracts.validate_examples ../../contracts
 
+      - name: Harness tests
+        run: PYTHONPATH=harness:contracts/tools/src uv run --with pytest --with jsonschema pytest harness/tests
+
+      - name: Axiom live-suite smoke check
+        run: PYTHONPATH=harness:contracts/tools/src uv run --with jsonschema python external/axiom/ci_check.py

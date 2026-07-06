@@ -53,10 +53,12 @@ Depends on: `repo_boundaries_20260706` Phase 1.
     - **Acceptance:** at least 10 cases run or blocker is documented.
 
 > NOTE (2026-07-06): The live suite ran 10 cases with 10 exact matches and stored reports under `external/axiom/results/rulespec-nz-live-suite/`. KiwiSaver compilation from `.external-repos/rulespec-nz` still fails with a YAML parse error at `rules[1].versions[0].values`, so that slice remains blocked separately from the successful live set.
-- [ ] Task: Add CI-compatible check
-    - [ ] Add a smoke CI check that self-skips when external engine artifacts are unavailable.
-    - [ ] Keep deterministic unit tests mandatory.
+- [x] Task: Add CI-compatible check
+    - [x] Add a smoke CI check that self-skips when external engine artifacts are unavailable.
+    - [x] Keep deterministic unit tests mandatory.
     - **Acceptance:** CI does not require network-only artifacts but verifies mappings and report code.
+
+> NOTE (2026-07-06): The CI workflow now runs harness tests and a smoke check that exits cleanly when the external Axiom engine artifacts are absent. Locally, the smoke check reuses the compiled artifacts and live-suite runner.
 - [ ] Task: Prepare upstream Axiom feedback
     - [ ] Draft issue/PR text for any discovered integration gap.
     - [ ] Mark submission as `[HUMAN]` unless authenticated approval is explicit.
