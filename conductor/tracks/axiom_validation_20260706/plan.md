@@ -65,7 +65,12 @@ Depends on: `repo_boundaries_20260706` Phase 1.
     - **Acceptance:** feedback artifact is complete or explicitly unnecessary.
 
 > NOTE (2026-07-06): The staged feedback draft covers the KiwiSaver compile blocker observed under the pinned engine/repo pair. The rest of the live suite remains green.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Live Runs And CI Integration' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Live Runs And CI Integration' (Protocol in workflow.md)
+
+> CHECKPOINT (2026-07-06): The live Axiom suite ran 10 cases with 10 exact matches and wrote the report packet under `external/axiom/results/rulespec-nz-live-suite/`.
+> The CI workflow now runs harness tests plus a skip-aware smoke check, so repository CI does not require external engine artifacts.
+> The upstream feedback draft is staged for the KiwiSaver compile blocker, which still fails under the pinned engine/repo pair.
+> `make check` was green at the phase boundary.
 
 ## Phase 4 - External Review Closure
 
