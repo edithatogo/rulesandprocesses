@@ -9,9 +9,9 @@ Depends on: `repo_boundaries_20260706` Phase 1.
     - [x] Rank candidates by source clarity, overlap with PIC concepts, and non-trivial output behavior.
     - [x] Record selection in `external/axiom/COVERAGE_PLAN.md`.
     - **Acceptance:** coverage plan names selected and rejected modules with reasons.
-- [ ] Task: Source assertion check
-    - [ ] For selected modules, identify source assertions or companion oracle tests.
-    - [ ] Mark any case without source support as smoke-only, not golden.
+- [x] Task: Source assertion check
+    - [x] For selected modules, identify source assertions or companion oracle tests.
+    - [x] Mark any case without source support as smoke-only, not golden.
     - **Acceptance:** no case is promoted as validation without source/oracle evidence.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Coverage Selection' (Protocol in workflow.md)
 

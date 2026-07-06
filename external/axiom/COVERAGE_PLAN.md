@@ -35,6 +35,16 @@ This plan selects source-backed RuleSpec NZ slices for the Axiom validation expa
 | Reserve social-security slice | Follow-on candidate | Source-backed, but broader than the first validation pass. |
 | Deferred social-security surfaces | Not selected | Missing or incomplete source/support confidence; remain out of validation scope. |
 
+## Source assertion ledger
+
+| Slice | Evidence type | Canonical status |
+|---|---|---|
+| KiwiSaver contributions | Primary statute anchors plus companion test corpus | Eligible for validation once adapter tests are wired. |
+| NZ Superannuation core/special rates | Primary statute anchors plus companion manifest/test evidence | Eligible for validation once adapter tests are wired. |
+| Social security main benefits reserve slice | Primary statute anchors plus companion tests | Follow-on candidate, not first-pass validation. |
+| GST, ACC earners levy, income tax smoke baselines | Existing smoke fixtures only | Remain smoke-only and must not be promoted as validation goldens. |
+| Deferred social-security surfaces | No sufficiently strong companion/source set yet | Blocked from validation selection. |
+
 ## Source Assertion Rules
 
 - A slice is eligible only when there is an official source route or a companion test corpus that can be cited deterministically.
