@@ -51,6 +51,7 @@ Tracks 1 and 2 are the critical path. Track 1 defines the contracts everything e
 - **`edithatogo/foi-o`** (FOI-O NZ): process-heavy testbed; first consumer of the contracts; receives the OIA rules module (Track 2).
 - **PolicyEngine / Axiom / OpenFisca**: rules-heavy testbeds; receive fixture/trace/validation contributions (Tracks 3–5).
 - **Alaveteli (mySociety)**: process-side upstream for foi-o's state model (Track 6).
+- **Adoption ledger**: staged and submitted upstream artifacts are tracked in `external/ADOPTION_STATUS.md` and mirrored in the Conductor adoption track.
 
 ## Provenance
 

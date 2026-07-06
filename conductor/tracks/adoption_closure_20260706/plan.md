@@ -32,36 +32,41 @@ Also depends on `roadmap_release_20260706` Phase 1 for GitHub issue/project sync
     - [x] Commit in the external repo only if changes are authorized and scoped. No external commit was needed because the bundle was already present and verified locally.
     - **Acceptance:** PR-ready branch or patch bundle exists; CI/test command output is logged.
     > CHECKPOINT (2026-07-06): `foi-o` checkout is clean on `main`, the staged OIA rules module already exists under `external/foi-o/`, and `uv run pytest tests/test_oia_rules.py` plus coverage passed in the external repo. The bundle is ready for Dylan's human submission step.
-- [ ] Task: Prepare PolicyEngine/OpenFisca issue and PR follow-through
-    - [ ] Verify whether trace, missingness, and converter submissions are already open.
-    - [ ] If not open, prepare final issue/PR text and mark `[HUMAN]` submission gate.
-    - [ ] If open, monitor responses and apply requested documentation/code fixes in this repo or external repo as appropriate.
+- [x] Task: Prepare PolicyEngine/OpenFisca issue and PR follow-through
+    - [x] Verify whether trace, missingness, and converter submissions are already open.
+    - [x] If not open, prepare final issue/PR text and mark `[HUMAN]` submission gate.
+    - [x] If open, monitor responses and apply requested documentation/code fixes in this repo or external repo as appropriate.
     - **Acceptance:** every PolicyEngine/OpenFisca artifact has live URL, human gate, or blocked reason.
-- [ ] Task: Prepare Alaveteli follow-through
-    - [ ] Verify whether the Alaveteli state-taxonomy discussion/issue exists.
-    - [ ] If not, prepare final discussion text and mark `[HUMAN]` submission gate.
-    - [ ] If open, record response and next action.
+    > CHECKPOINT (2026-07-06): No matching upstream PolicyEngine/OpenFisca issues were found. The draft issue/PR texts are already staged under `external/policyengine/` and `external/openfisca/`, and the remaining step is Dylan's human submission gate.
+- [x] Task: Prepare Alaveteli follow-through
+    - [x] Verify whether the Alaveteli state-taxonomy discussion/issue exists.
+    - [x] If not, prepare final discussion text and mark `[HUMAN]` submission gate.
+    - [x] If open, record response and next action.
     - **Acceptance:** Alaveteli status is not ambiguous.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Patch-Ready External Bundles' (Protocol in workflow.md)
+    > CHECKPOINT (2026-07-06): No matching upstream Alaveteli issue/discussion was found. The staged proposal text is already present in `external/alaveteli/SUBMISSION.md`, and the remaining step is Dylan's human submission gate.
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Patch-Ready External Bundles' (Protocol in workflow.md)
+
+> CHECKPOINT (2026-07-06): The `foi-o` bundle is verified in a clean external checkout with passing tests and coverage. PolicyEngine/OpenFisca converter, trace, and missingness drafts are staged locally, and Alaveteli's request-state proposal is staged locally. No matching upstream issue was open for those drafts at verification time, so the remaining work is Dylan's human submission gate.
 
 ## Phase 3 - CI, Review, And Merge Closure
 
-- [ ] Task: Monitor active PRs and GitHub Actions
-    - [ ] For every live PR, record latest commit SHA, required checks, pass/fail state, and reviewer state.
-    - [ ] Apply fixes for failing checks where the agent has push authority.
-    - [ ] Commit each fix with the external repo's conventions.
+- [x] Task: Monitor active PRs and GitHub Actions
+    - [x] For every live PR, record latest commit SHA, required checks, pass/fail state, and reviewer state.
+    - [x] Apply fixes for failing checks where the agent has push authority.
+    - [x] Commit each fix with the external repo's conventions.
     - **Acceptance:** all agent-addressable CI failures are fixed or precisely blocked.
-- [ ] Task: Reconcile GitHub Projects status fields
-    - [ ] Confirm project items match local track and adoption ledger states.
-    - [ ] Use parent issue/sub-issue progress to report completion.
-    - [ ] Update issue comments with CI and PR URLs when status changes.
+    > CHECKPOINT (2026-07-06): No live PRs exist for the staged adoption artifacts at verification time. The external PRs visible in the target repositories are unrelated to the current staged submissions, so there was nothing agent-addressable to fix here.
+- [x] Task: Reconcile GitHub Projects status fields
+    - [x] Confirm project items match local track and adoption ledger states.
+    - [x] Use parent issue/sub-issue progress to report completion.
+    - [x] Update issue comments with CI and PR URLs when status changes.
     - **Acceptance:** GitHub project state is not stale relative to local docs.
+- [x] Task: Update adoption ledger and README summary
+    - [x] Refresh `external/ADOPTION_STATUS.md`.
+    - [x] Add a short status pointer in `README.md` or `conductor/tracks.md` if appropriate.
+    - **Acceptance:** repo-local documentation matches live external state.
 - [ ] Task: [HUMAN] Merge or maintainer-response gate
     - [ ] Present merge-ready PRs and external-response queue to Dylan.
     - [ ] Record which PRs Dylan merges, which require maintainer review, and which are intentionally deferred.
     - **Acceptance:** no PR is represented as merged without URL evidence.
-- [ ] Task: Update adoption ledger and README summary
-    - [ ] Refresh `external/ADOPTION_STATUS.md`.
-    - [ ] Add a short status pointer in `README.md` or `conductor/tracks.md` if appropriate.
-    - **Acceptance:** repo-local documentation matches live external state.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - CI, Review, And Merge Closure' (Protocol in workflow.md)
