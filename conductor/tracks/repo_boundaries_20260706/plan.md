@@ -24,4 +24,9 @@
     - [ ] Prefer a markdown checklist if code would be overkill.
     - [ ] If code is added, write tests first and include it in `make check`.
     - **Acceptance:** future track reviews have an explicit repo-boundary check.
+- [ ] Task: Verify GitHub planning boundaries
+    - [ ] Read `conductor/github-planning.md`.
+    - [ ] Confirm GitHub issues/project items point back to local track paths.
+    - [ ] Confirm no GitHub issue asks agents to edit an out-of-scope repo without a boundary update.
+    - **Acceptance:** GitHub mirror cannot bypass repo-boundary rules.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Enforcement Hooks' (Protocol in workflow.md)

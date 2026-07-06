@@ -1,6 +1,7 @@
 # Implementation Plan
 
 Depends on: `repo_boundaries_20260706` Phase 1. Use `conductor/edithatogo-repo-boundaries.md` before touching any external repo.
+Also depends on `roadmap_release_20260706` Phase 1 for GitHub issue/project synchronization.
 
 ## Phase 1 - Adoption Inventory
 
@@ -9,6 +10,11 @@ Depends on: `repo_boundaries_20260706` Phase 1. Use `conductor/edithatogo-repo-b
     - [ ] Create `external/ADOPTION_STATUS.md` with target, artifact, status, URL, CI state, owner, and next action columns.
     - [ ] Mark unknown external status as `needs_verification`, not complete.
     - **Acceptance:** every staged external artifact has one ledger row.
+- [ ] Task: Link adoption ledger to GitHub roadmap issue hierarchy
+    - [ ] Read `conductor/github-planning.md`.
+    - [ ] Add GitHub issue/project URL columns where useful.
+    - [ ] Ensure external-gate and human-gate labels are applied to relevant track issues.
+    - **Acceptance:** adoption rows can be traced to GitHub issues or explicit non-GitHub contacts.
 - [ ] Task: Verify live external state
     - [ ] Use GitHub CLI/API for issue/PR state where available.
     - [ ] Check DBN log and any available mailbox/thread evidence only when the relevant connector/tool is available and authorized.
@@ -43,6 +49,11 @@ Depends on: `repo_boundaries_20260706` Phase 1. Use `conductor/edithatogo-repo-b
     - [ ] Apply fixes for failing checks where the agent has push authority.
     - [ ] Commit each fix with the external repo's conventions.
     - **Acceptance:** all agent-addressable CI failures are fixed or precisely blocked.
+- [ ] Task: Reconcile GitHub Projects status fields
+    - [ ] Confirm project items match local track and adoption ledger states.
+    - [ ] Use parent issue/sub-issue progress to report completion.
+    - [ ] Update issue comments with CI and PR URLs when status changes.
+    - **Acceptance:** GitHub project state is not stale relative to local docs.
 - [ ] Task: [HUMAN] Merge or maintainer-response gate
     - [ ] Present merge-ready PRs and external-response queue to Dylan.
     - [ ] Record which PRs Dylan merges, which require maintainer review, and which are intentionally deferred.

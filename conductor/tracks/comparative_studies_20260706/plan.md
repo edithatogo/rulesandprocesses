@@ -40,4 +40,10 @@ Depends on: `adoption_closure_20260706` Phase 1. DBN or maintainer feedback shou
     - [ ] Present recommendation, feasibility proof, and draft track.
     - [ ] Dylan selects proceed, revise, or defer.
     - **Acceptance:** decision is recorded.
+- [ ] Task: Create approved study implementation track
+    - [ ] If Dylan approves proceeding, create the new Conductor track using the approved draft.
+    - [ ] Add it to `conductor/tracks.md` in dependency order.
+    - [ ] Create or update a GitHub sub-issue under the roadmap parent issue.
+    - [ ] If Dylan defers, record the deferral and do not create a placeholder implementation track.
+    - **Acceptance:** approved study has an executable Conductor track and GitHub issue, or deferral is explicit.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - New Study Track Draft' (Protocol in workflow.md)

@@ -1,6 +1,6 @@
 # Implementation Plan
 
-Depends on: `repo_boundaries_20260706` Phase 1 and `adoption_closure_20260706` Phase 1.
+Depends on: `repo_boundaries_20260706` Phase 2 and `adoption_closure_20260706` Phase 1.
 
 ## Phase 1 - Demo Architecture
 
@@ -43,6 +43,12 @@ Depends on: `repo_boundaries_20260706` Phase 1 and `adoption_closure_20260706` P
 
 ## Phase 4 - CI And External Packaging
 
+- [ ] Task: Privacy/security review
+    - [ ] Confirm no real applicant/requester data is committed.
+    - [ ] Confirm no secrets, tokens, or live service credentials are required.
+    - [ ] Confirm tests mock external calls.
+    - [ ] Confirm trace outputs are minimal and do not leak unnecessary private inputs.
+    - **Acceptance:** review checklist is committed and all items pass or are blocked.
 - [ ] Task: Add checks to `make check`
     - [ ] Include demo tests without requiring external services.
     - [ ] Keep fixtures deterministic.

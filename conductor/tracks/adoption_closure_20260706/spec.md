@@ -26,6 +26,8 @@ The first roadmap produced evidence and staged submissions. This track turns tho
 4. Prepare patch branches or PR-ready bundles for targets where the current agent has access.
 5. Monitor GitHub Actions/CI after any branch/PR creation and apply review/CI fixes within the authorized repository.
 6. Record external gates honestly. If merge authority or maintainer response is missing, mark it blocked with the exact requirement instead of calling it complete.
+7. Keep GitHub issue/project status synchronized with local adoption state.
+8. Use native GitHub sub-issues under the roadmap parent issue where available.
 
 ## Non-Functional Requirements
 
@@ -33,6 +35,7 @@ The first roadmap produced evidence and staged submissions. This track turns tho
 - Do not force PIC branding into upstream contributions; lead with the maintainer's problem.
 - Do not claim merge, publication, or acceptance without a URL or repo-local log evidence.
 - Use one commit per task in this repository; external repositories get their own commits/branches only when explicitly touched.
+- Use `conductor/github-planning.md` for labels, milestone, project, and sub-issue expectations.
 
 ## Acceptance Criteria
 
@@ -40,6 +43,7 @@ The first roadmap produced evidence and staged submissions. This track turns tho
 - All staged submissions are either live externally, explicitly superseded, or marked with a concrete blocker.
 - Any created PRs have passing required GitHub Actions, or a failing-check diagnosis with fixes applied where permitted.
 - Merged PRs are recorded with URLs. Unmerged PRs list the remaining reviewer/maintainer action.
+- GitHub issue/project rows reflect the same state as `external/ADOPTION_STATUS.md`.
 - `make check` passes in this repo before the phase is checkpointed.
 
 ## Out Of Scope

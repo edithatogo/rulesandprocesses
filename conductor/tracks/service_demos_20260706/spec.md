@@ -11,6 +11,7 @@ Docassemble and CiviForm assessments exist, but no runnable demo exists yet. Thi
 3. Include traces/explanations in outputs.
 4. Document integration boundaries and what is real vs mocked.
 5. Avoid storing or processing real personal data.
+6. Perform a privacy/security review before external packaging.
 
 ## Non-Functional Requirements
 
@@ -18,6 +19,8 @@ Docassemble and CiviForm assessments exist, but no runnable demo exists yet. Thi
 - No runtime AI decisions.
 - Use typed request/response schemas and JSON examples.
 - Keep CiviForm integration as a mock/service-boundary proof unless a real CiviForm plugin path is selected.
+- Tests must not require live external services.
+- Demo traces must not expose unnecessary personal input fields.
 
 ## Acceptance Criteria
 
@@ -25,6 +28,7 @@ Docassemble and CiviForm assessments exist, but no runnable demo exists yet. Thi
 - Unit/integration tests verify request validation, rule invocation, and trace output.
 - `make check` passes.
 - Demo README names exact limitations and next upstream path.
+- Privacy/security checklist passes before any outreach packet is prepared.
 
 ## Out Of Scope
 

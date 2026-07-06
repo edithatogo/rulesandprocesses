@@ -1,6 +1,6 @@
 # Implementation Plan
 
-Depends on: `adoption_closure_20260706` Phase 1. Do not start schema edits until consumer feedback is inventoried.
+Depends on: `adoption_closure_20260706` Phase 3. Do not start schema edits until consumer feedback includes real external status, PR/issue responses, or explicitly recorded local implementation friction. Inventory alone is insufficient for v0.2 schema changes.
 
 ## Phase 1 - Feedback Ledger
 

@@ -21,6 +21,7 @@ The SNAP study proved the harness pattern. This track chooses the next comparati
    - novelty relative to existing validation work.
 3. Select one primary and one reserve study.
 4. Draft conductor-ready specs/plans for the selected study, but do not start implementation until approved.
+5. After approval, create a dedicated implementation track for the selected study.
 
 ## Non-Functional Requirements
 
@@ -32,6 +33,7 @@ The SNAP study proved the harness pattern. This track chooses the next comparati
 
 - `studies/NEXT_STUDY_SELECTION.md` exists with scoring and recommendation.
 - Selected study has a draft `spec.md` and `plan.md` or a documented decision not to proceed.
+- If Dylan approves proceeding, the selected study is represented by a new Conductor track and GitHub sub-issue.
 - External dependencies, licenses, and source-access blockers are identified before implementation.
 - `make check` passes.
 

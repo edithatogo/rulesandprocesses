@@ -2,6 +2,11 @@
 
 ---
 
+- [ ] **Track: Next-generation roadmap release orchestration**
+*Link: [./tracks/roadmap_release_20260706/](./tracks/roadmap_release_20260706/)*
+
+---
+
 - [ ] **Track: Repo relevance boundary catalog**
 *Link: [./tracks/repo_boundaries_20260706/](./tracks/repo_boundaries_20260706/)*
 
