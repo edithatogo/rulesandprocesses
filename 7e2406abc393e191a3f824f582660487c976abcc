@@ -1,0 +1,1 @@
+Phase 3 completed with a 10-case live suite report at external/axiom/results/rulespec-nz-live-suite/, a skip-aware CI smoke check, and a staged upstream feedback draft for the KiwiSaver compile blocker. make check passed at the phase boundary.
