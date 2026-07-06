@@ -59,10 +59,12 @@ Depends on: `repo_boundaries_20260706` Phase 1.
     - **Acceptance:** CI does not require network-only artifacts but verifies mappings and report code.
 
 > NOTE (2026-07-06): The CI workflow now runs harness tests and a smoke check that exits cleanly when the external Axiom engine artifacts are absent. Locally, the smoke check reuses the compiled artifacts and live-suite runner.
-- [ ] Task: Prepare upstream Axiom feedback
-    - [ ] Draft issue/PR text for any discovered integration gap.
-    - [ ] Mark submission as `[HUMAN]` unless authenticated approval is explicit.
+- [x] Task: Prepare upstream Axiom feedback
+    - [x] Draft issue/PR text for any discovered integration gap.
+    - [x] Mark submission as `[HUMAN]` unless authenticated approval is explicit.
     - **Acceptance:** feedback artifact is complete or explicitly unnecessary.
+
+> NOTE (2026-07-06): The staged feedback draft covers the KiwiSaver compile blocker observed under the pinned engine/repo pair. The rest of the live suite remains green.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Live Runs And CI Integration' (Protocol in workflow.md)
 
 ## Phase 4 - External Review Closure
