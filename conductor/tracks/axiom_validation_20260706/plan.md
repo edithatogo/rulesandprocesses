@@ -37,7 +37,12 @@ Depends on: `repo_boundaries_20260706` Phase 1.
     - [x] Extend `harness/axiom` only with explicit mappings.
     - [x] Update runbook with compile/run commands for each slice.
     - **Acceptance:** unit tests and fixture validation pass.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Fixture And Adapter Expansion' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Fixture And Adapter Expansion' (Protocol in workflow.md)
+
+> CHECKPOINT (2026-07-06): Phase 2 now has explicit KiwiSaver and NZ Superannuation adapters, source-backed candidate fixture files, and slice-specific runbook commands.
+> The new adapter tests pass, including bad value-state rejection and unmapped-ID failures.
+> `pic-validate --no-references external/axiom/fixtures` passes for the new fixture documents; full directory reference validation is still blocked by the pre-existing smoke fixtures in the same folder.
+> `make check` passed at the phase boundary.
 
 ## Phase 3 - Live Runs And CI Integration
 
