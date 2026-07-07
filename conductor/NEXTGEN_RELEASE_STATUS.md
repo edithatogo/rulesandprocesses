@@ -1,6 +1,6 @@
 # Next-generation Roadmap Release Status
 
-Last updated: 2026-07-06.
+Last updated: 2026-07-07.
 
 This file records the GitHub execution ledger for the next-generation roadmap. Local Conductor specs and plans remain the source of truth for requirements and acceptance.
 
@@ -31,7 +31,7 @@ Completed prior-track issues [#1](https://github.com/edithatogo/rulesandprocesse
 | Track | Issue | Project status | Depends on | CI gate | External/human gate | Next action |
 |---|---:|---|---|---|---|---|
 | `roadmap_release_20260706` | [#7](https://github.com/edithatogo/rulesandprocesses/issues/7) | Todo | All active tracks for final certification | `make check`; GitHub Actions before final certification | Dylan release decision | Finish Phase 1 checkpoint, then hold mid/final audits until child tracks progress. |
-| `repo_boundaries_20260706` | [#8](https://github.com/edithatogo/rulesandprocesses/issues/8) | Todo | None | Documentation validation via `make check` where applicable | None unless repo classification is disputed | Complete repo inventory and reconcile GitHub planning boundaries. |
+| `repo_boundaries_20260706` | [#8](https://github.com/edithatogo/rulesandprocesses/issues/8) | Done | None | Documentation validation via `make check` where applicable | None unless repo classification is disputed | Completed and archived in `conductor/archive/repo_boundaries_20260706/`. |
 | `adoption_closure_20260706` | [#9](https://github.com/edithatogo/rulesandprocesses/issues/9) | Todo | `repo_boundaries_20260706` Phase 1; `roadmap_release_20260706` Phase 1 | GitHub Actions on any pushed branches/PRs | Upstream maintainers and Dylan submission/merge approvals | Build adoption ledger and issue/PR/submission packets. |
 | `pic_v02_20260706` | [#10](https://github.com/edithatogo/rulesandprocesses/issues/10) | Todo | Adoption Phase 3 consumer evidence | `make check`; contract examples and schema tests; GitHub Actions | Consumer compatibility evidence | Draft v0.2 delta from real consumers only. |
 | `axiom_validation_20260706` | [#11](https://github.com/edithatogo/rulesandprocesses/issues/11) | Todo | Existing Axiom validation artifacts | `make check`; harness regression tests; GitHub Actions | Axiom upstream/source availability where external validation is needed | Expand deterministic RuleSpec NZ fixture/harness coverage. |
