@@ -64,9 +64,9 @@ Depends on: `repo_boundaries_20260706` Phase 2 and `adoption_closure_20260706` P
     - [x] Confirm tests mock external calls.
     - [x] Confirm trace outputs are minimal and do not leak unnecessary private inputs.
     - **Acceptance:** review checklist is committed and all items pass or are blocked.
-- [ ] Task: Add checks to `make check`
-    - [ ] Include demo tests without requiring external services.
-    - [ ] Keep fixtures deterministic.
+- [x] Task: Add checks to `make check`
+    - [x] Include demo tests without requiring external services.
+    - [x] Keep fixtures deterministic.
     - **Acceptance:** `make check` passes locally.
 - [ ] Task: Prepare outreach/update packet
     - [ ] Draft update for DBN/Docassemble/CiviForm only if demo is credible.

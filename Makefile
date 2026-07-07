@@ -1,6 +1,6 @@
-.PHONY: check lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test
+.PHONY: check lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test service-boundaries-lint service-boundaries-test
 
-check: lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test
+check: lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test service-boundaries-lint service-boundaries-test
 
 lint:
 	cd contracts/tools && uv run --with ruff ruff check .
@@ -31,3 +31,9 @@ snap-runner-lint:
 
 snap-runner-test:
 	PYTHONPATH=studies/snap-divergence/runner/src:harness:contracts/tools/src uv run --with pytest --with jsonschema pytest studies/snap-divergence/runner/tests
+
+service-boundaries-lint:
+	PYTHONPATH=demos/service-boundaries/src:external/foi-o/src uv run --with ruff ruff check demos/service-boundaries/src demos/service-boundaries/tests
+
+service-boundaries-test:
+	PYTHONPATH=demos/service-boundaries/src:external/foi-o/src uv run --with pytest --with jsonschema pytest demos/service-boundaries/tests
