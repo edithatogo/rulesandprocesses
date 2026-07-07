@@ -79,4 +79,8 @@ Depends on: `repo_boundaries_20260706` Phase 2 and `adoption_closure_20260706` P
 
 > NOTE (2026-07-07): The branch was pushed to `origin/main`, and GitHub Actions run `28835558809` completed successfully.
 
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 4 - CI And External Packaging' (Protocol in workflow.md)
+> CHECKPOINT (2026-07-07): Phase 4 closes with the service-boundary demos folded into `make check`, a committed privacy/security review, a staged outreach packet, and a successful push plus GitHub Actions pass.
+> The demo targets remain local and deterministic, with no real applicant data or live service dependency, and the remaining external send step is explicitly human-gated.
+> No further implementation work remains inside this track before archival.
+
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 4 - CI And External Packaging' (Protocol in workflow.md)
