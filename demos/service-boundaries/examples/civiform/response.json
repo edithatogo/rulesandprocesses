@@ -2,7 +2,7 @@
   "result": {
     "decision_id": "nz-oia/decision.response_deadline",
     "output": {
-      "value": "2026-07-30",
+      "value": "2026-07-29",
       "valueState": "known"
     }
   },
@@ -18,7 +18,7 @@
       }
     ],
     "result": {
-      "value": "2026-07-30",
+      "value": "2026-07-29",
       "valueState": "known"
     },
     "sourceRefs": ["OIA 1982 s 2", "OIA 1982 s 15"]

@@ -9,9 +9,9 @@ Depends on: `repo_boundaries_20260706` Phase 2 and `adoption_closure_20260706` P
     - [x] Select exact local paths for demo artifacts.
     - [x] Define request/response JSON examples.
     - **Acceptance:** `demos/service-boundaries/DESIGN.md` defines both demos and their limits.
-- [ ] Task: Write schema/tests first
-    - [ ] Add request/response validation tests.
-    - [ ] Add trace-presence tests.
+- [x] Task: Write schema/tests first
+    - [x] Add request/response validation tests.
+    - [x] Add trace-presence tests.
     - **Acceptance:** tests fail before implementation.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Demo Architecture' (Protocol in workflow.md)
 
