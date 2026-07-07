@@ -9,9 +9,9 @@ Depends on: `adoption_closure_20260706` Phase 3. Do not start schema edits until
     - [x] Classify each request by source, urgency, consumer, and evidence.
     - [x] Mark speculative ideas as rejected or deferred.
     - **Acceptance:** every proposed v0.2 change has a named consumer or is deferred.
-- [ ] Task: Define v0.2 scope
-    - [ ] Draft `contracts/VERSIONING.md` or update `contracts/README.md` with v0.2 scope rules.
-    - [ ] Decide which contract packages, if any, require v0.2 directories.
+- [x] Task: Define v0.2 scope
+    - [x] Draft `contracts/VERSIONING.md` or update `contracts/README.md` with v0.2 scope rules.
+    - [x] Decide which contract packages, if any, require v0.2 directories.
     - **Acceptance:** scope has no unbacked ontology/JSON-LD/expression-language additions.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Feedback Ledger' (Protocol in workflow.md)
 
