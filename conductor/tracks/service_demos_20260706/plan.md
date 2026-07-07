@@ -58,11 +58,11 @@ Depends on: `repo_boundaries_20260706` Phase 2 and `adoption_closure_20260706` P
 
 ## Phase 4 - CI And External Packaging
 
-- [ ] Task: Privacy/security review
-    - [ ] Confirm no real applicant/requester data is committed.
-    - [ ] Confirm no secrets, tokens, or live service credentials are required.
-    - [ ] Confirm tests mock external calls.
-    - [ ] Confirm trace outputs are minimal and do not leak unnecessary private inputs.
+- [x] Task: Privacy/security review
+    - [x] Confirm no real applicant/requester data is committed.
+    - [x] Confirm no secrets, tokens, or live service credentials are required.
+    - [x] Confirm tests mock external calls.
+    - [x] Confirm trace outputs are minimal and do not leak unnecessary private inputs.
     - **Acceptance:** review checklist is committed and all items pass or are blocked.
 - [ ] Task: Add checks to `make check`
     - [ ] Include demo tests without requiring external services.
