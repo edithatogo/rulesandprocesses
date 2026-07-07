@@ -21,7 +21,7 @@ Native sub-issues attached to #6:
 | [#9](https://github.com/edithatogo/rulesandprocesses/issues/9) | `adoption_closure_20260706` | `conductor/tracks/adoption_closure_20260706/` |
 | [#10](https://github.com/edithatogo/rulesandprocesses/issues/10) | `pic_v02_20260706` | `conductor/tracks/pic_v02_20260706/` |
 | [#11](https://github.com/edithatogo/rulesandprocesses/issues/11) | `axiom_validation_20260706` | `conductor/tracks/axiom_validation_20260706/` |
-| [#12](https://github.com/edithatogo/rulesandprocesses/issues/12) | `service_demos_20260706` | `conductor/tracks/service_demos_20260706/` |
+| [#12](https://github.com/edithatogo/rulesandprocesses/issues/12) | `service_demos_20260706` | `conductor/archive/service_demos_20260706/` |
 | [#13](https://github.com/edithatogo/rulesandprocesses/issues/13) | `comparative_studies_20260706` | `conductor/tracks/comparative_studies_20260706/` |
 
 Completed prior-track issues [#1](https://github.com/edithatogo/rulesandprocesses/issues/1) through [#5](https://github.com/edithatogo/rulesandprocesses/issues/5) are closed as completed and their project status is `Done`.
@@ -35,7 +35,7 @@ Completed prior-track issues [#1](https://github.com/edithatogo/rulesandprocesse
 | `adoption_closure_20260706` | [#9](https://github.com/edithatogo/rulesandprocesses/issues/9) | Todo | `repo_boundaries_20260706` Phase 1; `roadmap_release_20260706` Phase 1 | GitHub Actions on any pushed branches/PRs | Upstream maintainers and Dylan submission/merge approvals | Build adoption ledger and issue/PR/submission packets. |
 | `pic_v02_20260706` | [#10](https://github.com/edithatogo/rulesandprocesses/issues/10) | Done | Adoption Phase 3 consumer evidence | `make check`; contract examples and schema tests; GitHub Actions | Consumer compatibility evidence | Completed and archived in `conductor/archive/pic_v02_20260706/`. |
 | `axiom_validation_20260706` | [#11](https://github.com/edithatogo/rulesandprocesses/issues/11) | Todo | Existing Axiom validation artifacts | `make check`; harness regression tests; GitHub Actions | Axiom upstream/source availability where external validation is needed | Expand deterministic RuleSpec NZ fixture/harness coverage. |
-| `service_demos_20260706` | [#12](https://github.com/edithatogo/rulesandprocesses/issues/12) | In Progress | Repo-boundary Phase 2; PIC/Axiom artifacts where reused | `make check`; demo tests; GitHub Actions | Dylan demo review; no live secrets or third-party calls | Build local-only service-boundary demo packets. |
+| `service_demos_20260706` | [#12](https://github.com/edithatogo/rulesandprocesses/issues/12) | Done | Repo-boundary Phase 2; PIC/Axiom artifacts where reused | `make check`; demo tests; GitHub Actions | Dylan demo review; no live secrets or third-party calls | Completed and archived in `conductor/archive/service_demos_20260706/`. |
 | `comparative_studies_20260706` | [#13](https://github.com/edithatogo/rulesandprocesses/issues/13) | Done | Adoption and validation evidence for candidate scoring | Candidate evidence validation; later track-specific checks | Dylan study approval before implementation track | Completed and archived in `conductor/archive/comparative_studies_20260706/`. |
 
 Certification levels used by this matrix:

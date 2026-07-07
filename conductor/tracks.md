@@ -27,11 +27,6 @@
 
 ---
 
-- [~] **Track: Service-boundary demonstrations**
-*Link: [./tracks/service_demos_20260706/](./tracks/service_demos_20260706/)*
-
----
-
 - [x] **Track: Next comparative study selection**
 *Link: [./archive/comparative_studies_20260706/](./archive/comparative_studies_20260706/)*
 
