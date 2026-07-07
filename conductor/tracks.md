@@ -17,8 +17,8 @@
 
 ---
 
-- [x] **Track: PIC v0.2 consumer-driven revision**
-*Link: [./archive/pic_v02_20260706/](./archive/pic_v02_20260706/)*
+- [~] **Track: PIC v0.2 consumer-driven revision**
+*Link: [./tracks/pic_v02_20260706/](./tracks/pic_v02_20260706/)*
 
 ---
 
@@ -39,4 +39,3 @@
 
 - [ ] **Track: NZ RuleSpec vs OpenFisca Aotearoa Reconciliation**
 *Link: [./tracks/nz_reconciliation_20260707/](./tracks/nz_reconciliation_20260707/)*
-
