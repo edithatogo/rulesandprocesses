@@ -1,10 +1,8 @@
 from __future__ import annotations
 
 from datetime import date
-from datetime import timedelta
 from pathlib import Path
 import sys
-import types
 from typing import Any, Mapping
 
 from jsonschema import FormatChecker, validate
@@ -125,40 +123,6 @@ def _ensure_foi_o_on_path() -> None:
         sys.path.insert(0, path)
 
 
-def _is_foi_o_summer_exclusion(day: date) -> bool:
-    return (day.month == 12 and day.day >= 25) or (day.month == 1 and day.day <= 15)
-
-
-def _add_working_days(
-    start: date,
-    n: int,
-    holidays: list[date] | None = None,
-    include_oia_summer_exclusion: bool = True,
-) -> date:
-    blocked_days = set(holidays or [])
-    current = start
-    remaining = n
-    while remaining > 0:
-        current += timedelta(days=1)
-        if current.weekday() >= 5:
-            continue
-        if current in blocked_days:
-            continue
-        if include_oia_summer_exclusion and _is_foi_o_summer_exclusion(current):
-            continue
-        remaining -= 1
-    return current
-
-
-def _ensure_foi_o_dates_module() -> None:
-    module_name = "foi_o_nz.dates"
-    if module_name in sys.modules:
-        return
-    module = types.ModuleType(module_name)
-    module.add_working_days = _add_working_days
-    sys.modules[module_name] = module
-
-
 def _validate(instance: Mapping[str, Any], schema: dict[str, Any]) -> None:
     validate(instance=dict(instance), schema=schema, format_checker=_FORMAT_CHECKER)
 
@@ -177,7 +141,6 @@ def _parse_holidays(holiday_dates: list[str] | None) -> list[date]:
 
 def _load_rule_result(receipt_date: str, holiday_dates: list[str] | None = None):
     _ensure_foi_o_on_path()
-    _ensure_foi_o_dates_module()
     from foi_o_nz.oia_rules import RuleInvocation, ValueObject, evaluate_invocation
 
     invocation = RuleInvocation(

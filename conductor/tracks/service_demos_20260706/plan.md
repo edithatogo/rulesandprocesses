@@ -27,9 +27,9 @@ Depends on: `repo_boundaries_20260706` Phase 2 and `adoption_closure_20260706` P
     - [x] Include representative interview input and rule result output.
     - [x] Add README instructions.
     - **Acceptance:** demo test calculates expected OIA deadline and emits trace fields.
-- [ ] Task: Validate no process coupling regression
-    - [ ] Confirm the rules module does not import unrelated `foi-o` process code.
-    - [ ] Run relevant OIA tests and `pic-validate`.
+- [x] Task: Validate no process coupling regression
+    - [x] Confirm the rules module does not import unrelated `foi-o` process code.
+    - [x] Run relevant OIA tests and `pic-validate`.
     - **Acceptance:** import isolation and validation pass.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - OIA/Docassemble Demo' (Protocol in workflow.md)
 
