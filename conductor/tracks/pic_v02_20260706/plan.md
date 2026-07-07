@@ -4,10 +4,10 @@ Depends on: `adoption_closure_20260706` Phase 3. Do not start schema edits until
 
 ## Phase 1 - Feedback Ledger
 
-- [ ] Task: Create `contracts/FEEDBACK.md`
-    - [ ] Inventory feedback from `external/ADOPTION_STATUS.md`, issue/PR comments, DBN responses, and local implementation pain.
-    - [ ] Classify each request by source, urgency, consumer, and evidence.
-    - [ ] Mark speculative ideas as rejected or deferred.
+- [x] Task: Create `contracts/FEEDBACK.md`
+    - [x] Inventory feedback from `external/ADOPTION_STATUS.md`, issue/PR comments, DBN responses, and local implementation pain.
+    - [x] Classify each request by source, urgency, consumer, and evidence.
+    - [x] Mark speculative ideas as rejected or deferred.
     - **Acceptance:** every proposed v0.2 change has a named consumer or is deferred.
 - [ ] Task: Define v0.2 scope
     - [ ] Draft `contracts/VERSIONING.md` or update `contracts/README.md` with v0.2 scope rules.
@@ -49,4 +49,3 @@ Depends on: `adoption_closure_20260706` Phase 3. Do not start schema edits until
     - [x] Dylan decides whether v0.2 is published, deferred, or kept experimental.
     - **Acceptance:** publication status is recorded.
 - [x] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Consumer Validation' (Protocol in workflow.md)
-
