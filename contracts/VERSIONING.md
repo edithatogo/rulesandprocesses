@@ -20,3 +20,5 @@ Based on active consumer requirements, the following packages are upgraded to `v
     *   **Change:** Add support for declaring explicit holiday exclusions array.
 
 All other contracts (`pic-semantics`, `pic-crosswalk`, `pic-fixtures`) remain at `v0.1` as no consumer feedback requires changes.
+
+The Alaveteli request-state proposal is tracked in `contracts/FEEDBACK.md` as deferred evidence; it does not upgrade any PIC package until a named consumer requires it.
