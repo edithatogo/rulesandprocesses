@@ -69,4 +69,8 @@ Also depends on `roadmap_release_20260706` Phase 1 for GitHub issue/project sync
     - [ ] Present merge-ready PRs and external-response queue to Dylan.
     - [ ] Record which PRs Dylan merges, which require maintainer review, and which are intentionally deferred.
     - **Acceptance:** no PR is represented as merged without URL evidence.
+
+> BLOCKED (2026-07-07): All staged external bundles and drafts are prepared locally, but the remaining merge/submission actions require Dylan or upstream maintainer authority.
+> No agent-accessible path remains to mark these targets merged or submitted without an external action and URL evidence.
+
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - CI, Review, And Merge Closure' (Protocol in workflow.md)
