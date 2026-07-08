@@ -1,6 +1,16 @@
 # Upstream Submission: Coupling OIA Rules Module to foi-o
 
-This directory stages a rules module for integration with `foi-o`. Upstream submission is a `[HUMAN]` task to be performed by Dylan.
+**Status (2026-07-09): merged upstream.**  
+PR: https://github.com/edithatogo/foi-o/pull/20  
+Merge commit on `main`: `d2f5dbd8832da9a471fde8f7c8c235dd0473a7b9`
+
+This directory retains the staged rules module for PIC validation and historical evidence. Upstream submission for the isolated module is complete.
+
+---
+
+## Original draft (archived)
+
+This directory stages a rules module for integration with `foi-o`. Upstream submission was a `[HUMAN]` task; it was completed via authorized agent PR after Dylan selected Option A.
 
 ## Draft PR Title
 `feat: extract OIA statutory clock decisions to isolated, testable rules module`

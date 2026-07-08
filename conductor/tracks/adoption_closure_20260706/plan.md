@@ -70,7 +70,10 @@ Also depends on `roadmap_release_20260706` Phase 1 for GitHub issue/project sync
     - [ ] Record which PRs Dylan merges, which require maintainer review, and which are intentionally deferred.
     - **Acceptance:** no PR is represented as merged without URL evidence.
 
-> BLOCKED (2026-07-07): All staged external bundles and drafts are prepared locally, but the remaining merge/submission actions require Dylan or upstream maintainer authority.
-> No agent-accessible path remains to mark these targets merged or submitted without an external action and URL evidence.
+> PARTIAL (2026-07-09): `edithatogo/foi-o` OIA rules module landed via authorized Option A PR: https://github.com/edithatogo/foi-o/pull/20 (merged `d2f5dbd`). Ledger updated. Remaining staged targets (PolicyEngine, OpenFisca, Alaveteli, Axiom feedback, DBN monitor) still need Dylan submit/defer decisions.
+>
+> CI note on that PR: Ruff, full pytest, validate-repo, and schema-drift passed. End-to-end SHACL smoke and Mojo/pixi jobs fail on `main` independently (pre-existing).
+
+> BLOCKED (2026-07-07): Remaining non-foi-o staged external bundles and drafts are prepared locally, but their merge/submission actions still require Dylan or upstream maintainer authority (except foi-o, now merged).
 
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - CI, Review, And Merge Closure' (Protocol in workflow.md)
