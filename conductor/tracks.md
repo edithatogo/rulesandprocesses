@@ -38,10 +38,27 @@
 ---
 
 - [x] **Track: NZ reconciliation live dual-engine re-run**
-*Link: [./tracks/nz_recon_live_20260709/](./tracks/nz_recon_live_20260709/)*
+*Link: [./archive/nz_recon_live_20260709/](./archive/nz_recon_live_20260709/)*
+
+---
+
+- [x] **Track: foi-o oia_rules process and CLI wiring**
+*Link: [./archive/foi_o_wiring_20260709/](./archive/foi_o_wiring_20260709/)*
+
+---
+
+- [x] **Track: Local fork solidify (rulespec-nz + openfisca-aotearoa-br)**
+*Link: [./archive/local_forks_solidify_20260709/](./archive/local_forks_solidify_20260709/)*
+
+---
+
+- [x] **Track: fyi-cli × foi-o integration (deferred)**
+*Link: [./archive/fyi_cli_foi_o_integration_20260709/](./archive/fyi_cli_foi_o_integration_20260709/)*
 
 ---
 
 ## Program status (2026-07-09)
 
-Conductor tracks complete. Live NZ dual-engine re-run produced **10/17** numeric agreements against local engines. Upstream PR merges and monitoring continue via `external/MAINTAINER_MONITORING.md`.
+All in-scope Conductor tracks for this program are **complete/archived**.
+Local product follow-through: `edithatogo/foi-o` PR #21 merged (process wiring).
+Fork SoT: `external/FORK_LOCAL_STATUS.md`. fyi-cli integration deferred: `external/fyi-cli/INTEGRATION_NOTES.md`.

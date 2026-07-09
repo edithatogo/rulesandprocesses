@@ -1,0 +1,8 @@
+{
+  "track_id": "fyi_cli_foi_o_integration_20260709",
+  "type": "chore",
+  "status": "complete",
+  "created_at": "2026-07-09T03:00:00Z",
+  "updated_at": "2026-07-09T03:10:00Z",
+  "description": "Assessed fyi-cli \u00d7 foi-o; deferred (Rust/Python boundary)."
+}

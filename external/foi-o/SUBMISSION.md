@@ -42,3 +42,7 @@ By decoupling decision rules (such as response deadlines, transfer limits, exten
 *Note: Parameters, fixtures, and trace outputs conform to the Policy Interchange Contracts (PIC) v0.1 format[^1], enabling vendor-neutral, cross-engine validation.*
 
 [^1]: [Policy Interchange Contracts (PIC) v0.1 Specification](https://github.com/edithatogo/rulesandprocesses/tree/main/contracts)
+
+## Process wiring (2026-07-09)
+
+Merged https://github.com/edithatogo/foi-o/pull/21 — normalise/CLI dispatch through oia_rules.
