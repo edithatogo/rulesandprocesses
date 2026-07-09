@@ -1,0 +1,45 @@
+{
+  "repo": ".external-repos/openfisca-aotearoa",
+  "rateParameterPath": "openfisca_aotearoa/parameters/taxes/income_tax/individual_income_tax_rate.yaml",
+  "rateInstantCount": 4,
+  "rateInstants": [
+    "2000-04-01",
+    "2008-10-01",
+    "2009-04-01",
+    "2010-10-01"
+  ],
+  "latestRateInstant": "2010-10-01",
+  "coversTaxYear2026": false,
+  "incomeTaxVariableFiles": [
+    "variables/acts/income_tax/family_scheme/best_start.py",
+    "variables/acts/income_tax/family_scheme/child_tax_credit.py",
+    "variables/acts/income_tax/family_scheme/family_scheme.py",
+    "variables/acts/income_tax/family_scheme/family_tax_credit.py",
+    "variables/acts/income_tax/family_scheme/in_work_tax_credit.py",
+    "variables/acts/income_tax/family_scheme/minimum_family_tax_credit.py",
+    "variables/acts/income_tax/family_scheme/parental_tax_credit.py",
+    "variables/acts/income_tax/family_scheme/working_for_families.py",
+    "variables/acts/income_tax/individual.py",
+    "variables/acts/income_tax/interpretation.py"
+  ],
+  "accVariableFiles": [
+    "variables/acts/acc/acc_part_2/personal_injury.py",
+    "variables/acts/acc/acc_part_3/lodgeclaim.py",
+    "variables/acts/acc/acc_part_4/incapacity_for_employment/incapacitated.py",
+    "variables/acts/acc/acc_part_4/weekly_compensation/loss_of_earnings.py",
+    "variables/acts/acc/acc_part_4/weekly_compensation/weekly_compensation.py",
+    "variables/acts/acc/definitions.py",
+    "variables/acts/acc/purpose.py",
+    "variables/acts/acc/schedule_1/loss_of_potential_earnings.py",
+    "variables/acts/acc/schedule_1/minimum_weekly_earnings.py"
+  ],
+  "kiwisaverVariableFiles": [],
+  "definesTaxableIncomeHelper": true,
+  "definesScheduleIncomeTaxPayable": false,
+  "hasEarnersLevyVariables": false,
+  "runtime": {
+    "openfisca_core_41_install": "blocked_pendulum_build_on_modern_python",
+    "openfisca_core_44_with_country_package": "blocked_metaclass_conflict",
+    "liveSimulation": "unavailable"
+  }
+}

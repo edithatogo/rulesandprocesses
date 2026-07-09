@@ -36,7 +36,7 @@ nz-recon-lint:
 	PYTHONPATH=studies/nz-reconciliation/runner/src uv run --with ruff ruff check studies/nz-reconciliation/runner/src studies/nz-reconciliation/runner/tests
 
 nz-recon-test:
-	PYTHONPATH=studies/nz-reconciliation/runner/src uv run --with pytest pytest studies/nz-reconciliation/runner/tests
+	PYTHONPATH=studies/nz-reconciliation/runner/src uv run --with pytest --with pyyaml pytest studies/nz-reconciliation/runner/tests
 
 service-boundaries-lint:
 	PYTHONPATH=demos/service-boundaries/src:external/foi-o/src uv run --with ruff ruff check demos/service-boundaries/src demos/service-boundaries/tests

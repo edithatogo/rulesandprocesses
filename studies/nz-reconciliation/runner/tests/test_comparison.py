@@ -60,3 +60,25 @@ def test_compare_result_sets_orders_by_case_id() -> None:
         ],
     )
     assert [row["caseId"] for row in rows] == ["a", "b"]
+
+
+def test_compare_pair_engine_gap_is_classified_not_numeric() -> None:
+    rulespec = {
+        "caseId": "nz-recon/income_tax.first_bracket_upper_bound",
+        "domain": "income_tax",
+        "status": "exact_match",
+        "outputs": {"tax": {"value": "1638"}},
+    }
+    openfisca = {
+        "caseId": "nz-recon/income_tax.first_bracket_upper_bound",
+        "domain": "income_tax",
+        "status": "engine_gap",
+        "outputs": {},
+        "notes": "no progressive tax formula",
+        "evidence": ["openfisca_aotearoa/variables/acts/income_tax/individual.py"],
+    }
+    row = compare_pair(rulespec, openfisca)
+    assert row["agreement"] is False
+    assert row["classification"] == "engine_gap"
+    assert row["valueDifference"] is None
+    assert "openfisca_aotearoa/variables/acts/income_tax/individual.py" in row["evidence"]

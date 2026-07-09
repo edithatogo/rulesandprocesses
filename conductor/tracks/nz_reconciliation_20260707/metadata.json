@@ -3,6 +3,6 @@
   "type": "feature",
   "status": "in_progress",
   "created_at": "2026-07-07T00:28:00Z",
-  "updated_at": "2026-07-09T00:10:00Z",
+  "updated_at": "2026-07-09T01:00:00Z",
   "description": "Reconcile NZ personal income tax, ACC earner levies, and KiwiSaver calculations between rulespec-nz and openfisca-aotearoa."
 }

@@ -68,37 +68,55 @@ def compare_pair(
     case_id = rulespec.get("caseId") or openfisca.get("caseId")
     rs_outputs = rulespec.get("outputs") or {}
     of_outputs = openfisca.get("outputs") or {}
+    rs_status = rulespec.get("status", "ok")
+    of_status = openfisca.get("status", "ok")
     rs_value = _primary_numeric(rs_outputs)
     of_value = _primary_numeric(of_outputs)
 
-    if rs_value is None or of_value is None:
-        agreement = rs_outputs == of_outputs
+    evidence = [
+        "RuleSpec result JSONL",
+        "OpenFisca Aotearoa result JSONL",
+    ]
+    evidence.extend(openfisca.get("evidence") or [])
+    evidence.extend(rulespec.get("evidence") or [])
+
+    # Non-executable sides are classified, not treated as numeric disagreement.
+    if of_status == "engine_gap":
+        agreement = False
+        classification = "engine_gap"
         difference = None
+    elif rs_status in {"blocked_compile", "compile_blocked", "adapter_failure"}:
+        agreement = False
+        classification = str(rs_status)
+        difference = None
+    elif rs_value is None or of_value is None:
+        agreement = rs_outputs == of_outputs and rs_outputs != {}
+        difference = None
+        classification = "agreement" if agreement else "unclassified"
     else:
         difference = abs(rs_value - of_value)
         agreement = difference <= tolerance
+        classification = "agreement" if agreement else "unclassified"
 
     return {
         "caseId": case_id,
         "domain": rulespec.get("domain") or openfisca.get("domain"),
         "agreement": agreement,
-        "classification": "agreement" if agreement else "unclassified",
+        "classification": classification,
         "rulespec": {
-            "status": rulespec.get("status", "ok"),
+            "status": rs_status,
             "primaryValue": None if rs_value is None else _decimal_string(rs_value),
             "outputs": rs_outputs,
         },
         "openfiscaAotearoa": {
-            "status": openfisca.get("status", "ok"),
+            "status": of_status,
             "primaryValue": None if of_value is None else _decimal_string(of_value),
             "outputs": of_outputs,
+            "notes": openfisca.get("notes"),
         },
         "valueDifference": None if difference is None else _decimal_string(difference),
         "tolerance": _decimal_string(tolerance),
-        "evidence": [
-            "RuleSpec result JSONL",
-            "OpenFisca Aotearoa result JSONL",
-        ],
+        "evidence": evidence,
     }
 
 

@@ -30,8 +30,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa exposes income_tax__taxable_income and a 2010-vintage individual_income_tax_rate parameter tree, but no variable computes progressive income tax before credits for a taxable-income input. Cannot reconcile RuleSpec individual_income_tax_before_credits.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/income_tax/individual.py; openfisca_aotearoa/parameters/taxes/income_tax/individual_income_tax_rate.yaml"
       },
       "inputs": {
         "nz:statutes/income_tax/schedule_1/individual_income_tax#input.taxable_income": 15600,
@@ -65,8 +67,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa exposes income_tax__taxable_income and a 2010-vintage individual_income_tax_rate parameter tree, but no variable computes progressive income tax before credits for a taxable-income input. Cannot reconcile RuleSpec individual_income_tax_before_credits.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/income_tax/individual.py; openfisca_aotearoa/parameters/taxes/income_tax/individual_income_tax_rate.yaml"
       },
       "inputs": {
         "nz:statutes/income_tax/schedule_1/individual_income_tax#input.taxable_income": 53500,
@@ -100,8 +104,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa exposes income_tax__taxable_income and a 2010-vintage individual_income_tax_rate parameter tree, but no variable computes progressive income tax before credits for a taxable-income input. Cannot reconcile RuleSpec individual_income_tax_before_credits.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/income_tax/individual.py; openfisca_aotearoa/parameters/taxes/income_tax/individual_income_tax_rate.yaml"
       },
       "inputs": {
         "nz:statutes/income_tax/schedule_1/individual_income_tax#input.taxable_income": 180000,
@@ -135,8 +141,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa exposes income_tax__taxable_income and a 2010-vintage individual_income_tax_rate parameter tree, but no variable computes progressive income tax before credits for a taxable-income input. Cannot reconcile RuleSpec individual_income_tax_before_credits.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/income_tax/individual.py; openfisca_aotearoa/parameters/taxes/income_tax/individual_income_tax_rate.yaml"
       },
       "inputs": {
         "nz:statutes/income_tax/schedule_1/individual_income_tax#input.taxable_income": 200000,
@@ -169,8 +177,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa exposes income_tax__taxable_income and a 2010-vintage individual_income_tax_rate parameter tree, but no variable computes progressive income tax before credits for a taxable-income input. Cannot reconcile RuleSpec individual_income_tax_before_credits.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/income_tax/individual.py; openfisca_aotearoa/parameters/taxes/income_tax/individual_income_tax_rate.yaml"
       },
       "inputs": {
         "nz:statutes/income_tax/schedule_1/individual_income_tax#input.taxable_income": -100
@@ -201,8 +211,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa ACC modules model LOPE/weekly compensation eligibility (acc_sched_1__*, acc__earner, etc.), not ACC earners levy rates, caps, or standard/self-employed levy amounts.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/acc/"
       },
       "inputs": {
         "nz:regulations/acc/earners_levy#input.acc_earnings_for_earners_levy": 100000
@@ -238,8 +250,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa ACC modules model LOPE/weekly compensation eligibility (acc_sched_1__*, acc__earner, etc.), not ACC earners levy rates, caps, or standard/self-employed levy amounts.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/acc/"
       },
       "inputs": {
         "nz:regulations/acc/earners_levy#input.acc_earnings_for_earners_levy": 200000
@@ -271,8 +285,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa ACC modules model LOPE/weekly compensation eligibility (acc_sched_1__*, acc__earner, etc.), not ACC earners levy rates, caps, or standard/self-employed levy amounts.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/acc/"
       },
       "inputs": {
         "nz:regulations/acc/earners_levy#input.acc_earnings_for_earners_levy": -100
@@ -304,8 +320,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa ACC modules model LOPE/weekly compensation eligibility (acc_sched_1__*, acc__earner, etc.), not ACC earners levy rates, caps, or standard/self-employed levy amounts.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/acc/"
       },
       "inputs": {
         "nz:regulations/acc/earners_levy#input.acc_self_employed_more_than_30_hours_per_week": true,
@@ -339,8 +357,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa ACC modules model LOPE/weekly compensation eligibility (acc_sched_1__*, acc__earner, etc.), not ACC earners levy rates, caps, or standard/self-employed levy amounts.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/acc/"
       },
       "inputs": {
         "nz:regulations/acc/earners_levy#input.acc_self_employed_more_than_30_hours_per_week": true,
@@ -373,8 +393,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa ACC modules model LOPE/weekly compensation eligibility (acc_sched_1__*, acc__earner, etc.), not ACC earners levy rates, caps, or standard/self-employed levy amounts.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/acc/"
       },
       "inputs": {
         "nz:regulations/acc/earners_levy#input.acc_self_employed_purchases_weekly_compensation": true,
@@ -407,8 +429,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa ACC modules model LOPE/weekly compensation eligibility (acc_sched_1__*, acc__earner, etc.), not ACC earners levy rates, caps, or standard/self-employed levy amounts.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/acc/"
       },
       "inputs": {
         "nz:regulations/acc/earners_levy#input.acc_self_employed_purchases_weekly_compensation": false,
@@ -441,8 +465,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa ACC modules model LOPE/weekly compensation eligibility (acc_sched_1__*, acc__earner, etc.), not ACC earners levy rates, caps, or standard/self-employed levy amounts.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/acc/"
       },
       "inputs": {
         "nz:regulations/acc/earners_levy#input.acc_invoice_issued_to_self_employed_person_for_acc_act_purposes": true,
@@ -477,8 +503,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "openfisca-aotearoa ACC modules model LOPE/weekly compensation eligibility (acc_sched_1__*, acc__earner, etc.), not ACC earners levy rates, caps, or standard/self-employed levy amounts.",
+        "classification": "engine_gap",
+        "evidence": "openfisca_aotearoa/variables/acts/acc/"
       },
       "inputs": {
         "nz:regulations/acc/earners_levy#input.acc_invoice_issued_to_self_employed_person_for_acc_act_purposes": true,
@@ -511,8 +539,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "No KiwiSaver contribution variables, parameters, or tests found in openfisca-aotearoa. RuleSpec KiwiSaver compile is also blocked upstream (TheAxiomFoundation/rulespec-nz#79).",
+        "classification": "engine_gap",
+        "evidence": "repo-wide search for kiwisaver (no matches under openfisca_aotearoa/)"
       },
       "inputs": {
         "nz:statutes/kiwisaver/contributions#input.kiwisaver_gross_salary_or_wages": 100000,
@@ -547,8 +577,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "No KiwiSaver contribution variables, parameters, or tests found in openfisca-aotearoa. RuleSpec KiwiSaver compile is also blocked upstream (TheAxiomFoundation/rulespec-nz#79).",
+        "classification": "engine_gap",
+        "evidence": "repo-wide search for kiwisaver (no matches under openfisca_aotearoa/)"
       },
       "inputs": {},
       "expectedRulespec": {
@@ -579,8 +611,10 @@
       },
       "openfiscaAotearoa": {
         "repo": "ServiceInnovationLab/openfisca-aotearoa",
-        "status": "pending_mapping",
-        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+        "status": "engine_gap",
+        "notes": "No KiwiSaver contribution variables, parameters, or tests found in openfisca-aotearoa. RuleSpec KiwiSaver compile is also blocked upstream (TheAxiomFoundation/rulespec-nz#79).",
+        "classification": "engine_gap",
+        "evidence": "repo-wide search for kiwisaver (no matches under openfisca_aotearoa/)"
       },
       "inputs": {
         "nz:statutes/kiwisaver/contributions#input.kiwisaver_gross_salary_or_wages": -100,
