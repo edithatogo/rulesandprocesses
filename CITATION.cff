@@ -4,8 +4,13 @@ type: software
 title: "Rules and Processes — policy interchange, conformance, and coupling"
 authors:
   - family-names: Mordaunt
-    given-names: Dylan
+    given-names: Dylan A
+    orcid: "https://orcid.org/0000-0002-9775-0603"
     alias: edithatogo
+    affiliation: >-
+      Faculty of Health, Education and Psychology, Victoria University of Wellington;
+      College of Medicine and Public Health, Flinders University;
+      Centre for Health Policy, The University of Melbourne
     website: "https://www.researchgate.net/profile/Dylan-Mordaunt-2"
 repository-code: "https://github.com/edithatogo/rulesandprocesses"
 url: "https://github.com/edithatogo/rulesandprocesses"

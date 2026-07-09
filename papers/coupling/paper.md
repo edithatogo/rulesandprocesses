@@ -1,8 +1,16 @@
 # Coupling Statutory Rules and Administrative Processes: A Pragmatic Contract-Based Approach to Rules-as-Code
 
-**Authors:** Dylan, Antigravity (AI Pair)  
+**Author:** Dylan A Mordaunt  
+**ORCID:** [0000-0002-9775-0603](https://orcid.org/0000-0002-9775-0603)  
+**Affiliations:**
+1. Faculty of Health, Education and Psychology, Victoria University of Wellington
+2. College of Medicine and Public Health, Flinders University
+3. Centre for Health Policy, The University of Melbourne
+
 **Date:** July 2026  
-**Track:** `community_20260704` (Phase 4)
+**Track:** `community_20260704` (Phase 4)  
+**arXiv status:** deferred (see `ARXIV_SUBMISSION.md`; GitHub [#15](https://github.com/edithatogo/rulesandprocesses/issues/15))  
+**Author block:** [`papers/AUTHOR.md`](../AUTHOR.md)
 
 ---
 

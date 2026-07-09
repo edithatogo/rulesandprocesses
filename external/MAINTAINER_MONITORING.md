@@ -22,8 +22,9 @@ Bot / author-only comments do **not** count as maintainer replies.
 | Item | Path | Status |
 |---|---|---|
 | Docassemble OIA interview package | `demos/docassemble-oia-clock/` | Added 2026-07-09 |
-| Coupling arXiv packet | `papers/coupling/ARXIV_SUBMISSION.md` | `[HUMAN]` submit |
-| SNAP arXiv packet | `studies/snap-divergence/paper/ARXIV_SUBMISSION.md` | `[HUMAN]` submit |
+| Coupling arXiv packet | `papers/coupling/ARXIV_SUBMISSION.md` | **Deferred** ([#15](https://github.com/edithatogo/rulesandprocesses/issues/15)) | Prepare only |
+| SNAP arXiv packet | `studies/snap-divergence/paper/ARXIV_SUBMISSION.md` | **Deferred** ([#16](https://github.com/edithatogo/rulesandprocesses/issues/16)) | Prepare only |
+| Unified papers project | https://github.com/users/edithatogo/projects/20 | Active | Ledger for pending/completed preprints |
 
 ## Protocol
 
