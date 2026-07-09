@@ -14,5 +14,4 @@ studies/nz-reconciliation/results/compiled/
 .venv-nz-recon/
 
 .coverage
-**/ .coverage
 **/.coverage
