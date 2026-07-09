@@ -13,7 +13,7 @@ This repository began as a ChatGPT-produced review pack for **RaCX** (a proposed
 1. [`views/07_fable5_reassessment_and_pivot.md`](views/07_fable5_reassessment_and_pivot.md) — **current strategy** (start here)
 2. [`views/06_fable5_independent_review.md`](views/06_fable5_independent_review.md) — second-opinion review of RaCX
 3. [`conductor/product.md`](conductor/product.md) — product definition
-4. [`conductor/tracks.md`](conductor/tracks.md) — completed tracks (archived under `conductor/archive/`)
+4. [`conductor/tracks.md`](conductor/tracks.md) — tracks (mostly archived; see active closeout if any)
 5. [`conductor/NEXTGEN_RELEASE_STATUS.md`](conductor/NEXTGEN_RELEASE_STATUS.md) — release matrix and external gates
 6. [`AGENTS.md`](AGENTS.md) — instructions for AI agents implementing this repo
 
@@ -25,7 +25,7 @@ This repository began as a ChatGPT-produced review pack for **RaCX** (a proposed
 | `harness/` | Active | Validation / adapter harness |
 | `converters/` | Active | Fixture converters (OpenFisca ↔ PolicyEngine YAML subsets) |
 | `studies/` | Active | SNAP divergence; NZ RuleSpec ↔ OpenFisca Aotearoa reconciliation |
-| `demos/` | Active | Service-boundary demonstrations |
+| `demos/` | Active | Service-boundary mocks + Docassemble OIA clock interview package |
 | `external/` | Active | Staged upstream packets + [`ADOPTION_STATUS.md`](external/ADOPTION_STATUS.md) |
 | `papers/` | Active | Coupling companion paper draft |
 | `conductor/` | Active | Product, workflow, release status; completed tracks in `archive/` |

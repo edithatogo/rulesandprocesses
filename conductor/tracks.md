@@ -57,8 +57,14 @@
 
 ---
 
+- [ ] **Track: Publication and demo closeout**
+*Link: [./tracks/publication_closeout_20260709/](./tracks/publication_closeout_20260709/)*
+
+---
+
 ## Program status (2026-07-09)
 
-All in-scope Conductor tracks for this program are **complete/archived**.
-Local product follow-through: `edithatogo/foi-o` PR #21 merged (process wiring).
+Prior roadmap tracks are **complete/archived**. Active follow-through: `publication_closeout_20260709` (Docassemble package + arXiv packets).
+External monitoring: `external/MAINTAINER_MONITORING.md`.
+Local product follow-through: `edithatogo/foi-o` PRs #20/#21 merged.
 Fork SoT: `external/FORK_LOCAL_STATUS.md`. fyi-cli integration deferred: `external/fyi-cli/INTEGRATION_NOTES.md`.

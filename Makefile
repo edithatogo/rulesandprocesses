@@ -1,6 +1,6 @@
-.PHONY: check lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test nz-recon-lint nz-recon-test service-boundaries-lint service-boundaries-test
+.PHONY: check lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test nz-recon-lint nz-recon-test service-boundaries-lint service-boundaries-test docassemble-oia-clock-lint docassemble-oia-clock-test
 
-check: lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test nz-recon-lint nz-recon-test service-boundaries-lint service-boundaries-test
+check: lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test nz-recon-lint nz-recon-test service-boundaries-lint service-boundaries-test docassemble-oia-clock-lint docassemble-oia-clock-test
 
 lint:
 	cd contracts/tools && uv run --with ruff ruff check .
@@ -43,3 +43,9 @@ service-boundaries-lint:
 
 service-boundaries-test:
 	PYTHONPATH=demos/service-boundaries/src:external/foi-o/src uv run --with pytest --with jsonschema pytest demos/service-boundaries/tests
+
+docassemble-oia-clock-lint:
+	PYTHONPATH=demos/docassemble-oia-clock/src:demos/service-boundaries/src:external/foi-o/src uv run --with ruff ruff check demos/docassemble-oia-clock/src demos/docassemble-oia-clock/tests
+
+docassemble-oia-clock-test:
+	PYTHONPATH=demos/docassemble-oia-clock/src:demos/service-boundaries/src:external/foi-o/src uv run --with pytest pytest demos/docassemble-oia-clock/tests

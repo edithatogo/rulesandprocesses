@@ -1,0 +1,71 @@
+metadata:
+  title: NZ OIA response deadline (PIC demo)
+  short title: OIA clock
+  description: |
+    Smallest credible Docassemble interview that invokes the isolated
+    foi-o oia_rules module for an Official Information Act response deadline.
+  authors:
+    - name: Dylan Mordaunt
+  revision_date: 2026-07-09
+  version: "0.1.0"
+  tags:
+    - oia
+    - rules-as-code
+    - pic
+  documentation: |
+    This interview is a demonstration of typed rules/process coupling.
+    Results are indicative only and are not legal advice.
+
+---
+question: |
+  Official Information Act — indicative response deadline
+subquestion: |
+  Enter the date the agency **received** the request (Day 0 under OIA s 15).
+  Optional public holidays can be listed as ISO dates, one per line.
+fields:
+  - Receipt date: receipt_date
+    datatype: date
+  - Public holidays (optional): holiday_text
+    datatype: area
+    required: False
+    hint: |
+      One YYYY-MM-DD date per line. Leave blank if none apply.
+---
+code: |
+  from oia_clock_demo.evaluate import evaluate_response_deadline
+
+  _holidays = []
+  if holiday_text:
+      _holidays = [
+          line.strip()
+          for line in str(holiday_text).splitlines()
+          if line.strip()
+      ]
+  clock_result = evaluate_response_deadline(
+      receipt_date.format("yyyy-MM-dd"),
+      _holidays,
+  )
+  response_deadline = clock_result["output"]["value"]
+  clock_trace = clock_result["trace"]
+  clock_disclaimer = clock_result["disclaimer"]
+---
+question: |
+  Indicative response deadline
+subquestion: |
+  **Deadline:** ${ response_deadline }
+
+  ${ clock_disclaimer }
+
+  ### Why this date?
+  - Decision: `${ clock_result["decision_id"] }`
+  - Trace step: `${ clock_trace.get("stepId") }`
+  - Sources: `${ ", ".join(clock_trace.get("sourceRefs") or []) }`
+field: show_result
+action buttons:
+  - Restart: restart
+---
+mandatory: True
+code: |
+  receipt_date
+  clock_result
+  show_result
