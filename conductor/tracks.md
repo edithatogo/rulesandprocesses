@@ -2,8 +2,8 @@
 
 ---
 
-- [~] **Track: Next-generation roadmap release orchestration**
-*Link: [./tracks/roadmap_release_20260706/](./tracks/roadmap_release_20260706/)*
+- [x] **Track: Next-generation roadmap release orchestration**
+*Link: [./archive/roadmap_release_20260706/](./archive/roadmap_release_20260706/)*
 
 ---
 
@@ -32,5 +32,11 @@
 
 ---
 
-- [~] **Track: NZ RuleSpec vs OpenFisca Aotearoa Reconciliation**
-*Link: [./tracks/nz_reconciliation_20260707/](./tracks/nz_reconciliation_20260707/)*
+- [x] **Track: NZ RuleSpec vs OpenFisca Aotearoa Reconciliation**
+*Link: [./archive/nz_reconciliation_20260707/](./archive/nz_reconciliation_20260707/)*
+
+---
+
+## Program status (2026-07-09)
+
+All registered Conductor tracks are **complete**. External maintainer monitoring continues via `external/MAINTAINER_MONITORING.md`.

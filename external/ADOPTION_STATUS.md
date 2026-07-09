@@ -15,4 +15,9 @@ This document tracks all staged and submitted upstream proposals, PRs, and issue
 | `PolicyEngine/policyengine-core` (YAML converter) | `external/policyengine/SUBMISSION.md` | `submitted` | [Issue #514](https://github.com/PolicyEngine/policyengine-core/issues/514) opened 2026-07-09 | `PolicyEngine/policyengine-core#514` | `none` | Agent (authorized) | Monitor maintainer response |
 | `openfisca/openfisca-core` (YAML converter) | `external/openfisca/SUBMISSION.md` | `submitted` | [Issue #1381](https://github.com/openfisca/openfisca-core/issues/1381) opened 2026-07-09 | `openfisca/openfisca-core#1381` | `none` | Agent (authorized) | Monitor maintainer response |
 | `Alaveteli/mySociety` (Request State Taxonomy) | `external/alaveteli/SUBMISSION.md` | `submitted` | [Issue #9355](https://github.com/mysociety/alaveteli/issues/9355) opened 2026-07-09 | `mysociety/alaveteli#9355` | `none` | Agent (authorized) | Monitor maintainer response |
+| `BetterRules/openfisca-aotearoa` (coverage gap for NZ recon) | `studies/nz-reconciliation/results/DIVERGENCE_REPORT.md` | `submitted` | [Issue #199](https://github.com/BetterRules/openfisca-aotearoa/issues/199) opened 2026-07-09 (coverage: 2026 tax, earners levy, KiwiSaver) | `BetterRules/openfisca-aotearoa#199` | `none` | Agent (authorized) | Monitor maintainer response |
 | `Digital Benefits Network Rules-as-Code CoP` (Email) | `external/dbn/EMAIL.md` | `sent` | Email thread | `DBN#Email` (`external-gate`) | `none` | Dylan | Monitor for responses |
+
+## Monitoring
+
+See `external/MAINTAINER_MONITORING.md` for the latest maintainer-reply sweep (last: 2026-07-09; **zero** maintainer comments on open proposals).

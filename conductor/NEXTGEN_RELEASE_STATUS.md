@@ -4,6 +4,17 @@ Last updated: 2026-07-09.
 
 This file records the GitHub execution ledger for the next-generation roadmap. Local Conductor specs and plans remain the source of truth for requirements and acceptance.
 
+## Release decision (2026-07-09)
+
+**Decision: keep external monitoring open.**
+
+- **Repo-local roadmap work:** complete (`make check` green; non-final tracks archived with evidence).
+- **External adoption:** every staged GitHub target has a durable URL in `external/ADOPTION_STATUS.md`.
+- **Maintainer replies:** none yet on open proposals (see `external/MAINTAINER_MONITORING.md`).
+- **Do not claim** broad external merge/adoption beyond the single merged `foi-o` PR and local fork archives.
+
+Interpreter of record: Dylan (session authorization to address remaining human gates).
+
 ## GitHub Ledger
 
 Project: [Rules and Processes Integration Dashboard](https://github.com/users/edithatogo/projects/19)
@@ -16,27 +27,29 @@ Native sub-issues attached to #6:
 
 | Issue | Conductor track | Local path |
 |---|---|---|
-| [#7](https://github.com/edithatogo/rulesandprocesses/issues/7) | `roadmap_release_20260706` | `conductor/tracks/roadmap_release_20260706/` |
-| [#8](https://github.com/edithatogo/rulesandprocesses/issues/8) | `repo_boundaries_20260706` | `conductor/tracks/repo_boundaries_20260706/` |
+| [#7](https://github.com/edithatogo/rulesandprocesses/issues/7) | `roadmap_release_20260706` | `conductor/archive/roadmap_release_20260706/` |
+| [#8](https://github.com/edithatogo/rulesandprocesses/issues/8) | `repo_boundaries_20260706` | `conductor/archive/repo_boundaries_20260706/` |
 | [#9](https://github.com/edithatogo/rulesandprocesses/issues/9) | `adoption_closure_20260706` | `conductor/archive/adoption_closure_20260706/` |
-| [#10](https://github.com/edithatogo/rulesandprocesses/issues/10) | `pic_v02_20260706` | `conductor/tracks/pic_v02_20260706/` |
+| [#10](https://github.com/edithatogo/rulesandprocesses/issues/10) | `pic_v02_20260706` | `conductor/archive/pic_v02_20260706/` |
 | [#11](https://github.com/edithatogo/rulesandprocesses/issues/11) | `axiom_validation_20260706` | `conductor/archive/axiom_validation_20260706/` |
 | [#12](https://github.com/edithatogo/rulesandprocesses/issues/12) | `service_demos_20260706` | `conductor/archive/service_demos_20260706/` |
-| [#13](https://github.com/edithatogo/rulesandprocesses/issues/13) | `comparative_studies_20260706` | `conductor/tracks/comparative_studies_20260706/` |
+| [#13](https://github.com/edithatogo/rulesandprocesses/issues/13) | `comparative_studies_20260706` | `conductor/archive/comparative_studies_20260706/` |
+| *(local)* | `nz_reconciliation_20260707` | `conductor/archive/nz_reconciliation_20260707/` |
 
-Completed prior-track issues [#1](https://github.com/edithatogo/rulesandprocesses/issues/1) through [#5](https://github.com/edithatogo/rulesandprocesses/issues/5) are closed as completed and their project status is `Done`.
+Completed prior-track issues [#1](https://github.com/edithatogo/rulesandprocesses/issues/1) through [#5](https://github.com/edithatogo/rulesandprocesses/issues/5) are closed as completed.
 
 ## Release Matrix
 
 | Track | Issue | Project status | Depends on | CI gate | External/human gate | Next action |
 |---|---:|---|---|---|---|---|
-| `roadmap_release_20260706` | [#7](https://github.com/edithatogo/rulesandprocesses/issues/7) | Todo | All active tracks for final certification | `make check`; GitHub Actions before final certification | Dylan release decision | Finish Phase 1 checkpoint, then hold mid/final audits until child tracks progress. |
-| `repo_boundaries_20260706` | [#8](https://github.com/edithatogo/rulesandprocesses/issues/8) | Done | None | Documentation validation via `make check` where applicable | None unless repo classification is disputed | Completed and archived in `conductor/archive/repo_boundaries_20260706/`. |
-| `adoption_closure_20260706` | [#9](https://github.com/edithatogo/rulesandprocesses/issues/9) | Done | repo boundaries; roadmap phase 1 | GitHub Actions on any pushed branches/PRs | All staged GitHub targets submitted or merged with URLs | Completed and archived in `conductor/archive/adoption_closure_20260706/`. |
-| `pic_v02_20260706` | [#10](https://github.com/edithatogo/rulesandprocesses/issues/10) | Done | Adoption Phase 3 consumer evidence | `make check`; contract examples and schema tests; GitHub Actions | Consumer compatibility evidence | Completed and archived in `conductor/archive/pic_v02_20260706/`. |
-| `axiom_validation_20260706` | [#11](https://github.com/edithatogo/rulesandprocesses/issues/11) | Done | Existing Axiom validation artifacts | `make check`; harness regression tests; GitHub Actions | Upstream KiwiSaver compile issue filed (#79); suite green without that slice | Completed and archived in `conductor/archive/axiom_validation_20260706/`. |
-| `service_demos_20260706` | [#12](https://github.com/edithatogo/rulesandprocesses/issues/12) | Done | Repo-boundary Phase 2; PIC/Axiom artifacts where reused | `make check`; demo tests; GitHub Actions | Dylan demo review; no live secrets or third-party calls | Completed and archived in `conductor/archive/service_demos_20260706/`. |
-| `comparative_studies_20260706` | [#13](https://github.com/edithatogo/rulesandprocesses/issues/13) | Done | Adoption and validation evidence for candidate scoring | Candidate evidence validation; later track-specific checks | Dylan study approval before implementation track | Completed and archived in `conductor/archive/comparative_studies_20260706/`. |
+| `roadmap_release_20260706` | [#7](https://github.com/edithatogo/rulesandprocesses/issues/7) | Done (monitor) | All child tracks | `make check` green 2026-07-09 | Release decision recorded: keep external monitoring open | Monitor upstream issue replies; optional follow-up tracks |
+| `repo_boundaries_20260706` | [#8](https://github.com/edithatogo/rulesandprocesses/issues/8) | Done | None | Docs / `make check` | None | Archived |
+| `adoption_closure_20260706` | [#9](https://github.com/edithatogo/rulesandprocesses/issues/9) | Done | Repo boundaries; roadmap phase 1 | N/A for drafts | Submitted/merged URLs in ledger; replies pending | Monitor `MAINTAINER_MONITORING.md` |
+| `pic_v02_20260706` | [#10](https://github.com/edithatogo/rulesandprocesses/issues/10) | Done | Adoption evidence | `make check` | Consumer evidence | Archived |
+| `axiom_validation_20260706` | [#11](https://github.com/edithatogo/rulesandprocesses/issues/11) | Done | Axiom artifacts | Harness + Actions | [rulespec-nz#79](https://github.com/TheAxiomFoundation/rulespec-nz/issues/79) open | Monitor #79 |
+| `service_demos_20260706` | [#12](https://github.com/edithatogo/rulesandprocesses/issues/12) | Done | Boundaries / PIC / Axiom | Demo tests | None blocking | Archived |
+| `comparative_studies_20260706` | [#13](https://github.com/edithatogo/rulesandprocesses/issues/13) | Done | Adoption / validation evidence | Study draft validation | Study selection approved | Archived; spawned NZ recon track |
+| `nz_reconciliation_20260707` | *(local track)* | Done | Comparative study selection | `make nz-recon-*` | Certified engine-gap; [openfisca-aotearoa#199](https://github.com/BetterRules/openfisca-aotearoa/issues/199) | Monitor #199; optional future dual-engine track |
 
 Certification levels used by this matrix:
 
@@ -47,29 +60,18 @@ Certification levels used by this matrix:
 - `declined`: external actor declined or replaced the contribution.
 - `blocked by external actor`: no further local action can advance the item.
 - `superseded`: later approved plan makes the item unnecessary.
+- `engine_gap`: comparative study completed with documented non-overlap (not numeric agreement).
 
-## Project Configuration Applied
+## External adoption snapshot (2026-07-09)
 
-- Added `external/ADOPTION_STATUS.md` as the repo-local adoption ledger for staged and submitted upstream work.
-- Added labels for Conductor tracks, next-generation roadmap work, external gates, CI-required work, human gates, repo-boundary work, adoption, contracts, validation harnesses, service demos, comparative studies, releases, and GitHub project coordination.
-- Added all active roadmap issues to the project.
-- Set active roadmap issue project status to `Todo`.
-- Set completed prior-track project items to `Done`.
-- Attached issues #7-#13 as native sub-issues under #6.
-- Added issue dependencies for true downstream blockers:
-  - #10 is blocked by #9.
-  - #12 is blocked by #8, #10, and #11.
-  - #13 is blocked by #9 and #11.
+| Outcome | Count | Notes |
+|---|---:|---|
+| Merged upstream (this program) | 1 | `edithatogo/foi-o` PR #20 |
+| Submitted open issues | 8 | PE×3, OF-core×2, Alaveteli×1, rulespec-nz×1, openfisca-aotearoa×1 |
+| Email sent / monitor | 1 | DBN CoP |
+| Maintainer replies | 0 | As of monitoring sweep |
 
-## Recommended Project Views
-
-These views should be maintained in GitHub Projects:
-
-- `Roadmap hierarchy`: table view grouped or filtered by parent issue, with `Parent issue` and `Sub-issues progress` visible.
-- `External gates`: filtered by `external-gate` or `human-gate`.
-- `CI and PR readiness`: filtered by `ci-required`.
-- `By milestone`: grouped by the `Next-generation roadmap` milestone.
-- `Review queue`: filtered by linked PRs, reviewers, and labels requiring Dylan review.
+Full table: `external/ADOPTION_STATUS.md`.
 
 ## Operating Boundary
 

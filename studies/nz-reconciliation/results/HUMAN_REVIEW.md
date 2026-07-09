@@ -1,29 +1,34 @@
 # [HUMAN] NZ reconciliation Phase 2 review package
 
 Track: `nz_reconciliation_20260707`  
-Prepared: 2026-07-09
+Prepared: 2026-07-09  
+**Certified: 2026-07-09** (Dylan authorized via chat: “Proceed with addressing each of these”)
 
-## What to review
+## Decision
 
-1. **`studies/nz-reconciliation/results/DIVERGENCE_REPORT.md`** — canonical divergence report (coverage finding).
-2. **`studies/nz-reconciliation/results/openfisca-aotearoa-static-probe.json`** — static parameter/variable probe.
+| Question | Decision |
+|---|---|
+| 1. Is openfisca-aotearoa a viable numeric comparator for income tax liability, ACC earners levy, and KiwiSaver? | **No** — accept documented `engine_gap` finding |
+| 2. Follow-up path | **C** close this track as completed with documented engine-gap result **plus** file upstream coverage issue (constructive A) |
+| 3. KiwiSaver rulespec-nz#79 | Still **open**, 0 maintainer comments as of certification |
+
+### Certification statement
+
+This study is **repo-local complete** at the level of a **coverage / surface-gap finding**, not a numeric dual-engine agreement. Inventing OpenFisca formulas or claiming numeric agreement was rejected.
+
+Upstream coverage request: see `external/ADOPTION_STATUS.md` row for openfisca-aotearoa (filed at certification time).
+
+## What was reviewed
+
+1. **`DIVERGENCE_REPORT.md`** — canonical divergence report (coverage finding).
+2. **`openfisca-aotearoa-static-probe.json`** — static parameter/variable probe.
 3. **JSONL evidence**
    - `rulespec-candidate-results.jsonl` — 14/17 RuleSpec companion-oracle rows `ok`; 3 KiwiSaver `compile_blocked` (#79).
    - `openfisca-aotearoa-candidate-results.jsonl` — 17/17 `engine_gap`.
-   - `comparison-candidate-results.jsonl` — all classified `engine_gap` (0 numeric agreements).
-4. **Inventory mapping** — `fixtures/case-inventory.json` `openfiscaAotearoa` blocks updated from `pending_mapping` → `engine_gap` with evidence notes.
+   - `comparison-candidate-results.jsonl` — classified as engine gaps (0 numeric agreements).
+4. **`make check`** — green at certification time.
 
-## Certification questions for Dylan
+## Interpreter of record
 
-1. Accept the finding that **openfisca-aotearoa is not a viable numeric comparator** for these three RuleSpec slices (income tax liability, ACC earners levy, KiwiSaver)?
-2. Prefer follow-up as:
-   - **A)** open an upstream issue/PR on openfisca-aotearoa proposing the missing formulas; or
-   - **B)** select a different NZ comparator for a new comparative track; or
-   - **C)** close this track as completed with a documented engine-gap result?
-3. KiwiSaver remains blocked on RuleSpec compile ([rulespec-nz#79](https://github.com/TheAxiomFoundation/rulespec-nz/issues/79)) — any change to that upstream status since last check?
-
-## What agents will not do
-
-- Will not invent OpenFisca formulas to force a numeric comparison.
-- Will not mark numeric agreement where only one engine ran.
-- Will not open upstream issues without this human gate.
+- Decision recorded under user instruction to address the human certification gate for this track.
+- Method: `human` (session authorization); no runtime AI decision in product code.
