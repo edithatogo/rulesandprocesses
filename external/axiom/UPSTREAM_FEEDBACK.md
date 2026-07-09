@@ -1,7 +1,7 @@
 # Axiom upstream feedback draft
 
 Track: `axiom_validation_20260706`
-Status: **submitted** — https://github.com/TheAxiomFoundation/rulespec-nz/issues/79 (2026-07-09)
+Status: **submitted** — https://github.com/TheAxiomFoundation/rulespec-nz/issues/79 (2026-07-09); **fix PR** — https://github.com/TheAxiomFoundation/rulespec-nz/pull/80 (2026-07-09)
 
 ## Live issue
 

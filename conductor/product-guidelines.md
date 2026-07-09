@@ -28,4 +28,4 @@
 
 ## Licensing
 
-- Code and schemas: MIT (matches foi-o). Documents: CC-BY-4.0. Third-party data (PRD, FYI archive) retains its original terms and is never committed here.
+- Code, schemas, and repository contents: Apache-2.0 (see root `LICENSE` / `NOTICE`). Cite via `CITATION.cff`. Third-party data (PRD, FYI archive) and staged upstream patches retain their original terms.
