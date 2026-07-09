@@ -1,3 +1,5 @@
+**Status (2026-07-09): submitted.** https://github.com/mysociety/alaveteli/issues/9355
+
 # Alaveteli Upstream Proposal: Request State Taxonomy Mapping
 
 **Track:** `community_20260704` (Phase 2)  

@@ -1,3 +1,5 @@
+**Status (2026-07-09): submitted.** https://github.com/PolicyEngine/policyengine-core/issues/514
+
 # Draft PolicyEngine Issue: YAML test portability converter
 
 Target repository: `PolicyEngine/policyengine-core`

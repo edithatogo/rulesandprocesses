@@ -1,3 +1,5 @@
+**Status (2026-07-09): submitted.** https://github.com/PolicyEngine/policyengine-core/issues/512
+
 # Draft PolicyEngine Issue: Versioned trace export
 
 Target repository: `PolicyEngine/policyengine-core`

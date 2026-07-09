@@ -1,3 +1,5 @@
+**Status (2026-07-09): submitted.** https://github.com/openfisca/openfisca-core/issues/1380
+
 # Draft OpenFisca Issue: missingness semantics
 
 Target repository: `openfisca/openfisca-core` and/or `openfisca/openfisca-france`
@@ -41,4 +43,3 @@ I am not proposing an engine-wide rewrite here. I am asking whether there is an 
 
 - `external/openfisca/MISSINGNESS_CASES.md`
 - local OpenFisca runtime run with `openfisca-core==44.7.0` and `openfisca-france==175.1.0`
-

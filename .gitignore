@@ -11,3 +11,4 @@ data/processed/
 *.zip
 .external-repos/
 studies/nz-reconciliation/results/compiled/
+.venv-nz-recon/

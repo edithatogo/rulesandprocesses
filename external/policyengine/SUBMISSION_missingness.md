@@ -1,3 +1,5 @@
+**Status (2026-07-09): submitted.** https://github.com/PolicyEngine/policyengine-core/issues/513
+
 # Draft PolicyEngine Issue: missingness semantics
 
 Target repository: `PolicyEngine/policyengine-core`
@@ -42,4 +44,3 @@ Footnote: this repo's `pic-semantics` contract already models `valueState` expli
 
 - `external/policyengine/MISSINGNESS_CASES.md`
 - local PolicyEngine runtime run with `policyengine-core==3.28.0` and `policyengine-us==1.755.5`
-

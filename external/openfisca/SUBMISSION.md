@@ -1,3 +1,5 @@
+**Status (2026-07-09): submitted.** https://github.com/openfisca/openfisca-core/issues/1381
+
 # Draft OpenFisca Issue: YAML test portability converter
 
 Target repository: `openfisca/openfisca-core`

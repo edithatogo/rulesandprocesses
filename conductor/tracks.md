@@ -12,8 +12,8 @@
 
 ---
 
-- [~] **Track: Adoption closure and external proof**
-*Link: [./tracks/adoption_closure_20260706/](./tracks/adoption_closure_20260706/)*
+- [x] **Track: Adoption closure and external proof**
+*Link: [./archive/adoption_closure_20260706/](./archive/adoption_closure_20260706/)*
 
 ---
 

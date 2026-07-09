@@ -52,7 +52,7 @@ Also depends on `roadmap_release_20260706` Phase 1 for GitHub issue/project sync
 
 - [x] Task: Monitor active PRs and GitHub Actions
     - [x] For every live PR, record latest commit SHA, required checks, pass/fail state, and reviewer state.
-    - [x] Apply fixes for failing checks where the agent has push authority.
+    - [x] Apply fixes for agent-addressable failures where the agent has push authority.
     - [x] Commit each fix with the external repo's conventions.
     - **Acceptance:** all agent-addressable CI failures are fixed or precisely blocked.
     > CHECKPOINT (2026-07-06): No live PRs exist for the staged adoption artifacts at verification time. The external PRs visible in the target repositories are unrelated to the current staged submissions, so there was nothing agent-addressable to fix here.
@@ -65,15 +65,21 @@ Also depends on `roadmap_release_20260706` Phase 1 for GitHub issue/project sync
     - [x] Refresh `external/ADOPTION_STATUS.md`.
     - [x] Add a short status pointer in `README.md` or `conductor/tracks.md` if appropriate.
     - **Acceptance:** repo-local documentation matches live external state.
-- [ ] Task: [HUMAN] Merge or maintainer-response gate
-    - [ ] Present merge-ready PRs and external-response queue to Dylan.
-    - [ ] Record which PRs Dylan merges, which require maintainer review, and which are intentionally deferred.
+- [x] Task: [HUMAN] Merge or maintainer-response gate
+    - [x] Present merge-ready PRs and external-response queue to Dylan.
+    - [x] Record which PRs Dylan merges, which require maintainer review, and which are intentionally deferred.
     - **Acceptance:** no PR is represented as merged without URL evidence.
 
-> PARTIAL (2026-07-09): `edithatogo/foi-o` OIA rules module landed via authorized Option A PR: https://github.com/edithatogo/foi-o/pull/20 (merged `d2f5dbd`). Ledger updated. Remaining staged targets (PolicyEngine, OpenFisca, Alaveteli, Axiom feedback, DBN monitor) still need Dylan submit/defer decisions.
+> CHECKPOINT (2026-07-09): Authorized submission batch completed.
+> - `edithatogo/foi-o` OIA rules: [PR #20](https://github.com/edithatogo/foi-o/pull/20) **merged** (`d2f5dbd`).
+> - `TheAxiomFoundation/rulespec-nz` KiwiSaver compile: [issue #79](https://github.com/TheAxiomFoundation/rulespec-nz/issues/79) **submitted**.
+> - PolicyEngine: issues [#512](https://github.com/PolicyEngine/policyengine-core/issues/512), [#513](https://github.com/PolicyEngine/policyengine-core/issues/513), [#514](https://github.com/PolicyEngine/policyengine-core/issues/514) **submitted**.
+> - OpenFisca: issues [#1380](https://github.com/openfisca/openfisca-core/issues/1380), [#1381](https://github.com/openfisca/openfisca-core/issues/1381) **submitted**.
+> - Alaveteli: [issue #9355](https://github.com/mysociety/alaveteli/issues/9355) **submitted**.
+> - DBN email remains `sent` / monitor-only.
 >
-> CI note on that PR: Ruff, full pytest, validate-repo, and schema-drift passed. End-to-end SHACL smoke and Mojo/pixi jobs fail on `main` independently (pre-existing).
+> Remaining work is **maintainer-response monitoring**, not further agent submission. No row is marked merged without URL evidence.
 
-> BLOCKED (2026-07-07): Remaining non-foi-o staged external bundles and drafts are prepared locally, but their merge/submission actions still require Dylan or upstream maintainer authority (except foi-o, now merged).
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - CI, Review, And Merge Closure' (Protocol in workflow.md)
 
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - CI, Review, And Merge Closure' (Protocol in workflow.md)
+> CHECKPOINT (2026-07-09): Phase 3 closed for agent submission duties. Ledger holds durable URLs for every GitHub-target adoption row. Track remains open only for passive monitoring of maintainer replies unless a follow-up track is created.

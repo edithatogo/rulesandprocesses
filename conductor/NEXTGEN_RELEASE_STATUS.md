@@ -18,7 +18,7 @@ Native sub-issues attached to #6:
 |---|---|---|
 | [#7](https://github.com/edithatogo/rulesandprocesses/issues/7) | `roadmap_release_20260706` | `conductor/tracks/roadmap_release_20260706/` |
 | [#8](https://github.com/edithatogo/rulesandprocesses/issues/8) | `repo_boundaries_20260706` | `conductor/tracks/repo_boundaries_20260706/` |
-| [#9](https://github.com/edithatogo/rulesandprocesses/issues/9) | `adoption_closure_20260706` | `conductor/tracks/adoption_closure_20260706/` |
+| [#9](https://github.com/edithatogo/rulesandprocesses/issues/9) | `adoption_closure_20260706` | `conductor/archive/adoption_closure_20260706/` |
 | [#10](https://github.com/edithatogo/rulesandprocesses/issues/10) | `pic_v02_20260706` | `conductor/tracks/pic_v02_20260706/` |
 | [#11](https://github.com/edithatogo/rulesandprocesses/issues/11) | `axiom_validation_20260706` | `conductor/archive/axiom_validation_20260706/` |
 | [#12](https://github.com/edithatogo/rulesandprocesses/issues/12) | `service_demos_20260706` | `conductor/archive/service_demos_20260706/` |
@@ -32,7 +32,7 @@ Completed prior-track issues [#1](https://github.com/edithatogo/rulesandprocesse
 |---|---:|---|---|---|---|---|
 | `roadmap_release_20260706` | [#7](https://github.com/edithatogo/rulesandprocesses/issues/7) | Todo | All active tracks for final certification | `make check`; GitHub Actions before final certification | Dylan release decision | Finish Phase 1 checkpoint, then hold mid/final audits until child tracks progress. |
 | `repo_boundaries_20260706` | [#8](https://github.com/edithatogo/rulesandprocesses/issues/8) | Done | None | Documentation validation via `make check` where applicable | None unless repo classification is disputed | Completed and archived in `conductor/archive/repo_boundaries_20260706/`. |
-| `adoption_closure_20260706` | [#9](https://github.com/edithatogo/rulesandprocesses/issues/9) | Todo | `repo_boundaries_20260706` Phase 1; `roadmap_release_20260706` Phase 1 | GitHub Actions on any pushed branches/PRs | Upstream maintainers and Dylan submission/merge approvals | Build adoption ledger and issue/PR/submission packets. |
+| `adoption_closure_20260706` | [#9](https://github.com/edithatogo/rulesandprocesses/issues/9) | Done | repo boundaries; roadmap phase 1 | GitHub Actions on any pushed branches/PRs | All staged GitHub targets submitted or merged with URLs | Completed and archived in `conductor/archive/adoption_closure_20260706/`. |
 | `pic_v02_20260706` | [#10](https://github.com/edithatogo/rulesandprocesses/issues/10) | Done | Adoption Phase 3 consumer evidence | `make check`; contract examples and schema tests; GitHub Actions | Consumer compatibility evidence | Completed and archived in `conductor/archive/pic_v02_20260706/`. |
 | `axiom_validation_20260706` | [#11](https://github.com/edithatogo/rulesandprocesses/issues/11) | Done | Existing Axiom validation artifacts | `make check`; harness regression tests; GitHub Actions | Upstream KiwiSaver compile issue filed (#79); suite green without that slice | Completed and archived in `conductor/archive/axiom_validation_20260706/`. |
 | `service_demos_20260706` | [#12](https://github.com/edithatogo/rulesandprocesses/issues/12) | Done | Repo-boundary Phase 2; PIC/Axiom artifacts where reused | `make check`; demo tests; GitHub Actions | Dylan demo review; no live secrets or third-party calls | Completed and archived in `conductor/archive/service_demos_20260706/`. |
