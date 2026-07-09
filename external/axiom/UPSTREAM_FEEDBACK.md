@@ -1,7 +1,12 @@
 # Axiom upstream feedback draft
 
 Track: `axiom_validation_20260706`
-Status: staged draft for human submission
+Status: **submitted** — https://github.com/TheAxiomFoundation/rulespec-nz/issues/79 (2026-07-09)
+
+## Live issue
+
+- URL: https://github.com/TheAxiomFoundation/rulespec-nz/issues/79
+- Title: KiwiSaver contributions module fails to compile with the pinned Axiom RuleSpec engine
 
 ## Draft issue: KiwiSaver contributions module fails to compile
 

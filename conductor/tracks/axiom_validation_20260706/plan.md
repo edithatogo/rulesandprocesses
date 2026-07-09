@@ -79,13 +79,15 @@ Depends on: `repo_boundaries_20260706` Phase 1.
     - [x] Monitor GitHub Actions until green or blocked.
     - [x] Apply fixes for agent-addressable failures.
     - **Acceptance:** branch has green Actions or exact blocker.
-- [ ] Task: [HUMAN] Submit or merge upstream Axiom work
-    - [ ] Present report, branch, and feedback text to Dylan.
-    - [ ] Record submitted/merged URLs or blocker in `external/ADOPTION_STATUS.md`.
+- [x] Task: [HUMAN] Submit or merge upstream Axiom work
+    - [x] Present report, branch, and feedback text to Dylan.
+    - [x] Record submitted/merged URLs or blocker in `external/ADOPTION_STATUS.md`.
     - **Acceptance:** external state is not ambiguous.
 
 > NOTE (2026-07-06): Branch `main` is pushed and GitHub Actions run `28796868138` completed successfully after the local harness fixes.
-> The remaining open item is human submission or merge of the staged upstream Axiom feedback for the KiwiSaver compile blocker.
-> The agent-side work for phase 4 is complete; external state now needs a Dylan action or recorded blocker URL.
+>
+> CHECKPOINT (2026-07-09): Upstream KiwiSaver compile feedback submitted as [TheAxiomFoundation/rulespec-nz#79](https://github.com/TheAxiomFoundation/rulespec-nz/issues/79). Ledger and `UPSTREAM_FEEDBACK.md` updated. Maintainer response / module fix remains external; agent submission gate is closed.
 
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 4 - External Review Closure' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 4 - External Review Closure' (Protocol in workflow.md)
+
+> CHECKPOINT (2026-07-09): Phase 4 closed for agent purposes. External Axiom KiwiSaver compile issue is filed with a durable URL; live suite remains green for non-KiwiSaver slices.

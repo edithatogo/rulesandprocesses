@@ -1,6 +1,6 @@
-.PHONY: check lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test service-boundaries-lint service-boundaries-test
+.PHONY: check lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test nz-recon-lint nz-recon-test service-boundaries-lint service-boundaries-test
 
-check: lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test service-boundaries-lint service-boundaries-test
+check: lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test nz-recon-lint nz-recon-test service-boundaries-lint service-boundaries-test
 
 lint:
 	cd contracts/tools && uv run --with ruff ruff check .
@@ -31,6 +31,12 @@ snap-runner-lint:
 
 snap-runner-test:
 	PYTHONPATH=studies/snap-divergence/runner/src:harness:contracts/tools/src uv run --with pytest --with jsonschema pytest studies/snap-divergence/runner/tests
+
+nz-recon-lint:
+	PYTHONPATH=studies/nz-reconciliation/runner/src uv run --with ruff ruff check studies/nz-reconciliation/runner/src studies/nz-reconciliation/runner/tests
+
+nz-recon-test:
+	PYTHONPATH=studies/nz-reconciliation/runner/src uv run --with pytest pytest studies/nz-reconciliation/runner/tests
 
 service-boundaries-lint:
 	PYTHONPATH=demos/service-boundaries/src:external/foi-o/src uv run --with ruff ruff check demos/service-boundaries/src demos/service-boundaries/tests

@@ -1,0 +1,598 @@
+{
+  "inventoryId": "nz-reconciliation-case-inventory-v1",
+  "title": "NZ RuleSpec vs OpenFisca Aotearoa cross-engine cases",
+  "pinnedRulespecCommit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+  "openfiscaAotearoaRepo": "https://github.com/ServiceInnovationLab/openfisca-aotearoa",
+  "targetMinCases": 15,
+  "caseCount": 17,
+  "domains": {
+    "income_tax": 5,
+    "acc_earners_levy": 9,
+    "kiwisaver": 3
+  },
+  "cases": [
+    {
+      "caseId": "nz-recon/income_tax.first_bracket_upper_bound",
+      "domain": "income_tax",
+      "name": "first_bracket_upper_bound",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/statutes/income_tax/schedule_1/individual_income_tax.test.yaml",
+        "modulePath": "nz/statutes/income_tax/schedule_1/individual_income_tax.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#input.taxable_income": 15600,
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#input.bracket": 1
+      },
+      "expectedRulespec": {
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#individual_income_tax_bracket_thresholds": 15600,
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#individual_income_tax_bracket_rates": 0.105,
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#individual_income_tax_before_credits": 1638
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/income_tax/schedule_1/individual_income_tax.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/income_tax.second_bracket_upper_bound",
+      "domain": "income_tax",
+      "name": "second_bracket_upper_bound",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/statutes/income_tax/schedule_1/individual_income_tax.test.yaml",
+        "modulePath": "nz/statutes/income_tax/schedule_1/individual_income_tax.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#input.taxable_income": 53500,
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#input.bracket": 2
+      },
+      "expectedRulespec": {
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#individual_income_tax_bracket_thresholds": 53500,
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#individual_income_tax_bracket_rates": 0.175,
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#individual_income_tax_before_credits": 8270.5
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/income_tax/schedule_1/individual_income_tax.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/income_tax.fourth_bracket_upper_bound",
+      "domain": "income_tax",
+      "name": "fourth_bracket_upper_bound",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/statutes/income_tax/schedule_1/individual_income_tax.test.yaml",
+        "modulePath": "nz/statutes/income_tax/schedule_1/individual_income_tax.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#input.taxable_income": 180000,
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#input.bracket": 4
+      },
+      "expectedRulespec": {
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#individual_income_tax_bracket_thresholds": 180000,
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#individual_income_tax_bracket_rates": 0.33,
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#individual_income_tax_before_credits": 49277.5
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/income_tax/schedule_1/individual_income_tax.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/income_tax.top_bracket_income",
+      "domain": "income_tax",
+      "name": "top_bracket_income",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/statutes/income_tax/schedule_1/individual_income_tax.test.yaml",
+        "modulePath": "nz/statutes/income_tax/schedule_1/individual_income_tax.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#input.taxable_income": 200000,
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#input.bracket": 5
+      },
+      "expectedRulespec": {
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#individual_income_tax_bracket_rates": 0.39,
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#individual_income_tax_before_credits": 57077.5
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/income_tax/schedule_1/individual_income_tax.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/income_tax.nonpositive_taxable_income",
+      "domain": "income_tax",
+      "name": "nonpositive_taxable_income",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/statutes/income_tax/schedule_1/individual_income_tax.test.yaml",
+        "modulePath": "nz/statutes/income_tax/schedule_1/individual_income_tax.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#input.taxable_income": -100
+      },
+      "expectedRulespec": {
+        "nz:statutes/income_tax/schedule_1/individual_income_tax#individual_income_tax_before_credits": 0
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/income_tax/schedule_1/individual_income_tax.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/acc_earners_levy.standard_2026_earnings_below_cap",
+      "domain": "acc_earners_levy",
+      "name": "standard_2026_earnings_below_cap",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/regulations/acc/earners_levy.test.yaml",
+        "modulePath": "nz/regulations/acc/earners_levy.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:regulations/acc/earners_levy#input.acc_earnings_for_earners_levy": 100000
+      },
+      "expectedRulespec": {
+        "nz:regulations/acc/earners_levy#acc_earners_levy_rate_excluding_gst": 0.0152,
+        "nz:regulations/acc/earners_levy#acc_earners_levy_rate_including_gst": 0.0175,
+        "nz:regulations/acc/earners_levy#acc_earners_levy_maximum_earnings": 156641,
+        "nz:regulations/acc/earners_levy#acc_levy_cents_rounding_scale": 100,
+        "nz:regulations/acc/earners_levy#acc_standard_earners_levy_excluding_gst": 1520,
+        "nz:regulations/acc/earners_levy#acc_standard_earners_levy_including_gst": 1750
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/regulations/acc/earners_levy.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/acc_earners_levy.standard_2026_earnings_above_cap",
+      "domain": "acc_earners_levy",
+      "name": "standard_2026_earnings_above_cap",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/regulations/acc/earners_levy.test.yaml",
+        "modulePath": "nz/regulations/acc/earners_levy.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:regulations/acc/earners_levy#input.acc_earnings_for_earners_levy": 200000
+      },
+      "expectedRulespec": {
+        "nz:regulations/acc/earners_levy#acc_standard_earners_levy_excluding_gst": 2380.9432,
+        "nz:regulations/acc/earners_levy#acc_standard_earners_levy_including_gst": 2741.22
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/regulations/acc/earners_levy.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/acc_earners_levy.standard_negative_earnings",
+      "domain": "acc_earners_levy",
+      "name": "standard_negative_earnings",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/regulations/acc/earners_levy.test.yaml",
+        "modulePath": "nz/regulations/acc/earners_levy.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:regulations/acc/earners_levy#input.acc_earnings_for_earners_levy": -100
+      },
+      "expectedRulespec": {
+        "nz:regulations/acc/earners_levy#acc_standard_earners_levy_excluding_gst": 0,
+        "nz:regulations/acc/earners_levy#acc_standard_earners_levy_including_gst": 0
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/regulations/acc/earners_levy.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/acc_earners_levy.low_self_employed_minimum_levy_2026",
+      "domain": "acc_earners_levy",
+      "name": "low_self_employed_minimum_levy_2026",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/regulations/acc/earners_levy.test.yaml",
+        "modulePath": "nz/regulations/acc/earners_levy.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:regulations/acc/earners_levy#input.acc_self_employed_more_than_30_hours_per_week": true,
+        "nz:regulations/acc/earners_levy#input.acc_self_employed_earnings_for_earners_levy": 40000,
+        "nz:regulations/acc/earners_levy#input.acc_employee_earnings_for_low_self_employed_formula": 10000
+      },
+      "expectedRulespec": {
+        "nz:regulations/acc/earners_levy#acc_low_self_employed_minimum_earnings": 50501,
+        "nz:regulations/acc/earners_levy#acc_low_self_employed_minimum_levy_excluding_gst": 615.6152
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/regulations/acc/earners_levy.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/acc_earners_levy.low_self_employed_threshold_not_met",
+      "domain": "acc_earners_levy",
+      "name": "low_self_employed_threshold_not_met",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/regulations/acc/earners_levy.test.yaml",
+        "modulePath": "nz/regulations/acc/earners_levy.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:regulations/acc/earners_levy#input.acc_self_employed_more_than_30_hours_per_week": true,
+        "nz:regulations/acc/earners_levy#input.acc_self_employed_earnings_for_earners_levy": 60000,
+        "nz:regulations/acc/earners_levy#input.acc_employee_earnings_for_low_self_employed_formula": 0
+      },
+      "expectedRulespec": {
+        "nz:regulations/acc/earners_levy#acc_low_self_employed_minimum_levy_excluding_gst": 0
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/regulations/acc/earners_levy.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/acc_earners_levy.weekly_compensation_purchase_2026",
+      "domain": "acc_earners_levy",
+      "name": "weekly_compensation_purchase_2026",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/regulations/acc/earners_levy.test.yaml",
+        "modulePath": "nz/regulations/acc/earners_levy.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:regulations/acc/earners_levy#input.acc_self_employed_purchases_weekly_compensation": true,
+        "nz:regulations/acc/earners_levy#input.acc_agreed_weekly_compensation_purchased_annual_amount": 60000
+      },
+      "expectedRulespec": {
+        "nz:regulations/acc/earners_levy#acc_weekly_compensation_purchase_multiplier": 1.25,
+        "nz:regulations/acc/earners_levy#acc_weekly_compensation_purchase_levy_excluding_gst": 1140
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/regulations/acc/earners_levy.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/acc_earners_levy.weekly_compensation_purchase_not_made",
+      "domain": "acc_earners_levy",
+      "name": "weekly_compensation_purchase_not_made",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/regulations/acc/earners_levy.test.yaml",
+        "modulePath": "nz/regulations/acc/earners_levy.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:regulations/acc/earners_levy#input.acc_self_employed_purchases_weekly_compensation": false,
+        "nz:regulations/acc/earners_levy#input.acc_agreed_weekly_compensation_purchased_annual_amount": 60000
+      },
+      "expectedRulespec": {
+        "nz:regulations/acc/earners_levy#acc_weekly_compensation_purchase_levy_excluding_gst": 0
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/regulations/acc/earners_levy.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/acc_earners_levy.self_employed_invoice_exempt_amount_applies",
+      "domain": "acc_earners_levy",
+      "name": "self_employed_invoice_exempt_amount_applies",
+      "period": "2026-06-16/2026-06-16",
+      "periodMeta": {
+        "period_kind": "custom",
+        "name": "calendar_day",
+        "start": "2026-06-16",
+        "end": "2026-06-16"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/regulations/acc/earners_levy.test.yaml",
+        "modulePath": "nz/regulations/acc/earners_levy.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:regulations/acc/earners_levy#input.acc_invoice_issued_to_self_employed_person_for_acc_act_purposes": true,
+        "nz:regulations/acc/earners_levy#input.acc_invoice_includes_earners_levy": true,
+        "nz:regulations/acc/earners_levy#input.acc_self_employed_invoice_acc_levy_amount": 40
+      },
+      "expectedRulespec": {
+        "nz:regulations/acc/earners_levy#acc_self_employed_invoice_exempt_amount": 40,
+        "nz:regulations/acc/earners_levy#acc_self_employed_invoice_levy_payable_after_exempt_amount": 0
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/regulations/acc/earners_levy.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/acc_earners_levy.self_employed_invoice_exempt_amount_exceeded",
+      "domain": "acc_earners_levy",
+      "name": "self_employed_invoice_exempt_amount_exceeded",
+      "period": "2026-06-16/2026-06-16",
+      "periodMeta": {
+        "period_kind": "custom",
+        "name": "calendar_day",
+        "start": "2026-06-16",
+        "end": "2026-06-16"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/regulations/acc/earners_levy.test.yaml",
+        "modulePath": "nz/regulations/acc/earners_levy.yaml",
+        "compileStatus": "ok"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:regulations/acc/earners_levy#input.acc_invoice_issued_to_self_employed_person_for_acc_act_purposes": true,
+        "nz:regulations/acc/earners_levy#input.acc_invoice_includes_earners_levy": true,
+        "nz:regulations/acc/earners_levy#input.acc_self_employed_invoice_acc_levy_amount": 40.01
+      },
+      "expectedRulespec": {
+        "nz:regulations/acc/earners_levy#acc_self_employed_invoice_levy_payable_after_exempt_amount": 40.01
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/regulations/acc/earners_levy.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/kiwisaver.employee_and_employer_minimum_rates_2026",
+      "domain": "kiwisaver",
+      "name": "employee_and_employer_minimum_rates_2026",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/statutes/kiwisaver/contributions.test.yaml",
+        "modulePath": "nz/statutes/kiwisaver/contributions.yaml",
+        "compileStatus": "blocked_yaml_values_shape"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:statutes/kiwisaver/contributions#input.kiwisaver_gross_salary_or_wages": 100000,
+        "nz:statutes/kiwisaver/contributions#input.kiwisaver_selected_employee_contribution_rate": 0.035
+      },
+      "expectedRulespec": {
+        "nz:statutes/kiwisaver/contributions#kiwisaver_employee_minimum_contribution_rate": 0.035,
+        "nz:statutes/kiwisaver/contributions#kiwisaver_employer_minimum_contribution_rate": 0.035,
+        "nz:statutes/kiwisaver/contributions#kiwisaver_employee_deduction": 3500,
+        "nz:statutes/kiwisaver/contributions#kiwisaver_minimum_employer_contribution": 3500
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/kiwisaver/contributions.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/kiwisaver.government_contribution_cap_from_threshold",
+      "domain": "kiwisaver",
+      "name": "government_contribution_cap_from_threshold",
+      "period": "2025-07-01/2026-06-30",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2025-07-01",
+        "end": "2026-06-30"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/statutes/kiwisaver/contributions.test.yaml",
+        "modulePath": "nz/statutes/kiwisaver/contributions.yaml",
+        "compileStatus": "blocked_yaml_values_shape"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {},
+      "expectedRulespec": {
+        "nz:statutes/kiwisaver/contributions#kiwisaver_government_contribution_match_rate": 0.25,
+        "nz:statutes/kiwisaver/contributions#kiwisaver_government_contribution_member_payment_threshold": 1042.86,
+        "nz:statutes/kiwisaver/contributions#kiwisaver_government_contribution_maximum": 260.72
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/kiwisaver/contributions.test.yaml"
+      ]
+    },
+    {
+      "caseId": "nz-recon/kiwisaver.negative_salary_does_not_create_contributions",
+      "domain": "kiwisaver",
+      "name": "negative_salary_does_not_create_contributions",
+      "period": "2026-04-01/2027-03-31",
+      "periodMeta": {
+        "period_kind": "tax_year",
+        "start": "2026-04-01",
+        "end": "2027-03-31"
+      },
+      "rulespec": {
+        "repo": "TheAxiomFoundation/rulespec-nz",
+        "commit": "3c6436b2ecf82dd7a7f7810a406a2695a64af33a",
+        "testPath": "nz/statutes/kiwisaver/contributions.test.yaml",
+        "modulePath": "nz/statutes/kiwisaver/contributions.yaml",
+        "compileStatus": "blocked_yaml_values_shape"
+      },
+      "openfiscaAotearoa": {
+        "repo": "ServiceInnovationLab/openfisca-aotearoa",
+        "status": "pending_mapping",
+        "notes": "Map inputs/outputs to openfisca_aotearoa variables in Phase 2"
+      },
+      "inputs": {
+        "nz:statutes/kiwisaver/contributions#input.kiwisaver_gross_salary_or_wages": -100,
+        "nz:statutes/kiwisaver/contributions#input.kiwisaver_selected_employee_contribution_rate": 0.035
+      },
+      "expectedRulespec": {
+        "nz:statutes/kiwisaver/contributions#kiwisaver_employee_deduction": 0,
+        "nz:statutes/kiwisaver/contributions#kiwisaver_minimum_employer_contribution": 0
+      },
+      "sourceRefs": [
+        "https://github.com/TheAxiomFoundation/rulespec-nz/blob/3c6436b2ecf82dd7a7f7810a406a2695a64af33a/nz/statutes/kiwisaver/contributions.test.yaml"
+      ]
+    }
+  ]
+}

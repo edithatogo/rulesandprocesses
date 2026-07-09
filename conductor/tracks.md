@@ -22,7 +22,7 @@
 
 ---
 
-- [~] **Track: Axiom RuleSpec validation expansion**
+- [x] **Track: Axiom RuleSpec validation expansion**
 *Link: [./tracks/axiom_validation_20260706/](./tracks/axiom_validation_20260706/)*
 
 ---
@@ -32,5 +32,5 @@
 
 ---
 
-- [ ] **Track: NZ RuleSpec vs OpenFisca Aotearoa Reconciliation**
+- [~] **Track: NZ RuleSpec vs OpenFisca Aotearoa Reconciliation**
 *Link: [./tracks/nz_reconciliation_20260707/](./tracks/nz_reconciliation_20260707/)*
