@@ -21,12 +21,11 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v7
-        with:
-          enable-cache: true
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: "3.12"
+      - name: Install uv
+        run: python -m pip install --disable-pip-version-check uv==0.11.8
       - name: Run complete repository gate
         run: make check
 
@@ -46,6 +45,10 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           persist-credentials: false
-      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v7
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Install uv
+        run: python -m pip install --disable-pip-version-check uv==0.11.8
       - name: Audit workflow security
         run: uvx zizmor .github/workflows
