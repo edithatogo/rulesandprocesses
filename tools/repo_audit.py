@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import re
 import sys
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -70,24 +71,25 @@ def audit_repository(root: Path = ROOT) -> list[str]:
     errors.extend(f"missing required governance file: {path}" for path in required if not path.exists())
     for path in MANUSCRIPTS:
         errors.extend(audit_manuscript(path))
-    for path in root.rglob("*"):
-        if not path.is_file() or any(
-            part in {".git", ".venv", ".external-repos", "__pycache__", ".pytest_cache"}
-            for part in path.parts
-        ):
-            continue
-        relative = path.relative_to(root)
-        if relative.parts[0] in {"conversation", "source_material"}:
-            continue
-        try:
-            text = path.read_text(encoding="utf-8")
-        except UnicodeDecodeError:
-            continue
-        if LEGACY_REPOSITORY in text and relative not in INTENTIONAL_LEGACY_REFERENCE_PATHS:
-            errors.append(f"{relative}: unexpected legacy repository URL")
-    citation = (root / "CITATION.cff").read_text(encoding="utf-8")
-    if CANONICAL_REPOSITORY not in citation:
-        errors.append("CITATION.cff: canonical repository URL is missing")
+    excluded = {".git", ".venv", ".external-repos", "__pycache__", ".pytest_cache", "conversation", "source_material"}
+    for root_dir, directories, filenames in os.walk(root):
+        directories[:] = [directory for directory in directories if directory not in excluded]
+        for filename in filenames:
+            path = Path(root_dir) / filename
+            relative = path.relative_to(root)
+            try:
+                text = path.read_text(encoding="utf-8")
+            except UnicodeDecodeError:
+                continue
+            if LEGACY_REPOSITORY in text and relative not in INTENTIONAL_LEGACY_REFERENCE_PATHS:
+                errors.append(f"{relative}: unexpected legacy repository URL")
+    citation_path = root / "CITATION.cff"
+    if citation_path.exists():
+        citation = citation_path.read_text(encoding="utf-8")
+        if CANONICAL_REPOSITORY not in citation:
+            errors.append("CITATION.cff: canonical repository URL is missing")
+    else:
+        errors.append("CITATION.cff: file is missing")
     return errors
 
 

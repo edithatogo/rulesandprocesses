@@ -2,7 +2,7 @@
 
 ## Objective
 
-Rename `edithatogo/rac-conformance` to `edithatogo/rac-conformance` and make the new identity canonical while preserving historical, versioned identifiers.
+Rename `edithatogo/rulesandprocesses` to `edithatogo/rac-conformance` and make the new identity canonical while preserving historical, versioned identifiers.
 
 ## Requirements
 
