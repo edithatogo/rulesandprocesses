@@ -18,10 +18,11 @@ def summary(path: Path, title: str) -> str:
     rows = read_jsonl(path)
     classifications = Counter(row.get("classification", row.get("status", "unknown")) for row in rows)
     agreements = sum(1 for row in rows if row.get("agreement") is True)
+    source_name = str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else path.name
     lines = [
         f"# {title}",
         "",
-        f"Source: `{path.relative_to(ROOT)}`",
+        f"Source: `{source_name}`",
         "",
         "| Metric | Value |",
         "|---|---:|",
