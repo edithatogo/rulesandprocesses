@@ -37,6 +37,10 @@ def summary(path: Path, title: str) -> str:
 
 
 TARGETS = {
+    ROOT / "papers/coupling/ARTIFACT_SUMMARY.md": (
+        ROOT / "studies/snap-divergence/results/comparison-approved-results.jsonl",
+        "Coupling evidence summary",
+    ),
     ROOT / "studies/nz-reconciliation/paper/ARTIFACT_SUMMARY.md": (
         ROOT / "studies/nz-reconciliation/results/comparison-live-results.jsonl",
         "NZ reconciliation artifact summary",

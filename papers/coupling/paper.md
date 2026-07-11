@@ -31,6 +31,8 @@ To address this, we propose a decoupled architecture using **Policy Interchange 
 
 ## 2. Methodology & Architecture
 
+The architecture and evidence surfaces are summarized in [`FIGURE_1_ARCHITECTURE.md`](FIGURE_1_ARCHITECTURE.md) and [`ARTIFACT_SUMMARY.md`](ARTIFACT_SUMMARY.md).
+
 ### 2.1 The Invocation Seam
 We decouple rules from process engines by establishing a typed, message-based seam:
 - **`RuleInvocation`**: Exposes a target decision ID, a parameter set version, and a dictionary of inputs wrapped as `ValueObject`s (carrying `value` and `valueState`).

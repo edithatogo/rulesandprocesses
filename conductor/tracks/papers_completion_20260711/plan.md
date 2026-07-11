@@ -12,16 +12,18 @@
 ## Phase 2 - Coupling paper
 
 - [x] Task: Expand methods, architecture, evaluation, related work, and limitations
-- [ ] Task: Generate architecture and evidence-traceability figures/tables
+- [x] Task: Generate architecture and evidence-traceability figures/tables
 - [x] Task: Build and review the coupling submission packet
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Coupling paper' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Coupling paper' (Protocol in workflow.md)
+
+> CHECKPOINT (2026-07-11): Added conceptual architecture, evidence-summary, differential pipeline, and exception-queue figures/tables. They are explicitly non-normative and link back to committed artifacts.
 
 ## Phase 3 - SNAP divergence paper
 
 - [x] Task: Expand corpus provenance, runner methods, triangulation, results, and threats to validity
-- [ ] Task: Generate flow, classification, agreement, and exception-queue figures/tables
+- [x] Task: Generate flow, classification, agreement, and exception-queue figures/tables
 - [x] Task: Build and review the SNAP submission packet
-- [ ] Task: Conductor - Automated Review and Checkpoint 'SNAP divergence paper' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'SNAP divergence paper' (Protocol in workflow.md)
 
 ## Phase 4 - NZ reconciliation paper
 
