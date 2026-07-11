@@ -2,6 +2,11 @@
 
 ---
 
+- [~] **Track: Reliability, upstream governance, and publication refinement**
+*Link: [./tracks/reliability_publication_20260711/](./tracks/reliability_publication_20260711/)*
+
+---
+
 - [x] **Track: Next-generation roadmap release orchestration**
 *Link: [./archive/roadmap_release_20260706/](./archive/roadmap_release_20260706/)*
 

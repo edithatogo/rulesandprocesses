@@ -1,12 +1,12 @@
 # Maintainer response monitoring
 
-Last checked: **2026-07-11** (human-ask pass: tagged Max on Axiom; PE review follow-ups pushed; light pings elsewhere).
+Last checked: **2026-07-11** (all issue/PR pairs added to Project 19; PR bodies normalized; rulespec-nz conflict repaired; signing still external).
 
 Bot / author-only comments do **not** count as maintainer replies.
 
 | Target | URL | State | Implementation | Maintainer reply? | Next action |
 |---|---|---|---|---|---|
-| rulespec-nz KiwiSaver compile | https://github.com/TheAxiomFoundation/rulespec-nz/issues/79 | open | [PR #80](https://github.com/TheAxiomFoundation/rulespec-nz/pull/80) — compile OK; **hard-blocked** on `AXIOM_ENCODE_APPLY_SIGNING_KEY` | No (asked @MaxGhenis 2026-07-11) | Await Max re-sign / merge |
+| rulespec-nz KiwiSaver compile | https://github.com/TheAxiomFoundation/rulespec-nz/issues/79 | open | [PR #80](https://github.com/TheAxiomFoundation/rulespec-nz/pull/80) — conflict repaired at `7cafeb0`; compile/Ruff/270 tests OK; **hard-blocked** on `AXIOM_ENCODE_APPLY_SIGNING_KEY` | No (asked @MaxGhenis 2026-07-11) | Await Max re-sign / merge |
 | PE trace export | https://github.com/PolicyEngine/policyengine-core/issues/512 | open | [PR #515](https://github.com/PolicyEngine/policyengine-core/pull/515) — Max review addressed (TraceNode fields + format notes) | Yes (Max COMMENTED 2026-07-09; follow-up pushed) | Max: approve fork workflows + re-review |
 | PE missingness | https://github.com/PolicyEngine/policyengine-core/issues/513 | open | [PR #516](https://github.com/PolicyEngine/policyengine-core/pull/516) — Max review addressed (`_get_visible_branch_names`) | Yes (Max COMMENTED 2026-07-09; follow-up pushed) | Max: approve fork workflows + re-review |
 | PE YAML converter | https://github.com/PolicyEngine/policyengine-core/issues/514 | open | [PR #517](https://github.com/PolicyEngine/policyengine-core/pull/517) — docs link to `test_runner.py` | Yes (Max COMMENTED 2026-07-09; follow-up pushed) | Max: approve fork workflows + re-review |
