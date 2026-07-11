@@ -1,0 +1,1 @@
+Review fix: external fixture path handling now passes; full make check passed, including repository audit and paper artifact check.
