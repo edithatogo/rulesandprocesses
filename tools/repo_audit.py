@@ -26,6 +26,7 @@ INTENTIONAL_LEGACY_REFERENCE_PATHS = LEGACY_ID_PATHS | {
 MANUSCRIPTS = (
     ROOT / "papers/coupling/paper.md",
     ROOT / "studies/snap-divergence/paper/paper.md",
+    ROOT / "studies/nz-reconciliation/paper/paper.md",
 )
 REQUIRED_SECTIONS = (
     "## Abstract",
