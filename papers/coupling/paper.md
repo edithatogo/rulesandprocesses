@@ -15,7 +15,7 @@
 ---
 
 ## Abstract
-Rules-as-Code (RaC) initiatives typically focus on rules-heavy domains (such as tax-benefit calculations) or process-heavy domains (such as public record lifecycle tracking) in isolation. However, actual administrative operations require coupling these two surfaces. This paper presents a pragmatic, contract-based approach to coupling statutory rules and administrative processes. We define a lightweight Policy Interchange Contract (PIC) schema that acts as a boundary between process state machines (like `foi-o` for official information requests) and isolated rules modules. We evaluate this approach across two distinct case studies: Official Information Act (OIA) clocks in New Zealand, and a multi-state SNAP eligibility study. Our results demonstrate that decoupled rules modules can achieve 100% differential testing parity while maintaining strict import-graph isolation and preserving non-computable discretion points.
+Rules-as-Code (RaC) initiatives often treat rules-heavy calculations and process-heavy administration separately, although operational systems must connect them. We describe a contract-based boundary between deterministic rules modules and administrative process engines. The boundary combines versioned parameters, provenance-labelled fixtures, value-state semantics, and calculation traces while leaving discretionary judgments with human decision-makers. We evaluate the approach through a New Zealand Official Information Act (OIA) clock module and a separate cross-engine study of US Supplemental Nutrition Assistance Program (SNAP) calculations. Repository tests establish import-graph isolation for the OIA module and agreement for 50 approved SNAP comparison cases; 15 additional SNAP cases remain separately classified because their model surfaces or assumptions are not directly comparable. These results support a narrower claim than universal interchange: small, versioned contracts can make selected rule/process integrations testable and auditable without requiring participating systems to share an execution language.
 
 ---
 
@@ -67,11 +67,20 @@ Our repository artifacts support the following verification claims:
 | Claim | Supporting Repo Artifact | Verification Result |
 |---|---|---|
 | OIA rules are fully isolated from process states | `external/foi-o/tests/test_oia_rules.py` | Import-isolation test confirms zero process imports in the rules module. |
-| Decoupled rules module matches legacy calculations | `external/foi-o/rules/differential_test.py` | 100% agreement on 13 golden clock fixtures. |
-| Multi-engine SNAP calculations can be verified | `studies/snap-divergence/REPORT.md` | 100% agreement on 50 golden fixtures across PolicyEngine and PRD. |
+| Decoupled rules module matches retained reference cases | `external/foi-o/tests/test_oia_rules.py` | All 13 reviewed clock cases pass the differential regression test. |
+| Multi-engine SNAP calculations can be compared | `studies/snap-divergence/results/comparison-approved-results.jsonl` | 50 approved comparison cases agree within the declared tolerance. |
 | Divergences can be systematically classified | `studies/snap-divergence/DIVERGENCE_CLASSIFICATION.md` | All 15 divergences classified under state-option, vintage, or triggers. |
 
 ---
 
+## Data and code availability
+
+All code, schemas, test inputs, runner implementations, result artifacts, and adjudication documentation used for these claims are versioned in this repository. Engine and source revisions are recorded in the relevant study manifests and reports. External services are not required for the deterministic repository validation suite, although reproducing live engine runs requires the pinned third-party engines.
+
+## Limitations
+
+The demonstrations cover selected OIA deadline calculations and selected SNAP scenarios; they do not establish complete statutory coverage, legal correctness, population representativeness, or interoperability among arbitrary engines. Agreement between two implementations is not an independent legal oracle. The OIA reference cases depend on recorded human interpretation, while the SNAP held cases show that adapter assumptions and model scope can prevent direct comparison. Upstream adoption is also incomplete: several related contributions remain under maintainer review.
+
 ## 5. Conclusion
-Pragmatic Rules-as-Code does not require rewriting entire government software stacks in logic-programming languages. By establishing simple, contract-based invocation seams and standard JSON trace formats, we can successfully decouple statutory logic, verify correctness through differential testing, and safely flag discretion points for human review.
+
+The evidence supports a practical architectural result: selected statutory calculations can be isolated behind typed, versioned contracts while process state and discretionary decisions remain outside the calculation module. Differential testing then exposes both agreements and comparability limits. Further work should test additional consumers and policy domains before treating PIC as a general interoperability standard.

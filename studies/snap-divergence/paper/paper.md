@@ -15,7 +15,7 @@
 ---
 
 ## Abstract
-Rules-as-Code (RaC) promises to improve the precision, transparency, and consistency of public benefits programs by translating statutory and regulatory texts into executable code. However, a critical question remains: do independent implementations of the same legislative rules yield identical results? This paper presents a systematic, differential-testing evaluation of two leading RaC engines—PolicyEngine (Python) and the Atlanta Fed Policy Rules Database (PRD, R)—implementing the Supplemental Nutrition Assistance Program (SNAP) for Federal Fiscal Year 2026. Testing against a corpus of 65 human-curated and AI-proposed scenarios across five states (California, Texas, Pennsylvania, Mississippi, and Georgia) reveals a 100% output agreement rate (50 out of 50) for core compliance scenarios. For the remaining 15 held cases, we document and classify structural differences in state-option modeling, utility deduction triggers, and parameter surfaces.
+Independent executable models of the same public-benefit program provide an opportunity for differential testing, but agreement alone is not a legal oracle and disagreement is not automatically a software bug. We compare PolicyEngine-US (Python) and the Atlanta Fed Policy Rules Database (PRD, R) for selected Federal Fiscal Year 2026 Supplemental Nutrition Assistance Program (SNAP) scenarios in California, Texas, Pennsylvania, Mississippi, and Georgia. The corpus contains 65 provenance-labelled candidate scenarios. Fifty cases entered the approved comparison set and agreed on eligibility and allotment within the declared tolerance. Fifteen cases were held because state-option pathways, utility-deduction triggers, parameter vintages, or fixture assumptions were not directly aligned. A deterministic source-triangulation process assigns a proposed disposition or an explicit source-review exception to each held case. The study demonstrates a reproducible method for separating output disagreement, model-scope differences, adapter defects, and unresolved source questions; it does not estimate population error rates or establish either implementation as legally authoritative.
 
 ---
 
@@ -50,8 +50,8 @@ A unified `crosswalk.json` schema was designed to map inputs across the two syst
 - Countable liquid assets.
 
 ### 2.3 Fixture Corpus and Execution
-We compiled 65 test fixtures containing expected outputs derived from USDA Food and Nutrition Service (FNS) worked examples and state policy manuals.
-- **Agreements (50 cases)**: Promoted to the golden fixture set in `fixtures/snap-fy2026-fixtures.json` after both runners yielded identical results within a $1.00 tolerance.
+We assembled 65 provenance-labelled candidate scenarios from source-backed boundary cases and model-surface probes.
+- **Approved comparison set (50 cases)**: Retained in `results/comparison-approved-results.jsonl` after both runners yielded equivalent outputs within the declared tolerance and the fixture review gate was completed.
 - **Divergences (15 cases)**: Held back for detailed code-level analysis and classification.
 
 Two independent test runners were built:
@@ -75,14 +75,24 @@ The remaining 15 cases (23.1%) were held back. All 15 were classified into three
 | **Deduction Handling** | 4 | 3 | Mismatches in utility allowance triggers. Pennsylvania automatic HSUA/LIHEAP triggers and Mississippi phone-only standard utility deductions are handled differently at the adapter interface level. |
 | **Parameter Vintage** | 3 | 3 | Divergences in non-BBCE income thresholds (e.g., Mississippi FPL thresholds). |
 
-Fourteen of the 15 divergences are decision-relevant (flipping eligibility or altering allotments by >$10.00); the Mississippi phone-only utility allowance case is a smaller, non-decision-relevant adapter-surface difference. Importantly, **no divergences represent programming errors (bugs) in either engine**; rather, they arise from acceptable differences in modeling scope (e.g., direct SNAP gates vs. complex TANF categorical routes) or adapter-level assumptions.
+Fourteen of the 15 divergences are decision-relevant (flipping eligibility or altering allotments by more than $10.00); the Mississippi phone-only utility allowance case is a smaller, non-decision-relevant adapter-surface difference. The classifications are proposed dispositions rather than a blanket finding that either engine is correct. Confirmed-bug labels require controlling primary or official source assertions; blocked, stale, conflicting, or secondary-only evidence is routed to further source review. This distinction prevents model disagreement from being converted into a bug claim without an independent evidentiary basis.
 
 ---
 
-## 4. Discussion and Threats to Validity
-- **Fixture Coverage**: 65 fixtures provide high coverage of boundary conditions but do not represent the full joint distribution of the US population.
+## 4. Discussion
+
+The principal result is procedural. A comparison harness can make disagreements observable, but a source ledger and deterministic adjudication rules are needed to distinguish calculation defects from differences in scope, vintage, or fixture interpretation. The held-case queue is therefore part of the result rather than discarded noise.
+
+## Data and code availability
+
+The fixture candidates, approved comparison output, held divergences, source assertions, adjudication rules, runner code, environment manifests, and generated reports are committed under `studies/snap-divergence/`. Commands required to reproduce validation are documented in the study README and exercised by repository CI. Re-running the PRD side requires R and the pinned upstream revision; re-running PolicyEngine requires the recorded Python package versions.
+
+## Limitations
+- **Fixture coverage**: The 65 scenarios target selected boundaries and are not a probability sample. They cannot estimate prevalence or population-level error rates.
 - **Adapter Assumptions**: Differences in monthly-to-annual income conversions (PRD calculates annually, PolicyEngine monthly) required normalizations that may introduce minor rounding variances.
 - **Legislation Vintages**: State administrative options change rapidly; keeping parameter sheets synchronized is a continuous maintenance burden.
+- **Oracle independence**: Agreement between the engines is supporting evidence, not proof of legal correctness. Source assertions and human certification remain necessary for controlling interpretations.
+- **Generalisability**: Five states and selected rule surfaces do not represent the full SNAP program or other benefits programs.
 
 ---
 
@@ -97,4 +107,4 @@ Related efforts (such as OASIS LegalRuleML and W3C PROV-O) attempt to formalize 
 ---
 
 ## 6. Conclusion
-We find that independent implementations of SNAP in PolicyEngine and PRD are highly reliable, achieving perfect agreement across the golden fixture set. The observed divergences are not code bugs, but rather structural modeling choices (e.g., direct SNAP checks vs. TANF pathway emulation). This highlights the value of differential testing as a QA tool for civic software.
+PolicyEngine and PRD agree across the 50-case approved comparison set, while 15 held cases expose meaningful differences in model pathways, assumptions, and source alignment. The result supports differential testing as a diagnostic method, not a claim of universal reliability. Combining deterministic comparison with provenance-labelled fixtures, primary-source assertions, and an explicit exception queue provides a more defensible quality-assurance process for public-benefit software.
