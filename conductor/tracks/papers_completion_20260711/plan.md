@@ -30,7 +30,7 @@
 - [x] Task: Draft full manuscript from live dual-engine and engine-gap evidence
 - [x] Task: Generate coverage, agreement, and model-surface figures/tables
 - [x] Task: Build and review the NZ reconciliation submission packet
-- [ ] Task: Conductor - Automated Review and Checkpoint 'NZ reconciliation paper' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'NZ reconciliation paper' (Protocol in workflow.md)
 
 > CHECKPOINT (2026-07-11): Drafted the NZ reconciliation manuscript and packet from the certified engine-gap evidence. Figures/tables and final primary-source refresh remain before submission readiness.
 
@@ -40,3 +40,5 @@
 - [ ] Task: [HUMAN] Authorize each arXiv or journal submission
 - [ ] Task: Record submission identifiers or continued deferral
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Human submission gates' (Protocol in workflow.md)
+
+> BLOCKED (2026-07-11): Submission decisions require Dylan's explicit authorship, venue, disclosure, and submit authorization. Agents may prepare packets and evidence but may not submit.
