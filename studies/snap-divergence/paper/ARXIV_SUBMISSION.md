@@ -1,7 +1,7 @@
 # arXiv submission packet — SNAP divergence study
 
 **Status:** **deferred** (2026-07-09) — prepare fully; **do not submit** without explicit human authorization.  
-**GitHub issue:** [#16](https://github.com/edithatogo/rulesandprocesses/issues/16)  
+**GitHub issue:** [#16](https://github.com/edithatogo/rac-conformance/issues/16)  
 **Unified project:** [arXiv and preprint papers](https://github.com/users/edithatogo/projects/20)  
 **Source draft:** [`paper.md`](paper.md)  
 **Author block:** [`../../../papers/AUTHOR.md`](../../../papers/AUTHOR.md)
@@ -26,7 +26,7 @@ Rules-as-Code (RaC) promises to improve the precision, transparency, and consist
 
 ## Artifact links
 
-- Study root: https://github.com/edithatogo/rulesandprocesses/tree/main/studies/snap-divergence
+- Study root: https://github.com/edithatogo/rac-conformance/tree/main/studies/snap-divergence
 - Golden fixtures: `studies/snap-divergence/fixtures/snap-fy2026-fixtures.json` (human-promoted 2026-07-06)
 - Report: `studies/snap-divergence/REPORT.md`
 - DBN outreach draft: `external/dbn/EMAIL.md`

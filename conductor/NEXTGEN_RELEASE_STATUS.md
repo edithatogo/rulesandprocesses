@@ -19,37 +19,37 @@ Interpreter of record: Dylan (session authorization to address remaining human g
 
 Project: [Rules and Processes Integration Dashboard](https://github.com/users/edithatogo/projects/19)
 
-Milestone: [Next-generation roadmap](https://github.com/edithatogo/rulesandprocesses/milestone/1)
+Milestone: [Next-generation roadmap](https://github.com/edithatogo/rac-conformance/milestone/1)
 
-Parent issue: [#6 Next-generation roadmap: adoption, v0.2, validation, demos, studies, release](https://github.com/edithatogo/rulesandprocesses/issues/6)
+Parent issue: [#6 Next-generation roadmap: adoption, v0.2, validation, demos, studies, release](https://github.com/edithatogo/rac-conformance/issues/6)
 
 Native sub-issues attached to #6:
 
 | Issue | Conductor track | Local path |
 |---|---|---|
-| [#7](https://github.com/edithatogo/rulesandprocesses/issues/7) | `roadmap_release_20260706` | `conductor/archive/roadmap_release_20260706/` |
-| [#8](https://github.com/edithatogo/rulesandprocesses/issues/8) | `repo_boundaries_20260706` | `conductor/archive/repo_boundaries_20260706/` |
-| [#9](https://github.com/edithatogo/rulesandprocesses/issues/9) | `adoption_closure_20260706` | `conductor/archive/adoption_closure_20260706/` |
-| [#10](https://github.com/edithatogo/rulesandprocesses/issues/10) | `pic_v02_20260706` | `conductor/archive/pic_v02_20260706/` |
-| [#11](https://github.com/edithatogo/rulesandprocesses/issues/11) | `axiom_validation_20260706` | `conductor/archive/axiom_validation_20260706/` |
-| [#12](https://github.com/edithatogo/rulesandprocesses/issues/12) | `service_demos_20260706` | `conductor/archive/service_demos_20260706/` |
-| [#13](https://github.com/edithatogo/rulesandprocesses/issues/13) | `comparative_studies_20260706` | `conductor/archive/comparative_studies_20260706/` |
-| [#14](https://github.com/edithatogo/rulesandprocesses/issues/14) | `nz_reconciliation_20260707` | `conductor/archive/nz_reconciliation_20260707/` |
+| [#7](https://github.com/edithatogo/rac-conformance/issues/7) | `roadmap_release_20260706` | `conductor/archive/roadmap_release_20260706/` |
+| [#8](https://github.com/edithatogo/rac-conformance/issues/8) | `repo_boundaries_20260706` | `conductor/archive/repo_boundaries_20260706/` |
+| [#9](https://github.com/edithatogo/rac-conformance/issues/9) | `adoption_closure_20260706` | `conductor/archive/adoption_closure_20260706/` |
+| [#10](https://github.com/edithatogo/rac-conformance/issues/10) | `pic_v02_20260706` | `conductor/archive/pic_v02_20260706/` |
+| [#11](https://github.com/edithatogo/rac-conformance/issues/11) | `axiom_validation_20260706` | `conductor/archive/axiom_validation_20260706/` |
+| [#12](https://github.com/edithatogo/rac-conformance/issues/12) | `service_demos_20260706` | `conductor/archive/service_demos_20260706/` |
+| [#13](https://github.com/edithatogo/rac-conformance/issues/13) | `comparative_studies_20260706` | `conductor/archive/comparative_studies_20260706/` |
+| [#14](https://github.com/edithatogo/rac-conformance/issues/14) | `nz_reconciliation_20260707` | `conductor/archive/nz_reconciliation_20260707/` |
 
-Completed prior-track issues [#1](https://github.com/edithatogo/rulesandprocesses/issues/1) through [#5](https://github.com/edithatogo/rulesandprocesses/issues/5) are closed as completed.
+Completed prior-track issues [#1](https://github.com/edithatogo/rac-conformance/issues/1) through [#5](https://github.com/edithatogo/rac-conformance/issues/5) are closed as completed.
 
 ## Release Matrix
 
 | Track | Issue | Project status | Depends on | CI gate | External/human gate | Next action |
 |---|---:|---|---|---|---|---|
-| `roadmap_release_20260706` | [#7](https://github.com/edithatogo/rulesandprocesses/issues/7) | Done (monitor) | All child tracks | `make check` green 2026-07-09 | Release decision recorded: keep external monitoring open | Monitor upstream issue replies; optional follow-up tracks |
-| `repo_boundaries_20260706` | [#8](https://github.com/edithatogo/rulesandprocesses/issues/8) | Done | None | Docs / `make check` | None | Archived |
-| `adoption_closure_20260706` | [#9](https://github.com/edithatogo/rulesandprocesses/issues/9) | Done | Repo boundaries; roadmap phase 1 | N/A for drafts | Submitted/merged URLs in ledger; replies pending | Monitor `MAINTAINER_MONITORING.md` |
-| `pic_v02_20260706` | [#10](https://github.com/edithatogo/rulesandprocesses/issues/10) | Done | Adoption evidence | `make check` | Consumer evidence | Archived |
-| `axiom_validation_20260706` | [#11](https://github.com/edithatogo/rulesandprocesses/issues/11) | Done | Axiom artifacts | Harness + Actions | [rulespec-nz#79](https://github.com/TheAxiomFoundation/rulespec-nz/issues/79) open | Monitor #79 |
-| `service_demos_20260706` | [#12](https://github.com/edithatogo/rulesandprocesses/issues/12) | Done | Boundaries / PIC / Axiom | Demo tests | None blocking | Archived |
-| `comparative_studies_20260706` | [#13](https://github.com/edithatogo/rulesandprocesses/issues/13) | Done | Adoption / validation evidence | Study draft validation | Study selection approved | Archived; spawned NZ recon track |
-| `nz_reconciliation_20260707` | [#14](https://github.com/edithatogo/rulesandprocesses/issues/14) | Done | Comparative study selection | `make nz-recon-*` | Certified engine-gap; [openfisca-aotearoa#199](https://github.com/BetterRules/openfisca-aotearoa/issues/199) | Monitor #199; optional future dual-engine track |
+| `roadmap_release_20260706` | [#7](https://github.com/edithatogo/rac-conformance/issues/7) | Done (monitor) | All child tracks | `make check` green 2026-07-09 | Release decision recorded: keep external monitoring open | Monitor upstream issue replies; optional follow-up tracks |
+| `repo_boundaries_20260706` | [#8](https://github.com/edithatogo/rac-conformance/issues/8) | Done | None | Docs / `make check` | None | Archived |
+| `adoption_closure_20260706` | [#9](https://github.com/edithatogo/rac-conformance/issues/9) | Done | Repo boundaries; roadmap phase 1 | N/A for drafts | Submitted/merged URLs in ledger; replies pending | Monitor `MAINTAINER_MONITORING.md` |
+| `pic_v02_20260706` | [#10](https://github.com/edithatogo/rac-conformance/issues/10) | Done | Adoption evidence | `make check` | Consumer evidence | Archived |
+| `axiom_validation_20260706` | [#11](https://github.com/edithatogo/rac-conformance/issues/11) | Done | Axiom artifacts | Harness + Actions | [rulespec-nz#79](https://github.com/TheAxiomFoundation/rulespec-nz/issues/79) open | Monitor #79 |
+| `service_demos_20260706` | [#12](https://github.com/edithatogo/rac-conformance/issues/12) | Done | Boundaries / PIC / Axiom | Demo tests | None blocking | Archived |
+| `comparative_studies_20260706` | [#13](https://github.com/edithatogo/rac-conformance/issues/13) | Done | Adoption / validation evidence | Study draft validation | Study selection approved | Archived; spawned NZ recon track |
+| `nz_reconciliation_20260707` | [#14](https://github.com/edithatogo/rac-conformance/issues/14) | Done | Comparative study selection | `make nz-recon-*` | Certified engine-gap; [openfisca-aotearoa#199](https://github.com/BetterRules/openfisca-aotearoa/issues/199) | Monitor #199; optional future dual-engine track |
 
 Certification levels used by this matrix:
 

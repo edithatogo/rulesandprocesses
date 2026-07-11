@@ -9,7 +9,7 @@ Our findings indicate a high level of reliability and agreement between the two 
 2. We identified 15 structural divergences representing differences in modeling scope (e.g., direct SNAP eligibility gates in PRD vs. PolicyEngine's emulation of the TANF non-cash categorical eligibility pathway), utility deduction triggers, and parameter vintages, which we have cataloged and classified. No code-level bugs were found in either engine.
 
 The full study artifacts, including the runners, the crosswalk schema, the fixture corpus, and our detailed paper draft, are available in our repository:
-https://github.com/edithatogo/rulesandprocesses/tree/main/studies/snap-divergence/
+https://github.com/edithatogo/rac-conformance/tree/main/studies/snap-divergence/
 
 We look forward to discussing these results and exploring how systematic differential testing can be adopted as a standard practice for public-benefit Rules-as-Code projects.
 

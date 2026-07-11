@@ -9,7 +9,7 @@
 
 **Date:** July 2026  
 **Track:** `community_20260704` (Phase 4)  
-**arXiv status:** deferred (see `ARXIV_SUBMISSION.md`; GitHub [#15](https://github.com/edithatogo/rulesandprocesses/issues/15))  
+**arXiv status:** deferred (see `ARXIV_SUBMISSION.md`; GitHub [#15](https://github.com/edithatogo/rac-conformance/issues/15))  
 **Author block:** [`papers/AUTHOR.md`](../AUTHOR.md)
 
 ---
@@ -30,6 +30,8 @@ To address this, we propose a decoupled architecture using **Policy Interchange 
 ---
 
 ## 2. Methodology & Architecture
+
+The architecture and evidence surfaces are summarized in [`FIGURE_1_ARCHITECTURE.md`](FIGURE_1_ARCHITECTURE.md) and [`ARTIFACT_SUMMARY.md`](ARTIFACT_SUMMARY.md).
 
 ### 2.1 The Invocation Seam
 We decouple rules from process engines by establishing a typed, message-based seam:

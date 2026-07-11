@@ -9,7 +9,7 @@
 
 **Date:** July 2026  
 **Track:** `divergence_study_20260704`  
-**arXiv status:** deferred (see `ARXIV_SUBMISSION.md`; GitHub [#16](https://github.com/edithatogo/rulesandprocesses/issues/16))  
+**arXiv status:** deferred (see `ARXIV_SUBMISSION.md`; GitHub [#16](https://github.com/edithatogo/rac-conformance/issues/16))  
 **Author block:** [`papers/AUTHOR.md`](../../../papers/AUTHOR.md)
 
 ---
@@ -61,6 +61,8 @@ Two independent test runners were built:
 ---
 
 ## 3. Results
+
+The comparison and exception-queue workflows are summarized in [`FIGURE_1_PIPELINE.md`](FIGURE_1_PIPELINE.md), [`FIGURE_2_EXCEPTION_QUEUE.md`](FIGURE_2_EXCEPTION_QUEUE.md), and [`ARTIFACT_SUMMARY.md`](ARTIFACT_SUMMARY.md).
 
 ### 3.1 Overall Agreement
 Of the 65 scenarios executed, **50 cases (76.9%)** achieved complete agreement on both eligibility status and monthly allotment.

@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite it using the metadata below."
 type: software
-title: "Rules and Processes — policy interchange, conformance, and coupling"
+title: "RaC Conformance — policy interchange, verification, and rules/process coupling"
 authors:
   - family-names: Mordaunt
     given-names: Dylan A
@@ -12,8 +12,8 @@ authors:
       College of Medicine and Public Health, Flinders University;
       Centre for Health Policy, The University of Melbourne
     website: "https://www.researchgate.net/profile/Dylan-Mordaunt-2"
-repository-code: "https://github.com/edithatogo/rulesandprocesses"
-url: "https://github.com/edithatogo/rulesandprocesses"
+repository-code: "https://github.com/edithatogo/rac-conformance"
+url: "https://github.com/edithatogo/rac-conformance"
 abstract: >-
   Evidence-first program for policy interchange contracts (PIC), conformance
   harnesses, and typed rules/process coupling across OpenFisca, PolicyEngine,

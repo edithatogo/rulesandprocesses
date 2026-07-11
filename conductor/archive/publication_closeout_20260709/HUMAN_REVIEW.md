@@ -19,9 +19,9 @@ Unified project: [arXiv and preprint papers](https://github.com/users/edithatogo
 
 | Paper | Issue | Publication status |
 |---|---|---|
-| PIC coupling | [rulesandprocesses#15](https://github.com/edithatogo/rulesandprocesses/issues/15) | Deferred |
-| SNAP divergence | [rulesandprocesses#16](https://github.com/edithatogo/rulesandprocesses/issues/16) | Deferred |
-| NZ recon findings (future) | [rulesandprocesses#17](https://github.com/edithatogo/rulesandprocesses/issues/17) | Draft |
+| PIC coupling | [#15](https://github.com/edithatogo/rac-conformance/issues/15) | Deferred |
+| SNAP divergence | [#16](https://github.com/edithatogo/rac-conformance/issues/16) | Deferred |
+| NZ recon findings (future) | [#17](https://github.com/edithatogo/rac-conformance/issues/17) | Draft |
 | FOI-O methods | [foi-o#22](https://github.com/edithatogo/foi-o/issues/22) | Deferred |
 | FOI-O publication track (historical) | [foi-o#19](https://github.com/edithatogo/foi-o/issues/19) | Done / Deferred |
 | Reimbursement Atlas methods preprint | [reimbursement-atlas#118](https://github.com/edithatogo/reimbursement-atlas/issues/118) | Draft |

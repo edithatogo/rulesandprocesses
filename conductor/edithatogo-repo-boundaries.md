@@ -15,7 +15,7 @@ This document limits which `edithatogo` repositories are in scope for the next-g
 
 | Repository | Relevance | Boundary |
 |---|---|---|
-| `edithatogo/rulesandprocesses` | Primary roadmap, contracts, harnesses, studies, papers, and conductor coordination. | All roadmap planning lives here first. |
+| `edithatogo/rac-conformance` | Primary roadmap, contracts, harnesses, studies, papers, and conductor coordination. | All roadmap planning lives here first. |
 | `edithatogo/foi-o` | First active PIC consumer and process-heavy proof for OIA statutory-clock rules. | Relevant for OIA rules PR, fixture CI, trace integration, and rule/process invocation. Do not alter non-OIA workflows unless a future track names them. |
 | `edithatogo/rulespec-nz` | Public NZ RuleSpec corpus used for Axiom validation slices. | Relevant for PIC fixture mappings and Axiom/RuleSpec differential harness work. Do not treat as a general source of legal truth without source assertions. |
 | `edithatogo/axiom-rules-engine` | Runtime surface for RuleSpec execution and traces. | Relevant for harness integration, trace/export behavior, and upstream issue/PR feedback. |
