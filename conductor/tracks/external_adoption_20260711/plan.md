@@ -12,6 +12,7 @@
 
 - [x] Task: Apply actionable maintainer feedback with focused regression tests
 - [x] Task: Resolve contributor-controlled CI failures and conflicts
+- [x] Task: Prepare maintainer follow-up packets and terminal-state evidence requirements
 - [ ] Task: [HUMAN] Supply or request maintainer-only workflow approvals, signing, and merge decisions
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Review response' (Protocol in workflow.md)
 
