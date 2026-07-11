@@ -14,7 +14,7 @@ Following up briefly on my note about our SNAP dual-engine validation study (Pol
 
 In case it helps prioritise:
 
-- Study materials remain at: https://github.com/edithatogo/rulesandprocesses/tree/main/studies/snap-divergence/
+- Study materials remain at: https://github.com/edithatogo/rac-conformance/tree/main/studies/snap-divergence/
 - We are still glad to present methodology at a CoP roundtable, or to share the PIC fixture/trace schemas if useful for other program comparisons.
 - If another benefit program or state-option set would be more valuable than a second SNAP pass, we can aim the harness there next.
 

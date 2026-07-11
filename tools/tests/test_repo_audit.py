@@ -2,7 +2,7 @@ from pathlib import Path
 
 import yaml
 
-from tools.repo_audit import audit_manuscript, markdown_links
+from tools.repo_audit import LEGACY_ID_PATHS, audit_manuscript, audit_repository, markdown_links
 
 
 def test_markdown_links_extract_targets() -> None:
@@ -32,3 +32,9 @@ def test_workflows_keep_triggers_at_top_level() -> None:
         assert "pull_request" not in document.get("concurrency", {}), (
             f"{workflow} nests pull_request under concurrency"
         )
+
+
+def test_legacy_repository_urls_are_limited_to_persistent_ids() -> None:
+    errors = audit_repository()
+    assert not [error for error in errors if "legacy repository URL" in error]
+    assert all(path.exists() for path in LEGACY_ID_PATHS)

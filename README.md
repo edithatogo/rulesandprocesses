@@ -1,4 +1,4 @@
-# Rules and Processes — policy interchange, conformance, and coupling
+# RaC Conformance — policy interchange, verification, and rules/process coupling
 
 Evidence-first program for **policy interchange contracts (PIC)**, conformance harnesses, and typed rules/process coupling across OpenFisca, PolicyEngine, Axiom, and process platforms.
 
@@ -47,7 +47,7 @@ Original six tracks plus the next-generation roadmap are archived under [`conduc
 | NZ reconciliation | Certified **engine-gap** (not numeric dual-engine agreement); coverage request [`openfisca-aotearoa#199`](https://github.com/BetterRules/openfisca-aotearoa/issues/199) |
 | Adoption ledger | [`external/ADOPTION_STATUS.md`](external/ADOPTION_STATUS.md) |
 
-GitHub roadmap parent: [#6](https://github.com/edithatogo/rulesandprocesses/issues/6). Track issues [#7](https://github.com/edithatogo/rulesandprocesses/issues/7)–[#13](https://github.com/edithatogo/rulesandprocesses/issues/13) are closed complete.
+GitHub roadmap parent: [#6](https://github.com/edithatogo/rac-conformance/issues/6). Track issues [#7](https://github.com/edithatogo/rac-conformance/issues/7)–[#13](https://github.com/edithatogo/rac-conformance/issues/13) are closed complete.
 
 ## Key constraints (non-negotiable)
 

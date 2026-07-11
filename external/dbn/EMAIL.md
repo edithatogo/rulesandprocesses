@@ -24,7 +24,7 @@ We would love to know from the CoP:
 - Which benefit programs or specific state-option combinations would you most like to see compared next using this differential validation harness?
 
 The full study repo, including the R and Python runners and our draft paper, can be found here:
-https://github.com/edithatogo/rulesandprocesses/tree/main/studies/snap-divergence/
+https://github.com/edithatogo/rac-conformance/tree/main/studies/snap-divergence/
 
 Looking forward to hearing from you.
 

@@ -7,6 +7,22 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+LEGACY_REPOSITORY = "github.com/edithatogo/rulesandprocesses"
+CANONICAL_REPOSITORY = "github.com/edithatogo/rac-conformance"
+LEGACY_ID_PATHS = {
+    Path("contracts/pic-crosswalk/0.1.0/schema.json"),
+    Path("contracts/pic-fixtures/0.1.0/schema.json"),
+    Path("contracts/pic-parameters/0.1.0/schema.json"),
+    Path("contracts/pic-parameters/0.2.0/schema.json"),
+    Path("contracts/pic-semantics/0.1.0/schema.json"),
+    Path("contracts/pic-traces/0.1.0/schema.json"),
+    Path("contracts/pic-traces/0.2.0/schema.json"),
+    Path("conductor/archive/contracts_20260704/plan.md"),
+}
+INTENTIONAL_LEGACY_REFERENCE_PATHS = LEGACY_ID_PATHS | {
+    Path("tools/repo_audit.py"),
+    Path("docs/REPOSITORY_IDENTITY.md"),
+}
 MANUSCRIPTS = (
     ROOT / "papers/coupling/paper.md",
     ROOT / "studies/snap-divergence/paper/paper.md",
@@ -53,6 +69,24 @@ def audit_repository(root: Path = ROOT) -> list[str]:
     errors.extend(f"missing required governance file: {path}" for path in required if not path.exists())
     for path in MANUSCRIPTS:
         errors.extend(audit_manuscript(path))
+    for path in root.rglob("*"):
+        if not path.is_file() or any(
+            part in {".git", ".venv", ".external-repos", "__pycache__", ".pytest_cache"}
+            for part in path.parts
+        ):
+            continue
+        relative = path.relative_to(root)
+        if relative.parts[0] in {"conversation", "source_material"}:
+            continue
+        try:
+            text = path.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            continue
+        if LEGACY_REPOSITORY in text and relative not in INTENTIONAL_LEGACY_REFERENCE_PATHS:
+            errors.append(f"{relative}: unexpected legacy repository URL")
+    citation = (root / "CITATION.cff").read_text(encoding="utf-8")
+    if CANONICAL_REPOSITORY not in citation:
+        errors.append("CITATION.cff: canonical repository URL is missing")
     return errors
 
 

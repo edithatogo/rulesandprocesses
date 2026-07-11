@@ -1,7 +1,7 @@
 # arXiv submission packet — coupling paper
 
 **Status:** **deferred** (2026-07-09) — prepare fully; **do not submit** without explicit human authorization.  
-**GitHub issue:** [#15](https://github.com/edithatogo/rulesandprocesses/issues/15)  
+**GitHub issue:** [#15](https://github.com/edithatogo/rac-conformance/issues/15)  
 **Unified project:** [arXiv and preprint papers](https://github.com/users/edithatogo/projects/20)  
 **Source draft:** [`paper.md`](paper.md)  
 **Author block:** [`../AUTHOR.md`](../AUTHOR.md)
@@ -26,7 +26,7 @@ Rules-as-Code (RaC) initiatives typically focus on rules-heavy domains (such as 
 
 ## Artifact links
 
-- Repository: https://github.com/edithatogo/rulesandprocesses
+- Repository: https://github.com/edithatogo/rac-conformance
 - OIA rules consumer: https://github.com/edithatogo/foi-o (PRs #20, #21)
 - SNAP study: `studies/snap-divergence/`
 - Cite software: `CITATION.cff`

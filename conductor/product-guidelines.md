@@ -9,7 +9,7 @@
 
 ## Naming
 
-- The project's public naming avoids "RaCX" and "superset". Working name for the contracts: **Policy Interchange Contracts (PIC)** — plain, descriptive, unclaimed. Individual contracts: `pic-crosswalk`, `pic-parameters`, `pic-fixtures`, `pic-traces`, `pic-semantics`.
+- The project's public name is **RaC Conformance** (`rac-conformance`). It avoids "RaCX" and "superset": RaC means Rules-as-Code, while conformance describes the evidence-first product. The contract family remains **Policy Interchange Contracts (PIC)**. Individual contracts: `pic-crosswalk`, `pic-parameters`, `pic-fixtures`, `pic-traces`, `pic-semantics`.
 - IDs are jurisdiction- and package-scoped: `nz-oia/…`, `us-snap/…`. No global registry.
 
 ## Non-negotiable content rules
