@@ -8,13 +8,8 @@ on:
       - "external/axiom/**"
       - "Makefile"
       - ".github/workflows/contracts.yml"
+  # `check` is required by branch protection, so every PR must report it.
   pull_request:
-    paths:
-      - "contracts/**"
-      - "harness/**"
-      - "external/axiom/**"
-      - "Makefile"
-      - ".github/workflows/contracts.yml"
 
 permissions:
   contents: read

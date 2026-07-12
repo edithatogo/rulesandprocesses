@@ -34,6 +34,23 @@
 
 > CHECKPOINT (2026-07-11): Drafted the NZ reconciliation manuscript and packet from the certified engine-gap evidence. Figures/tables and final primary-source refresh remain before submission readiness.
 
+## Phase 4.5 - Final local QA and review packet
+
+- [x] Task: Run final manuscript, citation, artifact, and link QA across all three packages
+- [x] Task: Normalize paper issue hierarchy and record the NZ reconciliation paper as a child work item of this track
+- [x] Task: Conductor - Automated Review and Checkpoint 'Final local QA and review packet' (Protocol in workflow.md)
+
+Acceptance: `make check` passes; all three packets identify their evidence roots,
+limitations, declarations, and human submission decisions; issue #17 is either
+closed as superseded or explicitly retained as a child of issue #24; no artifact
+claims submission or acceptance without human evidence.
+
+> CHECKPOINT (2026-07-11): Final `make check` passed across repository audit,
+paper artifacts, contracts, converters, harnesses, both study runners, and demos.
+The three paper packets are locally prepared and remain submission-deferred.
+Issue #17 was superseded by the unified paper program issue #24; publication
+authorization remains a human gate.
+
 ## Phase 5 - Human submission gates
 
 - [ ] Task: [HUMAN] Approve final authorship, affiliations, target venues, and disclosure text
