@@ -1,6 +1,6 @@
 # Plan
 
-GitHub issue: https://github.com/edithatogo/foi-process/issues/7
+GitHub issue: [edithatogo/foi-process#7](https://github.com/edithatogo/foi-process/issues/7)
 
 - [ ] Add and validate `CITATION.cff` in `foi-process`.
 - [ ] Publish an immutable release tag and record its commit evidence.
