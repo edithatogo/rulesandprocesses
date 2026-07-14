@@ -37,11 +37,17 @@
 
 ## Phase 3: Durable governance
 
-- [ ] Task: Document or implement a repeatable item-level sync with FOI-only allowlists.
-- [ ] Task: Add drift checks for missing, stale, or unrelated Project 14 items.
+- [x] Task: Document or implement a repeatable item-level sync with FOI-only allowlists.
+- [x] Task: Add drift checks for missing, stale, or unrelated Project 14 items.
 - [ ] Task: Run repository quality gates and Conductor review.
 - [ ] Task: Archive only after live Project evidence is recorded.
 - [ ] Task: Conductor - User Manual Verification 'Durable governance' (Protocol in workflow.md)
+
+> CHECKPOINT (2026-07-15): Added `project14-allowlist.json` and
+> `tools/validate_project14_allowlist.py`. Against the live Project 14 export,
+> the checker found all 18 required items and 67 extra historical items. The
+> extras are reported for human triage; no automatic deletion or status rewrite
+> is authorized.
 
 ## Phase 4: FOI-O to PIC compatibility profile
 
