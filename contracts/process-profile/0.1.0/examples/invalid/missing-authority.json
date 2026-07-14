@@ -1,0 +1,8 @@
+{
+  "conformsTo": "pic-process-profile/0.1.0",
+  "process": {"id": "demo/missing-authority", "version": "0.1.0"},
+  "case": {"id": "demo/case.synthetic-001", "synthetic": true},
+  "states": [], "events": [], "transitions": [], "actors": [],
+  "ruleInvocations": [{"id": "invocation.1", "decisionId": "demo/decision", "observedAt": "2026-01-01T00:00:00Z"}],
+  "sourceAssertions": [], "traceLinks": []
+}

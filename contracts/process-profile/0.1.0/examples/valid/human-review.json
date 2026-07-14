@@ -1,0 +1,12 @@
+{
+  "conformsTo": "pic-process-profile/0.1.0",
+  "process": {"id": "demo/human-review", "version": "0.1.0"},
+  "case": {"id": "demo/case.synthetic-review-001", "synthetic": true},
+  "states": [{"id": "review.open", "kind": "derived"}, {"id": "review.closed", "kind": "derived"}],
+  "events": [{"id": "event.review-opened", "kind": "observed", "stateId": "review.open", "occurredAt": "2026-07-01T00:00:00Z", "observedAt": "2026-07-01T00:00:00Z", "actorId": "person:reviewer"}],
+  "transitions": [{"id": "transition.review-close", "fromStateId": "review.open", "toStateId": "review.closed", "eventId": "event.review-opened"}],
+  "actors": [{"id": "person:reviewer", "kind": "person", "label": "Human reviewer"}],
+  "humanTasks": [{"id": "task.review", "kind": "human_review", "actorId": "person:reviewer", "stateId": "review.open"}],
+  "sourceAssertions": [],
+  "traceLinks": []
+}

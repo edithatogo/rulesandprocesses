@@ -1,0 +1,7 @@
+{
+  "conformsTo": "pic-process-profile/0.1.0",
+  "process": {"id": "demo/dangling-trace", "version": "0.1.0"},
+  "case": {"id": "demo/case.synthetic-001", "synthetic": true},
+  "states": [], "events": [], "transitions": [], "actors": [], "sourceAssertions": [],
+  "traceLinks": [{"id": "trace.1", "traceConformsTo": "pic-traces/0.1.0", "traceRef": "urn:sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "ruleInvocationId": "invocation.missing"}]
+}

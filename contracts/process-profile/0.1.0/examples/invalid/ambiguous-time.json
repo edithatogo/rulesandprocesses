@@ -1,0 +1,9 @@
+{
+  "conformsTo": "pic-process-profile/0.1.0",
+  "process": {"id": "demo/ambiguous-time", "version": "0.1.0"},
+  "case": {"id": "demo/case.synthetic-001", "synthetic": true},
+  "states": [{"id": "state.one", "kind": "observed"}],
+  "events": [{"id": "event.1", "kind": "observed", "stateId": "state.one", "occurredAt": "2026-01-01T00:00:00Z", "actorId": "person:one"}],
+  "transitions": [], "actors": [{"id": "person:one", "kind": "person", "label": "One"}],
+  "sourceAssertions": [], "traceLinks": []
+}

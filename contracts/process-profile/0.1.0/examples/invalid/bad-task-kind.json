@@ -1,0 +1,8 @@
+{
+  "conformsTo": "pic-process-profile/0.1.0",
+  "process": {"id": "demo/bad-task", "version": "0.1.0"},
+  "case": {"id": "demo/case.synthetic-001", "synthetic": true},
+  "states": [], "events": [], "transitions": [], "actors": [],
+  "humanTasks": [{"id": "task.1", "kind": "automatic_magic", "actorId": "person:one"}],
+  "sourceAssertions": [], "traceLinks": []
+}
