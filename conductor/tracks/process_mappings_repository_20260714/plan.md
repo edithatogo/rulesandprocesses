@@ -28,6 +28,13 @@ Phase 1 and establishes the implementation home required by
 
 ## Phase 2 - Parent Integration and Contract Discipline
 
+> CHECKPOINT (2026-07-15): The incubator now consumes the merged
+> `pic-process-profile/0.1.0` contract through a full commit and schema digest
+> pin. A deterministic validator checks the pinned schema, candidate source
+> manifest, local FOI-O/foi-process evidence paths, and valid contract examples;
+> drift fails `make check`. No normative schema is copied and no remote
+> repository is created. Phase 3 extraction rehearsal remains pending.
+
 - [x] Task: Wire parent roadmap and repository boundaries
     - [x] Insert this track between the v1 foundation and process-profile implementation.
     - [x] Add `foi-process` as a current implementation/evidence consumer and the incubator as a provisional repository home.
@@ -41,7 +48,7 @@ Phase 1 and establishes the implementation home required by
       `contracts/tools/src/pic_contracts/process_mappings_consumption.py`, and
       `contracts/tools/tests/test_process_mappings_consumption.py`.
     - **Acceptance:** drift is detected deterministically and cannot silently fork PIC or FOI semantics.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Parent Integration and Contract Discipline' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Parent Integration and Contract Discipline' (Protocol in workflow.md)
 
 ## Phase 3 - Extraction Rehearsal and Governance Packet
 
