@@ -1,0 +1,1 @@
+Verification: FOI_PROGRAMME_REPO_ROOT=/tmp/rac-process-consumption make check passed on 2026-07-15. Migration packet is draft-only; no remote-side facts are asserted and all hosted or human actions remain gated.
