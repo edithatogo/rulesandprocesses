@@ -1,0 +1,1 @@
+Conductor task: Implement machine-readable v1 gate manifest and validator\nEvidence: conductor/v1-release-gates.json; tools/release_gates.py; release-gates-check in make check. Full make check passed.\nCompleted: 2026-07-15
