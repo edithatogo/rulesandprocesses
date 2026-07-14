@@ -60,3 +60,25 @@ def test_parallel_complaint_fixture_has_parallel_pathway() -> None:
     assert any(
         state["id"].endswith(":parallel-pathway") for state in profile["states"]
     )
+
+
+def test_human_review_template_matches_resolver_queue() -> None:
+    template_path = (
+        ROOT
+        / "subrepos/process-mappings/profiles/adverse-incidents/"
+        "HUMAN_REVIEW_DECISIONS.template.json"
+    )
+    template = json.loads(
+        template_path.read_text(encoding="utf-8")
+    )
+
+    assert template["status"] == "awaiting-human-review"
+    assert {item["mappingId"] for item in template["decisions"]} == {
+        "mapping.nz.consumer-informed",
+        "mapping.nz.review-learning",
+        "mapping.au.open-disclosure",
+        "mapping.nsw.incident-review",
+        "mapping.au.secondary-summary",
+        "mapping.local.escalation",
+    }
+    assert all(item["decision"] is None for item in template["decisions"])

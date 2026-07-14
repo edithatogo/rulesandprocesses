@@ -1,0 +1,74 @@
+{
+  "profileId": "adverse-incidents/open-disclosure",
+  "status": "awaiting-human-review",
+  "reviewer": null,
+  "reviewedAt": null,
+  "decisions": [
+    {
+      "mappingId": "mapping.nz.consumer-informed",
+      "decision": null,
+      "sourceRef": null,
+      "sourceDigest": null,
+      "jurisdiction": "NZ",
+      "effectiveDateBasis": null,
+      "permittedInterpretation": null,
+      "excludedInterpretation": "Do not infer disclosure adequacy or legal compliance.",
+      "followUpSourceRequest": null
+    },
+    {
+      "mappingId": "mapping.nz.review-learning",
+      "decision": null,
+      "sourceRef": null,
+      "sourceDigest": null,
+      "jurisdiction": "NZ",
+      "effectiveDateBasis": null,
+      "permittedInterpretation": null,
+      "excludedInterpretation": "Do not encode review or learning duties while the official source is blocked.",
+      "followUpSourceRequest": "Verify accessible authoritative HQSC policy text."
+    },
+    {
+      "mappingId": "mapping.au.open-disclosure",
+      "decision": null,
+      "sourceRef": null,
+      "sourceDigest": null,
+      "jurisdiction": "AU",
+      "effectiveDateBasis": null,
+      "permittedInterpretation": null,
+      "excludedInterpretation": "Do not treat the national framework as replacing state or territory requirements.",
+      "followUpSourceRequest": "Confirm operative date and jurisdictional relationship."
+    },
+    {
+      "mappingId": "mapping.nsw.incident-review",
+      "decision": null,
+      "sourceRef": null,
+      "sourceDigest": null,
+      "jurisdiction": "AU-NSW",
+      "effectiveDateBasis": null,
+      "permittedInterpretation": null,
+      "excludedInterpretation": "Do not encode reportability or review thresholds from blocked text.",
+      "followUpSourceRequest": "Verify current NSW directive text."
+    },
+    {
+      "mappingId": "mapping.au.secondary-summary",
+      "decision": null,
+      "sourceRef": null,
+      "sourceDigest": null,
+      "jurisdiction": "AU",
+      "effectiveDateBasis": null,
+      "permittedInterpretation": null,
+      "excludedInterpretation": "Secondary-only evidence cannot support a controlling obligation.",
+      "followUpSourceRequest": "Replace with a verified primary source or reject."
+    },
+    {
+      "mappingId": "mapping.local.escalation",
+      "decision": null,
+      "sourceRef": null,
+      "sourceDigest": null,
+      "jurisdiction": "AU-NSW",
+      "effectiveDateBasis": null,
+      "permittedInterpretation": null,
+      "excludedInterpretation": "Do not invent a local escalation owner or procedure.",
+      "followUpSourceRequest": "Name the controlling local procedure or retain unresolved."
+    }
+  ]
+}

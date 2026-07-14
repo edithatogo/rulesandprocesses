@@ -38,7 +38,8 @@ provenance, and trace hash. None is a golden fixture.
 
 ## Certification Record
 
-For each reviewed item, record: reviewer, date, source URL or document digest,
+Use `HUMAN_REVIEW_DECISIONS.template.json` as the structured response form. For
+each reviewed item, record: reviewer, date, source URL or document digest,
 jurisdiction, effective-date basis, decision (`approved`, `rejected`, or
 `limited`), permitted interpretation, excluded interpretation, and follow-up
 source request. Do not change `reviewerState` to `human-approved` or
