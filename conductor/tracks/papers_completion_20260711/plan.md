@@ -87,12 +87,15 @@ human-authorized after the refresh.
       statuses with verified version and concept DOIs.
 - [ ] Task: [HUMAN] Pin the Hugging Face dataset repository, revision, and
       digest for the exact archive-derived layer used in the manuscripts.
-- [ ] Task: Run the citation validator and live DOI audit before the release
+- [x] Task: Run the citation validator and live DOI audit before the release
       refresh checkpoint.
 
 > CHECKPOINT (2026-07-14): Local CFF and manuscript-register work is complete.
-> `fyi-archive` has a verified version DOI; all other included release mirrors
-> remain explicit human publication gates rather than fabricated citations.
+> The citation validator passed all seven programme artefacts. The live Zenodo
+> audit confirmed that DOI `10.5281/zenodo.21338285` is a published `0.1.0`
+> record, not the current `fyi-archive v0.11.1`; the mismatch is recorded and
+> no current-release DOI is claimed. All other release mirrors and Hugging
+> Face coordinates remain explicit human publication gates.
 
 ## Phase 5 - Human submission gates
 
