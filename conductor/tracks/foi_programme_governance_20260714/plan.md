@@ -10,6 +10,7 @@
 
 > BLOCKED (2026-07-14): Manual verification requires Dylan to confirm the
 > live Project 14 title, scope, repository boundaries, and navigation anchors.
+> Prepared review surface: `HUMAN_VERIFICATION_PACKET.md` section 1.
 
 > CHECKPOINT (2026-07-14): Live Project 14 documentation at
 > `https://github.com/users/edithatogo/projects/14` already contains the
@@ -30,6 +31,7 @@
 > Their current Project status is `Todo`, matching the local plans. Project 14
 > now provides jurisdiction, repository role, dependency, evidence status,
 > human gate, and delivery status fields; all 18 allowlisted items have values.
+> Prepared review surface: `HUMAN_VERIFICATION_PACKET.md` section 2.
 
 ## Phase 3: Durable governance
 
@@ -45,6 +47,7 @@
 > items. The historical items were removed from Project 14 only, preserving
 > their source issues and dedicated-project memberships. The live board now
 > passes the exact allowlist with zero missing, extra, or stale items.
+> Prepared review surface: `HUMAN_VERIFICATION_PACKET.md` section 3.
 
 > REVIEW (2026-07-15): Added stale-status detection and four passing unit tests.
 > Full `make check` passed after the checker integration.
@@ -84,3 +87,4 @@
 > a machine-readable papers handoff are present and tested locally. The live
 > published-artifact exercise, independent human review, and manual verification
 > remain open.
+> Prepared boundary review: `HUMAN_VERIFICATION_PACKET.md` section 4.
