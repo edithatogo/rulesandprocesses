@@ -1,0 +1,8 @@
+{
+  "conformsTo": "pic-process-profile/0.1.0",
+  "process": {"id": "demo/bad-transition", "version": "0.1.0"},
+  "case": {"id": "demo/case.synthetic-001", "synthetic": true},
+  "states": [{"id": "state.one", "kind": "observed"}], "events": [],
+  "transitions": [{"id": "transition.1", "fromStateId": "state.one", "toStateId": "state.missing"}],
+  "actors": [], "sourceAssertions": [], "traceLinks": []
+}

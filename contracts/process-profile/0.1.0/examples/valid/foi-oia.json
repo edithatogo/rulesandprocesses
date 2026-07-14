@@ -1,0 +1,12 @@
+{
+  "conformsTo": "pic-process-profile/0.1.0",
+  "process": {"id": "foi/nz-oia", "version": "0.1.0", "jurisdiction": "NZ"},
+  "case": {"id": "nz-oia/case.synthetic-001", "synthetic": true},
+  "states": [{"id": "request.received", "kind": "observed"}, {"id": "request.deadline-calculated", "kind": "derived"}],
+  "events": [{"id": "event.received-001", "kind": "observed", "stateId": "request.received", "occurredAt": "2026-07-01T09:00:00+12:00", "observedAt": "2026-07-01T09:00:00+12:00", "actorId": "authority:agency"}],
+  "transitions": [{"id": "transition.deadline-001", "fromStateId": "request.received", "toStateId": "request.deadline-calculated", "eventId": "event.received-001"}],
+  "actors": [{"id": "authority:agency", "kind": "authority", "label": "Receiving agency"}],
+  "ruleInvocations": [{"id": "invocation.deadline-001", "decisionId": "nz-oia/decision.response_deadline", "parameterIds": ["nz-oia/parameter.working_day_limit"], "traceConformsTo": "pic-traces/0.1.0", "authorityAssertionId": "assertion.oia-s15", "observedAt": "2026-07-01T09:00:00+12:00"}],
+  "sourceAssertions": [{"id": "assertion.oia-s15", "authorityClass": "law", "reviewerState": "official-primary", "sourceStatus": "current", "effectiveFrom": "2025-04-05", "jurisdiction": "NZ", "sourceRef": "https://www.legislation.govt.nz/act/public/1982/0156/latest/whole.html"}],
+  "traceLinks": [{"id": "trace.deadline-001", "traceConformsTo": "pic-traces/0.1.0", "traceRef": "urn:sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}]
+}

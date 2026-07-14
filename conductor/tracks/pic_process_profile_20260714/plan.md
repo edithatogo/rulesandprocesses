@@ -28,11 +28,12 @@ under [#50](https://github.com/edithatogo/rac-conformance/issues/50).
 
 ## Phase 2 - Contract and Validator
 
-- [ ] Task: Write process-profile schema and validator tests
-    - [ ] Add at least two valid examples covering FOI-O and a synthetic human-review process.
-    - [ ] Add invalid examples for authority, temporal, transition, task-kind, source-state, and trace-link failures.
-    - [ ] Add compatibility tests for existing PIC identifiers.
+- [x] Task: Write process-profile schema and validator tests
+    - [x] Add at least two valid examples covering FOI-O and a synthetic human-review process.
+    - [x] Add invalid examples for authority, temporal, transition, task-kind, source-state, and trace-link failures.
+    - [x] Add compatibility tests for existing PIC identifiers.
     - **Acceptance:** tests fail for the intended unsupported contract before implementation.
+    - **Evidence:** `contracts/tools/tests/test_process_profile_schema.py` and the valid/invalid corpus define the intended red/green behavior; targeted collection fails until `process-profile/0.1.0` and validator discovery are implemented.
 - [ ] Task: Implement process-profile schemas and validator
     - [ ] Add versioned schemas, canonical examples, diagnostics, and CLI discovery.
     - [ ] Preserve all existing PIC validation behavior.
