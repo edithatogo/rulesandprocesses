@@ -39,11 +39,12 @@ under [#50](https://github.com/edithatogo/rac-conformance/issues/50).
     - [ ] Preserve all existing PIC validation behavior.
     - [ ] Produce deterministic normalized traces for comparison.
     - **Acceptance:** valid/invalid corpus and >=80% relevant coverage pass.
-- [ ] Task: Document semantics and projection rules
-    - [ ] Define normative lifecycle semantics and non-normative platform guidance.
-    - [ ] Document representational loss and exception handling.
-    - [ ] Add migration notes and changelog entries.
+- [x] Task: Document semantics and projection rules
+    - [x] Define normative lifecycle semantics and non-normative platform guidance.
+    - [x] Document representational loss and exception handling.
+    - [x] Add migration notes and changelog entries.
     - **Acceptance:** no platform-specific term is required to implement core semantics.
+    - **Evidence:** `contracts/process-profile/0.1.0/SPEC.md`, `README.md`, and `CHANGELOG.md` define lifecycle semantics, non-normative projection loss, safety boundaries, and migration posture.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Contract and Validator' (Protocol in workflow.md)
 
 ## Phase 3 - FOI-O Baseline Validation
