@@ -10,11 +10,12 @@ GitHub issue: [#39](https://github.com/edithatogo/rac-conformance/issues/39).
     - [ ] Record explicit v1 non-goals and prohibited claims.
     - **Acceptance:** every public surface has one owner, stability class, and support posture.
     - **Evidence:** `docs/V1_SCOPE.md` inventories the current contracts, tools, profiles, adapters, studies, demos, generated artifacts, and internal materials, with explicit v1 non-goals and prohibited claims.
-- [ ] Task: Define conformance levels and evidence semantics
+- [x] Task: Define conformance levels and evidence semantics
     - [ ] Separate syntactic, semantic, execution, trace, source, and independently certified conformance.
     - [ ] Define pass, fail, blocked, exception, and not-applicable states.
     - [ ] Prohibit legal, clinical, funding, and standards-body claims from conformance badges.
     - **Acceptance:** each level has deterministic tests and required evidence.
+    - **Evidence:** `docs/V1_CONFORMANCE.md` defines the six cumulative levels, five machine-readable evidence states, independence requirements, required evidence, and prohibited claims.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Product Boundary' (Protocol in workflow.md)
 
 ## Phase 2 - Lifecycle Policies
