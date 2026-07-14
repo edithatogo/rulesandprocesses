@@ -1,9 +1,9 @@
 {
   "procedure": "local-process-mappings-extraction-rehearsal",
-  "sourceCommit": "67b6666779036f7951eb9867bc0390e8229320cd",
-  "sourceTree": "ec5c107bd70224cff9c65b50912b6f45d29547ca",
-  "trackedFileCount": 22,
-  "fileManifestSha256": "8e62135cd2460a669ca101e7c4e5b3b44308b07b397dfd751503b5ef6f476aac",
+  "sourceCommit": "463be0f36d61f48fab91c1e7a77106ad93139717",
+  "sourceTree": "b6cc1c8b171e8c969d50a581888b0f87d5b8d874",
+  "trackedFileCount": 25,
+  "fileManifestSha256": "b97b3727beafa8e338bbb5385f131a9896dbed37ec1df02b4f749eeccc8a4647",
   "parentLicenseSha256": "db3c7186f3e87713b0acbee2321b9af9a0795c5c87b7836540c0c5c42e3ff964",
   "transformedLinks": [
     "LICENSE_BOUNDARY.md: ../../LICENSE -> LICENSE"
@@ -12,17 +12,17 @@
     {
       "id": "tracked-tree",
       "status": "pass",
-      "detail": "22 tracked files copied"
+      "detail": "25 tracked files copied"
     },
     {
       "id": "source-commit",
       "status": "pass",
-      "detail": "67b6666779036f7951eb9867bc0390e8229320cd"
+      "detail": "463be0f36d61f48fab91c1e7a77106ad93139717"
     },
     {
       "id": "source-tree",
       "status": "pass",
-      "detail": "ec5c107bd70224cff9c65b50912b6f45d29547ca"
+      "detail": "b6cc1c8b171e8c969d50a581888b0f87d5b8d874"
     },
     {
       "id": "license-transfer",

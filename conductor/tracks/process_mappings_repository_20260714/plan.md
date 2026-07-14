@@ -52,6 +52,14 @@ Phase 1 and establishes the implementation home required by
 
 ## Phase 3 - Extraction Rehearsal and Governance Packet
 
+> CHECKPOINT (2026-07-15): The extraction procedure now produces an auditable
+> local report covering tracked-tree provenance, license transfer, temporary
+> standalone Git commit and clone, link and source-manifest checks, rollback,
+> and the explicit no-remote boundary. The migration packet drafts destination
+> metadata, issue cross-references, hosted controls, versioning, and cutover
+> conditions without inventing remote state. Remote creation and canonical
+> cutover remain human-gated.
+
 - [x] Task: Build and test the extraction procedure
     - [x] Preserve subtree history and verify file, commit, and license integrity.
     - [x] Rehearse standalone CI, local installation, links, provenance checks, and dependency updates in a temporary local repository.
@@ -66,7 +74,7 @@ Phase 1 and establishes the implementation home required by
     - [x] Record owner, canonical URL, archive/reference behavior, release policy, and initial versioning proposal.
     - Evidence: `subrepos/process-mappings/migration/GITHUB_MIGRATION_PACKET.md`.
     - **Acceptance:** all authenticated or human actions are itemized and no remote-side fact is invented.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Extraction Rehearsal and Governance Packet' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Extraction Rehearsal and Governance Packet' (Protocol in workflow.md)
 
 ## Phase 4 - Human Cutover and Parent Closeout
 
