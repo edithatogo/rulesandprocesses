@@ -103,3 +103,72 @@ def test_allowlist_reports_extra_item_in_allowed_repository(tmp_path: Path, monk
     monkeypatch.setattr("sys.argv", ["check", "--items", str(items_path), "--allowlist", str(allowlist_path)])
 
     assert main() == 1
+
+
+def test_allowlist_accepts_status_override(tmp_path: Path, monkeypatch) -> None:
+    items_path = tmp_path / "items.json"
+    allowlist_path = tmp_path / "allowlist.json"
+    items_path.write_text(
+        json.dumps(
+            {
+                "items": [
+                    {
+                        "content": {"repository": "edithatogo/rac-conformance", "number": 36},
+                        "status": "Done",
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    allowlist_path.write_text(
+        json.dumps(
+            {
+                "expected_status": "Todo",
+                "expected_status_overrides": {"edithatogo/rac-conformance#36": "Done"},
+                "required_items": ["edithatogo/rac-conformance#36"],
+                "allowed_repositories": ["edithatogo/rac-conformance"],
+            }
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(
+        "sys.argv", ["check", "--items", str(items_path), "--allowlist", str(allowlist_path)]
+    )
+
+    assert main() == 0
+
+
+def test_allowlist_reports_unpopulated_required_field(tmp_path: Path, monkeypatch) -> None:
+    items_path = tmp_path / "items.json"
+    allowlist_path = tmp_path / "allowlist.json"
+    items_path.write_text(
+        json.dumps(
+            {
+                "items": [
+                    {
+                        "content": {"repository": "edithatogo/foi-o", "number": 23},
+                        "status": "Todo",
+                        "jurisdiction": None,
+                    }
+                ]
+            }
+        ),
+        encoding="utf-8",
+    )
+    allowlist_path.write_text(
+        json.dumps(
+            {
+                "expected_status": "Todo",
+                "required_items": ["edithatogo/foi-o#23"],
+                "required_fields": ["jurisdiction"],
+                "allowed_repositories": ["edithatogo/foi-o"],
+            }
+        ),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(
+        "sys.argv", ["check", "--items", str(items_path), "--allowlist", str(allowlist_path)]
+    )
+
+    assert main() == 1

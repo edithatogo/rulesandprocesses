@@ -38,17 +38,27 @@ def main() -> int:
     observed = set(observed_by_key)
     required = set(allowlist["required_items"])
     expected_status = allowlist.get("expected_status")
+    status_overrides = allowlist.get("expected_status_overrides", {})
+    required_fields = allowlist.get("required_fields", [])
     allowed_repositories = set(allowlist["allowed_repositories"])
     unrelated_repositories = sorted(
         key for key in observed if key.split("#", maxsplit=1)[0] not in allowed_repositories
     )
     extra_items = sorted(observed - required)
     missing = sorted(required - observed)
-    stale = sorted(
-        key
-        for key in required & observed
-        if expected_status and observed_by_key[key].get("status") != expected_status
-    )
+    stale = []
+    unpopulated_fields = []
+    for key in required & observed:
+        item = observed_by_key[key]
+        expected = status_overrides.get(key, expected_status)
+        observed_status = item.get("status")
+        if expected and observed_status != expected:
+            stale.append((key, expected, observed_status))
+        for field in required_fields:
+            if item.get(field) in {None, ""}:
+                unpopulated_fields.append((key, field))
+    stale.sort()
+    unpopulated_fields.sort()
 
     print(f"observed={len(observed)} required={len(required)}")
     if missing:
@@ -61,9 +71,17 @@ def main() -> int:
         print("extra items outside the exact FOI allowlist:")
         print("\n".join(f"- {key}" for key in extra_items))
     if stale:
-        print(f"stale items (expected status: {expected_status}):")
-        print("\n".join(f"- {key}" for key in stale))
-    return 1 if missing or unrelated_repositories or extra_items or stale else 0
+        print("stale items:")
+        print(
+            "\n".join(
+                f"- {key}: expected {expected}, observed {observed}"
+                for key, expected, observed in stale
+            )
+        )
+    if unpopulated_fields:
+        print("required fields without values:")
+        print("\n".join(f"- {key}: {field}" for key, field in unpopulated_fields))
+    return 1 if missing or unrelated_repositories or extra_items or stale or unpopulated_fields else 0
 
 
 if __name__ == "__main__":
