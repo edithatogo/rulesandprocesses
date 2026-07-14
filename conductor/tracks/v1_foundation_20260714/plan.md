@@ -23,11 +23,12 @@ GitHub issue: [#39](https://github.com/edithatogo/rac-conformance/issues/39).
 
 ## Phase 2 - Lifecycle Policies
 
-- [ ] Task: Publish compatibility and migration policy
-    - [ ] Define SemVer treatment for each PIC contract and the aggregate toolkit.
-    - [ ] Define canonical serialization, identifier stability, and CLI compatibility promises.
-    - [ ] Define deprecation notice periods and migration-artifact requirements.
+- [x] Task: Publish compatibility and migration policy
+    - [x] Define SemVer treatment for each PIC contract and the aggregate toolkit.
+    - [x] Define canonical serialization, identifier stability, and CLI compatibility promises.
+    - [x] Define deprecation notice periods and migration-artifact requirements.
     - **Acceptance:** representative compatible and breaking changes are classified by tests.
+    - **Evidence:** `docs/V1_COMPATIBILITY.md` defines independent package versioning, serialization and identifier stability, CLI compatibility, deprecation periods, and migration artifacts.
 - [ ] Task: Publish support, maintenance, and security policy
     - [ ] Define supported Python/platform versions and maintenance windows.
     - [ ] Define vulnerability intake, embargo, patch, and end-of-support behavior.
