@@ -1,0 +1,1 @@
+Verification: focused FOI portability tests, rehearsal test, Ruff, and full FOI_PROGRAMME_REPO_ROOT=/tmp/rac-process-consumption make check passed on 2026-07-15. FOI-O paths and bytes were verified against commit 447920b9bb72830f2c8490ee40bdcd73c5eedb4a; authority and mapping certification remain human-gated.
