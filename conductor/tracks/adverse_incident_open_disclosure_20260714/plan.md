@@ -54,5 +54,5 @@ GitHub issue: [#41](https://github.com/edithatogo/rac-conformance/issues/41). De
     - [ ] Specify the minimum public or appropriately de-identified aggregate event, provenance, authority, jurisdiction, permitted-purpose, and review fields.
     - [ ] Reject patient-level content, inferred causation, and uncertified downstream action.
     - [ ] Add valid and negative examples without making the handoff mandatory for incident workflows.
-    - **Acceptance:** the medicine-pathway profile can consume only a validated, purpose-limited signal and cannot infer an outcome from it.
+    - **Acceptance:** the handoff schema and examples validate and strictly exclude patient-level data, causal inference, and uncertified downstream action.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Synthetic Demonstrator and Review' (Protocol in workflow.md)
