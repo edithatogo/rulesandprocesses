@@ -52,4 +52,14 @@ def validate_offline_bundle(bundle: Path) -> ValidationReport:
             report.add(
                 ValidationIssue(location, "artifact contract does not match wrapper", "reference")
             )
+            continue
+        artifact_report = validate_file(artifact_path)
+        for issue in artifact_report.issues:
+            report.add(
+                ValidationIssue(
+                    location,
+                    f"wrapped artifact failed PIC validation: {issue.message}",
+                    issue.code,
+                )
+            )
     return report

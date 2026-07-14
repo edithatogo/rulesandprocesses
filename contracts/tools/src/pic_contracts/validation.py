@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
 from datetime import date, datetime
 from pathlib import Path
@@ -115,9 +116,15 @@ def _compatibility_semantics(path: Path, doc: dict[str, Any]) -> list[Validation
     declared_packages = set(doc["picPackages"])
     evidence_ids = set(doc["governance"]["evidenceAssertionIds"])
 
-    applicable_at = datetime.fromisoformat(jurisdiction["applicableAt"].replace("Z", "+00:00"))
-    observed_at = datetime.fromisoformat(jurisdiction["observedAt"].replace("Z", "+00:00"))
-    if observed_at < applicable_at:
+    try:
+        applicable_at = datetime.fromisoformat(
+            jurisdiction["applicableAt"].replace("Z", "+00:00")
+        )
+        observed_at = datetime.fromisoformat(jurisdiction["observedAt"].replace("Z", "+00:00"))
+    except ValueError:
+        issues.append(ValidationIssue(str(path), "invalid compatibility timestamp", "time"))
+        applicable_at = observed_at = None
+    if applicable_at is not None and observed_at is not None and observed_at < applicable_at:
         issues.append(
             ValidationIssue(str(path), "observation time precedes applicable time", "time")
         )
@@ -144,6 +151,10 @@ def _compatibility_semantics(path: Path, doc: dict[str, Any]) -> list[Validation
 
     for index, artifact in enumerate(doc["picArtifacts"]):
         location = f"{path}:picArtifacts/{index}"
+        if not _is_immutable_uri(artifact["artifactUri"]):
+            issues.append(
+                ValidationIssue(location, "artifact URI is not content-addressed", "provenance")
+            )
         if artifact["contract"] not in declared_packages:
             issues.append(
                 ValidationIssue(
@@ -199,6 +210,15 @@ def _compatibility_semantics(path: Path, doc: dict[str, Any]) -> list[Validation
                     "promotion",
                 )
             )
+        review_uri = promotion["reviewEvidenceUri"]
+        if promotion["status"] == "approved" and not _is_immutable_uri(review_uri):
+            issues.append(
+                ValidationIssue(
+                    location,
+                    "review evidence URI is not content-addressed",
+                    "provenance",
+                )
+            )
     if doc["governance"]["promotionState"] == "gold" and any(
         record["status"] != "approved" for record in doc["promotionRecords"]
     ):
@@ -210,6 +230,19 @@ def _compatibility_semantics(path: Path, doc: dict[str, Any]) -> list[Validation
             )
         )
     return issues
+
+
+def _is_immutable_uri(uri: str | None) -> bool:
+    if uri is None:
+        return False
+    if re.fullmatch(r"urn:sha256:[a-f0-9]{64}", uri):
+        return True
+    return bool(
+        re.fullmatch(
+            r"https://raw\.githubusercontent\.com/[^/]+/[^/]+/[a-f0-9]{40}/.+",
+            uri,
+        )
+    )
 
 
 def _json_files(path: Path) -> list[Path]:

@@ -69,3 +69,16 @@ def test_gold_requires_approved_promotion_records(tmp_path) -> None:
     report = validate_file(path)
     assert not report.ok
     assert any(issue.code == "promotion" for issue in report.issues)
+
+
+def test_compatibility_rejects_mutable_uri_and_bad_timestamp(tmp_path) -> None:
+    document = copy.deepcopy(load_json(BASE / "valid" / "nz-release.json"))
+    document["picArtifacts"][0]["artifactUri"] = (
+        "https://raw.githubusercontent.com/edithatogo/rac-conformance/main/fixture.json"
+    )
+    document["jurisdiction"]["observedAt"] = "not-a-time"
+    path = tmp_path / "mutable.json"
+    path.write_text(json.dumps(document), encoding="utf-8")
+    report = validate_file(path)
+    assert not report.ok
+    assert {"provenance", "time"} <= {issue.code for issue in report.issues}

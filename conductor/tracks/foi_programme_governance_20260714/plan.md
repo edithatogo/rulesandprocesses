@@ -49,8 +49,13 @@
 > passes the exact allowlist with zero missing, extra, or stale items.
 > Prepared review surface: `HUMAN_VERIFICATION_PACKET.md` section 3.
 
-> REVIEW (2026-07-15): Added stale-status detection and four passing unit tests.
+> REVIEW (2026-07-14): Added stale-status detection and four passing unit tests.
 > Full `make check` passed after the checker integration.
+
+> REVIEW (2026-07-14): Phase 4 review closed fail-open validation edges:
+> malformed timestamps now report deterministic errors, publication/review URIs
+> must be content-addressed, and offline bundles validate each wrapped artifact
+> against its complete PIC schema rather than trusting `conformsTo` alone.
 
 ## Phase 4: FOI-O to PIC compatibility profile
 
