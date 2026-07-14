@@ -20,4 +20,20 @@ def test_foi_source_manifest_does_not_claim_live_primary_verification() -> None:
     )
 
     assert primary["reviewerState"] == "agent-proposed"
-    assert primary["sourceStatus"] == "inherited-local-note-not-live-verified"
+    assert primary["sourceStatus"].startswith("locator-verified-content-matched")
+
+
+def test_foi_source_references_are_pinned_and_portable() -> None:
+    candidates = json.loads((ROOT / "PROFILE_CANDIDATES.json").read_text(encoding="utf-8"))
+    portability = json.loads(
+        (ROOT / "SOURCE_REFERENCE_PORTABILITY.json").read_text(encoding="utf-8")
+    )
+    commit = portability["commit"]
+
+    assert portability["contentMatch"] == "local-staged-bytes-match-pinned-upstream-bytes"
+    assert all(
+        ref.startswith(f"https://github.com/edithatogo/foi-o/blob/{commit}/")
+        for mapping in candidates["mappings"]
+        for ref in mapping["sourceRefs"]
+    )
+    assert all(item["sha256"] for item in portability["references"])

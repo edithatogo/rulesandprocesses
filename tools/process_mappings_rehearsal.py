@@ -18,7 +18,11 @@ def run_rehearsal(root: Path, report_path: Path, *, require_clean: bool = True) 
     """Copy the tracked subtree into a temporary Git repository and audit it."""
 
     source = root / SUBTREE
-    tracked = _git(root, "ls-files", "-z", "--", str(SUBTREE)).stdout.split("\0")
+    list_arguments = ["ls-files", "-z"]
+    if not require_clean:
+        list_arguments.extend(["--cached", "--others", "--exclude-standard"])
+    list_arguments.extend(["--", str(SUBTREE)])
+    tracked = _git(root, *list_arguments).stdout.split("\0")
     tracked = [Path(path) for path in tracked if path]
     if not tracked:
         raise ValueError("process-mappings subtree has no tracked files")
@@ -143,6 +147,7 @@ def _assert_provenance(root: Path) -> None:
         root / "contracts/consumption.json",
         root / "profiles/foi/SOURCE_MANIFEST.json",
         root / "profiles/foi/PROFILE_CANDIDATES.json",
+        root / "profiles/foi/SOURCE_REFERENCE_PORTABILITY.json",
     ]
     missing = [str(path.relative_to(root)) for path in required if not path.exists()]
     if missing:
