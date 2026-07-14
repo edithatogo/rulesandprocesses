@@ -1,0 +1,1 @@
+Conductor task: Run full compatibility and regression gates\nEvidence: contracts/process-profile/COMPATIBILITY.md, contracts/CONSUMERS.md, and full make check passed. Human certification remains open.\nCompleted: 2026-07-15
