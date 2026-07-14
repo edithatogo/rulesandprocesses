@@ -28,6 +28,7 @@ def main() -> int:
         "nlp-policy-nz",
         "legislation",
         "rac-conformance",
+        "foi-process",
         "alaveteli",
         "foi-programme-quality-evidence",
         "foio-pic-release-evidence",
