@@ -8,6 +8,14 @@ during the repository incubation governed by
 
 ## Phase 1 - Source and Authority Spine
 
+> CHECKPOINT (2026-07-15): The adverse-incident profile now has a versioned
+> primary-source ledger and an authority/variation matrix covering NZ, Australia,
+> and NSW. The matrix distinguishes regulation, national policy, national
+> framework, national standard, state directive, regional implementation, and
+> hypothetical local procedure. Three official source downloads remain blocked
+> and are recorded as exceptions; no secondary substitute, legal conclusion, or
+> clinical judgement has been encoded.
+
 - [x] Task: Build versioned primary-source manifest
     - [x] Store the profile source ledger under `subrepos/process-mappings/profiles/adverse-incidents/sources/`.
     - [x] Pin current NZ national policy, HDC guidance/Code basis, Australian national framework/standard, and NSW directives/guidance.
@@ -21,7 +29,7 @@ during the repository incubation governed by
     - [x] Identify common core and intentional variation without premature crosswalk claims.
     - Evidence: `subrepos/process-mappings/profiles/adverse-incidents/AUTHORITY_VARIATION_MATRIX.json`.
     - **Acceptance:** no national framework is mislabeled as legislation and no local policy is generalized nationally.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Source and Authority Spine' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Source and Authority Spine' (Protocol in workflow.md)
 
 ## Phase 2 - Process Mapping and Triangulation
 
