@@ -81,6 +81,7 @@ Phase 1 and establishes the implementation home required by
 - [ ] Task: [HUMAN] Approve repository creation and canonical cutover
     - [ ] Review extraction evidence, ownership, visibility, governance, security, issue migration, and rollback plan.
     - [ ] Approve, defer, or reject creation of `edithatogo/process-mappings`.
+    - Prepared source portability evidence: `subrepos/process-mappings/profiles/foi/SOURCE_REFERENCE_PORTABILITY.json` pins the four current FOI-O references and records byte equality without certifying legal or semantic authority.
     - **Acceptance:** the decision and any conditions are recorded before remote creation or canonical-home changes.
 - [ ] Task: Execute approved extraction and verify hosted controls
     - [ ] Create and populate the remote only after approval, then configure approved protections and Project linkage.
