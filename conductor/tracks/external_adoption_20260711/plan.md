@@ -32,4 +32,4 @@
 > CHECKPOINT (2026-07-14): Every staged contribution now has an explicit disposition in `external/ADOPTION_STATUS.md`. Project 19 issue #23 remains In Progress, matching unresolved external gates; no Project status or local ledger entry is treated as upstream acceptance.
 - [x] Task: Conductor - Automated Review and Checkpoint 'Adoption closeout' (Protocol in workflow.md)
 
-> CHECKPOINT (2026-07-14): Review found no correctness, scope, test, contract, or documentation defects requiring remediation. Full `make check` passed after the closeout ledger updates. The track remains in progress solely because upstream maintainer gates are unresolved.
+> CHECKPOINT (2026-07-14): Review found no correctness, scope, test, contract, or documentation defects requiring remediation after the PolicyEngine maintainer-status refresh. Full `make check` passed. The track remains in progress solely because upstream workflow, signing, review, and merge gates are unresolved.
