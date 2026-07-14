@@ -101,3 +101,8 @@
 > schema corpus validation, 25 converter tests, 20 harness tests, 33 SNAP
 > tests, 16 NZ reconciliation tests, 6 service-boundary tests, and 2
 > Docassemble tests. No repo-owned correctness blocker remains.
+
+> PR REVIEW FIX (2026-07-14): Hardened bitemporal comparison for mixed
+> offset-naive/aware inputs, normalized equivalent ISO-8601 instants, and split
+> missing-profile diagnostics from independent jurisdiction/version mismatches.
+> Fourteen focused compatibility tests pass.

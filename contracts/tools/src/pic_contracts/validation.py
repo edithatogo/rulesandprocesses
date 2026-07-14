@@ -124,30 +124,50 @@ def _compatibility_semantics(path: Path, doc: dict[str, Any]) -> list[Validation
     except ValueError:
         issues.append(ValidationIssue(str(path), "invalid compatibility timestamp", "time"))
         applicable_at = observed_at = None
-    if applicable_at is not None and observed_at is not None and observed_at < applicable_at:
-        issues.append(
-            ValidationIssue(str(path), "observation time precedes applicable time", "time")
-        )
+    if applicable_at is not None and observed_at is not None:
+        try:
+            if observed_at < applicable_at:
+                issues.append(
+                    ValidationIssue(str(path), "observation time precedes applicable time", "time")
+                )
+        except TypeError:
+            issues.append(
+                ValidationIssue(
+                    str(path),
+                    "cannot compare offset-naive and offset-aware timestamps",
+                    "time",
+                )
+            )
 
     matching_profiles = [
         profile
         for profile in doc["foioRelease"]["profiles"]
         if profile["id"] == jurisdiction["profileId"]
     ]
-    if not matching_profiles or matching_profiles[0]["jurisdiction"] != jurisdiction["id"]:
+    if not matching_profiles:
         issues.append(
             ValidationIssue(
                 str(path),
-                "FOI-O profile jurisdiction does not match envelope",
+                "FOI-O profile ID not found in release profiles",
                 "jurisdiction",
             )
         )
-    elif matching_profiles[0]["version"] != jurisdiction["profileVersion"]:
-        issues.append(
-            ValidationIssue(
-                str(path), "FOI-O profile version does not match envelope", "version"
+    else:
+        profile = matching_profiles[0]
+        if profile["jurisdiction"] != jurisdiction["id"]:
+            issues.append(
+                ValidationIssue(
+                    str(path),
+                    "FOI-O profile jurisdiction does not match envelope",
+                    "jurisdiction",
+                )
             )
-        )
+        if profile["version"] != jurisdiction["profileVersion"]:
+            issues.append(
+                ValidationIssue(
+                    str(path), "FOI-O profile version does not match envelope", "version"
+                )
+            )
 
     for index, artifact in enumerate(doc["picArtifacts"]):
         location = f"{path}:picArtifacts/{index}"
@@ -171,7 +191,7 @@ def _compatibility_semantics(path: Path, doc: dict[str, Any]) -> list[Validation
                     "jurisdiction",
                 )
             )
-        if artifact["applicableAt"] != jurisdiction["applicableAt"]:
+        if not _timestamps_equal(artifact["applicableAt"], jurisdiction["applicableAt"]):
             issues.append(
                 ValidationIssue(
                     location,
@@ -179,7 +199,7 @@ def _compatibility_semantics(path: Path, doc: dict[str, Any]) -> list[Validation
                     "time",
                 )
             )
-        if artifact["observedAt"] != jurisdiction["observedAt"]:
+        if not _timestamps_equal(artifact["observedAt"], jurisdiction["observedAt"]):
             issues.append(
                 ValidationIssue(
                     location,
@@ -243,6 +263,15 @@ def _is_immutable_uri(uri: str | None) -> bool:
             uri,
         )
     )
+
+
+def _timestamps_equal(left: str, right: str) -> bool:
+    try:
+        left_time = datetime.fromisoformat(left.replace("Z", "+00:00"))
+        right_time = datetime.fromisoformat(right.replace("Z", "+00:00"))
+    except ValueError:
+        return left == right
+    return left_time == right_time
 
 
 def _json_files(path: Path) -> list[Path]:

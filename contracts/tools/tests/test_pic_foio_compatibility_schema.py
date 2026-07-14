@@ -82,3 +82,39 @@ def test_compatibility_rejects_mutable_uri_and_bad_timestamp(tmp_path) -> None:
     report = validate_file(path)
     assert not report.ok
     assert {"provenance", "time"} <= {issue.code for issue in report.issues}
+
+
+def test_compatibility_reports_naive_aware_timestamp_mismatch(tmp_path) -> None:
+    document = copy.deepcopy(load_json(BASE / "valid" / "nz-release.json"))
+    document["jurisdiction"]["applicableAt"] = "2026-06-01T00:00:00"
+    path = tmp_path / "mixed-offsets.json"
+    path.write_text(json.dumps(document), encoding="utf-8")
+    report = validate_file(path)
+    assert not report.ok
+    assert any("offset-naive" in issue.message for issue in report.issues)
+
+
+def test_equivalent_timestamp_notation_matches_wrapper(tmp_path) -> None:
+    document = copy.deepcopy(load_json(BASE / "valid" / "nz-release.json"))
+    document["jurisdiction"]["observedAt"] = "2026-07-14T00:00:00+00:00"
+    path = tmp_path / "equivalent-time.json"
+    path.write_text(json.dumps(document), encoding="utf-8")
+    report = validate_file(path)
+    assert report.ok
+
+
+def test_profile_mismatches_are_reported_independently(tmp_path) -> None:
+    document = copy.deepcopy(load_json(BASE / "valid" / "nz-release.json"))
+    profile = document["foioRelease"]["profiles"][0]
+    profile["jurisdiction"] = "AU-NSW"
+    profile["version"] = "1.0.0"
+    path = tmp_path / "profile-mismatch.json"
+    path.write_text(json.dumps(document), encoding="utf-8")
+    report = validate_file(path)
+    assert not report.ok
+    assert {"jurisdiction", "version"} <= {issue.code for issue in report.issues}
+
+    document["jurisdiction"]["profileId"] = "foi-o-us"
+    path.write_text(json.dumps(document), encoding="utf-8")
+    report = validate_file(path)
+    assert any("profile ID not found" in issue.message for issue in report.issues)
