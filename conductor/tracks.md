@@ -4,7 +4,7 @@
 Track ID: `citation_zenodo_mirroring_20260714`
 *Link: [./tracks/citation_zenodo_mirroring_20260714/](./tracks/citation_zenodo_mirroring_20260714/)*
 
-- [ ] **Track: FOI programme quality and spaCy evaluation**
+- [x] **Track: FOI programme quality and spaCy evaluation**
 Track ID: `foi_programme_quality_and_spacy_20260714`
 *Link: [./tracks/foi_programme_quality_and_spacy_20260714/](./tracks/foi_programme_quality_and_spacy_20260714/)*
 

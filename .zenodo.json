@@ -1,0 +1,8 @@
+{
+  "title": "RaC Conformance — policy interchange, verification, and rules/process coupling",
+  "description": "Versioned evidence-first conformance harnesses and policy-interchange contracts for rules-as-code systems, including FOI-O compatibility evidence.",
+  "creators": [{"name": "Mordaunt, Dylan A", "orcid": "0000-0002-9775-0603"}],
+  "license": "Apache-2.0",
+  "keywords": ["rules-as-code", "policy-interchange", "conformance", "freedom-of-information", "new-zealand", "australia"],
+  "related_identifiers": [{"identifier": "https://github.com/edithatogo/rac-conformance", "relation": "isIdenticalTo", "scheme": "url"}]
+}
