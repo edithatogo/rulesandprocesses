@@ -13,12 +13,17 @@ GitHub issue: https://github.com/edithatogo/rac-conformance/issues/33
 > from the GitHub release.
 
 - [x] Add `.zenodo.json` and register the repository in the paper mirror manifest. (CFF/Zenodo metadata validated locally)
-- [x] [HUMAN] Deposit the verified GitHub release in Zenodo and verify the
+- [ ] [HUMAN] Deposit the verified GitHub release in Zenodo and verify the
       resulting version and concept DOIs.
-- [x] Replace the pending DOI gate in the manuscript ledger.
+- [ ] Replace the pending DOI gate in the manuscript ledger.
 
-> CHECKPOINT (2026-07-15): Zenodo record `21360138` publishes `v0.8.1` at
-> version DOI `10.5281/zenodo.21360138` and concept DOI
-> `10.5281/zenodo.21360137`. Public metadata identifies the GitHub repository,
-> MIT license, and author ORCID `0000-0002-9775-0603`; the GitHub release
-> resolves to commit `d24ae6f9f2d9488052969f633d91eff4a9a47f58`.
+> EVIDENCE CORRECTION (2026-07-15): Zenodo record `21360138` is the FOI-O
+> `v0.8.1` release and does not satisfy this track's RaC Conformance evidence-
+> release deposit gate. RaC Conformance `v0.2.0` is published at commit
+> `35fdebdd6ca3ad0a254ca0b3ec5b7466b7db3fe5`, but the programme manifest and
+> citation ledger correctly retain `pending_human_deposit`; live Zenodo searches
+> by repository URL and title returned no RaC Conformance record.
+
+> BLOCKED (2026-07-15): Publishing the RaC Conformance `v0.2.0` release in
+> Zenodo and verifying its version and concept DOIs require the human deposit
+> gate. No DOI will be inferred from FOI-O or another programme repository.

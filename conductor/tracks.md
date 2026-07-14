@@ -1,6 +1,6 @@
 # Project Tracks
 
-- [x] **Track: Citation and Zenodo mirroring**
+- [~] **Track: Citation and Zenodo mirroring**
 Track ID: `citation_zenodo_mirroring_20260714`
 *Link: [./tracks/citation_zenodo_mirroring_20260714/](./tracks/citation_zenodo_mirroring_20260714/)*
 
