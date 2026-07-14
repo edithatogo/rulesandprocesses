@@ -13,6 +13,7 @@ MANIFEST = (
     / "sources"
     / "SOURCE_MANIFEST.json"
 )
+MATRIX = MANIFEST.parents[1] / "AUTHORITY_VARIATION_MATRIX.json"
 
 
 def test_adverse_incident_source_ledger_has_expected_authority_layers() -> None:
@@ -45,3 +46,21 @@ def test_blocked_sources_are_explicit_and_not_filled_by_secondary_sources() -> N
         if source["id"] in document["blockedSources"]:
             assert source["sourceStatus"].endswith("download-blocked")
             assert source["digest"] is None
+
+
+def test_authority_variation_matrix_does_not_create_a_false_crosswalk() -> None:
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    matrix = json.loads(MATRIX.read_text(encoding="utf-8"))
+    source_ids = {source["id"] for source in manifest["sources"]}
+
+    assert matrix["mappingState"] == "not-a-crosswalk"
+    for layer in matrix["layers"]:
+        assert set(layer["sourceIds"]).issubset(source_ids)
+        assert "certified" not in layer["disposition"]
+    assert {layer["id"] for layer in matrix["layers"]} >= {
+        "national-consistency",
+        "nz-consumer-rights",
+        "australia-national-framework",
+        "regional-implementation",
+        "hypothetical-local-procedure",
+    }
