@@ -33,6 +33,14 @@ during the repository incubation governed by
 
 ## Phase 2 - Process Mapping and Triangulation
 
+> CHECKPOINT (2026-07-15): Phase 2 now contains agent-proposed process
+> candidates, a deterministic field-driven source triangulation resolver, and
+> a generated result packet. The resolver emits one disposition per mapping,
+> fails closed for blocked, conflicting, undated, underspecified, and
+> secondary-only evidence, and never certifies an obligation. Review found no
+> actionable defects; human certification and synthetic fixture work remain
+> deferred to Phase 3.
+
 - [x] Task: Draft process-profile candidates
     - [x] Store candidate mappings under `subrepos/process-mappings/profiles/adverse-incidents/candidates/`.
     - [x] Model detection through closure with stable IDs and explicit human tasks.
@@ -52,7 +60,9 @@ during the repository incubation governed by
     - [x] Verify jurisdiction and effective-date leakage fails.
     - **Acceptance:** tests fail before implementation and pass after deterministic resolver work.
     - Evidence: `contracts/tools/tests/test_adverse_incident_triangulation.py` and `results/triangulated-candidates.json`.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Process Mapping and Triangulation' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Process Mapping and Triangulation' (Protocol in workflow.md)
+    - Review: spec/plan/workflow/diff reviewed; no actionable defects found.
+    - Validation: `FOI_PROGRAMME_REPO_ROOT=/tmp/rac-process-consumption make check` passed.
 
 ## Phase 3 - Synthetic Demonstrator and Review
 
