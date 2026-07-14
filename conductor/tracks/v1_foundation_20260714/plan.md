@@ -58,4 +58,7 @@ GitHub issue: [#39](https://github.com/edithatogo/rac-conformance/issues/39).
     - [x] Update Project 19 from the local manifest.
     - **Acceptance:** no existing gate is silently weakened or counted twice.
     - **Evidence:** `conductor/v1-release-gates.json` links gate records to FOI-O #27, RaC #23/#31/#33/#30, and leaves their source-of-truth statuses authoritative; Track #39 is In Progress in Project 19.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Release Gate Control Plane' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Release Gate Control Plane' (Protocol in workflow.md)
+    - **Review:** Phase 3 review found no gate-state weakening or duplicate source-of-truth ownership; the manifest validator was added to `make check` and retains blocked external/human gates.
+
+> CHECKPOINT (2026-07-15): The release-gate corpus covers invalid missing evidence, self-certified adoption, stale evidence, and ambiguous status, plus valid blocked and fully satisfied manifests. `tools/release_gates.py` produces deterministic reports and `conductor/v1-release-gates.json` records FOI-O, adoption, papers, Zenodo, and governance dependencies with source issue links. Full `make check` passed, and Track #39 is In Progress in Project 19. External deposits, independent adoption, and FOI-O evidence remain blocked rather than locally certified.
