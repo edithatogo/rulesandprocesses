@@ -1,0 +1,1 @@
+Verification: FOI_PROGRAMME_REPO_ROOT=/tmp/rac-process-consumption make check passed on 2026-07-15 after review fix 5f19e8d. Phase 3 preserves the no-remote boundary and records the remaining human cutover gate.
