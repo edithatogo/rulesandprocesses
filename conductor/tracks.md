@@ -4,6 +4,10 @@
 Track ID: `citation_zenodo_mirroring_20260714`
 *Link: [./tracks/citation_zenodo_mirroring_20260714/](./tracks/citation_zenodo_mirroring_20260714/)*
 
+- [ ] **Track: FOI process citation and Zenodo mirroring**
+Track ID: `foi_process_citation_mirroring_20260714`
+*Link: [./tracks/foi_process_citation_mirroring_20260714/](./tracks/foi_process_citation_mirroring_20260714/)*
+
 - [x] **Track: FOI programme quality and spaCy evaluation**
 Track ID: `foi_programme_quality_and_spacy_20260714`
 *Link: [./tracks/foi_programme_quality_and_spacy_20260714/](./tracks/foi_programme_quality_and_spacy_20260714/)*
