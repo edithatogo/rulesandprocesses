@@ -8,11 +8,12 @@ during the repository incubation governed by
 
 ## Phase 1 - Source and Authority Spine
 
-- [ ] Task: Build versioned primary-source manifest
-    - [ ] Store the profile source ledger under `subrepos/process-mappings/profiles/adverse-incidents/sources/`.
-    - [ ] Pin current NZ national policy, HDC guidance/Code basis, Australian national framework/standard, and NSW directives/guidance.
-    - [ ] Record issuer, jurisdiction, authority type, applicability, effective date, supersession, retrieval time, rights, and digest.
-    - [ ] Mark blocked or ambiguous documents explicitly; do not substitute secondary summaries.
+- [x] Task: Build versioned primary-source manifest
+    - [x] Store the profile source ledger under `subrepos/process-mappings/profiles/adverse-incidents/sources/`.
+    - [x] Pin current NZ national policy, HDC guidance/Code basis, Australian national framework/standard, and NSW directives/guidance.
+    - [x] Record issuer, jurisdiction, authority type, applicability, effective date, supersession, retrieval time, rights, and digest.
+    - [x] Mark blocked or ambiguous documents explicitly; do not substitute secondary summaries.
+    - Evidence: `subrepos/process-mappings/profiles/adverse-incidents/sources/SOURCE_MANIFEST.json`.
     - **Acceptance:** every modeled obligation resolves to a controlling or explicitly non-controlling primary source.
 - [ ] Task: Build authority and variation matrix
     - [ ] Separate national consistency layer, jurisdictional requirements, regional implementation, and hypothetical local procedure.
