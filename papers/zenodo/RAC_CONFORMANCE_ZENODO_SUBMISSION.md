@@ -13,7 +13,8 @@ issue #33. This file is preparation evidence, not proof of a Zenodo deposit.
 
 1. Deposit the GitHub release in Zenodo using the repository `.zenodo.json`.
 2. Verify the title, creator ORCID, Apache-2.0 license, and repository link.
-3. Record the version DOI, concept DOI, landing page, release SHA, archive
-   digest, and verification date in the mirror manifest and citation ledger.
-4. Replace `pending_human_deposit` only after the version DOI resolves to this
-   exact release.
+3. Record the version DOI and concept DOI in the mirror manifest. Record the
+   landing page, release SHA, archive digest, and verification date in the
+   citation ledger.
+4. Replace `pending_human_deposit` with `verified_published_version` only after
+   the version DOI resolves to this exact release.
