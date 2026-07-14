@@ -46,18 +46,19 @@ def main() -> int:
     )
     extra_items = sorted(observed - required)
     missing = sorted(required - observed)
-    stale = sorted(
-        (key, status_overrides.get(key, expected_status), observed_by_key[key].get("status"))
-        for key in required & observed
-        if status_overrides.get(key, expected_status)
-        and observed_by_key[key].get("status") != status_overrides.get(key, expected_status)
-    )
-    unpopulated_fields = sorted(
-        (key, field)
-        for key in required & observed
-        for field in required_fields
-        if observed_by_key[key].get(field) in {None, ""}
-    )
+    stale = []
+    unpopulated_fields = []
+    for key in required & observed:
+        item = observed_by_key[key]
+        expected = status_overrides.get(key, expected_status)
+        observed_status = item.get("status")
+        if expected and observed_status != expected:
+            stale.append((key, expected, observed_status))
+        for field in required_fields:
+            if item.get(field) in {None, ""}:
+                unpopulated_fields.append((key, field))
+    stale.sort()
+    unpopulated_fields.sort()
 
     print(f"observed={len(observed)} required={len(required)}")
     if missing:
