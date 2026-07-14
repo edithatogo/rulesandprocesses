@@ -65,6 +65,12 @@
 - [ ] Task: Implement offline validation and a release compatibility matrix,
       then exercise both repositories against pinned published artifacts rather
       than checkout-relative paths.
+
+> BLOCKED (2026-07-14): `pic-foio-check`, content-addressed offline bundle
+> validation, and a fail-closed compatibility matrix are implemented. The live
+> exercise cannot pass until `edithatogo/foi-o` publishes a V2 release: the
+> existing `v0.8.0` tag lacks the V2 manifest/codebook/capability/migration
+> artifacts, and no GitHub release or release PR currently exists.
 - [ ] Task: Require independent-oracle review before generated FOI-O candidates
       can be promoted to PIC golden fixtures or approved crosswalk rows.
 - [ ] Task: Produce a machine-readable release-evidence bundle for the papers

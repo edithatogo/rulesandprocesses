@@ -1,8 +1,26 @@
 {
   "schemaVersion": "pic-foio-compatibility-matrix.v0.1.0",
   "entries": [
-    {"foioCore": "2.0.0", "profile": "foi-o-nz@2.0.0", "picCompatibility": ["pic-crosswalk@0.1.0", "pic-fixtures@0.1.0", "pic-traces@0.2.0"], "status": "candidate", "evidence": "examples/valid/nz-release.json"},
-    {"foioCore": "2.0.0", "profile": "foi-o-au-nsw@0.1.0", "picCompatibility": ["pic-crosswalk@0.1.0", "pic-fixtures@0.1.0"], "status": "candidate", "evidence": "examples/valid/nsw-release.json"}
+    {
+      "foioCore": "2.0.0",
+      "profile": "foi-o-nz@2.0.0",
+      "picCompatibility": ["pic-crosswalk@0.1.0", "pic-fixtures@0.1.0", "pic-parameters@0.2.0", "pic-traces@0.2.0"],
+      "status": "blocked_no_published_release",
+      "publishedManifestUri": null,
+      "publishedManifestSha256": null,
+      "contractExample": "examples/valid/nz-release.json",
+      "blocker": "FOI-O V2 artifacts are present on main but no immutable V2 release is published."
+    },
+    {
+      "foioCore": "2.0.0",
+      "profile": "foi-o-au-nsw@0.1.0",
+      "picCompatibility": ["pic-crosswalk@0.1.0", "pic-fixtures@0.1.0", "pic-parameters@0.2.0", "pic-traces@0.2.0"],
+      "status": "blocked_no_published_release",
+      "publishedManifestUri": null,
+      "publishedManifestSha256": null,
+      "contractExample": "examples/valid/nsw-release.json",
+      "blocker": "The Australian pilot and its immutable FOI-O jurisdiction-profile release are not complete."
+    }
   ],
-  "releaseRule": "Only entries with immutable revisions, matching content digests, and independent review may be promoted beyond candidate."
+  "releaseRule": "Only entries backed by an immutable published manifest, matching offline content digests, and independent review may be marked passed."
 }

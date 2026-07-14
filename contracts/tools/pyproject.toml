@@ -16,6 +16,7 @@ dependencies = [
 [project.scripts]
 pic-validate = "pic_contracts.validate_cli:main"
 pic-diff = "pic_contracts.diff_cli:main"
+pic-foio-check = "pic_contracts.compatibility_cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/pic_contracts"]
@@ -38,4 +39,3 @@ source = ["pic_contracts"]
 [tool.coverage.report]
 fail_under = 80
 show_missing = true
-

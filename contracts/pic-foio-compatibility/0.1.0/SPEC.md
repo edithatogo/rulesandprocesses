@@ -16,3 +16,9 @@ artifact coordinate and digest, jurisdiction, applicable and observation times,
 and evidence references. The deterministic validator requires those values to
 match the release envelope and rejects evidence references not declared by the
 governance assertion ledger.
+
+`pic-foio-check` validates a downloaded bundle without network access. The
+bundle stores each PIC artifact under `artifacts/<sha256>` and retains its
+immutable publication URI in the wrapper. The compatibility matrix must report
+an absent FOI-O release as blocked; a synthetic contract example is not release
+evidence and cannot produce a `passed` row.
