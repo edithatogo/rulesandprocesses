@@ -1,9 +1,10 @@
 {
   "procedure": "local-process-mappings-extraction-rehearsal",
-  "sourceCommit": "463be0f36d61f48fab91c1e7a77106ad93139717",
-  "sourceTree": "b6cc1c8b171e8c969d50a581888b0f87d5b8d874",
+  "sourceCommit": "024664fe3574bb283718a2691f44a835a7550439",
+  "sourceTree": "08c3f7362b8974240f957461adff5f75272a26e5",
+  "historySplitCommit": "498b12e7dc2e92a7a51b5cddd454daa051afb16c",
   "trackedFileCount": 25,
-  "fileManifestSha256": "b97b3727beafa8e338bbb5385f131a9896dbed37ec1df02b4f749eeccc8a4647",
+  "fileManifestSha256": "869d094642b5ea38dcb77d10c480e57e4db6e04630d4fb59b53f4f897020471e",
   "parentLicenseSha256": "db3c7186f3e87713b0acbee2321b9af9a0795c5c87b7836540c0c5c42e3ff964",
   "transformedLinks": [
     "LICENSE_BOUNDARY.md: ../../LICENSE -> LICENSE"
@@ -17,12 +18,17 @@
     {
       "id": "source-commit",
       "status": "pass",
-      "detail": "463be0f36d61f48fab91c1e7a77106ad93139717"
+      "detail": "024664fe3574bb283718a2691f44a835a7550439"
     },
     {
       "id": "source-tree",
       "status": "pass",
-      "detail": "b6cc1c8b171e8c969d50a581888b0f87d5b8d874"
+      "detail": "08c3f7362b8974240f957461adff5f75272a26e5"
+    },
+    {
+      "id": "history-preservation",
+      "status": "pass",
+      "detail": "498b12e7dc2e92a7a51b5cddd454daa051afb16c"
     },
     {
       "id": "license-transfer",
@@ -48,6 +54,31 @@
       "id": "provenance-files",
       "status": "pass",
       "detail": "source manifest and consumption manifest present"
+    },
+    {
+      "id": "standalone-ci",
+      "status": "deferred",
+      "detail": "destination workflow must be added after cutover approval"
+    },
+    {
+      "id": "local-installation",
+      "status": "not-applicable",
+      "detail": "incubator contains no installable runtime package"
+    },
+    {
+      "id": "dependency-updates",
+      "status": "deferred",
+      "detail": "destination dependency policy must be configured after cutover"
+    },
+    {
+      "id": "issue-migration",
+      "status": "drafted",
+      "detail": "migration packet preserves parent issue cross-references"
+    },
+    {
+      "id": "source-reference-portability",
+      "status": "deferred",
+      "detail": "parent-local FOI-O evidence paths need durable destination references"
     },
     {
       "id": "remote-creation",
