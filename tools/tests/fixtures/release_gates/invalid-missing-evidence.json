@@ -1,0 +1,13 @@
+{
+  "manifest_version": "1",
+  "release": "v1.0.0-rc.1",
+  "gates": [
+    {
+      "id": "local-check",
+      "owner": "rac-maintainers",
+      "category": "repository",
+      "status": "pass",
+      "observed_at": "2026-07-15"
+    }
+  ]
+}
