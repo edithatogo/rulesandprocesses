@@ -39,7 +39,7 @@
 
 - [x] Task: Document or implement a repeatable item-level sync with FOI-only allowlists.
 - [x] Task: Add drift checks for missing, stale, or unrelated Project 14 items.
-- [ ] Task: Run repository quality gates and Conductor review.
+- [x] Task: Run repository quality gates and Conductor review.
 - [ ] Task: Archive only after live Project evidence is recorded.
 - [ ] Task: Conductor - User Manual Verification 'Durable governance' (Protocol in workflow.md)
 
@@ -48,6 +48,9 @@
 > the checker found all 18 required items and 67 extra historical items. The
 > extras are reported for human triage; no automatic deletion or status rewrite
 > is authorized.
+
+> REVIEW (2026-07-15): Added stale-status detection and four passing unit tests.
+> Full `make check` passed after the checker integration.
 
 ## Phase 4: FOI-O to PIC compatibility profile
 

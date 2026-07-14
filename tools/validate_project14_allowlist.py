@@ -34,14 +34,21 @@ def main() -> int:
     if not isinstance(items, list):
         raise ValueError("Project export must be a JSON list or an object with items")
 
-    observed = {key for item in items if (key := _item_key(item))}
+    observed_by_key = {key: item for item in items if (key := _item_key(item))}
+    observed = set(observed_by_key)
     required = set(allowlist["required_items"])
+    expected_status = allowlist.get("expected_status")
     allowed_repositories = set(allowlist["allowed_repositories"])
     unrelated_repositories = sorted(
         key for key in observed if key.split("#", maxsplit=1)[0] not in allowed_repositories
     )
     extra_items = sorted(observed - required)
     missing = sorted(required - observed)
+    stale = sorted(
+        key
+        for key in required & observed
+        if expected_status and observed_by_key[key].get("status") != expected_status
+    )
 
     print(f"observed={len(observed)} required={len(required)}")
     if missing:
@@ -53,7 +60,10 @@ def main() -> int:
     if extra_items:
         print("extra items outside the exact FOI allowlist:")
         print("\n".join(f"- {key}" for key in extra_items))
-    return 1 if missing or unrelated_repositories or extra_items else 0
+    if stale:
+        print(f"stale items (expected status: {expected_status}):")
+        print("\n".join(f"- {key}" for key in stale))
+    return 1 if missing or unrelated_repositories or extra_items or stale else 0
 
 
 if __name__ == "__main__":

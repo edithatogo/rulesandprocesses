@@ -1,5 +1,6 @@
 {
   "project": 14,
+  "expected_status": "Todo",
   "required_items": [
     "edithatogo/foi-o#23",
     "edithatogo/foi-o#24",
