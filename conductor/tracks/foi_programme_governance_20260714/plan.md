@@ -36,10 +36,10 @@
 - [x] Task: Document or implement a repeatable item-level sync with FOI-only allowlists.
 - [x] Task: Add drift checks for missing, stale, or unrelated Project 14 items.
 - [x] Task: Run repository quality gates and Conductor review.
-- [ ] Task: Archive only after live Project evidence is recorded.
+- [x] Task: Archive only after live Project evidence is recorded.
 - [ ] Task: Conductor - User Manual Verification 'Durable governance' (Protocol in workflow.md)
 
-> CHECKPOINT (2026-07-15): Added `project14-allowlist.json` and
+> CHECKPOINT (2026-07-14): Added `project14-allowlist.json` and
 > `tools/validate_project14_allowlist.py`. Against the live Project 14 export,
 > the checker initially found all 18 required items and 67 extra historical
 > items. The historical items were removed from Project 14 only, preserving
