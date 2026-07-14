@@ -23,14 +23,15 @@ owns generic source-backed profiles and adapters.
 > commit `2e635115f61e24d2e109d868119024a5591cce00`. `CITATION.cff` records the
 > repository, Apache-2.0 license, version `0.1.0`, and release date. Hosted
 > `contracts`, `dependency-policy`, `feature-matrix`, and both Rust checks passed.
-> Programme ledger mirroring and Zenodo DOI verification remain open in Phase 2.
+> Programme ledger mirroring is complete; Zenodo DOI verification remains open
+> in Phase 2.
 
 ## Phase 2 - Programme Mirror and Preservation Evidence
 
-- [ ] Task: Add the released repository to programme citation ledgers
-    - [ ] Pin the released foi-process tag and commit in the FOI programme mirror manifest.
-    - [ ] Record its implementation-consumer and operational-evidence role.
-    - [ ] Verify that references do not make foi-process a runtime dependency or semantic authority.
+- [x] Task: Add the released repository to programme citation ledgers
+    - [x] Pin the released foi-process tag and commit in the FOI programme mirror manifest.
+    - [x] Record its implementation-consumer and operational-evidence role.
+    - [x] Verify that references do not make foi-process a runtime dependency or semantic authority.
     - **Acceptance:** mirror and citation checks resolve to the immutable upstream release.
 - [ ] Task: [HUMAN] Enable and verify Zenodo preservation
     - [ ] Enable the repository in Zenodo and publish preservation for the approved release.
