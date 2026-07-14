@@ -1,6 +1,17 @@
 {
   "project": 14,
   "expected_status": "Todo",
+  "expected_status_overrides": {
+    "edithatogo/rac-conformance#36": "Done"
+  },
+  "required_fields": [
+    "jurisdiction",
+    "repository role",
+    "dependency",
+    "evidence status",
+    "human gate",
+    "delivery status"
+  ],
   "required_items": [
     "edithatogo/foi-o#23",
     "edithatogo/foi-o#24",

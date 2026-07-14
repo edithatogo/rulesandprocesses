@@ -106,3 +106,9 @@
 > offset-naive/aware inputs, normalized equivalent ISO-8601 instants, and split
 > missing-profile diagnostics from independent jurisdiction/version mismatches.
 > Fourteen focused compatibility tests pass.
+
+> DELIVERY CHECKPOINT (2026-07-14): PR #36 merged after all hosted checks and
+> review threads passed. Project 14 records it as `Done`, with human gate
+> satisfied and delivery status done. The drift checker now supports per-item
+> status overrides and fails on missing values in any of the six programme
+> metadata fields.
