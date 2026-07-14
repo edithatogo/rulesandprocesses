@@ -9,11 +9,12 @@ under [#50](https://github.com/edithatogo/rac-conformance/issues/50).
 
 ## Phase 1 - Consumer and Semantic Inventory
 
-- [ ] Task: Inventory process concepts from real consumers
-    - [ ] Extract only consumed concepts from FOI-O, the existing Docassemble demo, harness traces, and approved health demonstrator requirements.
-    - [ ] Record concept owner, consumer, cardinality, time semantics, and failure behavior.
-    - [ ] Reject ontology, BPMN, and workflow-engine concepts with no current consumer.
+- [x] Task: Inventory process concepts from real consumers
+    - [x] Extract only consumed concepts from FOI-O, the existing Docassemble demo, harness traces, and approved health demonstrator requirements.
+    - [x] Record concept owner, consumer, cardinality, time semantics, and failure behavior.
+    - [x] Reject ontology, BPMN, and workflow-engine concepts with no current consumer.
     - **Acceptance:** every proposed field has a named consumer and evidence artifact.
+    - **Evidence:** `contracts/process-profile/CONSUMER_INVENTORY.md` records six current consumers, evidence paths, field cardinality/time/failure semantics, and explicit exclusions.
 - [ ] Task: Define authority and source-assertion model
     - [ ] Distinguish law, regulation, national policy, regional policy, guidance, interpretation, and runtime observation.
     - [ ] Define `agent-proposed`, `human-approved`, and official-primary assertion states.
