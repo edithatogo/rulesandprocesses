@@ -10,11 +10,20 @@ from pic_contracts.validation import ValidationIssue, ValidationReport, validate
 
 def validate_example_corpus(root: Path) -> ValidationReport:
     report = ValidationReport()
-    for valid_path in sorted(root.glob("pic-*/*/examples/valid/*.json")):
+    example_roots = list(root.glob("pic-*/*/examples")) + list(
+        root.glob("process-profile/*/examples")
+    )
+    valid_paths = (
+        path for example_root in example_roots for path in example_root.glob("valid/*.json")
+    )
+    for valid_path in sorted(valid_paths):
         result = validate_file(valid_path)
         if not result.ok:
             report.extend(result.issues)
-    for invalid_path in sorted(root.glob("pic-*/*/examples/invalid/*.json")):
+    invalid_paths = (
+        path for example_root in example_roots for path in example_root.glob("invalid/*.json")
+    )
+    for invalid_path in sorted(invalid_paths):
         result = validate_file(invalid_path)
         if result.ok:
             report.add(
@@ -42,4 +51,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":  # pragma: no cover
     raise SystemExit(main())
-
