@@ -63,8 +63,9 @@ under [#50](https://github.com/edithatogo/rac-conformance/issues/50).
     - [ ] Present only contested source assertions and mapping exceptions.
     - [ ] Record approval, rejection, or required changes per assertion.
     - **Acceptance:** certified fixtures contain no agent-only controlling assertion.
-- [ ] Task: Run full compatibility and regression gates
-    - [ ] Run `make check`, schema corpus checks, and FOI-O profile validation.
-    - [ ] Update consumer and compatibility matrices.
+- [x] Task: Run full compatibility and regression gates
+    - [x] Run `make check`, schema corpus checks, and FOI-O profile validation.
+    - [x] Update consumer and compatibility matrices.
     - **Acceptance:** all gates pass or exact external/human blockers are recorded.
+    - **Evidence:** `contracts/process-profile/COMPATIBILITY.md`, `contracts/CONSUMERS.md`, candidate corpus tests, and full `make check` provide the current compatibility boundary; human mapping certification remains open.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - FOI-O Baseline Validation' (Protocol in workflow.md)
