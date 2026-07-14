@@ -1,0 +1,1 @@
+Conductor task: Build FOI-O compatibility profile and candidate corpus\nEvidence: subrepos/process-mappings/profiles/foi; candidate corpus tests; full make check passed. All mappings remain agent-proposed.\nCompleted: 2026-07-15
