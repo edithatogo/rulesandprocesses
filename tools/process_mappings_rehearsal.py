@@ -14,7 +14,7 @@ SUBTREE = Path("subrepos/process-mappings")
 _MARKDOWN_LINK = re.compile(r"\[[^]]+\]\(([^)]+)\)")
 
 
-def run_rehearsal(root: Path, report_path: Path) -> dict:
+def run_rehearsal(root: Path, report_path: Path, *, require_clean: bool = True) -> dict:
     """Copy the tracked subtree into a temporary Git repository and audit it."""
 
     source = root / SUBTREE
@@ -22,20 +22,22 @@ def run_rehearsal(root: Path, report_path: Path) -> dict:
     tracked = [Path(path) for path in tracked if path]
     if not tracked:
         raise ValueError("process-mappings subtree has no tracked files")
-    report_relative = _relative_to_root(root, report_path)
-    changed = _git(root, "diff", "--name-only", "HEAD", "--", str(SUBTREE)).stdout.splitlines()
-    unexpected = [
-        path
-        for path in changed
-        if path != report_relative and not path.endswith("/migration/REHEARSAL_REPORT.json")
-    ]
-    if unexpected:
-        raise ValueError(f"process-mappings subtree has uncommitted changes: {unexpected}")
+    if require_clean:
+        report_relative = _relative_to_root(root, report_path)
+        changed = _git(root, "diff", "--name-only", "HEAD", "--", str(SUBTREE)).stdout.splitlines()
+        unexpected = [
+            path
+            for path in changed
+            if path != report_relative and not path.endswith("/migration/REHEARSAL_REPORT.json")
+        ]
+        if unexpected:
+            raise ValueError(f"process-mappings subtree has uncommitted changes: {unexpected}")
     if (source / ".git").exists():
         raise ValueError("nested .git directory is forbidden")
 
     source_commit = _git(root, "rev-parse", "HEAD").stdout.strip()
     source_tree = _git(root, "rev-parse", f"HEAD:{SUBTREE}").stdout.strip()
+    history_split = _git(root, "subtree", "split", "--prefix", str(SUBTREE), "HEAD").stdout.strip()
     file_digests = {
         str(path.relative_to(SUBTREE)): hashlib.sha256((root / path).read_bytes()).hexdigest()
         for path in tracked
@@ -66,11 +68,17 @@ def run_rehearsal(root: Path, report_path: Path) -> dict:
             {"id": "tracked-tree", "status": "pass", "detail": f"{len(tracked)} tracked files copied"},
             {"id": "source-commit", "status": "pass", "detail": source_commit},
             {"id": "source-tree", "status": "pass", "detail": source_tree},
+            {"id": "history-preservation", "status": "pass", "detail": history_split},
             {"id": "license-transfer", "status": "pass", "detail": license_digest},
             {"id": "standalone-git-commit", "status": "pass", "detail": "local commit created"},
             {"id": "independent-clone", "status": "pass", "detail": "local clone completed"},
             {"id": "link-audit", "status": "pass", "detail": "all local Markdown links resolve"},
             {"id": "provenance-files", "status": "pass", "detail": "source manifest and consumption manifest present"},
+            {"id": "standalone-ci", "status": "deferred", "detail": "destination workflow must be added after cutover approval"},
+            {"id": "local-installation", "status": "not-applicable", "detail": "incubator contains no installable runtime package"},
+            {"id": "dependency-updates", "status": "deferred", "detail": "destination dependency policy must be configured after cutover"},
+            {"id": "issue-migration", "status": "drafted", "detail": "migration packet preserves parent issue cross-references"},
+            {"id": "source-reference-portability", "status": "deferred", "detail": "parent-local FOI-O evidence paths need durable destination references"},
             {"id": "remote-creation", "status": "deferred", "detail": "explicit human cutover gate required"},
             {"id": "rollback", "status": "defined", "detail": "retain parent subtree until hosted clone and checks pass"},
         ]
@@ -81,6 +89,7 @@ def run_rehearsal(root: Path, report_path: Path) -> dict:
         "procedure": "local-process-mappings-extraction-rehearsal",
         "sourceCommit": source_commit,
         "sourceTree": source_tree,
+        "historySplitCommit": history_split,
         "trackedFileCount": len(tracked),
         "fileManifestSha256": file_manifest_sha,
         "parentLicenseSha256": license_digest,

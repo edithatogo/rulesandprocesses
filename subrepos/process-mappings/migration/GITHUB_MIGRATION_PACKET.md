@@ -28,6 +28,9 @@ profiles`, `process-mining`, `camunda`, `public-interest-technology`.
 The Apache-2.0 license must be copied from the parent root and retained with
 the extracted tree. External source rights remain governed by each source
 manifest; unclear or incompatible material stays referenced, not vendored.
+The current FOI source manifest contains parent-local `external/foi-o/` paths;
+these must be converted to durable destination references or deliberately
+retained as a parent dependency before cutover.
 
 ## Required hosted controls
 
