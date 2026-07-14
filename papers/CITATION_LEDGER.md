@@ -27,3 +27,12 @@ Status: working ledger for the paper-completion track. Every manuscript claim mu
 - A secondary source cannot support a confirmed legal or engine-bug claim when a primary source is required.
 - Time-varying sources require an effective date in the artifact or the claim is marked unresolved.
 - Engine agreement is not an independent legal oracle.
+
+## Quality and extraction evidence
+
+The cross-repository quality register is committed at
+`papers/foi-programme-quality-evidence.json`. It pins the local heads and
+records stable lanes, Python/spaCy canaries, dependency and type baselines,
+SBOM/provenance boundaries, and the deferred V2 extraction re-extraction gate.
+It is evidence of repository-local checks only; it does not assert Zenodo,
+Hugging Face, upstream merge, or extraction-accuracy publication status.
