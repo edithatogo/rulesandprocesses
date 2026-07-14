@@ -22,8 +22,15 @@ def run_rehearsal(root: Path, report_path: Path) -> dict:
     tracked = [Path(path) for path in tracked if path]
     if not tracked:
         raise ValueError("process-mappings subtree has no tracked files")
-    if _git(root, "diff", "--quiet", "HEAD", "--", str(SUBTREE)).returncode != 0:
-        raise ValueError("process-mappings subtree has uncommitted changes")
+    report_relative = _relative_to_root(root, report_path)
+    changed = _git(root, "diff", "--name-only", "HEAD", "--", str(SUBTREE)).stdout.splitlines()
+    unexpected = [
+        path
+        for path in changed
+        if path != report_relative and not path.endswith("/migration/REHEARSAL_REPORT.json")
+    ]
+    if unexpected:
+        raise ValueError(f"process-mappings subtree has uncommitted changes: {unexpected}")
     if (source / ".git").exists():
         raise ValueError("nested .git directory is forbidden")
 
@@ -94,6 +101,13 @@ def _git(cwd: Path, *arguments: str) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
         ["git", *arguments], cwd=cwd, check=True, capture_output=True, text=True
     )
+
+
+def _relative_to_root(root: Path, path: Path) -> str | None:
+    try:
+        return str(path.resolve().relative_to(root.resolve()))
+    except ValueError:
+        return None
 
 
 def _rewrite_parent_license_link(path: Path) -> list[str]:
