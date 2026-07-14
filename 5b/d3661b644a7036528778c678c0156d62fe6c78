@@ -1,0 +1,1 @@
+Verification: FOI_PROGRAMME_REPO_ROOT=/tmp/rac-process-consumption make check passed on 2026-07-15. Report records current source commit 024664f, subtree split 498b12e, 25 tracked files, and explicit deferred human/hosted boundaries.
