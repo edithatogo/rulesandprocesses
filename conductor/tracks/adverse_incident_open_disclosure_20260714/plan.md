@@ -33,23 +33,36 @@ during the repository incubation governed by
 
 ## Phase 2 - Process Mapping and Triangulation
 
-- [ ] Task: Draft process-profile candidates
-    - [ ] Store candidate mappings under `subrepos/process-mappings/profiles/adverse-incidents/candidates/`.
-    - [ ] Model detection through closure with stable IDs and explicit human tasks.
-    - [ ] Model open communication as a continuing relational process, not a one-time notification flag.
-    - [ ] Link reporting, complaints, review, disclosure, and improvement as related but distinct processes.
+> CHECKPOINT (2026-07-15): Phase 2 now contains agent-proposed process
+> candidates, a deterministic field-driven source triangulation resolver, and
+> a generated result packet. The resolver emits one disposition per mapping,
+> fails closed for blocked, conflicting, undated, underspecified, and
+> secondary-only evidence, and never certifies an obligation. Review found no
+> actionable defects; human certification and synthetic fixture work remain
+> deferred to Phase 3.
+
+- [x] Task: Draft process-profile candidates
+    - [x] Store candidate mappings under `subrepos/process-mappings/profiles/adverse-incidents/candidates/`.
+    - [x] Model detection through closure with stable IDs and explicit human tasks.
+    - [x] Model open communication as a continuing relational process, not a one-time notification flag.
+    - [x] Link reporting, complaints, review, disclosure, and improvement as related but distinct processes.
     - **Acceptance:** all mappings are `agent-proposed` until source and human review gates pass.
-- [ ] Task: Implement deterministic source triangulation
-    - [ ] Require controlling primary-source support for normative obligation labels.
-    - [ ] Resolve national/regional overlays by jurisdiction, authority, effective date, and applicability.
-    - [ ] Emit exception reasons for blocked source, conflict, missing date, underspecified local procedure, and secondary-only evidence.
+    - Evidence: `subrepos/process-mappings/profiles/adverse-incidents/candidates/CANDIDATE_MAPPINGS.json` and `SOURCE_ASSERTIONS.json`.
+- [x] Task: Implement deterministic source triangulation
+    - [x] Require controlling primary-source support for normative obligation labels.
+    - [x] Resolve national/regional overlays by jurisdiction, authority, effective date, and applicability.
+    - [x] Emit exception reasons for blocked source, conflict, missing date, underspecified local procedure, and secondary-only evidence.
     - **Acceptance:** every mapping receives a proposed disposition or explicit exception without case-name-coded rules.
-- [ ] Task: Write mapping and resolver tests
-    - [ ] Cover harm, near miss, delayed recognition, disputed facts, parallel complaint, and blocked-source cases.
-    - [ ] Verify agent-only assertions cannot become certified obligations.
-    - [ ] Verify jurisdiction and effective-date leakage fails.
+    - Evidence: `tools/adverse_incident_triangulation.py`.
+- [x] Task: Write mapping and resolver tests
+    - [x] Cover harm, near miss, delayed recognition, disputed facts, parallel complaint, and blocked-source cases.
+    - [x] Verify agent-only assertions cannot become certified obligations.
+    - [x] Verify jurisdiction and effective-date leakage fails.
     - **Acceptance:** tests fail before implementation and pass after deterministic resolver work.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Process Mapping and Triangulation' (Protocol in workflow.md)
+    - Evidence: `contracts/tools/tests/test_adverse_incident_triangulation.py` and `results/triangulated-candidates.json`.
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Process Mapping and Triangulation' (Protocol in workflow.md)
+    - Review: spec/plan/workflow/diff reviewed; no actionable defects found.
+    - Validation: `FOI_PROGRAMME_REPO_ROOT=/tmp/rac-process-consumption make check` passed.
 
 ## Phase 3 - Synthetic Demonstrator and Review
 
