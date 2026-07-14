@@ -2,7 +2,7 @@
 
 - [x] Implement `foi-o` maximal quality profile. (local child track evidence captured; basedpyright and extraction-contract follow-ups remain explicit)
 - [x] Implement `fyi-archive` maximal quality profile. (local child track evidence captured; basedpyright and dependency follow-ups remain explicit)
-- [ ] Complete `nlp-policy-nz` Python-runtime reconciliation and spaCy 4 spike.
+- [x] Complete `nlp-policy-nz` Python-runtime reconciliation and spaCy 4 spike. (Python 3.12 production; 3.11 compatibility; 3.13/3.14 canaries; spaCy 4 deferred)
 - [ ] Reconcile cross-repository release and extraction-contract evidence.
 - [ ] Update the manuscript evidence ledger and release packet.
 
