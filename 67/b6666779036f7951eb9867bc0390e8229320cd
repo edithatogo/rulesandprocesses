@@ -1,0 +1,1 @@
+Verification: FOI_PROGRAMME_REPO_ROOT=/tmp/rac-process-consumption make check passed immediately before commit on 2026-07-15; phase 2 checkpoint records no remote creation and phase 3 as next.
