@@ -1,0 +1,6 @@
+Task: Incorporate Australian FOI and programme-governance recommendations
+Summary: docs(conductor): add FOI programme governance track
+
+Commit notes: Add the issue-linked Project 14 synchronization and FOI-only scope contract.
+Verification: metadata parsing, registry/link inspection, git diff --check, issue linkage, and Project 14 membership passed.
+Remaining risks: implementation, live capture, legal/source review, annotation, publication, push, and pull request remain separately gated.
