@@ -23,8 +23,6 @@ owns generic source-backed profiles and adapters.
 > commit `2e635115f61e24d2e109d868119024a5591cce00`. `CITATION.cff` records the
 > repository, Apache-2.0 license, version `0.1.0`, and release date. Hosted
 > `contracts`, `dependency-policy`, `feature-matrix`, and both Rust checks passed.
-> Programme ledger mirroring is complete; Zenodo DOI verification remains open
-> in Phase 2.
 
 ## Phase 2 - Programme Mirror and Preservation Evidence
 
@@ -33,8 +31,15 @@ owns generic source-backed profiles and adapters.
     - [x] Record its implementation-consumer and operational-evidence role.
     - [x] Verify that references do not make foi-process a runtime dependency or semantic authority.
     - **Acceptance:** mirror and citation checks resolve to the immutable upstream release.
-- [ ] Task: [HUMAN] Enable and verify Zenodo preservation
-    - [ ] Enable the repository in Zenodo and publish preservation for the approved release.
-    - [ ] Verify version and concept DOI metadata against the GitHub release and `CITATION.cff`.
+- [x] Task: [HUMAN] Enable and verify Zenodo preservation
+    - [x] Enable the repository in Zenodo and publish preservation for the approved release.
+    - [x] Verify version and concept DOI metadata against the GitHub release and `CITATION.cff`.
     - **Acceptance:** DOI records resolve publicly and all mirrored identifiers agree.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Programme Mirror and Preservation Evidence' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Programme Mirror and Preservation Evidence' (Protocol in workflow.md)
+
+> CHECKPOINT (2026-07-15): Zenodo record `21359526` publishes `v0.1.0` at
+> version DOI `10.5281/zenodo.21359526` and concept DOI
+> `10.5281/zenodo.21359525`. Public metadata identifies the GitHub repository,
+> Apache-2.0 license, and author ORCID `0000-0002-9775-0603`; the GitHub release
+> resolves to commit `2e635115f61e24d2e109d868119024a5591cce00`. The programme
+> citation validator passes with the release commit pinned in the manifest.
