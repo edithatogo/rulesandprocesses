@@ -1,1 +1,3 @@
 Verification: FOI_PROGRAMME_REPO_ROOT=/tmp/rac-process-consumption make check passed on 2026-07-15 after review fix 5f19e8d. Phase 3 preserves the no-remote boundary and records the remaining human cutover gate.
+
+Conductor review evidence: reviewed spec.md, plan.md, workflow.md, changed files, focused tests, Ruff, and full make check. Fixed generated-report dirty-tree handling, added subtree split history evidence, and made hosted/install/dependency/issue/source portability boundaries explicit. Remaining external blocker is required analyze check quota; human cutover remains intentionally open.
