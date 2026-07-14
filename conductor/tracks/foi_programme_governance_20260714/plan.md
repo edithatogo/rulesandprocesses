@@ -93,3 +93,9 @@
 > published-artifact exercise, independent human review, and manual verification
 > remain open.
 > Prepared boundary review: `HUMAN_VERIFICATION_PACKET.md` section 4.
+
+> FINAL REVIEW (2026-07-14): Full `make check` passed after remediation:
+> repository audit, 11 tools tests, 46 contract tests at 87.20% coverage,
+> schema corpus validation, 25 converter tests, 20 harness tests, 33 SNAP
+> tests, 16 NZ reconciliation tests, 6 service-boundary tests, and 2
+> Docassemble tests. No repo-owned correctness blocker remains.
