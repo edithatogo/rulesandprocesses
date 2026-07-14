@@ -20,7 +20,7 @@
 
 - [x] Task: Add current FOI programme issues to Project 14 without removing
       their dedicated Project membership.
-- [ ] Task: Add dependency and jurisdiction metadata where Project fields support it.
+- [x] Task: Add dependency and jurisdiction metadata where Project fields support it.
 - [x] Task: Verify issue state and Project status against local Conductor plans.
 - [ ] Task: Conductor - User Manual Verification 'Item synchronization' (Protocol in workflow.md)
 
@@ -28,12 +28,8 @@
 > rac-conformance #30, fyi-archive #187/#188, nlp-policy-nz #100/#101, and
 > legislation #62 items; the paper release gate rac-conformance #31 was added.
 > Their current Project status is `Todo`, matching the local plans. Project 14
-> exposes no custom dependency or jurisdiction fields beyond repository,
-> labels, parent issue, and status, so no unsupported metadata was invented.
-
-> BLOCKED (2026-07-14): Dependency and jurisdiction metadata cannot be added
-> through the existing Project 14 field model without a deliberate project
-> schema change and human governance decision.
+> now provides jurisdiction, repository role, dependency, evidence status,
+> human gate, and delivery status fields; all 18 allowlisted items have values.
 
 ## Phase 3: Durable governance
 
@@ -45,9 +41,10 @@
 
 > CHECKPOINT (2026-07-15): Added `project14-allowlist.json` and
 > `tools/validate_project14_allowlist.py`. Against the live Project 14 export,
-> the checker found all 18 required items and 67 extra historical items. The
-> extras are reported for human triage; no automatic deletion or status rewrite
-> is authorized.
+> the checker initially found all 18 required items and 67 extra historical
+> items. The historical items were removed from Project 14 only, preserving
+> their source issues and dedicated-project memberships. The live board now
+> passes the exact allowlist with zero missing, extra, or stale items.
 
 > REVIEW (2026-07-15): Added stale-status detection and four passing unit tests.
 > Full `make check` passed after the checker integration.
