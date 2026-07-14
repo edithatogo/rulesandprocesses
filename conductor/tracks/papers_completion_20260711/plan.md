@@ -51,11 +51,15 @@ The three paper packets are locally prepared and remain submission-deferred.
 Issue #17 was superseded by the unified paper program issue #24; publication
 authorization remains a human gate.
 
+> DECISION (2026-07-14): Keep the papers deferred until the next `foi-o`
+release is available. After that release, update the papers and submit only
+after Dylan's explicit authorization.
+
 ## Phase 5 - Human submission gates
 
 - [ ] Task: [HUMAN] Approve final authorship, affiliations, target venues, and disclosure text
 - [ ] Task: [HUMAN] Authorize each arXiv or journal submission
-- [ ] Task: Record submission identifiers or continued deferral
+- [x] Task: Record submission identifiers or continued deferral
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Human submission gates' (Protocol in workflow.md)
 
 > BLOCKED (2026-07-11): Submission decisions require Dylan's explicit authorship, venue, disclosure, and submit authorization. Agents may prepare packets and evidence but may not submit.
