@@ -1,0 +1,1 @@
+Conductor task: Write process-profile schema and validator tests\nTDD evidence: targeted schema tests failed because process-profile/0.1.0/schema.json was absent; existing PIC identifier compatibility test passed.\nCompleted: 2026-07-15
