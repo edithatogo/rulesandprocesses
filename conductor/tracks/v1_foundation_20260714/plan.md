@@ -42,10 +42,11 @@ GitHub issue: [#39](https://github.com/edithatogo/rac-conformance/issues/39).
 
 ## Phase 3 - Release Gate Control Plane
 
-- [ ] Task: Write release-gate manifest tests
-    - [ ] Add invalid cases for missing evidence, self-certified adoption, stale evidence, and ambiguous gate status.
-    - [ ] Add valid blocked and fully satisfied examples.
+- [x] Task: Write release-gate manifest tests
+    - [x] Add invalid cases for missing evidence, self-certified adoption, stale evidence, and ambiguous gate status.
+    - [x] Add valid blocked and fully satisfied examples.
     - **Acceptance:** tests fail before validator implementation.
+    - **Evidence:** `tools/tests/test_release_gates.py` and its six JSON fixtures define the required red/green corpus; the targeted test run failed before `tools.release_gates` existed.
 - [ ] Task: Implement machine-readable v1 gate manifest and validator
     - [ ] Record gate owner, dependencies, evidence URLs/digests, observation time, and status.
     - [ ] Produce a deterministic human-readable report.

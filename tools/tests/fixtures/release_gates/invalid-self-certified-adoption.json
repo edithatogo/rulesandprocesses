@@ -1,0 +1,15 @@
+{
+  "manifest_version": "1",
+  "release": "v1.0.0-rc.1",
+  "gates": [
+    {
+      "id": "external-adoption",
+      "owner": "rac-maintainers",
+      "category": "adoption",
+      "status": "pass",
+      "independent": false,
+      "observed_at": "2026-07-15",
+      "evidence": [{"url": "https://example.invalid/self-report", "observed_at": "2026-07-15"}]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "manifest_version": "1",
+  "release": "v1.0.0-rc.1",
+  "gates": [
+    {
+      "id": "governance",
+      "owner": "rac-maintainers",
+      "category": "governance",
+      "status": "pending",
+      "observed_at": "2026-07-15",
+      "evidence": [{"digest": "sha256:abc", "observed_at": "2026-07-15"}]
+    }
+  ]
+}

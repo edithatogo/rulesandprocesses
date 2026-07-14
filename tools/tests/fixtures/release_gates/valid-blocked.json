@@ -1,0 +1,23 @@
+{
+  "manifest_version": "1",
+  "release": "v1.0.0-rc.1",
+  "gates": [
+    {
+      "id": "local-check",
+      "owner": "rac-maintainers",
+      "category": "repository",
+      "status": "pass",
+      "observed_at": "2026-07-15",
+      "evidence": [{"url": "https://github.com/edithatogo/rac-conformance/actions", "observed_at": "2026-07-15"}]
+    },
+    {
+      "id": "zenodo-deposit",
+      "owner": "dylan",
+      "category": "human",
+      "status": "blocked",
+      "reason_code": "human_deposit_required",
+      "next_action": "Deposit the RaC release to Zenodo and record the verified DOI.",
+      "observed_at": "2026-07-15"
+    }
+  ]
+}
