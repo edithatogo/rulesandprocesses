@@ -35,7 +35,10 @@ GitHub issue: [#39](https://github.com/edithatogo/rac-conformance/issues/39).
     - [x] Define maintainer succession and release authority.
     - **Acceptance:** policies have named owners and observable response targets.
     - **Evidence:** `docs/V1_SUPPORT_SECURITY.md` defines the tested baseline, maintenance window, private vulnerability intake, response targets, patch workflow, and succession rules.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Lifecycle Policies' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Lifecycle Policies' (Protocol in workflow.md)
+    - **Review:** Phase 2 review found no policy contradiction after splitting the two task commits; compatibility and support evidence are explicit and repository-local.
+
+> CHECKPOINT (2026-07-15): `docs/V1_COMPATIBILITY.md` preserves independently versioned PIC contracts, canonical serialization, identifier stability, CLI behavior, deprecation periods, and migration evidence. `docs/V1_SUPPORT_SECURITY.md` records the tested support baseline, maintenance window, vulnerability response targets, and succession controls. Full `make check` passed after each policy task. External security reports, release deposits, and independent certifications remain external or human-gated.
 
 ## Phase 3 - Release Gate Control Plane
 
