@@ -40,11 +40,12 @@ during the repository incubation governed by
     - [x] Link reporting, complaints, review, disclosure, and improvement as related but distinct processes.
     - **Acceptance:** all mappings are `agent-proposed` until source and human review gates pass.
     - Evidence: `subrepos/process-mappings/profiles/adverse-incidents/candidates/CANDIDATE_MAPPINGS.json` and `SOURCE_ASSERTIONS.json`.
-- [ ] Task: Implement deterministic source triangulation
-    - [ ] Require controlling primary-source support for normative obligation labels.
-    - [ ] Resolve national/regional overlays by jurisdiction, authority, effective date, and applicability.
-    - [ ] Emit exception reasons for blocked source, conflict, missing date, underspecified local procedure, and secondary-only evidence.
+- [x] Task: Implement deterministic source triangulation
+    - [x] Require controlling primary-source support for normative obligation labels.
+    - [x] Resolve national/regional overlays by jurisdiction, authority, effective date, and applicability.
+    - [x] Emit exception reasons for blocked source, conflict, missing date, underspecified local procedure, and secondary-only evidence.
     - **Acceptance:** every mapping receives a proposed disposition or explicit exception without case-name-coded rules.
+    - Evidence: `tools/adverse_incident_triangulation.py`.
 - [ ] Task: Write mapping and resolver tests
     - [ ] Cover harm, near miss, delayed recognition, disputed facts, parallel complaint, and blocked-source cases.
     - [ ] Verify agent-only assertions cannot become certified obligations.
