@@ -1,0 +1,1 @@
+Conductor review evidence: reviewed spec, plan, workflow, source ledger, matrix, tests, and changed files. Full FOI_PROGRAMME_REPO_ROOT=/tmp/rac-process-consumption make check passed on 2026-07-15; no high-confidence fixes remained.
