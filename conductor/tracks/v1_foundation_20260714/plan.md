@@ -4,11 +4,12 @@ GitHub issue: [#39](https://github.com/edithatogo/rac-conformance/issues/39).
 
 ## Phase 1 - Product Boundary
 
-- [ ] Task: Define v1 normative and optional surfaces
+- [x] Task: Define v1 normative and optional surfaces
     - [ ] Inventory every public schema, CLI, library, generated artifact, study interface, and adapter.
     - [ ] Classify each as core, optional profile, jurisdiction profile, adapter, experimental, or internal.
     - [ ] Record explicit v1 non-goals and prohibited claims.
     - **Acceptance:** every public surface has one owner, stability class, and support posture.
+    - **Evidence:** `docs/V1_SCOPE.md` inventories the current contracts, tools, profiles, adapters, studies, demos, generated artifacts, and internal materials, with explicit v1 non-goals and prohibited claims.
 - [ ] Task: Define conformance levels and evidence semantics
     - [ ] Separate syntactic, semantic, execution, trace, source, and independently certified conformance.
     - [ ] Define pass, fail, blocked, exception, and not-applicable states.
