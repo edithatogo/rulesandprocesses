@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "purpose": "Version-pinned citation and Zenodo mirror register for the FOI manuscript programme.",
-  "as_of": "2026-07-14",
+  "as_of": "2026-07-15",
   "human_gate": "A pending record is not a claim that a Zenodo deposit exists; publish and verify the tagged release before manuscript submission.",
   "artifacts": [
     {"id":"foi-o","kind":"software","repository":"https://github.com/edithatogo/foi-o","version":"0.8.0","tag":"v0.8.0","citation_file":"CITATION.cff","zenodo_status":"pending_human_deposit","zenodo_doi":null},
