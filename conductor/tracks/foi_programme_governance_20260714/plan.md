@@ -2,11 +2,19 @@
 
 ## Phase 1: Umbrella definition
 
-- [ ] Task: Update Project 14 title documentation, description, repository roles,
+- [x] Task: Update Project 14 title documentation, description, repository roles,
       inclusion filters, and status semantics.
-- [ ] Task: Add navigation anchors for every in-scope repository and dedicated Project.
-- [ ] Task: Define FOI-only filters for multi-purpose repositories.
+- [x] Task: Add navigation anchors for every in-scope repository and dedicated Project.
+- [x] Task: Define FOI-only filters for multi-purpose repositories.
 - [ ] Task: Conductor - User Manual Verification 'Umbrella definition' (Protocol in workflow.md)
+
+> BLOCKED (2026-07-14): Manual verification requires Dylan to confirm the
+> live Project 14 title, scope, repository boundaries, and navigation anchors.
+
+> CHECKPOINT (2026-07-14): Live Project 14 documentation at
+> `https://github.com/users/edithatogo/projects/14` already contains the
+> approved title, all seven repository roles and boundaries, FOI-only scope
+> rules, status semantics, and navigation anchors for dedicated boards.
 
 ## Phase 2: Item synchronization
 
