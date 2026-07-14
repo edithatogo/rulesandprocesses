@@ -1,0 +1,1 @@
+PR review remediation (2026-07-14): Explicitly made pic_process_profile depend on both foundation and repository-incubation tracks, and replaced the bare #50 status reference with an absolute issue link. Repository audit passed.
