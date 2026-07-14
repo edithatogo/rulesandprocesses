@@ -28,31 +28,53 @@ Phase 1 and establishes the implementation home required by
 
 ## Phase 2 - Parent Integration and Contract Discipline
 
+> CHECKPOINT (2026-07-15): The incubator now consumes the merged
+> `pic-process-profile/0.1.0` contract through a full commit and schema digest
+> pin. A deterministic validator checks the pinned schema, candidate source
+> manifest, local FOI-O/foi-process evidence paths, and valid contract examples;
+> drift fails `make check`. No normative schema is copied and no remote
+> repository is created. Phase 3 extraction rehearsal remains pending.
+
 - [x] Task: Wire parent roadmap and repository boundaries
     - [x] Insert this track between the v1 foundation and process-profile implementation.
     - [x] Add `foi-process` as a current implementation/evidence consumer and the incubator as a provisional repository home.
     - [x] Update tracks #40-#43 with exact normative and implementation paths.
     - **Acceptance:** local and GitHub dependency graphs agree and no existing repository is repurposed ambiguously.
-- [ ] Task: Define released-contract consumption and compatibility tests
-    - [ ] Pin the process-profile contract version or commit consumed from `rac-conformance`.
-    - [ ] Validate profiles against upstream schemas without copying normative definitions.
-    - [ ] Add compatibility-matrix and provenance checks for FOI-O and foi-process inputs.
+- [x] Task: Define released-contract consumption and compatibility tests
+    - [x] Pin the process-profile contract version or commit consumed from `rac-conformance`.
+    - [x] Validate profiles against upstream schemas without copying normative definitions.
+    - [x] Add compatibility-matrix and provenance checks for FOI-O and foi-process inputs.
+    - Evidence: `subrepos/process-mappings/contracts/consumption.json`,
+      `contracts/tools/src/pic_contracts/process_mappings_consumption.py`, and
+      `contracts/tools/tests/test_process_mappings_consumption.py`.
     - **Acceptance:** drift is detected deterministically and cannot silently fork PIC or FOI semantics.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Parent Integration and Contract Discipline' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Parent Integration and Contract Discipline' (Protocol in workflow.md)
 
 ## Phase 3 - Extraction Rehearsal and Governance Packet
 
-- [ ] Task: Build and test the extraction procedure
-    - [ ] Preserve subtree history and verify file, commit, and license integrity.
-    - [ ] Rehearse standalone CI, local installation, links, provenance checks, and dependency updates in a temporary local repository.
-    - [ ] Define rollback and prevent simultaneous writable parent and extracted copies.
+> CHECKPOINT (2026-07-15): The extraction procedure now produces an auditable
+> local report covering tracked-tree provenance, license transfer, temporary
+> standalone Git commit and clone, link and source-manifest checks, rollback,
+> and the explicit no-remote boundary. The migration packet drafts destination
+> metadata, issue cross-references, hosted controls, versioning, and cutover
+> conditions without inventing remote state. Remote creation and canonical
+> cutover remain human-gated.
+
+- [x] Task: Build and test the extraction procedure
+    - [x] Preserve subtree history and verify file, commit, and license integrity.
+    - [x] Rehearse standalone CI, local installation, links, provenance checks, and dependency updates in a temporary local repository.
+    - [x] Define rollback and prevent simultaneous writable parent and extracted copies.
+    - Evidence: `tools/process_mappings_rehearsal.py`,
+      `tools/tests/test_process_mappings_rehearsal.py`, and
+      `subrepos/process-mappings/migration/REHEARSAL_REPORT.json`.
     - **Acceptance:** the rehearsal is reproducible and produces an auditable evidence report without creating a remote.
-- [ ] Task: Prepare GitHub repository and migration packet
-    - [ ] Draft repository description, topics, license, CODEOWNERS, issue/PR templates, security policy, branch protection, required checks, and Project 19 linkage.
-    - [ ] Map parent issues/subissues to destination issues without losing cross-references.
-    - [ ] Record owner, canonical URL, archive/reference behavior, release policy, and initial versioning proposal.
+- [x] Task: Prepare GitHub repository and migration packet
+    - [x] Draft repository description, topics, license, CODEOWNERS, issue/PR templates, security policy, branch protection, required checks, and Project 19 linkage.
+    - [x] Map parent issues/subissues to destination issues without losing cross-references.
+    - [x] Record owner, canonical URL, archive/reference behavior, release policy, and initial versioning proposal.
+    - Evidence: `subrepos/process-mappings/migration/GITHUB_MIGRATION_PACKET.md`.
     - **Acceptance:** all authenticated or human actions are itemized and no remote-side fact is invented.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Extraction Rehearsal and Governance Packet' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Extraction Rehearsal and Governance Packet' (Protocol in workflow.md)
 
 ## Phase 4 - Human Cutover and Parent Closeout
 
