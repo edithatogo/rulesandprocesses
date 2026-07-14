@@ -1,6 +1,6 @@
 # Plan
 
-- [ ] Implement `foi-o` maximal quality profile.
+- [x] Implement `foi-o` maximal quality profile. (local child track evidence captured; basedpyright and extraction-contract follow-ups remain explicit)
 - [ ] Implement `fyi-archive` maximal quality profile.
 - [ ] Complete `nlp-policy-nz` Python-runtime reconciliation and spaCy 4 spike.
 - [ ] Reconcile cross-repository release and extraction-contract evidence.

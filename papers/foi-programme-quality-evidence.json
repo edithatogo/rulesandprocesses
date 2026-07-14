@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-07-14",
+  "programme": "FOI quality and spaCy evaluation",
+  "production_policy": {
+    "foi_o": "stable Python 3.12 lane; 3.13/3.14 canaries",
+    "fyi_archive": "stable Python 3.12 lane; 3.13/3.14 canaries",
+    "nlp_policy_nz": "Python 3.12 production; 3.11 compatibility; 3.13/3.14 canaries; spaCy 3.8.14 production"
+  },
+  "repositories": [
+    {
+      "id": "foi-o",
+      "head": "7242ac544dd5a8adb3671b044b6a3cff81685455",
+      "quality": {
+        "stable_lane": "documented and locally gated",
+        "canary": "Ruff preview and Python 3.13/3.14 advisory lanes",
+        "basedpyright": "434-finding baseline, non-blocking",
+        "cross_repo_contract": "open task; V2 extraction re-extraction pending"
+      }
+    },
+    {
+      "id": "fyi-archive",
+      "head": "da9bccf239bdd20d724258a7d9c9e8c182bf1e46",
+      "quality": {
+        "stable_lane": "202 tests passed, 1 skipped; 90.31% coverage",
+        "canary": "Python 3.13/3.14 and Ruff preview advisory workflows",
+        "basedpyright": "974-finding baseline, non-blocking",
+        "dependency_review": "pandas 3.0.4 yanked warning recorded",
+        "cross_repo_contract": "FOI-O/NLP consumer fixture gate present"
+      }
+    },
+    {
+      "id": "nlp-policy-nz",
+      "head": "af79585a5c628df93cb72995b3c27382065b3aee",
+      "quality": {
+        "stable_lane": "Python 3.12 production and 3.11 compatibility policy tested",
+        "canary": "spaCy 4.0.0.dev3 Python 3.14 wheel absent; source build fails in blis",
+        "spacy_decision": "retain spaCy 3.8.14; defer spaCy 4 adoption",
+        "cross_repo_contract": "focused evidence complete; full extraction suite remains environment-blocked"
+      }
+    }
+  ],
+  "release_gates": {
+    "dependency_lock": "recorded",
+    "runtime_matrix": "recorded",
+    "schema": "recorded",
+    "provenance": "recorded",
+    "security": "recorded",
+    "sbom": "recorded",
+    "cross_repository_extraction_contract": "deferred_pending_re_extraction"
+  },
+  "manuscript_boundary": "These are repo-local evidence records, not a claim of upstream merge, Zenodo publication, Hugging Face revision pin, or extraction accuracy."
+}
