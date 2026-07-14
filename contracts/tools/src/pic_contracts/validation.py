@@ -22,6 +22,7 @@ CONFORMS_TO_CONTRACT = {
     "pic-traces/0.1.0": "pic-traces",
     "pic-traces/0.2.0": "pic-traces",
     "pic-foio-compatibility/0.1.0": "pic-foio-compatibility",
+    "pic-process-profile/0.1.0": "process-profile",
 }
 
 
@@ -69,7 +70,8 @@ def detect_contract(doc: dict[str, Any], path: Path | None = None) -> str | None
                 "pic-parameters",
                 "pic-fixtures",
                 "pic-traces",
-                "pic-foio-compatibility",
+            "pic-foio-compatibility",
+                "process-profile",
             }:
                 return part
     return None
@@ -104,10 +106,73 @@ def validate_file(path: Path) -> ValidationReport:
         report.add(ValidationIssue(str(path), _format_schema_error(error), "schema"))
     if contract == "pic-foio-compatibility" and report.ok:
         report.extend(_compatibility_semantics(path, doc))
+    if contract == "process-profile" and report.ok:
+        report.extend(_process_profile_semantics(path, doc))
     if contract == "pic-parameters":
         for error in validate_parameter_periods(doc):
             report.add(ValidationIssue(f"{path}:{error.path}", error.message, "period"))
     return report
+
+
+def _process_profile_semantics(path: Path, doc: dict[str, Any]) -> list[ValidationIssue]:
+    """Validate references and authority constraints beyond JSON Schema."""
+
+    issues: list[ValidationIssue] = []
+    state_ids = {item["id"] for item in doc["states"]}
+    event_ids = {item["id"] for item in doc["events"]}
+    actor_ids = {item["id"] for item in doc["actors"]}
+    assertion_ids = {item["id"] for item in doc["sourceAssertions"]}
+    invocation_ids = {item["id"] for item in doc.get("ruleInvocations", [])}
+    for index, event in enumerate(doc["events"]):
+        location = f"{path}:events/{index}"
+        if event["stateId"] not in state_ids:
+            issues.append(ValidationIssue(location, "event references unknown state", "reference"))
+        if event["actorId"] not in actor_ids:
+            issues.append(ValidationIssue(location, "event references unknown actor", "reference"))
+    for index, transition in enumerate(doc["transitions"]):
+        location = f"{path}:transitions/{index}"
+        for state_field in ("fromStateId", "toStateId"):
+            if transition[state_field] not in state_ids:
+                issues.append(
+                    ValidationIssue(
+                        location,
+                        f"transition references unknown {state_field}",
+                        "reference",
+                    )
+                )
+        if "eventId" in transition and transition["eventId"] not in event_ids:
+            issues.append(
+                ValidationIssue(location, "transition references unknown eventId", "reference")
+            )
+    for index, invocation in enumerate(doc.get("ruleInvocations", [])):
+        location = f"{path}:ruleInvocations/{index}"
+        if invocation["authorityAssertionId"] not in assertion_ids:
+            issues.append(
+                ValidationIssue(
+                    location,
+                    "rule invocation references unknown authority assertion",
+                    "reference",
+                )
+            )
+    for index, assertion in enumerate(doc["sourceAssertions"]):
+        if assertion.get("controlling") and assertion["reviewerState"] == "agent-proposed":
+            issues.append(
+                ValidationIssue(
+                    f"{path}:sourceAssertions/{index}",
+                    "agent-proposed assertion cannot be controlling",
+                    "authority",
+                )
+            )
+    for index, link in enumerate(doc["traceLinks"]):
+        if link.get("ruleInvocationId") and link["ruleInvocationId"] not in invocation_ids:
+            issues.append(
+                ValidationIssue(
+                    f"{path}:traceLinks/{index}",
+                    "trace link references unknown rule invocation",
+                    "reference",
+                )
+            )
+    return issues
 
 
 def _compatibility_semantics(path: Path, doc: dict[str, Any]) -> list[ValidationIssue]:
