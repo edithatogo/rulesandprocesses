@@ -15,10 +15,11 @@ during the repository incubation governed by
     - [x] Mark blocked or ambiguous documents explicitly; do not substitute secondary summaries.
     - Evidence: `subrepos/process-mappings/profiles/adverse-incidents/sources/SOURCE_MANIFEST.json`.
     - **Acceptance:** every modeled obligation resolves to a controlling or explicitly non-controlling primary source.
-- [ ] Task: Build authority and variation matrix
-    - [ ] Separate national consistency layer, jurisdictional requirements, regional implementation, and hypothetical local procedure.
-    - [ ] Record actor authority, discretion, required human judgement, and escalation owner.
-    - [ ] Identify common core and intentional variation without premature crosswalk claims.
+- [x] Task: Build authority and variation matrix
+    - [x] Separate national consistency layer, jurisdictional requirements, regional implementation, and hypothetical local procedure.
+    - [x] Record actor authority, discretion, required human judgement, and escalation owner.
+    - [x] Identify common core and intentional variation without premature crosswalk claims.
+    - Evidence: `subrepos/process-mappings/profiles/adverse-incidents/AUTHORITY_VARIATION_MATRIX.json`.
     - **Acceptance:** no national framework is mislabeled as legislation and no local policy is generalized nationally.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Source and Authority Spine' (Protocol in workflow.md)
 
