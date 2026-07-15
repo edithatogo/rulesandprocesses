@@ -6,7 +6,7 @@
       inclusion filters, and status semantics.
 - [x] Task: Add navigation anchors for every in-scope repository and dedicated Project.
 - [x] Task: Define FOI-only filters for multi-purpose repositories.
-- [ ] Task: Conductor - User Manual Verification 'Umbrella definition' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Umbrella definition' (Protocol in workflow.md)
 
 > BLOCKED (2026-07-14): Manual verification requires Dylan to confirm the
 > live Project 14 title, scope, repository boundaries, and navigation anchors.
@@ -17,13 +17,17 @@
 > approved title, all seven repository roles and boundaries, FOI-only scope
 > rules, status semantics, and navigation anchors for dedicated boards.
 
+> HUMAN APPROVAL (2026-07-15): Dylan approved the Project 14 human
+> verification packet, including the umbrella definition and repository-boundary
+> rules.
+
 ## Phase 2: Item synchronization
 
 - [x] Task: Add current FOI programme issues to Project 14 without removing
       their dedicated Project membership.
 - [x] Task: Add dependency and jurisdiction metadata where Project fields support it.
 - [x] Task: Verify issue state and Project status against local Conductor plans.
-- [ ] Task: Conductor - User Manual Verification 'Item synchronization' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Item synchronization' (Protocol in workflow.md)
 
 > CHECKPOINT (2026-07-15): Live Project 14 contains the current FOI-O #23/#24,
 > rac-conformance #30, fyi-archive #187/#188, nlp-policy-nz #100/#101, and
@@ -35,13 +39,16 @@
 > values.
 > Prepared review surface: `HUMAN_VERIFICATION_PACKET.md` section 2.
 
+> HUMAN APPROVAL (2026-07-15): Dylan approved the Project 14 item
+> synchronization verification recorded in the packet.
+
 ## Phase 3: Durable governance
 
 - [x] Task: Document or implement a repeatable item-level sync with FOI-only allowlists.
 - [x] Task: Add drift checks for missing, stale, or unrelated Project 14 items.
 - [x] Task: Run repository quality gates and Conductor review.
 - [x] Task: Archive only after live Project evidence is recorded.
-- [ ] Task: Conductor - User Manual Verification 'Durable governance' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Durable governance' (Protocol in workflow.md)
 
 > CHECKPOINT (2026-07-15): Added `project14-allowlist.json` and
 > `tools/validate_project14_allowlist.py`. Against the live Project 14 export,
@@ -61,6 +68,9 @@
 > malformed timestamps now report deterministic errors, publication/review URIs
 > must be content-addressed, and offline bundles validate each wrapped artifact
 > against its complete PIC schema rather than trusting `conformsTo` alone.
+
+> HUMAN APPROVAL (2026-07-15): Dylan approved the durable governance controls,
+> including the allowlist, drift-check, and status-override policy.
 
 ## Phase 4: FOI-O to PIC compatibility profile
 
@@ -89,7 +99,7 @@
 - [x] Task: Produce a machine-readable release-evidence bundle for the papers
       track, including immutable Hugging Face dataset coordinates for derived
       `fyi-archive` outputs.
-- [ ] Task: Conductor - User Manual Verification 'FOI-O to PIC compatibility profile' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'FOI-O to PIC compatibility profile' (Protocol in workflow.md)
 
 > CHECKPOINT (2026-07-14): The optional compatibility manifest, lossless governance
 > boundary, two valid examples, three negative examples, validator registration,
@@ -98,6 +108,11 @@
 > published-artifact exercise, independent human review, and manual verification
 > remain open.
 > Prepared boundary review: `HUMAN_VERIFICATION_PACKET.md` section 4.
+
+> HUMAN APPROVAL (2026-07-15): Dylan approved the FOI-O/PIC boundary and the
+> reduced-human workflow. This approval does not certify FOI-O conformance or
+> close the live published-artifact exercise, which remains blocked pending the
+> required FOI-O evidence artifacts.
 
 > FINAL REVIEW (2026-07-14): Full `make check` passed after remediation:
 > repository audit, 11 tools tests, 46 contract tests at 87.20% coverage,
