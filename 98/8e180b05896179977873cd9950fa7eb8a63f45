@@ -1,0 +1,1 @@
+Phase 1 checkpoint: local make check and BPMN XML validation pass; merged PR #76 passed Java 17 CPT smoke tests plus all required repository checks after the JUnit alignment fix in 297a670.
