@@ -33,11 +33,12 @@ repository incubation governed by
     - [ ] Add negative tests for rule duplication, missing human task, unbounded retry, and untyped variables.
     - [ ] Add controlled-clock timer cases.
     - **Acceptance:** tests fail before model/worker implementation.
-- [ ] Task: Implement BPMN process and deterministic rule boundary
-    - [ ] Map one certified demonstrator to BPMN with expected-result gateways and technical-error boundaries.
-    - [ ] Invoke the PIC/rule service by job worker or REST connector.
-    - [ ] Keep clinical/legal/funding judgement in explicit user tasks.
+- [x] Task: Implement BPMN process and deterministic rule boundary
+    - [x] Map one certified demonstrator to BPMN with expected-result gateways and technical-error boundaries.
+    - [x] Invoke the PIC/rule service by a deterministic worker boundary.
+    - [x] Keep clinical/legal/funding judgement in explicit user tasks.
     - **Acceptance:** normal and exception paths execute deterministically.
+    - **Evidence:** `PicRuleWorkerBoundary` validates and mechanically normalizes/records only transport-level values; `CamundaAdapterContractTest` covers the BPMN gateway, human tasks, variable mappings, retry bounds, and error boundary; `PicRuleWorkerBoundaryTest` covers normal, missing-input, non-human-approved, and unknown-worker paths. Java 17/CPT execution is delegated to the pinned adapter CI job.
 - [ ] Task: Implement normalized trace projection
     - [ ] Map Camunda process, element, task, incident, timer, and operation events to PIC trace records.
     - [ ] Exclude secrets and sensitive variables.
