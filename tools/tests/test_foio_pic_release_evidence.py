@@ -14,8 +14,9 @@ def test_release_evidence_is_pinned_and_fail_closed() -> None:
         (ROOT / "papers/foio-pic-release-evidence.json").read_text(encoding="utf-8")
     )
     assert evidence["schema_version"] == "foio-pic-release-evidence.v1.0.0"
-    assert evidence["status"] == "blocked_pending_foio_v2_release"
-    assert evidence["foio"]["published_release"] is None
+    assert evidence["status"] == "blocked_pending_foio_release_evidence_bundle"
+    assert evidence["foio"]["published_release"]["tag"] == "v0.8.1"
+    assert evidence["foio"]["published_release"]["revision"] == evidence["foio"]["observed_main_revision"]
     assert len(evidence["foio"]["observed_main_revision"]) == 40
     assert len(evidence["pic"]["contract_revision"]) == 40
     assert len(evidence["pic"]["schema_sha256"]) == 64
