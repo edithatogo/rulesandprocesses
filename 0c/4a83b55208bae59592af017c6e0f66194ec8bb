@@ -1,0 +1,1 @@
+Second clean build failure was an out-of-project README path; package-local README and readme path now remove that dependency.
