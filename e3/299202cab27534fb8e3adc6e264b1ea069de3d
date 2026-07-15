@@ -1,0 +1,1 @@
+Evidence: clean detached worktree at 0c4a83b; make check passed; two uv builds produced identical wheel and sdist SHA-256 digests.
