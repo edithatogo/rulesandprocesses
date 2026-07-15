@@ -1,7 +1,8 @@
 # FOI-O v0.8.1 release-evidence handoff
 
-Status: candidate remediation only. This file is not an upstream release,
-evidence bundle, or publication claim.
+Status: candidate remediation approved by Dylan as the basis for upstream
+review. This file is not an upstream release, evidence bundle, or publication
+claim.
 
 ## Verified release input
 
@@ -38,6 +39,13 @@ The candidate was then rechecked with the same environment and produced
 `280 passed, 2 skipped`. It has not been pushed to `foi-o` and does not replace
 the upstream tag.
 
+## Approval boundary
+
+On 2026-07-15 Dylan approved `995dbd2` as the remediation basis for a corrected
+immutable FOI-O release. The approval authorizes upstream review and application
+of that candidate; it does not approve the candidate for direct promotion,
+replace the `v0.8.1` tag, or certify the evidence bundle.
+
 ## Still required for #27
 
 The upstream release-evidence bundle must still include and substantiate the
@@ -49,7 +57,7 @@ open. This handoff does not certify any of those unfinished gates.
 
 ## Human boundary
 
-Dylan must decide whether to apply and review the candidate in the FOI-O
-repository, publish a corrected immutable release, and generate the accepted
-evidence bundle. No upstream branch, PR, release, dataset, or paper action is
-performed by this handoff.
+Upstream FOI-O work remains required to apply and review the candidate, publish
+a corrected immutable release, and generate the accepted evidence bundle. No
+upstream branch, PR, release, dataset, or paper action is performed by this
+handoff.
