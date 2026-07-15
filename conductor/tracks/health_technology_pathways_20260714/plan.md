@@ -27,7 +27,11 @@ during the repository incubation governed by
     - [x] Document representational loss per jurisdiction.
     - **Acceptance:** common terms do not erase institutional decision ownership.
     - **Evidence:** `subrepos/process-mappings/profiles/health-technology/LIFECYCLE_MODEL.md` defines neutral stages, variation rules, unavailable evidence, representational loss, and authority boundaries; lifecycle regression tests pass.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Authority and Source Architecture' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Authority and Source Architecture' (Protocol in workflow.md)
+    - **Review:** Automated review found and fixed two regression-test brittleness issues; the final matrix, source manifest, lifecycle model, and tests preserve authority boundaries and unavailable evidence without asserting clinical or funding outcomes.
+    - **Verification:** `FOI_PROGRAMME_REPO_ROOT=/tmp/rac-process-consumption make check` passed with 84 contract tests and 83.46% contract coverage.
+
+> CHECKPOINT (2026-07-15): Phase 1 is complete. The candidate authority matrix covers Medsafe/Pharmac, TGA/PBAC/PBS/MSAC/MBS, MHRA/NICE, FDA, CMS, and explicitly unspecified commercial payers. The source ledger pins 13 official references and records unavailable confidential evidence. The lifecycle model supports branching and iteration without treating unlike authorities as equivalent. No comparison case, jurisdiction profile, or source assertion has been human-certified.
 
 ## Phase 2 - Comparison Case Selection
 
