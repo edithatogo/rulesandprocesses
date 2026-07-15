@@ -16,3 +16,4 @@ def test_programme_gate_registry_is_fail_closed_and_evidence_linked() -> None:
         assert gate["localEvidence"]
         assert all((ROOT / path).exists() for path in gate["localEvidence"])
         assert gate["nextAction"]
+        assert gate["preparationStatus"]
