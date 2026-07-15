@@ -45,6 +45,7 @@ GitHub issue: [#46](https://github.com/edithatogo/rac-conformance/issues/46). De
     - **Acceptance:** authorization is explicit and tied to an exact commit/artifact set.
     - **Packet:** `V1_RELEASE_AUTHORIZATION_PACKET.md` is prepared; no release authorization or publication action has been taken.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Qualification' (Protocol in workflow.md)
+    - **BLOCKED (2026-07-15):** The qualification matrix and security review preserve unresolved FOI-O evidence, independent adoption, engineering-hardening, live-check, and human-certification gates. Do not promote, sign, publish, or archive v1.0 until those gates change state.
 
 ## Phase 3 - Publication and Verification
 
