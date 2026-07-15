@@ -1,0 +1,1 @@
+Conductor task closeout: Camunda adapter scaffold adds a pinned Java 17/Maven/JUnit module, committed BPMN model, XML smoke tests, and dedicated CI. PIC core remains dependency-free. Local core/XML checks passed; Java 17/Maven/Docker runtime verification is delegated to CI because local Java 11/no-Maven/no-Docker are unavailable.
