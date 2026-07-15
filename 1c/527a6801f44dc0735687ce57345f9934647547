@@ -1,0 +1,1 @@
+Task evidence: local make check, BPMN XML validation, and diff validation pass. Java projection tests run in the pinned Java 17 adapter CI job.
