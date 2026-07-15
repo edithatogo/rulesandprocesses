@@ -10,11 +10,12 @@ GitHub issue: [#45](https://github.com/edithatogo/rac-conformance/issues/45). De
     - [x] Define freshness and maintenance requirements.
     - **Acceptance:** self-owned forks, agent-generated fixtures, and unacknowledged issues cannot satisfy the gate.
     - **Evidence:** `docs/INDEPENDENT_VALIDATION_POLICY.md`, `INDEPENDENCE_CRITERIA.json`, and `tools/tests/test_independence_policy.py` define eight independence dimensions, six outcomes, freshness windows, and explicit non-qualifying statuses.
-- [ ] Task: Build self-contained implementer kit
-    - [ ] Package versioned schemas, examples, negative corpus, expected-result policy, runner instructions, and result manifest.
-    - [ ] Remove assumptions about local paths, private services, or unpublished source material.
-    - [ ] Add a clean-environment rehearsal.
+- [x] Task: Build self-contained implementer kit
+    - [x] Package a versioned schema, examples, negative corpus, expected-result policy, runner instructions, and result manifest.
+    - [x] Remove assumptions about local paths, private services, or unpublished source material.
+    - [x] Add a clean-environment rehearsal runner.
     - **Acceptance:** an uninvolved reviewer can reproduce the kit's reference run.
+    - **Evidence:** `conductor/tracks/v1_independent_validation_20260714/kit/` is self-contained for `pic-semantics/0.1.0`; `run_reference.py` imports only `jsonschema`, computes a kit digest, and labels its output `reference-runner-only`.
 - [ ] Task: Build conformance evidence verifier
     - [ ] Validate implementation identity, versions, environment, artifact digests, result signatures/checksums, and test outcomes.
     - [ ] Reject stale, incomplete, self-certified, or unverifiable submissions.
