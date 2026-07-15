@@ -86,6 +86,7 @@ def test_human_review_template_matches_resolver_queue() -> None:
     assert decisions["mapping.nz.review-learning"] == "approved"
     assert decisions["mapping.au.open-disclosure"] == "approved"
     assert decisions["mapping.nsw.incident-review"] == "approved"
+    assert decisions["mapping.au.secondary-summary"] == "rejected"
     assert all(
         decision is None
         for mapping_id, decision in decisions.items()
@@ -95,5 +96,6 @@ def test_human_review_template_matches_resolver_queue() -> None:
             "mapping.nz.review-learning",
             "mapping.au.open-disclosure",
             "mapping.nsw.incident-review",
+            "mapping.au.secondary-summary",
         }
     )

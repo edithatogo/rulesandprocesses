@@ -51,14 +51,14 @@
     },
     {
       "mappingId": "mapping.au.secondary-summary",
-      "decision": null,
-      "sourceRef": null,
+      "decision": "rejected",
+      "sourceRef": "https://example.invalid/secondary-summary",
       "sourceDigest": null,
       "jurisdiction": "AU",
-      "effectiveDateBasis": null,
-      "permittedInterpretation": null,
+      "effectiveDateBasis": "Not applicable; secondary-only evidence rejected.",
+      "permittedInterpretation": "Negative example showing that secondary-only material must not support a controlling obligation.",
       "excludedInterpretation": "Secondary-only evidence cannot support a controlling obligation.",
-      "followUpSourceRequest": "Replace with a verified primary source or reject."
+      "followUpSourceRequest": "Replace with a verified primary source only if the process question remains in scope."
     },
     {
       "mappingId": "mapping.local.escalation",
