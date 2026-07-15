@@ -18,7 +18,9 @@ def test_current_release_audit_preserves_blockers():
         "foio-release-evidence-bundle",
         "external-independent-adoption",
         "papers-refresh",
+        "papers-programme-submission",
         "rac-zenodo-deposit",
+        "foi-governance-manual-verification",
     }
     assert report["networkChecks"] == "not-performed"
 

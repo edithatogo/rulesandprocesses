@@ -13,7 +13,8 @@
 ## Current decision
 
 `DO NOT AUTHORIZE v1.0`: the candidate remains blocked by the FOI-O release-
-evidence bundle, independent adoption, paper refresh, and Zenodo deposit.
+evidence bundle, independent adoption, paper refresh, paper-programme
+submission authorization, Project 14 manual verification, and Zenodo deposit.
 
 ## Human decision checklist
 

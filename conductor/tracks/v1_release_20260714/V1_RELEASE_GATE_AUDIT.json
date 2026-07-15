@@ -12,11 +12,29 @@
     },
     {
       "dependencies": [
+        "v1-governance-documents"
+      ],
+      "id": "foi-governance-manual-verification",
+      "nextAction": "Verify the live Project 14 scope, issue membership, fields, and navigation against HUMAN_VERIFICATION_PACKET.md.",
+      "reasonCode": "project14_manual_verification_pending",
+      "status": "blocked"
+    },
+    {
+      "dependencies": [
         "foi-o-27"
       ],
       "id": "foio-release-evidence-bundle",
       "nextAction": "Complete foi-o issue 27 with capabilities, migrations, tests, fixtures, provenance, empirical results, exceptions, and limitations.",
       "reasonCode": "external_release_evidence_bundle_pending",
+      "status": "blocked"
+    },
+    {
+      "dependencies": [
+        "papers-refresh"
+      ],
+      "id": "papers-programme-submission",
+      "nextAction": "Approve authorship, venue, disclosure text, and submission of the three prepared paper packets.",
+      "reasonCode": "paper_programme_human_submission_pending",
       "status": "blocked"
     },
     {
@@ -38,11 +56,18 @@
       "status": "blocked"
     }
   ],
-  "gateCount": 7,
+  "gateCount": 9,
   "gates": [
     {
       "category": "adoption",
       "id": "external-independent-adoption",
+      "observedAt": "2026-07-15",
+      "owner": "dylan",
+      "status": "blocked"
+    },
+    {
+      "category": "human",
+      "id": "foi-governance-manual-verification",
       "observedAt": "2026-07-15",
       "owner": "dylan",
       "status": "blocked"
@@ -67,6 +92,13 @@
       "observedAt": "2026-07-15",
       "owner": "rac-maintainers",
       "status": "pass"
+    },
+    {
+      "category": "human",
+      "id": "papers-programme-submission",
+      "observedAt": "2026-07-15",
+      "owner": "dylan",
+      "status": "blocked"
     },
     {
       "category": "human",
