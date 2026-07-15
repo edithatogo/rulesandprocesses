@@ -1,0 +1,1 @@
+Task evidence: make mutation-smoke and full make check pass; both selected mutants are killed in isolated temporary source trees.
