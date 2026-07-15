@@ -13,7 +13,7 @@ repository incubation governed by
     - [x] Choose the smallest supported local runtime and exact version.
     - [x] Define rule-worker, human-task, trace, error, credential, and data boundaries.
     - **Acceptance:** the decision explains why Camunda is optional and identifies unsupported assumptions.
-    - **Evidence:** `subrepos/process-mappings/adapters/camunda/ARCHITECTURE_DECISION.md` and `VERSION_LOCK.json` select CPT with Java 17, JUnit 5, Testcontainers, and Camunda 8.9.12; local Java 11/no-Docker limitations are explicit.
+    - **Evidence:** `subrepos/process-mappings/adapters/camunda/ARCHITECTURE_DECISION.md` and `VERSION_LOCK.json` select CPT with Java 17, JUnit Jupiter 6.0.3 using the JUnit 5 API, Testcontainers, and Camunda 8.9.12; local Java 11/no-Docker limitations are explicit.
 - [x] Task: Scaffold reproducible adapter test module
     - [x] Create the module under `subrepos/process-mappings/adapters/camunda/` without adding Java, Docker, or Camunda dependencies to PIC core.
     - [x] Pin Java/build/Testcontainers/Camunda dependencies and container images.
@@ -21,7 +21,10 @@ repository incubation governed by
     - [x] Add a smoke test and CI job that can be disabled only with an explicit environment reason.
     - **Acceptance:** clean setup and teardown leave no committed runtime state.
     - **Evidence:** `subrepos/process-mappings/adapters/camunda/pom.xml`, committed BPMN model, JUnit smoke tests, `VERSION_LOCK.json`, and `.github/workflows/camunda-adapter.yml`; local XML/core gates pass, while Java 17/Maven/Docker execution is delegated to the pinned CI job.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Architecture and Reproducibility' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Architecture and Reproducibility' (Protocol in workflow.md)
+    - **Review evidence:** `make check`, BPMN XML validation, and `git diff --check` pass locally. PR #76 passed both Camunda smoke-test jobs, full-check, analysis, dependency review, workflow lint/security, and CodeQL before merge at `de49562`.
+    - **Review fix:** the first smoke-test run exposed an incompatible explicit JUnit Jupiter 5.11.4 dependency against CPT 8.9.12's JUnit 6.0.3 platform; commit `297a670` aligned the POM, lockfile, architecture decision, and regression test before the green rerun.
+    - **CHECKPOINT (2026-07-15):** Phase 1 proves an optional, version-locked Camunda adapter scaffold with a committed executable BPMN model, isolated Java test module, and CI teardown boundary. The core PIC validators remain Camunda-independent. Local Java 11/no-Maven/no-Docker limitations remain documented; Java 17/CPT execution is verified in CI.
 
 ## Phase 2 - Executable Mapping
 
