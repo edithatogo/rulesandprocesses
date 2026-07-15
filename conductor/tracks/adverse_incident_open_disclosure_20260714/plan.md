@@ -81,10 +81,11 @@ during the repository incubation governed by
     - Human decisions recorded in `HUMAN_REVIEW_DECISIONS.json`: four limited approvals, one explicit rejection, and one approved-unresolved boundary.
     - Process improvement recorded: source discovery is the first human-controlled step for every pathway; see `SOURCE_DISCOVERY_PROTOCOL.md`.
     - Process architecture recorded: all decisions sit within the project-level linked-process model in `PROCESS_PROJECT_MODEL.md`.
-- [ ] Task: Publish comparative findings and limitations
-    - [ ] Distinguish source fact, interpretation, executable behavior, variation, and unresolved exception.
-    - [ ] Document portability implications for the process profile and Camunda study.
+- [x] Task: Publish comparative findings and limitations
+    - [x] Distinguish source fact, interpretation, executable behavior, variation, and unresolved exception.
+    - [x] Document portability implications for the process profile and Camunda study.
     - **Acceptance:** findings make no organisational-compliance, legal-advice, or clinical-safety claim.
+    - Evidence: `subrepos/process-mappings/profiles/adverse-incidents/COMPARATIVE_FINDINGS.md`.
 - [ ] Task: Define privacy-preserving post-market safety handoff
     - [ ] Specify the minimum public or appropriately de-identified aggregate event, provenance, authority, jurisdiction, permitted-purpose, and review fields.
     - [ ] Reject patient-level content, inferred causation, and uncertified downstream action.
