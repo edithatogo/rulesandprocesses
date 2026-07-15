@@ -34,7 +34,8 @@ python tools/validate_project14_allowlist.py --items /tmp/project14.json \
 
 Fresh verification on 2026-07-15 produced `observed=19 required=19` with no
 missing, extra, or stale issue/PR items. The allowlist explicitly records
-`nlp-policy-nz#100`, `nlp-policy-nz#101`, and `rac-conformance#36` as `Done`; all
+`edithatogo/nlp-policy-nz#100`, `edithatogo/nlp-policy-nz#101`, and
+`edithatogo/rac-conformance#36` as `Done`; all
 other allowlisted items are expected to be `Todo`. Every item has values for
 jurisdiction, repository role, dependency, evidence status, human gate, and
 delivery status. Dedicated repository Project memberships were not removed.
