@@ -8,6 +8,8 @@ issue #33. This file is preparation evidence, not proof of a Zenodo deposit.
 - GitHub release/tag: `v0.2.0`
 - Main commit: `35fdebdd6ca3ad0a254ca0b3ec5b7466b7db3fe5`
 - Release: https://github.com/edithatogo/rac-conformance/releases/tag/v0.2.0
+- Archive packet: `RAC_CONFORMANCE_V0.2.0_ARCHIVE.json`
+- GitHub archive SHA-256: `07743bb7e4be3749f89564d8cb0184372a76d26af426181ccdcd3115e8d667ff`
 
 ## Human publication steps
 
@@ -18,3 +20,6 @@ issue #33. This file is preparation evidence, not proof of a Zenodo deposit.
    citation ledger.
 4. Replace `pending_human_deposit` with `verified_published_version` only after
    the version DOI resolves to this exact release.
+
+The archive packet records preparation evidence only. It does not represent a
+Zenodo deposit or DOI verification.
