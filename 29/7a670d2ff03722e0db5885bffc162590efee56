@@ -1,0 +1,1 @@
+Review fix: PR #76 smoke tests failed because the scaffold forced JUnit Jupiter 5.11.4 against CPT 8.9.12's JUnit 6.0.3 platform. Aligned the dependency, architecture decision, lockfile, and architecture regression test.
