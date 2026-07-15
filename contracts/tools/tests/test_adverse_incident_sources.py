@@ -43,7 +43,12 @@ def test_blocked_sources_are_explicit_and_not_filled_by_secondary_sources() -> N
     for source in document["sources"]:
         expected_state = (
             "human-approved"
-            if source["id"] == "nz-hqsc-national-adverse-events-policy-2023"
+            if source["id"]
+            in {
+                "nz-hqsc-national-adverse-events-policy-2023",
+                "nz-hdc-code-consumers-rights",
+                "au-open-disclosure-framework-2026",
+            }
             else "agent-proposed"
         )
         assert source["reviewerState"] == expected_state

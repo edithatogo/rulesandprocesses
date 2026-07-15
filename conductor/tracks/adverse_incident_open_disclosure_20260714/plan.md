@@ -78,7 +78,8 @@ during the repository incubation governed by
     - **Acceptance:** human review is focused and every promoted assertion has an auditable decision.
     - Prepared artifacts: `subrepos/process-mappings/profiles/adverse-incidents/HUMAN_REVIEW_PACKET.md` and `HUMAN_REVIEW_DECISIONS.template.json`.
     - **HUMAN GATE READY:** Dylan must certify or reject the queued assertions and exceptions before promotion or Phase 3 closure.
-    - Human decisions recorded: `mapping.nz.consumer-informed` and `mapping.nz.review-learning` approved with limited interpretations in `HUMAN_REVIEW_DECISIONS.json`; four decisions remain.
+    - Human decisions recorded: `mapping.nz.consumer-informed`, `mapping.nz.review-learning`, and `mapping.au.open-disclosure` approved with limited interpretations in `HUMAN_REVIEW_DECISIONS.json`; three decisions remain.
+    - Process improvement recorded: source discovery is the first human-controlled step for every pathway; see `SOURCE_DISCOVERY_PROTOCOL.md`.
 - [ ] Task: Publish comparative findings and limitations
     - [ ] Distinguish source fact, interpretation, executable behavior, variation, and unresolved exception.
     - [ ] Document portability implications for the process profile and Camunda study.

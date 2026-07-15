@@ -84,9 +84,14 @@ def test_human_review_template_matches_resolver_queue() -> None:
     decisions = {item["mappingId"]: item["decision"] for item in template["decisions"]}
     assert decisions["mapping.nz.consumer-informed"] == "approved"
     assert decisions["mapping.nz.review-learning"] == "approved"
+    assert decisions["mapping.au.open-disclosure"] == "approved"
     assert all(
         decision is None
         for mapping_id, decision in decisions.items()
         if mapping_id
-        not in {"mapping.nz.consumer-informed", "mapping.nz.review-learning"}
+        not in {
+            "mapping.nz.consumer-informed",
+            "mapping.nz.review-learning",
+            "mapping.au.open-disclosure",
+        }
     )

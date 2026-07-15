@@ -32,7 +32,7 @@
       "sourceStatus": "official-html-retrieved",
       "digest": "sha256:cf68019c860a1cd5bf462d6e501d4cca9702d57f8eb4974d53d11a2820c20761",
       "rights": "official-source-referenced-not-vendored",
-      "reviewerState": "agent-proposed"
+      "reviewerState": "human-approved"
     },
     {
       "id": "au-open-disclosure-framework-2026",
@@ -47,7 +47,7 @@
       "retrievalNote": "Effective-date field is intentionally unresolved; the framework itself directs alignment with applicable state and territory requirements.",
       "digest": "sha256:d0d3e5ce3b2cd470707c956157d99c723847c802ef706a65ce2b9fa54aec0fac",
       "rights": "CC-BY-NC-ND-4.0-source-reference-only",
-      "reviewerState": "agent-proposed"
+      "reviewerState": "human-approved"
     },
     {
       "id": "au-nsqhs-action-1-12",

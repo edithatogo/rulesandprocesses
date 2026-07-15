@@ -28,14 +28,14 @@
     },
     {
       "mappingId": "mapping.au.open-disclosure",
-      "decision": null,
-      "sourceRef": null,
-      "sourceDigest": null,
+      "decision": "approved",
+      "sourceRef": "https://www.safetyandquality.gov.au/sites/default/files/2026-06/Australian-Open-Disclosure-Framework_1.pdf",
+      "sourceDigest": "d0d3e5ce3b2cd470707c956157d99c723847c802ef706a65ce2b9fa54aec0fac",
       "jurisdiction": "AU",
-      "effectiveDateBasis": null,
-      "permittedInterpretation": null,
-      "excludedInterpretation": "Do not treat the national framework as replacing state or territory requirements.",
-      "followUpSourceRequest": "Confirm operative date and jurisdictional relationship."
+      "effectiveDateBasis": "Not stated in the reviewed framework; published June 2026; effective-date boundary retained.",
+      "permittedInterpretation": "Human-controlled relational open-disclosure process, proportionate response, support and accessibility choices, follow-up, and learning, subject to current jurisdictional and local source discovery.",
+      "excludedInterpretation": "Not legislation, not a universal legal obligation, not a substitute for state or territory requirements, and not an automated disclosure decision.",
+      "followUpSourceRequest": "Search and verify current state, territory, and local policies before jurisdiction-specific implementation."
     },
     {
       "mappingId": "mapping.nsw.incident-review",
