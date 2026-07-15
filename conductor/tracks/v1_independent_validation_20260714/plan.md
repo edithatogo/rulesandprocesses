@@ -4,11 +4,12 @@ GitHub issue: [#45](https://github.com/edithatogo/rac-conformance/issues/45). De
 
 ## Phase 1 - Independence Contract and Implementer Kit
 
-- [ ] Task: Define independent-validation evidence policy
-    - [ ] Define organisational, repository, codebase, oracle, fixture-curation, and execution independence.
-    - [ ] Define qualifying, partial, conflicting, withdrawn, declined, and unresponsive outcomes.
-    - [ ] Define freshness and maintenance requirements.
+- [x] Task: Define independent-validation evidence policy
+    - [x] Define organisational, repository, codebase, oracle, fixture-curation, and execution independence.
+    - [x] Define qualifying, partial, conflicting, withdrawn, declined, and unresponsive outcomes.
+    - [x] Define freshness and maintenance requirements.
     - **Acceptance:** self-owned forks, agent-generated fixtures, and unacknowledged issues cannot satisfy the gate.
+    - **Evidence:** `docs/INDEPENDENT_VALIDATION_POLICY.md`, `INDEPENDENCE_CRITERIA.json`, and `tools/tests/test_independence_policy.py` define eight independence dimensions, six outcomes, freshness windows, and explicit non-qualifying statuses.
 - [ ] Task: Build self-contained implementer kit
     - [ ] Package versioned schemas, examples, negative corpus, expected-result policy, runner instructions, and result manifest.
     - [ ] Remove assumptions about local paths, private services, or unpublished source material.
