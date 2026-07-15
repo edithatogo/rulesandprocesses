@@ -1,14 +1,19 @@
 {
   "schema_version": "foio-pic-release-evidence.v1.0.0",
   "as_of": "2026-07-14",
-  "status": "blocked_pending_foio_v2_release",
+  "status": "blocked_pending_foio_release_evidence_bundle",
   "foio": {
     "repository": "https://github.com/edithatogo/foi-o",
-    "observed_main_revision": "b42e631b6c68e841ff4843f15dc2ae984cd956f1",
-    "required_release": "v2.0.0",
-    "published_release": null,
+    "observed_main_revision": "d24ae6f9f2d9488052969f633d91eff4a9a47f58",
+    "required_release": "v0.8.1",
+    "published_release": {
+      "tag": "v0.8.1",
+      "revision": "d24ae6f9f2d9488052969f633d91eff4a9a47f58",
+      "zenodo_version_doi": "10.5281/zenodo.21360138",
+      "zenodo_concept_doi": "10.5281/zenodo.21360137"
+    },
     "release_evidence_issue": "https://github.com/edithatogo/foi-o/issues/27",
-    "blocker": "V2 artifacts exist on main, but no immutable V2 release or release PR is published."
+    "blocker": "The immutable v0.8.1 release is published, but issue #27 has not yet published the required release-evidence bundle."
   },
   "pic": {
     "repository": "https://github.com/edithatogo/rac-conformance",
@@ -17,7 +22,7 @@
     "schema_sha256": "295fd487b700739676cee716499b12683747441b9196114c44e30dfad7cba639",
     "matrix_sha256": "dffea2cd3112bdf46221a5a642a835b9b93f1471ae8a8b23c8af5d98eb6962ab",
     "offline_validator": "pic-foio-check",
-    "matrix_status": "blocked_no_published_release"
+    "matrix_status": "blocked_pending_evidence_bundle"
   },
   "dependencies": {
     "fyi_archive": {
