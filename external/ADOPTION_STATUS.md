@@ -20,4 +20,4 @@ This document tracks all staged and submitted upstream proposals, PRs, and issue
 
 ## Monitoring
 
-See `external/MAINTAINER_MONITORING.md` for the latest maintainer-reply sweep (last: 2026-07-14; unresolved external proposals remain maintainer-blocked).
+See `external/MAINTAINER_MONITORING.md` for the latest maintainer-reply sweep (last: 2026-07-15; unresolved external proposals remain maintainer-blocked, with RuleSpec NZ hosted validation failures explicitly recorded).
