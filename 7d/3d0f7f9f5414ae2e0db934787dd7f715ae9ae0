@@ -1,0 +1,1 @@
+Task evidence: make check and diff validation pass. Threat model covers ten external-input trust boundaries; high/critical risks have explicit mitigated, release-blocking, or external-gate dispositions.
