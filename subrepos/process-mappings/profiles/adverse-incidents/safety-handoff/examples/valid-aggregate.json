@@ -24,6 +24,7 @@
     "reviewer": null,
     "reviewReference": null
   },
+  "consumptionStatus": "blocked-until-human-review",
   "downstreamAction": {
     "authorized": false,
     "status": "not-authorized"

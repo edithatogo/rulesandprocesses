@@ -4,7 +4,7 @@
   "title": "Adverse-incident aggregate safety handoff 0.1.0",
   "type": "object",
   "additionalProperties": false,
-  "required": ["handoffVersion", "permittedPurpose", "aggregation", "jurisdiction", "provenance", "signal", "review", "downstreamAction"],
+  "required": ["handoffVersion", "permittedPurpose", "aggregation", "jurisdiction", "provenance", "signal", "review", "consumptionStatus", "downstreamAction"],
   "properties": {
     "handoffVersion": {"const": "adverse-incident-safety-handoff/0.1.0"},
     "permittedPurpose": {"enum": ["aggregate-safety-research", "public-safety-signal"]},
@@ -51,6 +51,7 @@
         "reviewReference": {"type": ["string", "null"]}
       }
     },
+    "consumptionStatus": {"enum": ["blocked-until-human-review", "approved-for-consumption"]},
     "downstreamAction": {
       "type": "object",
       "additionalProperties": false,
@@ -60,5 +61,11 @@
         "status": {"const": "not-authorized"}
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"consumptionStatus": {"const": "approved-for-consumption"}}},
+      "then": {"properties": {"review": {"properties": {"reviewStatus": {"const": "human-approved"}}}}}
+    }
+  ]
 }

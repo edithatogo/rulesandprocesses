@@ -12,7 +12,7 @@ during the repository incubation governed by
 > primary-source ledger and an authority/variation matrix covering NZ, Australia,
 > and NSW. The matrix distinguishes regulation, national policy, national
 > framework, national standard, state directive, regional implementation, and
-> hypothetical local procedure. Three official source downloads remain blocked
+> hypothetical local procedure. Two NSW official policy downloads remain blocked
 > and are recorded as exceptions; no secondary substitute, legal conclusion, or
 > clinical judgement has been encoded.
 

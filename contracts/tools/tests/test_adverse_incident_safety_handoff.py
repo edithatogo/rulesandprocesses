@@ -20,6 +20,7 @@ def test_valid_handoff_is_aggregate_and_not_action_authorized() -> None:
     assert errors == []
     assert document["aggregation"]["patientLevelDataIncluded"] is False
     assert document["signal"]["causation"] == "not-inferred"
+    assert document["consumptionStatus"] == "blocked-until-human-review"
     assert document["downstreamAction"]["authorized"] is False
 
 
