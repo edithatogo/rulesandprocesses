@@ -7,16 +7,16 @@ evidence bundle, or publication claim.
 
 - Repository: <https://github.com/edithatogo/foi-o>
 - Tag: `v0.8.1`
-- Commit: `d24ae6f9f2d9488052969f633d91eff4a9a47f58`
-- Zenodo version DOI: `10.5281/zenodo.21360138`
-- Zenodo concept DOI: `10.5281/zenodo.21360137`
+- Commit: [`d24ae6f9f2d9488052969f633d91eff4a9a47f58`](https://github.com/edithatogo/foi-o/commit/d24ae6f9f2d9488052969f633d91eff4a9a47f58)
+- Zenodo version DOI: [`10.5281/zenodo.21360138`](https://doi.org/10.5281/zenodo.21360138)
+- Zenodo concept DOI: [`10.5281/zenodo.21360137`](https://doi.org/10.5281/zenodo.21360137)
 - Evidence-bundle gate: <https://github.com/edithatogo/foi-o/issues/27>
 
 ## Immutable-tag validation
 
 The tag was checked in a clean detached worktree with:
 
-```text
+```bash
 uv sync --extra dev --extra rdf
 uv run pytest -q
 ```
