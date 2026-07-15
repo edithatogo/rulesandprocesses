@@ -54,6 +54,8 @@ def test_source_manifest_covers_matrix_sources_and_preserves_unavailable_states(
     assert referenced <= source_ids
     assert "confidential-commercial-evidence" in manifest["unavailableEvidence"]
     assert all(item["sourceStatus"].startswith("official-") for item in manifest["sources"])
+    assert all("effectiveFrom" in item and "supersededBy" in item for item in manifest["sources"])
+    assert all(item["retrievalDigest"].startswith("sha256:") for item in manifest["sources"])
 
 
 def test_money_and_outcomes_are_not_encoded_in_authority_matrix() -> None:

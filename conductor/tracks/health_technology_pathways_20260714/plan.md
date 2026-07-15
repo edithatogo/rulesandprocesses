@@ -14,12 +14,13 @@ during the repository incubation governed by
     - [x] Mark non-equivalent and absent functions explicitly.
     - **Acceptance:** automated checks reject FDA-as-payer, MBS-as-medicine-regulator, and other false-equivalence assertions.
     - **Evidence:** `subrepos/process-mappings/profiles/health-technology/AUTHORITY_MATRIX.json`, `LIFECYCLE_MODEL.md`, `sources/SOURCE_MANIFEST.json`, and `contracts/tools/tests/test_health_technology_profile.py`; 83 contract tests and full `make check` pass.
-- [ ] Task: Build versioned primary-source manifests
-    - [ ] Store source ledgers under `subrepos/process-mappings/profiles/health-technology/sources/`.
-    - [ ] Pin current official process manuals, legislation or regulations where needed, application guidance, and public decision-record formats.
-    - [ ] Record effective date, retrieval time, version, supersession, rights, and digest.
-    - [ ] Record inaccessible confidential stages as unavailable rather than filling gaps.
+- [x] Task: Build versioned primary-source manifests
+    - [x] Store source ledgers under `subrepos/process-mappings/profiles/health-technology/sources/`.
+    - [x] Pin current official process manuals, legislation or regulations where needed, application guidance, and public decision-record formats.
+    - [x] Record effective date, retrieval time, version, supersession, rights, and digest.
+    - [x] Record inaccessible confidential stages as unavailable rather than filling gaps.
     - **Acceptance:** every modeled stage has a source owner and authority classification.
+    - **Evidence:** `subrepos/process-mappings/profiles/health-technology/sources/SOURCE_MANIFEST.json` records 13 official source references, retrieval time, digests, authority classes, unresolved effective/supersession fields, rights, and unavailable confidential evidence; manifest regression tests pass.
 - [ ] Task: Define common lifecycle and variation model
     - [ ] Define neutral concepts for authorisation, HTA, recommendation, funding decision, negotiation, listing, restriction, exception, implementation, and monitoring.
     - [ ] Support parallel, iterative, terminated, resubmitted, and conditionally linked pathways.
