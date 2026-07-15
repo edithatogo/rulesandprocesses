@@ -1,0 +1,1 @@
+Task evidence: local make check, BPMN XML validation, and diff validation pass. Java contract execution is covered by the adapter CI smoke-test job.
