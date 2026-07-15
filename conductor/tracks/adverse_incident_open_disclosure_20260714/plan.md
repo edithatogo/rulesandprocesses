@@ -86,9 +86,10 @@ during the repository incubation governed by
     - [x] Document portability implications for the process profile and Camunda study.
     - **Acceptance:** findings make no organisational-compliance, legal-advice, or clinical-safety claim.
     - Evidence: `subrepos/process-mappings/profiles/adverse-incidents/COMPARATIVE_FINDINGS.md`.
-- [ ] Task: Define privacy-preserving post-market safety handoff
-    - [ ] Specify the minimum public or appropriately de-identified aggregate event, provenance, authority, jurisdiction, permitted-purpose, and review fields.
-    - [ ] Reject patient-level content, inferred causation, and uncertified downstream action.
-    - [ ] Add valid and negative examples without making the handoff mandatory for incident workflows.
+- [x] Task: Define privacy-preserving post-market safety handoff
+    - [x] Specify the minimum public or appropriately de-identified aggregate event, provenance, authority, jurisdiction, permitted-purpose, and review fields.
+    - [x] Reject patient-level content, inferred causation, and uncertified downstream action.
+    - [x] Add valid and negative examples without making the handoff mandatory for incident workflows.
     - **Acceptance:** the handoff schema and examples validate and strictly exclude patient-level data, causal inference, and uncertified downstream action.
+    - Evidence: `safety-handoff/schema.json`, `safety-handoff/examples/`, and `contracts/tools/tests/test_adverse_incident_safety_handoff.py`.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Synthetic Demonstrator and Review' (Protocol in workflow.md)
