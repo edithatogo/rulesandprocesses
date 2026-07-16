@@ -56,6 +56,13 @@ Phase 1 and establishes the implementation home required by
 > writable extracted source and rollback was verified. Governance packet work
 > remains.
 
+> CHECKPOINT (2026-07-16): The migration packet lists the proposed repository,
+> prepared CODEOWNERS/templates/security/CI files, Project 19 linkage, parent
+> issue mapping, versioning proposal, branch controls, rollback, and the
+> single-source-of-truth transition. No remote-side facts or issues were
+> invented, and no authenticated action was performed. The next step is the
+> explicit human cutover decision.
+
 - [x] Task: Build and test the extraction procedure
     - [x] Preserve subtree history and verify file, commit, and license integrity.
     - [x] Rehearse standalone CI, local installation, links, provenance checks, and dependency updates in a temporary local repository.
