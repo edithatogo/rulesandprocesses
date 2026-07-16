@@ -15,6 +15,7 @@ the semantic authority.
 - Execution evidence: `external/foi-o/rules/traces/`
 - Contract: `contracts/process-profile/0.1.0/`
 - Machine-readable record: `CERTIFICATION_RECORD.json` (currently `pending`).
+- Row-level review aid: `MAPPING_REVIEW_MATRIX.md`.
 - Candidate revision: `7990b4f`; the record pins the candidate SHA-256 and the
   `pic-process-profile/0.1.0` schema SHA-256.
 
@@ -35,6 +36,9 @@ the semantic authority.
    ontology hierarchy, discretion, and reasonableness judgments?
 6. Should this remain a candidate, or may it be promoted into a certified
    profile artifact after these questions are answered?
+
+The row-level questions and explicit non-claims are listed in
+`MAPPING_REVIEW_MATRIX.md`.
 
 ## Certification record
 
