@@ -12,6 +12,7 @@ from typing import Any
 from jsonschema import ValidationError as JsonSchemaValidationError
 
 from pic_contracts.parameters import validate_parameter_periods
+from pic_contracts.safety import SafetyLimitError
 from pic_contracts.schema_utils import load_json, validator_for
 
 CONFORMS_TO_CONTRACT = {
@@ -87,7 +88,7 @@ def validate_file(path: Path) -> ValidationReport:
     report = ValidationReport()
     try:
         doc = load_json(path)
-    except json.JSONDecodeError as exc:
+    except (json.JSONDecodeError, SafetyLimitError, OSError, UnicodeDecodeError) as exc:
         report.add(ValidationIssue(str(path), f"invalid JSON: {exc}", "json"))
         return report
     if not isinstance(doc, dict):

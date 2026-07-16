@@ -147,7 +147,7 @@ GitHub issue: [#43](https://github.com/edithatogo/rac-conformance/issues/43)
 
 ---
 
-- [ ] **Track: Harden RaC Conformance engineering and supply chain for v1**
+- [~] **Track: Harden RaC Conformance engineering and supply chain for v1**
 Track ID: `v1_engineering_hardening_20260714`
 GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44)
 *Link: [./tracks/v1_engineering_hardening_20260714/](./tracks/v1_engineering_hardening_20260714/)*

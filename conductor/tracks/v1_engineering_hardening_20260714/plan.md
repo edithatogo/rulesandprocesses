@@ -4,17 +4,23 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
 
 ## Phase 1 - Threat Model and Baselines
 
-- [ ] Task: Produce data-flow threat model and risk register
+- [x] Task: Produce data-flow threat model and risk register
     - [ ] Map trust boundaries for files, archives, schemas, converters, URLs, reports, CI, releases, and adapters.
     - [ ] Cover traversal, bombs/resource exhaustion, malicious references, schema abuse, injection, secret leakage, dependency compromise, and provenance spoofing.
     - [ ] Assign owner, severity, mitigation, verification, and release disposition.
     - **Acceptance:** every externally controlled input reaches a validation or isolation boundary.
-- [ ] Task: Establish compatibility and performance baselines
+    - Evidence: `security/THREAT_MODEL.md`, `security/RISK_REGISTER.json`, and bounded parser tests.
+- [x] Task: Establish compatibility and performance baselines
     - [ ] Measure representative small, large, invalid, and adversarial corpora.
     - [ ] Define supported platforms and diagnostic-quality expectations.
     - [ ] Record reference hardware/runtime and variance policy.
     - **Acceptance:** budgets are measurable and cannot be weakened silently.
+    - Evidence: `security/BASELINE.md` and `tools/validate_hardening_evidence.py`.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Threat Model and Baselines' (Protocol in workflow.md)
+
+> CHECKPOINT (2026-07-16): Trust boundaries, risk dispositions, parser resource
+> limits, and reference budgets are implemented. Hosted platform timing,
+> memory, and GitHub evidence remain required for full qualification.
 
 ## Phase 2 - Adversarial and Semantic Testing
 
