@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/edithatogo/rulesandprocesses/contracts/process-profile/0.1.0/schema.json",
+  "$id": "https://github.com/edithatogo/rac-conformance/contracts/process-profile/0.1.0/schema.json",
   "title": "PIC process profile",
   "type": "object",
   "additionalProperties": false,

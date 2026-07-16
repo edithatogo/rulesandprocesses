@@ -133,7 +133,9 @@ def _process_profile_semantics(path: Path, doc: dict[str, Any]) -> list[Validati
     def refs_exist(kind: str, owner: str, refs: list[str], records: dict[str, Any]) -> None:
         for ref in refs:
             if ref not in records:
-                issues.append(ValidationIssue(f"{path}:{owner}", f"unknown {kind} ID: {ref}", "reference"))
+                issues.append(
+                    ValidationIssue(f"{path}:{owner}", f"unknown {kind} ID: {ref}", "reference")
+                )
 
     for kind, records in (
         ("source assertion", doc["sourceAssertions"]),
@@ -148,24 +150,52 @@ def _process_profile_semantics(path: Path, doc: dict[str, Any]) -> list[Validati
 
     for assertion in doc["sourceAssertions"]:
         if assertion["controlling"]:
-            eligible = assertion["sourceType"] == "official_primary" or assertion["reviewStatus"] == "human-approved"
+            eligible = (
+                assertion["sourceType"] == "official_primary"
+                or assertion["reviewStatus"] == "human-approved"
+            )
             if not eligible:
-                issues.append(ValidationIssue(f"{path}:sourceAssertions/{assertion['id']}", "controlling assertion must be official primary or human-approved", "authority"))
+                issues.append(
+                    ValidationIssue(
+                        f"{path}:sourceAssertions/{assertion['id']}",
+                        "controlling assertion must be official primary or human-approved",
+                        "authority",
+                    )
+                )
             if assertion["effectiveFrom"] is None:
-                issues.append(ValidationIssue(f"{path}:sourceAssertions/{assertion['id']}", "controlling assertion requires effectiveFrom", "time"))
-        if assertion["effectiveFrom"] and assertion["effectiveTo"]:
-            if date.fromisoformat(assertion["effectiveTo"]) < date.fromisoformat(assertion["effectiveFrom"]):
-                issues.append(ValidationIssue(f"{path}:sourceAssertions/{assertion['id']}", "effectiveTo precedes effectiveFrom", "time"))
+                issues.append(
+                    ValidationIssue(
+                        f"{path}:sourceAssertions/{assertion['id']}",
+                        "controlling assertion requires effectiveFrom",
+                        "time",
+                    )
+                )
+        if assertion["effectiveFrom"] and assertion["effectiveTo"] and date.fromisoformat(
+            assertion["effectiveTo"]
+        ) < date.fromisoformat(assertion["effectiveFrom"]):
+            issues.append(
+                ValidationIssue(
+                    f"{path}:sourceAssertions/{assertion['id']}",
+                    "effectiveTo precedes effectiveFrom",
+                    "time",
+                )
+            )
 
     for item in doc["states"]:
         refs_exist("source assertion", item["id"], item.get("sourceAssertionIds", []), source_by_id)
     for item in doc["events"]:
         refs_exist("source assertion", item["id"], item["sourceAssertionIds"], source_by_id)
-        refs_exist("evidence reference", item["id"], item.get("evidenceReferenceIds", []), evidence_by_id)
+        refs_exist(
+            "evidence reference", item["id"], item.get("evidenceReferenceIds", []), evidence_by_id
+        )
         occurred = datetime.fromisoformat(item["occurredAt"].replace("Z", "+00:00"))
         observed = datetime.fromisoformat(item["observedAt"].replace("Z", "+00:00"))
         if observed < occurred:
-            issues.append(ValidationIssue(f"{path}:events/{item['id']}", "observedAt precedes occurredAt", "time"))
+            issues.append(
+                ValidationIssue(
+                    f"{path}:events/{item['id']}", "observedAt precedes occurredAt", "time"
+                )
+            )
     for item in doc["transitions"]:
         refs_exist("state", item["id"], [item["fromStateId"], item["toStateId"]], state_by_id)
         refs_exist("event", item["id"], [item["triggerEventId"]], event_by_id)
@@ -174,15 +204,37 @@ def _process_profile_semantics(path: Path, doc: dict[str, Any]) -> list[Validati
     for item in doc["tasks"]:
         refs_exist("source assertion", item["id"], item.get("sourceAssertionIds", []), source_by_id)
         if item["kind"] == "human_task" and "ruleInvocationId" in item:
-            issues.append(ValidationIssue(f"{path}:tasks/{item['id']}", "human task cannot reference a rule invocation", "task-kind"))
+            issues.append(
+                ValidationIssue(
+                    f"{path}:tasks/{item['id']}",
+                    "human task cannot reference a rule invocation",
+                    "task-kind",
+                )
+            )
         if item["kind"] == "deterministic_rule_task" and "ruleInvocationId" not in item:
-            issues.append(ValidationIssue(f"{path}:tasks/{item['id']}", "deterministic rule task requires a rule invocation", "task-kind"))
+            issues.append(
+                ValidationIssue(
+                    f"{path}:tasks/{item['id']}",
+                    "deterministic rule task requires a rule invocation",
+                    "task-kind",
+                )
+            )
         if item.get("ruleInvocationId"):
             refs_exist("rule invocation", item["id"], [item["ruleInvocationId"]], invocation_by_id)
         if item.get("decisionEventId"):
             refs_exist("event", item["id"], [item["decisionEventId"]], event_by_id)
-            if item["kind"] == "human_task" and item["decisionEventId"] in event_by_id and event_by_id[item["decisionEventId"]]["kind"] != "certified_human_decision":
-                issues.append(ValidationIssue(f"{path}:tasks/{item['id']}", "human task decisionEventId must identify a certified human decision", "task-kind"))
+            if (
+                item["kind"] == "human_task"
+                and item["decisionEventId"] in event_by_id
+                and event_by_id[item["decisionEventId"]]["kind"] != "certified_human_decision"
+            ):
+                issues.append(
+                    ValidationIssue(
+                        f"{path}:tasks/{item['id']}",
+                        "human task decisionEventId must identify a certified human decision",
+                        "task-kind",
+                    )
+                )
     for item in doc["ruleInvocations"]:
         refs_exist("trace", item["id"], [item["traceId"]], trace_by_id)
     for item in doc["evidenceReferences"]:
@@ -194,7 +246,9 @@ def _process_profile_semantics(path: Path, doc: dict[str, Any]) -> list[Validati
     applicable = datetime.fromisoformat(doc["applicableAt"].replace("Z", "+00:00"))
     observed = datetime.fromisoformat(doc["observedAt"].replace("Z", "+00:00"))
     if observed < applicable:
-        issues.append(ValidationIssue(str(path), "profile observedAt precedes applicableAt", "time"))
+        issues.append(
+            ValidationIssue(str(path), "profile observedAt precedes applicableAt", "time")
+        )
     return issues
 
 

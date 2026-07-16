@@ -1,9 +1,8 @@
 import json
 from pathlib import Path
 
-from pic_contracts.validation import detect_contract, validate_file
 from pic_contracts.process_profile import normalize_trace
-
+from pic_contracts.validation import detect_contract, validate_file
 
 ROOT = Path(__file__).parents[2] / "process-profile/0.1.0/examples"
 
@@ -64,3 +63,13 @@ def test_profile_normalizes_trace_deterministically() -> None:
         "foi-o/event/response.deadline",
         "foi-o/event/request.closed",
     ]
+
+
+def test_foi_candidate_profile_validates() -> None:
+    path = (
+        Path(__file__).parents[2]
+        / ".."
+        / "subrepos/process-mappings/profiles/foi/candidates/nz-oia-process-profile.json"
+    )
+    report = validate_file(path.resolve())
+    assert report.ok, report.to_dict()

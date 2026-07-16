@@ -9,7 +9,11 @@ evidence into released PIC process-profile contracts.
 - This profile records compatibility, provenance, and representational loss; it
   does not reinterpret FOI law or become a runtime dependency of either repo.
 
-No FOI mapping is implemented yet.
+The first mapping is an `agent-proposed` candidate under
+`candidates/nz-oia-process-profile.json`. It covers request receipt, transfer,
+extension, refusal, and reviewability using the platform-neutral profile. It is
+not promoted or authoritative; review boundaries are recorded in
+`CANDIDATE_REVIEW.md`.
 
 The current integration boundary is recorded in
 `../../schemas/contract-consumption.json` (relative to this profile). It
