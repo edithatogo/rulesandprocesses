@@ -10,11 +10,12 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - [ ] Assign owner, severity, mitigation, verification, and release disposition.
     - **Acceptance:** every externally controlled input reaches a validation or isolation boundary.
     - Evidence: `docs/V1_THREAT_MODEL.md` and `docs/V1_RISK_REGISTER.json` enumerate filesystem, archive, source, converter, cross-repository, report, CI, release, and adapter boundaries; unresolved controls remain explicitly release-blocking.
-- [ ] Task: Establish compatibility and performance baselines
+- [x] Task: Establish compatibility and performance baselines
     - [ ] Measure representative small, large, invalid, and adversarial corpora.
     - [ ] Define supported platforms and diagnostic-quality expectations.
     - [ ] Record reference hardware/runtime and variance policy.
     - **Acceptance:** budgets are measurable and cannot be weakened silently.
+    - Evidence: `tools/v1_baseline.py`, `Makefile` target `v1-baseline`, and `docs/V1_VALIDATION_BASELINE.json` measure small, invalid, large, and deeply nested cases with explicit byte/time budgets and a reviewed variance policy.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Threat Model and Baselines' (Protocol in workflow.md)
 
 ## Phase 2 - Adversarial and Semantic Testing

@@ -1,4 +1,4 @@
-.PHONY: check audit audit-test release-gates-check paper-artifacts paper-artifacts-write lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test nz-recon-lint nz-recon-test service-boundaries-lint service-boundaries-test docassemble-oia-clock-lint docassemble-oia-clock-test
+.PHONY: check audit audit-test release-gates-check paper-artifacts paper-artifacts-write lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test nz-recon-lint nz-recon-test service-boundaries-lint service-boundaries-test docassemble-oia-clock-lint docassemble-oia-clock-test v1-baseline
 
 check: audit audit-test release-gates-check paper-artifacts lint test validate-examples converter-lint converter-test corpus-report-check harness-lint harness-test snap-runner-lint snap-runner-test nz-recon-lint nz-recon-test service-boundaries-lint service-boundaries-test docassemble-oia-clock-lint docassemble-oia-clock-test
 
@@ -64,3 +64,6 @@ docassemble-oia-clock-lint:
 
 docassemble-oia-clock-test:
 	PYTHONPATH=demos/docassemble-oia-clock/src:demos/service-boundaries/src:external/foi-o/src uv run --with pytest pytest demos/docassemble-oia-clock/tests
+
+v1-baseline:
+	PYTHONPATH=contracts/tools/src uv run --with jsonschema python tools/v1_baseline.py --output docs/V1_VALIDATION_BASELINE.json
