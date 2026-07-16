@@ -58,14 +58,14 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - [ ] Document update and emergency-patch procedures.
     - **Acceptance:** unreviewed dependency or workflow changes cannot silently publish releases.
     - Evidence: `docs/V1_SUPPLY_CHAIN_EVIDENCE.md` and `docs/V1_HOSTED_GOVERNANCE.md` record local action pinning, permissions, workflow/dependency audits, SBOM results, hosted secret-scanning/push-protection status, and main-branch required checks/code-owner review.
-    - **BLOCKED (2026-07-16):** Required commit signatures, protected release environments, and artifact attestations remain unconfigured or unverified; these are still release-blocking hosted controls.
+    - **BLOCKED (2026-07-16):** Required commit signatures and artifact attestations remain unconfigured or unverified. The protected `release` environment is now configured and referenced by `.github/workflows/v1-release-qualification.yml`.
 - [ ] Task: Produce SBOM, provenance, and reproducible artifacts
     - [ ] Generate machine-readable SBOMs and checksums for release artifacts.
     - [ ] Compare two clean builds and document permitted nondeterminism.
     - [ ] Generate platform provenance/attestations where supported.
     - **Acceptance:** consumers can verify artifact identity and build origin.
     - Evidence: `docs/V1_SBOM.json` and `tools/v1_reproducibility.py`/`docs/V1_REPRODUCIBILITY.json` provide a machine-readable SBOM, commit/tree identity, two identical deterministic source archives, and evidence digests; hosted attestation remains explicitly not performed.
-    - **BLOCKED (2026-07-16):** Local evidence proves source/archive identity and reproducibility, but the required hosted signing/provenance attestation cannot be generated or verified before the workflow is pushed and GitHub-side controls are enabled.
+    - **BLOCKED (2026-07-16):** Local evidence proves source/archive identity and reproducibility, but hosted signing/provenance attestation remains unavailable until the release workflow is authorized and the required signing/attestation controls are enabled.
 - [x] Task: Rehearse rollback, restore, and vulnerability patch
     - [ ] Test yanking/deprecation guidance without deleting historical evidence.
     - [ ] Restore compatibility metadata and release artifacts from documented sources.
@@ -81,7 +81,7 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - [ ] Compare results to frozen budgets and baselines.
     - [ ] Resolve contributor-controlled failures and classify genuine external blockers.
     - **Acceptance:** release report links exact hosted and local evidence.
-    - Evidence: `.github/workflows/v1-qualification.yml` and `docs/V1_HOSTED_QUALIFICATION.md` record a successful immutable-pinned Ubuntu/macOS and Python 3.12/3.13 matrix, all deterministic v1 evidence generators, retained artifacts, and companion Contracts, Quality, Dependency Review, and CodeQL runs. Hosted branch protection, secret scanning, protected environments, and signing remain separate controls.
+    - Evidence: `.github/workflows/v1-qualification.yml`, `.github/workflows/v1-release-qualification.yml`, and `docs/V1_HOSTED_QUALIFICATION.md` record the successful immutable-pinned matrix and the protected manual release qualification path. Hosted branch protection, secret scanning, the protected release environment, signatures, and attestations remain separate controls.
 - [ ] Task: [HUMAN] Approve residual risk and signing posture
     - [ ] Present open risks, waivers, unsupported platforms, and signing/provenance evidence.
     - [ ] Dylan approves, rejects, or defers release-candidate qualification.

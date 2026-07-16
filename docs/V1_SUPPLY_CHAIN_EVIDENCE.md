@@ -14,13 +14,13 @@ Observed: 2026-07-16 from the RaC v1 integration worktree.
 | SBOM | pass | `docs/V1_SBOM.json` is a CycloneDX JSON inventory generated with reproducible output. |
 | Secret scanning | hosted pass | GitHub API verification on 2026-07-16 reports secret scanning and push protection enabled; validity checks and non-provider patterns remain disabled. |
 | Branch protection | hosted pass | Main requires one code-owner approval and all recorded CI/security/v1 matrix checks; admin enforcement, linear history, conversation resolution, no force-push, and no deletion are enabled. |
-| Release environment protection | blocked | Required commit signatures are disabled and protected environments/artifact attestations are not configured or verified. |
+| Release environment protection | pass with limitation | `release` requires the sole code owner, prevents self-review and administrator bypass, and permits protected branches only; commit signatures and artifact attestations remain unconfigured. |
 
 ## Release disposition
 
 The local and main-branch controls are suitable for continued engineering, but
-the v1 release remains blocked until signing, protected release environments,
-artifact attestations, and the remaining human/external gates are verified. A
-clean CI run must not be represented as proof of independent adoption or
-release authorization. Details of the hosted observation are in
+the v1 release remains blocked until signing, artifact attestations, and the
+remaining human/external gates are verified. A clean CI run must not be
+represented as proof of independent adoption or release authorization. Details
+of the hosted observation are in
 `docs/V1_HOSTED_GOVERNANCE.md`.
