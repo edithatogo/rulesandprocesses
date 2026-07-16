@@ -57,8 +57,8 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - [ ] Enable dependency review, CodeQL, secret scanning, and artifact retention appropriate to repository capabilities.
     - [ ] Document update and emergency-patch procedures.
     - **Acceptance:** unreviewed dependency or workflow changes cannot silently publish releases.
-    - Evidence: `docs/V1_SUPPLY_CHAIN_EVIDENCE.md` and `docs/V1_SBOM.json` record local action pinning, permissions, workflow audit, dependency audit, lockfiles, and SBOM results.
-    - **BLOCKED (2026-07-16):** GitHub-side branch protection, secret scanning/push protection, protected environments, and signing/attestation settings require hosted verification; local configuration cannot prove them.
+    - Evidence: `docs/V1_SUPPLY_CHAIN_EVIDENCE.md` and `docs/V1_HOSTED_GOVERNANCE.md` record local action pinning, permissions, workflow/dependency audits, SBOM results, hosted secret-scanning/push-protection status, and main-branch required checks/code-owner review.
+    - **BLOCKED (2026-07-16):** Required commit signatures, protected release environments, and artifact attestations remain unconfigured or unverified; these are still release-blocking hosted controls.
 - [ ] Task: Produce SBOM, provenance, and reproducible artifacts
     - [ ] Generate machine-readable SBOMs and checksums for release artifacts.
     - [ ] Compare two clean builds and document permitted nondeterminism.

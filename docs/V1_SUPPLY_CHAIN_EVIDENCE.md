@@ -12,13 +12,15 @@ Observed: 2026-07-16 from the RaC v1 integration worktree.
 | Dependency vulnerability audit | pass with limitation | `pip-audit` found no known vulnerabilities in the contract-tool environment. The local editable `pic-contracts` package is not present on PyPI and was not auditable as a distribution. |
 | Dependency locking | pass | `contracts/tools/uv.lock` and `converters/fixtures/uv.lock` are tracked. |
 | SBOM | pass | `docs/V1_SBOM.json` is a CycloneDX JSON inventory generated with reproducible output. |
-| Secret scanning | not locally certifiable | Hosted secret scanning and push protection require GitHub-side verification. |
-| Branch protection | not locally certifiable | Required checks and approval rules require GitHub-side verification. |
-| Release environment protection | not locally certifiable | Signing, protected environments, and artifact attestations require hosted verification. |
+| Secret scanning | hosted pass | GitHub API verification on 2026-07-16 reports secret scanning and push protection enabled; validity checks and non-provider patterns remain disabled. |
+| Branch protection | hosted pass | Main requires one code-owner approval and all recorded CI/security/v1 matrix checks; admin enforcement, linear history, conversation resolution, no force-push, and no deletion are enabled. |
+| Release environment protection | blocked | Required commit signatures are disabled and protected environments/artifact attestations are not configured or verified. |
 
 ## Release disposition
 
-The local controls are suitable for continued engineering, but the v1 release
-remains blocked until the hosted controls are verified and recorded. A clean
-local audit must not be represented as proof that GitHub branch protection,
-secret scanning, signing, or release permissions are configured.
+The local and main-branch controls are suitable for continued engineering, but
+the v1 release remains blocked until signing, protected release environments,
+artifact attestations, and the remaining human/external gates are verified. A
+clean CI run must not be represented as proof of independent adoption or
+release authorization. Details of the hosted observation are in
+`docs/V1_HOSTED_GOVERNANCE.md`.
