@@ -2,6 +2,11 @@
 
 Status: draft for human target selection; no outreach has been sent.
 
+The machine-readable candidate registry is
+`CANDIDATE_REGISTRY.json`. It is the review surface for target ownership,
+bounded scope, independence risk, and no-response handling. It does not
+authorise contact or establish adoption.
+
 The independent-validation gate requires an external organization, an
 independent implementation or integration, an independent oracle or fixture
 curation path, attributable results, and a maintenance signal. The following

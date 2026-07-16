@@ -26,11 +26,12 @@ GitHub issue: [#45](https://github.com/edithatogo/rac-conformance/issues/45). De
 
 ## Phase 2 - Candidate Engagement
 
-- [ ] Task: Identify candidate consumers and bounded integration surfaces
+- [x] Task: Identify candidate consumers and bounded integration surfaces
     - [ ] Prioritise maintainers already facing fixture, trace, process, or conformance pain.
     - [ ] Respect the one-unresolved-proposal-per-upstream rule.
     - [ ] Record target problem, expected effort, owner, source repository, and no-response exit condition.
     - **Acceptance:** each candidate has a real consumer problem rather than a generic standards pitch.
+    - **Evidence:** `external/independent-validation/CANDIDATE_REGISTRY.json` records three concrete upstream problem surfaces plus a preferred unaffiliated implementer route, with ownership, effort, independence risks, and no-response exits. No candidate is treated as adoption.
 - [ ] Task: Prepare implementation and feedback packets
     - [ ] Draft upstream-native issue/PR or workshop material under `external/<repo>/`.
     - [ ] Include scope, reproduction, minimal artifact, maintenance burden, and exit path.
