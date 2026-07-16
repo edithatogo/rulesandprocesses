@@ -49,6 +49,13 @@ Phase 1 and establishes the implementation home required by
 
 ## Phase 3 - Extraction Rehearsal and Governance Packet
 
+> CHECKPOINT (2026-07-16): The clean rehearsal at `f9fd927` produced filtered
+> subtree commit `f0ccb4698377f984940b4972377db4661c5f12de`, six preserved
+> commits, 107 files, passing standalone checks and `git fsck`. No remote or
+> canonical cutover was performed; the temporary extraction was the only
+> writable extracted source and rollback was verified. Governance packet work
+> remains.
+
 - [x] Task: Build and test the extraction procedure
     - [x] Preserve subtree history and verify file, commit, and license integrity.
     - [x] Rehearse standalone CI, local installation, links, provenance checks, and dependency updates in a temporary local repository.
