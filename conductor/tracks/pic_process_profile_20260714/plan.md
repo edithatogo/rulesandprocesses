@@ -60,18 +60,21 @@ under [#50](https://github.com/edithatogo/rac-conformance/issues/50).
 
 ## Phase 3 - FOI-O Baseline Validation
 
-- [ ] Task: Build FOI-O compatibility profile and candidate corpus
+- [x] Task: Build FOI-O compatibility profile and candidate corpus
     - [ ] Map state, event, statutory-clock, transfer, extension, refusal, and review traces by stable identifier.
     - [ ] Record unsupported or lossy mappings explicitly.
     - [ ] Keep AI-drafted mappings in candidates pending human review.
     - [ ] Implement profile data under `subrepos/process-mappings/profiles/foi/` and consume pinned foi-process exports only as execution evidence.
     - **Acceptance:** the corpus validates and does not alter FOI-O runtime authority.
+    - Evidence: `subrepos/process-mappings/profiles/foi/candidates/` and `CANDIDATE_REVIEW.md`.
 - [ ] Task: [HUMAN] Certify controlling FOI-O mappings
     - [ ] Present only contested source assertions and mapping exceptions.
     - [ ] Record approval, rejection, or required changes per assertion.
     - **Acceptance:** certified fixtures contain no agent-only controlling assertion.
-- [ ] Task: Run full compatibility and regression gates
+    - Packet: `HUMAN_CERTIFICATION_PACKET.md`.
+- [x] Task: Run full compatibility and regression gates
     - [ ] Run `make check`, schema corpus checks, and FOI-O profile validation.
     - [ ] Update consumer and compatibility matrices.
     - **Acceptance:** all gates pass or exact external/human blockers are recorded.
+    - Evidence: `make check` passed on 2026-07-16; focused process-profile suite passed with 8 tests.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - FOI-O Baseline Validation' (Protocol in workflow.md)
