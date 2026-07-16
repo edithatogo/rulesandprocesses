@@ -76,21 +76,33 @@ Phase 1 and establishes the implementation home required by
     - **Acceptance:** all authenticated or human actions are itemized and no remote-side fact is invented.
 - [x] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Extraction Rehearsal and Governance Packet' (Protocol in workflow.md)
 
-## Phase 4 - Human Cutover and Parent Closeout
+## Phase 4 - Deferred Cutover and Parent Closeout
 
-- [ ] Task: [HUMAN] Approve repository creation and canonical cutover
-    - [ ] Review extraction evidence, ownership, visibility, governance, security, issue migration, and rollback plan.
-    - [ ] Approve, defer, or reject creation of `edithatogo/process-mappings`.
+> CHECKPOINT (2026-07-16): The human decision is to defer creation of
+> `edithatogo/process-mappings`. The structured subrepo remains the sole
+> writable source, and the migration packet plus extraction rehearsal are
+> retained for reconsideration when a second mature domain or independent
+> consumer justifies a separate release lifecycle. No remote, destination
+> issues, redirects, or hosted settings were created. Parent checks remain the
+> active verification gate.
+>
+> Review (2026-07-16): Found and fixed one extracted-clone portability defect
+> where `STATUS.md` linked to a parent-only decision file. The local decision
+> mirror in `subrepos/process-mappings/migration/` now makes the subtree
+> link-complete. Focused rehearsal tests and full `make check` pass.
+
+- [x] Task: [HUMAN] Record decision to defer repository creation and canonical cutover
+    - [x] Review extraction evidence, ownership, visibility, governance, security, issue migration, and rollback plan.
+    - [x] Defer creation of `edithatogo/process-mappings` until the reconsideration triggers in `migration/DEFERRED_CUTOVER_DECISION.md` are met.
     - Prepared source portability evidence: `subrepos/process-mappings/profiles/foi/SOURCE_REFERENCE_PORTABILITY.json` pins the four current FOI-O references and records byte equality without certifying legal or semantic authority.
-    - **Acceptance:** the decision and any conditions are recorded before remote creation or canonical-home changes.
-- [ ] Task: Execute approved extraction and verify hosted controls
-    - [ ] Create and populate the remote only after approval, then configure approved protections and Project linkage.
-    - [ ] Run required hosted checks and independently clone/test the extracted repository.
-    - [ ] Record immutable migration commit and source-tree provenance.
-    - **Acceptance:** the approved remote is reproducible, protected, and green; otherwise rollback is executed.
-- [ ] Task: Close the parent incubator without dual ownership
-    - [ ] Remove the writable subtree or replace it with an intentional read-only reference after all parent consumers use the canonical remote.
-    - [ ] Update roadmap, issues, links, source manifests, and repository-boundary documentation.
-    - [ ] Verify no automation writes to the retired location.
-    - **Acceptance:** exactly one canonical writable source remains and parent checks pass.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 4 - Human Cutover and Parent Closeout' (Protocol in workflow.md)
+    - **Acceptance:** the decision and its reconsideration conditions are recorded before any remote-side action.
+- [x] Task: [DEFERRED] Execute extraction and verify hosted controls
+    - [x] No remote or hosted control is created while the cutover is deferred.
+    - [x] Preserve the extraction rehearsal and rollback evidence for future reconsideration.
+    - **Acceptance:** no remote-side action occurs and the parent remains the sole writable source.
+- [x] Task: Retain the parent incubator as the sole writable source
+    - [x] Keep `subrepos/process-mappings/` as the maintained implementation home.
+    - [x] State that future changes must land through `rac-conformance` until a new cutover decision.
+    - [x] Preserve the future migration packet without creating destination issues or redirects.
+    - **Acceptance:** exactly one writable source remains and parent checks continue to pass.
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 4 - Deferred Cutover and Parent Closeout' (Protocol in workflow.md)
