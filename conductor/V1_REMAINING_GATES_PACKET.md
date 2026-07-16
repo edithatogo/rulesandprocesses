@@ -63,6 +63,11 @@ Each submission must use the self-contained kit under
 external implementer's identity and oracle provenance, and return a signed or
 durably attributable evidence packet. Silence is not adoption.
 
+The current machine-readable target registry is
+`external/independent-validation/CANDIDATE_REGISTRY.json`; reviewable packets
+are staged under `external/policyengine/`, `external/openfisca/`, and
+`external/independent-validation/`.
+
 **Human decision required:** select target(s) and authorize each outreach or
 submission separately.
 
@@ -77,6 +82,10 @@ later 0.x release. The existing packet is
 The release candidate must be rebuilt from the final reviewed commit after
 the upstream and human gates change state. No existing local candidate can be
 promoted by inference.
+
+The hosted qualification matrix is prepared in
+`.github/workflows/v1-qualification.yml`, but its results and retained
+artifacts do not exist until the branch is pushed and GitHub runs it.
 
 ## Current gate rule
 
