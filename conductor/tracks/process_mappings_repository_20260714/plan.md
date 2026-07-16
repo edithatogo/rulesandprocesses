@@ -80,6 +80,9 @@ Phase 1 and establishes the implementation home required by
 - [ ] Task: [HUMAN] Approve repository creation and canonical cutover
     - [ ] Review extraction evidence, ownership, visibility, governance, security, issue migration, and rollback plan.
     - [ ] Approve, defer, or reject creation of `edithatogo/process-mappings`.
+    > BLOCKED (2026-07-16): Awaiting Dylan's explicit decision in
+    > `GITHUB_MIGRATION_PACKET.md`; agents must not create the remote, migrate
+    > issues, or make the extracted copy canonical before that decision.
     - **Acceptance:** the decision and any conditions are recorded before remote creation or canonical-home changes.
 - [ ] Task: Execute approved extraction and verify hosted controls
     - [ ] Create and populate the remote only after approval, then configure approved protections and Project linkage.
