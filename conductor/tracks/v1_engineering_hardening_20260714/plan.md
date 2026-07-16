@@ -58,14 +58,14 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - [ ] Document update and emergency-patch procedures.
     - **Acceptance:** unreviewed dependency or workflow changes cannot silently publish releases.
     - Evidence: `docs/V1_SUPPLY_CHAIN_EVIDENCE.md` and `docs/V1_HOSTED_GOVERNANCE.md` record local action pinning, permissions, workflow/dependency audits, SBOM results, hosted secret-scanning/push-protection status, and main-branch required checks/code-owner review.
-    - **BLOCKED (2026-07-16):** Required commit signatures and artifact attestations remain unconfigured or unverified. The protected `release` environment is now configured and referenced by `.github/workflows/v1-release-qualification.yml`.
+    - **BLOCKED (2026-07-16):** Required commit signatures remain disabled and artifact-attestation execution is unverified. The protected `release` environment and pinned attestation step are configured in `.github/workflows/v1-release-qualification.yml`.
 - [ ] Task: Produce SBOM, provenance, and reproducible artifacts
     - [ ] Generate machine-readable SBOMs and checksums for release artifacts.
     - [ ] Compare two clean builds and document permitted nondeterminism.
     - [ ] Generate platform provenance/attestations where supported.
     - **Acceptance:** consumers can verify artifact identity and build origin.
     - Evidence: `docs/V1_SBOM.json` and `tools/v1_reproducibility.py`/`docs/V1_REPRODUCIBILITY.json` provide a machine-readable SBOM, commit/tree identity, two identical deterministic source archives, and evidence digests; hosted attestation remains explicitly not performed.
-    - **BLOCKED (2026-07-16):** Local evidence proves source/archive identity and reproducibility, but hosted signing/provenance attestation remains unavailable until the release workflow is authorized and the required signing/attestation controls are enabled.
+    - **BLOCKED (2026-07-16):** Local evidence proves source/archive identity and reproducibility, but hosted signing/provenance attestation remains unverified until the protected workflow is approved and executed.
 - [x] Task: Rehearse rollback, restore, and vulnerability patch
     - [ ] Test yanking/deprecation guidance without deleting historical evidence.
     - [ ] Restore compatibility metadata and release artifacts from documented sources.

@@ -21,7 +21,7 @@ deferred to a later release.
 | ID | Current evidence | Decision required |
 | --- | --- | --- |
 | `RISK-SIGNATURES` | Required commit signatures are disabled on `main`; the current candidate is unsigned. | Enable and verify the approved signing posture, or explicitly defer v1 and name an owner and expiry. |
-| `RISK-RELEASE-ATTESTATION` | The protected `release` environment is configured and referenced by a manual qualification workflow; artifact attestations remain unavailable. | Verify the workflow under the protected environment and configure attestations, or explicitly defer v1 and record the accepted limitation. |
+| `RISK-RELEASE-ATTESTATION` | The protected `release` environment and pinned artifact-attestation step are configured; execution remains pending protected approval. | Approve and execute the workflow, then verify attestations, or explicitly defer v1 and record the accepted limitation. |
 | `RISK-SECRET-ENHANCEMENTS` | Secret scanning and push protection pass; validity checks and non-provider patterns remain disabled. | Enable after operational review, or record why the current controls are sufficient for this release. |
 | `RISK-EXTERNAL-QUALIFICATION` | Local and hosted matrices pass, but they do not establish an independent implementation. | Keep the independent-validation gate open; do not treat CI as adoption evidence. |
 | `RISK-CANDIDATE-SCOPE` | FOI-O and health-technology mappings remain candidate-only and human-uncertified. | Preserve the candidate boundary, or certify the relevant mappings through their dedicated packets. |

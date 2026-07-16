@@ -12,6 +12,6 @@
     "threatModel": "032ffc6e5105e77565fed18b8fc1de1016f2396342f2eb2dd2dd73fdfb57cc39",
     "riskRegister": "90f6c872db88b1b3e3c4c247c329b61b9ca7652b482d925768feadad11d89a37"
   },
-  "hostedAttestation": "not-performed; requires GitHub release workflow and human signing authorization",
+  "hostedAttestation": "workflow-configured; execution requires protected release-environment approval",
   "result": "pass"
 }
