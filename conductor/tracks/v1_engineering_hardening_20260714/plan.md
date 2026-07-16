@@ -64,11 +64,14 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - [ ] Compare two clean builds and document permitted nondeterminism.
     - [ ] Generate platform provenance/attestations where supported.
     - **Acceptance:** consumers can verify artifact identity and build origin.
+    - Evidence: `docs/V1_SBOM.json` and `tools/v1_reproducibility.py`/`docs/V1_REPRODUCIBILITY.json` provide a machine-readable SBOM, commit/tree identity, two identical deterministic source archives, and evidence digests; hosted attestation remains explicitly not performed.
+    - **BLOCKED (2026-07-16):** Local evidence proves source/archive identity and reproducibility, but the required hosted signing/provenance attestation cannot be generated or verified before the workflow is pushed and GitHub-side controls are enabled.
 - [ ] Task: Rehearse rollback, restore, and vulnerability patch
     - [ ] Test yanking/deprecation guidance without deleting historical evidence.
     - [ ] Restore compatibility metadata and release artifacts from documented sources.
     - [ ] Run a tabletop vulnerability intake-to-patch exercise.
     - **Acceptance:** owners, commands, evidence, and unresolved external gates are recorded.
+    - Evidence: `tools/v1_rollback_rehearsal.py` and `docs/V1_ROLLBACK_REHEARSAL.json` restore the current tree and historical `v0.2.0` fallback from deterministic archives and record the tabletop response; hosted yanking/signing/notification remain unperformed.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Supply Chain and Release Reproducibility' (Protocol in workflow.md)
 
 ## Phase 4 - Full Qualification
