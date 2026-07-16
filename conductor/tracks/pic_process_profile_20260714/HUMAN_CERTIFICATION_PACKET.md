@@ -15,19 +15,26 @@ the semantic authority.
 - Execution evidence: `external/foi-o/rules/traces/`
 - Contract: `contracts/process-profile/0.1.0/`
 - Machine-readable record: `CERTIFICATION_RECORD.json` (currently `pending`).
+- Candidate revision: `7990b4f`; the record pins the candidate SHA-256 and the
+  `pic-process-profile/0.1.0` schema SHA-256.
 
 ## Review questions
 
-1. Do the five event/state mappings preserve the FOI-O meaning of receipt,
-   transfer, extension, refusal, and reviewability?
-2. Are the source assertion, effective date, and authority classifications
-   appropriate for this compatibility candidate?
-3. Are the actor roles/systems and the working-day timer mapped to the correct
-   FOI-O authority and starting event?
-4. Are the two loss notes complete, especially for FOI-O ontology hierarchy,
-   discretion, and reasonableness judgments?
-5. Should this remain a candidate, or may it be promoted into a certified
-   profile artifact after the requested changes?
+1. Are `RequestObserved`, `TransferAssessed`, `TransferNotified`,
+   `DeadlineCalculated`, `ExtensionAssessed`, `ExtensionNotified`,
+   `OverdueFlagged`, and `DecisionCommunicated` the appropriate FOI-O event
+   vocabulary for this compatibility candidate?
+2. Does the candidate correctly distinguish observed events, executed actions,
+   and derived deadline/overdue signals?
+3. Is the reviewability state correctly non-terminal and explicitly prevented
+   from being treated as an Ombudsman outcome, legal refusal conclusion, or
+   certified human decision?
+4. Are the source assertion, effective date, authority classification, actor
+   links, and working-day timer appropriate?
+5. Are the expanded loss notes complete, including FOI-O payload fields,
+   ontology hierarchy, discretion, and reasonableness judgments?
+6. Should this remain a candidate, or may it be promoted into a certified
+   profile artifact after these questions are answered?
 
 ## Certification record
 

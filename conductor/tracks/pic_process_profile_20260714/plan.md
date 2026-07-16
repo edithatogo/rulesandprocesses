@@ -97,3 +97,7 @@ under [#50](https://github.com/edithatogo/rac-conformance/issues/50).
 > no candidate fixture or controlling mapping was promoted by the agent.
 > The machine-readable certification record is `CERTIFICATION_RECORD.json` and
 > is intentionally `pending` until a human reviewer records a decision.
+> REVIEW UPDATE (2026-07-17): The candidate was revised to preserve staged
+> FOI-O CoreEvent vocabulary and remove the unsupported terminal reviewability
+> implication. The certification packet now asks questions against revision
+> `7990b4f`; the human gate remains pending.
