@@ -40,12 +40,12 @@ Phase 1 and establishes the implementation home required by
     - [x] Add `foi-process` as a current implementation/evidence consumer and the incubator as a provisional repository home.
     - [x] Update tracks #40-#43 with exact normative and implementation paths.
     - **Acceptance:** local and GitHub dependency graphs agree and no existing repository is repurposed ambiguously.
-- [ ] Task: Define released-contract consumption and compatibility tests
+- [x] Task: Define released-contract consumption and compatibility tests
     - [x] Pin the process-profile contract version or commit consumed from `rac-conformance`.
     - [x] Validate profiles against upstream schemas without copying normative definitions.
     - [x] Add compatibility-matrix and provenance checks for FOI-O and foi-process inputs.
     - **Acceptance:** drift is detected deterministically and cannot silently fork PIC or FOI semantics.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Parent Integration and Contract Discipline' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Parent Integration and Contract Discipline' (Protocol in workflow.md)
 
 ## Phase 3 - Extraction Rehearsal and Governance Packet
 
@@ -73,7 +73,7 @@ Phase 1 and establishes the implementation home required by
     - [x] Map parent issues/subissues to destination issues without losing cross-references.
     - [x] Record owner, canonical URL, archive/reference behavior, release policy, and initial versioning proposal.
     - **Acceptance:** all authenticated or human actions are itemized and no remote-side fact is invented.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Extraction Rehearsal and Governance Packet' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Extraction Rehearsal and Governance Packet' (Protocol in workflow.md)
 
 ## Phase 4 - Human Cutover and Parent Closeout
 
