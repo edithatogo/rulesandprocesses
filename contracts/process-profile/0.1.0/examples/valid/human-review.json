@@ -15,5 +15,6 @@
   "tasks": [{"id": "demo/task/review", "kind": "human_task", "name": "Review and certify", "actorRole": "role/reviewer", "decisionEventId": "demo/event/review.certified", "sourceAssertionIds": ["demo/source/policy.1"]}],
   "ruleInvocations": [],
   "evidenceReferences": [],
-  "traces": [{"id": "demo/trace/review.1", "traceContract": "pic-traces/0.2.0", "artifactRef": "pic-traces/0.2.0#demo/review.1", "eventIds": ["demo/event/review.certified"], "ruleInvocationIds": [], "equivalenceClaim": "output"}]
+  "traces": [{"id": "demo/trace/review.1", "traceContract": "pic-traces/0.2.0", "artifactRef": "pic-traces/0.2.0#demo/review.1", "eventIds": ["demo/event/review.certified"], "ruleInvocationIds": [], "equivalenceClaim": "output"}],
+  "exceptions": [{"id": "demo/exception/reasonableness", "kind": "human_adjudication_required", "description": "The reviewer must assess policy reasonableness; the profile does not automate that judgement."}]
 }

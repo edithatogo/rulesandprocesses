@@ -32,7 +32,8 @@ under [#50](https://github.com/edithatogo/rac-conformance/issues/50).
 > COMPLETION AUDIT (2026-07-16): The profile schema explicitly includes
 > actors/authority links and timers/deadline declarations, in addition to the
 > original state, event, transition, task, rule, evidence, exception, and
-> trace records. Timer arithmetic remains in PIC parameters/rules.
+> trace records. Timer arithmetic remains in PIC parameters/rules. Required
+> source, actor, timer, and trace links fail closed when omitted or unknown.
 
 ## Phase 2 - Contract and Validator
 

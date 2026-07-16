@@ -23,6 +23,17 @@ def test_invalid_process_profiles_fail() -> None:
         assert not report.ok, path
 
 
+def test_profile_rejects_missing_source_reference(tmp_path: Path) -> None:
+    doc = json.loads((ROOT / "valid/foi-o-baseline.json").read_text())
+    doc["events"][0]["sourceAssertionIds"] = []
+    path = tmp_path / "pic-process-profile" / "profile.json"
+    path.parent.mkdir()
+    path.write_text(json.dumps(doc))
+    report = validate_file(path)
+    assert not report.ok
+    assert any("sourceAssertionIds" in issue.message for issue in report.issues)
+
+
 def test_profile_rejects_event_observed_before_occurrence(tmp_path: Path) -> None:
     source = ROOT / "valid/foi-o-baseline.json"
     doc = json.loads(source.read_text())
