@@ -40,6 +40,7 @@ GitHub issue: [#45](https://github.com/edithatogo/rac-conformance/issues/45). De
     - **Evidence:** draft packets are staged under `external/policyengine/`, `external/openfisca/`, `external/independent-validation/openfisca-aotearoa/`, and `external/independent-validation/UNAFFILIATED_IMPLEMENTER_INVITATION.md`; each names a bounded problem, reproduction contract, maintenance burden, exit path, and human submission boundary.
 - [ ] Task: [HUMAN] Approve external outreach and submissions
     - [ ] Dylan selects targets and authorizes each communication or submission.
+    - **Packet:** `OUTREACH_AUTHORIZATION_PACKET.md` provides per-target choices, scope, response limits, and the no-adoption-without-verification boundary.
     - [ ] Record submitted URL or deferred/declined disposition.
     - **Acceptance:** every external action has explicit authorization and durable evidence.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Candidate Engagement' (Protocol in workflow.md)
