@@ -60,6 +60,12 @@ under [#50](https://github.com/edithatogo/rac-conformance/issues/50).
 
 ## Phase 3 - FOI-O Baseline Validation
 
+> CHECKPOINT (2026-07-16): The engineering portion of Phase 3 is complete.
+> The candidate profile, pinned contract-consumption manifest, source/loss
+> packet, candidate validator, standalone incubator check, and full `make
+> check` all pass. The only remaining task is the explicit human certification
+> of the candidate mapping; no agent has promoted it.
+
 - [x] Task: Build FOI-O compatibility profile and candidate corpus
     - [x] Map state, event, statutory-clock, transfer, extension, refusal, and review traces by stable identifier.
     - [x] Record unsupported or lossy mappings explicitly.
