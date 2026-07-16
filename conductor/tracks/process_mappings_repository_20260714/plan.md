@@ -49,10 +49,10 @@ Phase 1 and establishes the implementation home required by
 
 ## Phase 3 - Extraction Rehearsal and Governance Packet
 
-- [ ] Task: Build and test the extraction procedure
-    - [ ] Preserve subtree history and verify file, commit, and license integrity.
-    - [ ] Rehearse standalone CI, local installation, links, provenance checks, and dependency updates in a temporary local repository.
-    - [ ] Define rollback and prevent simultaneous writable parent and extracted copies.
+- [x] Task: Build and test the extraction procedure
+    - [x] Preserve subtree history and verify file, commit, and license integrity.
+    - [x] Rehearse standalone CI, local installation, links, provenance checks, and dependency updates in a temporary local repository.
+    - [x] Define rollback and prevent simultaneous writable parent and extracted copies.
     - **Acceptance:** the rehearsal is reproducible and produces an auditable evidence report without creating a remote.
 - [ ] Task: Prepare GitHub repository and migration packet
     - [ ] Draft repository description, topics, license, CODEOWNERS, issue/PR templates, security policy, branch protection, required checks, and Project 19 linkage.
