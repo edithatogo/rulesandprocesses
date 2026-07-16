@@ -4,6 +4,12 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
 
 ## Phase 1 - Threat Model and Baselines
 
+> CHECKPOINT (2026-07-16): Threat boundaries, risk ownership, release
+> dispositions, and deterministic validation/performance budgets are recorded
+> in `docs/V1_THREAT_MODEL.md`, `docs/V1_RISK_REGISTER.json`, and
+> `docs/V1_VALIDATION_BASELINE.json`. The baseline passes on the reference
+> macOS/CPython environment; cross-platform and hosted controls remain open.
+
 - [x] Task: Produce data-flow threat model and risk register
     - [ ] Map trust boundaries for files, archives, schemas, converters, URLs, reports, CI, releases, and adapters.
     - [ ] Cover traversal, bombs/resource exhaustion, malicious references, schema abuse, injection, secret leakage, dependency compromise, and provenance spoofing.
@@ -16,7 +22,7 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - [ ] Record reference hardware/runtime and variance policy.
     - **Acceptance:** budgets are measurable and cannot be weakened silently.
     - Evidence: `tools/v1_baseline.py`, `Makefile` target `v1-baseline`, and `docs/V1_VALIDATION_BASELINE.json` measure small, invalid, large, and deeply nested cases with explicit byte/time budgets and a reviewed variance policy.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Threat Model and Baselines' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Threat Model and Baselines' (Protocol in workflow.md)
 
 ## Phase 2 - Adversarial and Semantic Testing
 
