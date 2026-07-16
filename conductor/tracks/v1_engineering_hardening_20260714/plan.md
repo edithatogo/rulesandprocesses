@@ -26,10 +26,11 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - [ ] Seed regressions from every discovered failure.
     - **Acceptance:** fuzz jobs are reproducible, time-bounded, and preserve failure artifacts safely.
     - Evidence: `tools/v1_fuzz.py`, `Makefile` target `v1-fuzz`, and `docs/V1_FUZZ_BASELINE.json` run six bounded deterministic mutations from a committed synthetic example and require every mutation to fail closed.
-- [ ] Task: Add hostile-input and resource-limit tests
+- [x] Task: Add hostile-input and resource-limit tests
     - [ ] Cover deep nesting, large collections, archive/path abuse, hostile strings, remote-reference attempts, and oversized decimals.
     - [ ] Enforce explicit size, depth, time, and memory limits where appropriate.
     - **Acceptance:** failures are controlled and do not expose secrets or write outside allowed paths.
+    - Evidence: `tools/process_mappings_rehearsal.py` enforces per-file and total extraction-size limits plus resolved destination containment; `tools/tests/test_process_mappings_rehearsal.py` covers traversal and absolute-path rejection.
 - [ ] Task: Add mutation testing to high-value deterministic modules
     - [ ] Select validators/converters with stable oracles.
     - [ ] Set justified thresholds and document equivalent/surviving mutations.
