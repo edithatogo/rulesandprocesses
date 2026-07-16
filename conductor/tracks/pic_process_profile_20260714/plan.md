@@ -64,6 +64,7 @@ under [#50](https://github.com/edithatogo/rac-conformance/issues/50).
     - [ ] Present only contested source assertions and mapping exceptions.
     - [ ] Record approval, rejection, or required changes per assertion.
     - **Acceptance:** certified fixtures contain no agent-only controlling assertion.
+    - **Evidence:** `subrepos/process-mappings/profiles/foi/HUMAN_CERTIFICATION_PACKET.md` provides row-level decisions for all six mappings, three source assertions, bounded outcomes, and the five required exception reasons. It is intentionally unfilled and does not certify or promote anything.
 - [x] Task: Run full compatibility and regression gates
     - [x] Run `make check`, schema corpus checks, and FOI-O profile validation.
     - [x] Update consumer and compatibility matrices.
