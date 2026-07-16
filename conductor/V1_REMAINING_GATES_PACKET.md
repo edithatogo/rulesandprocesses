@@ -83,9 +83,12 @@ The release candidate must be rebuilt from the final reviewed commit after
 the upstream and human gates change state. No existing local candidate can be
 promoted by inference.
 
-The hosted qualification matrix is prepared in
-`.github/workflows/v1-qualification.yml`, but its results and retained
-artifacts do not exist until the branch is pushed and GitHub runs it.
+The hosted qualification matrix is implemented in
+`.github/workflows/v1-qualification.yml`. Successful retained runs are linked
+from `docs/V1_HOSTED_QUALIFICATION.md` and cover Ubuntu/macOS with Python 3.12
+and 3.13. Those runs prove automated qualification of the candidate branch;
+they do not prove human certification, independent adoption, signing, or
+release authorization.
 
 ## Current gate rule
 
