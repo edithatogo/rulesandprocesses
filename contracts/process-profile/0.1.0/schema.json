@@ -4,7 +4,7 @@
   "title": "PIC process profile",
   "type": "object",
   "additionalProperties": false,
-  "required": ["conformsTo", "profileId", "profileVersion", "processDefinitionVersion", "jurisdiction", "applicableAt", "observedAt", "sourceAssertions", "states", "events", "transitions", "tasks", "ruleInvocations", "evidenceReferences", "traces"],
+  "required": ["conformsTo", "profileId", "profileVersion", "processDefinitionVersion", "jurisdiction", "applicableAt", "observedAt", "sourceAssertions", "actors", "states", "events", "timers", "transitions", "tasks", "ruleInvocations", "evidenceReferences", "traces"],
   "properties": {
     "conformsTo": {"const": "pic-process-profile/0.1.0"},
     "profileId": {"$ref": "#/$defs/picId"},
@@ -14,8 +14,10 @@
     "applicableAt": {"type": "string", "format": "date-time"},
     "observedAt": {"type": "string", "format": "date-time"},
     "sourceAssertions": {"type": "array", "items": {"$ref": "#/$defs/sourceAssertion"}},
+    "actors": {"type": "array", "items": {"$ref": "#/$defs/actor"}},
     "states": {"type": "array", "items": {"$ref": "#/$defs/state"}},
     "events": {"type": "array", "items": {"$ref": "#/$defs/event"}},
+    "timers": {"type": "array", "items": {"$ref": "#/$defs/timer"}},
     "transitions": {"type": "array", "items": {"$ref": "#/$defs/transition"}},
     "tasks": {"type": "array", "items": {"$ref": "#/$defs/task"}},
     "ruleInvocations": {"type": "array", "items": {"$ref": "#/$defs/ruleInvocation"}},
@@ -54,6 +56,16 @@
         "sourceAssertionIds": {"$ref": "#/$defs/refIds"}
       }
     },
+    "actor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "name"],
+      "properties": {
+        "id": {"$ref": "#/$defs/picId"},
+        "kind": {"enum": ["person", "role", "organization", "system"]},
+        "name": {"type": "string", "minLength": 1},
+        "authoritySourceAssertionIds": {"$ref": "#/$defs/refIds"}
+      }
+    },
     "event": {
       "type": "object", "additionalProperties": false,
       "required": ["id", "kind", "eventType", "occurredAt", "sourceAssertionIds"],
@@ -63,9 +75,23 @@
         "eventType": {"type": "string", "minLength": 1},
         "occurredAt": {"type": "string", "format": "date-time"},
         "observedAt": {"type": "string", "format": "date-time"},
-        "actorId": {"type": "string", "minLength": 1},
+        "actorId": {"$ref": "#/$defs/picId"},
+        "timerId": {"$ref": "#/$defs/picId"},
         "sourceAssertionIds": {"$ref": "#/$defs/refIds"},
         "evidenceReferenceIds": {"$ref": "#/$defs/refIds"}
+      }
+    },
+    "timer": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "name", "startEventId", "sourceAssertionIds"],
+      "properties": {
+        "id": {"$ref": "#/$defs/picId"},
+        "kind": {"enum": ["calendar_duration", "working_day_duration", "deadline", "relative"]},
+        "name": {"type": "string", "minLength": 1},
+        "startEventId": {"$ref": "#/$defs/picId"},
+        "duration": {"type": "string", "minLength": 1},
+        "calendarId": {"type": "string", "minLength": 1},
+        "sourceAssertionIds": {"$ref": "#/$defs/refIds"}
       }
     },
     "transition": {

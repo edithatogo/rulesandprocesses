@@ -7,6 +7,13 @@ interchange and conformance contract, not a workflow engine or ontology.
 ## Semantics
 
 - `states` and `transitions` describe the process definition.
+- `actors` identify people, roles, organizations, and systems participating in
+  the process. Authority for a role or system is linked through source
+  assertions rather than inferred from its label.
+- `timers` identify calendar, working-day, deadline, and relative timing
+  obligations. They reference a start event and carry a human-readable
+  duration; calendar arithmetic remains in the relevant PIC parameter or rule
+  contract.
 - `events` describe execution records. `observed_event`, `derived_state`,
   `proposed_action`, `certified_human_decision`, and `executed_action` are
   deliberately distinct; a proposal is never a certification.

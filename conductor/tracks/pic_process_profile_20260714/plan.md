@@ -29,6 +29,11 @@ under [#50](https://github.com/edithatogo/rac-conformance/issues/50).
 > documented and exercised by the process-profile corpus. No ontology or
 > platform runtime was added.
 
+> COMPLETION AUDIT (2026-07-16): The profile schema explicitly includes
+> actors/authority links and timers/deadline declarations, in addition to the
+> original state, event, transition, task, rule, evidence, exception, and
+> trace records. Timer arithmetic remains in PIC parameters/rules.
+
 ## Phase 2 - Contract and Validator
 
 - [x] Task: Write process-profile schema and validator tests

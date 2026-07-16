@@ -43,6 +43,26 @@ def test_profile_rejects_unknown_transition_reference(tmp_path: Path) -> None:
     assert any("unknown state ID" in issue.message for issue in report.issues)
 
 
+def test_profile_rejects_unknown_actor_reference(tmp_path: Path) -> None:
+    doc = json.loads((ROOT / "valid/foi-o-baseline.json").read_text())
+    doc["events"][0]["actorId"] = "role/does-not-exist"
+    path = tmp_path / "pic-process-profile" / "profile.json"
+    path.parent.mkdir()
+    path.write_text(json.dumps(doc))
+    report = validate_file(path)
+    assert any("unknown actor ID" in issue.message for issue in report.issues)
+
+
+def test_profile_rejects_unknown_timer_start_event(tmp_path: Path) -> None:
+    doc = json.loads((ROOT / "valid/foi-o-baseline.json").read_text())
+    doc["timers"][0]["startEventId"] = "foi-o/event/does-not-exist"
+    path = tmp_path / "pic-process-profile" / "profile.json"
+    path.parent.mkdir()
+    path.write_text(json.dumps(doc))
+    report = validate_file(path)
+    assert any("unknown event ID" in issue.message for issue in report.issues)
+
+
 def test_profile_rejects_human_task_with_non_certified_decision(tmp_path: Path) -> None:
     doc = json.loads((ROOT / "valid/human-review.json").read_text())
     doc["events"][0]["kind"] = "proposed_action"

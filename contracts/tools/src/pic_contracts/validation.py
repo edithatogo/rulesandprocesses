@@ -118,8 +118,10 @@ def _process_profile_semantics(path: Path, doc: dict[str, Any]) -> list[Validati
     """Check cross-record process invariants that JSON Schema cannot express."""
     issues: list[ValidationIssue] = []
     source_by_id = {item["id"]: item for item in doc["sourceAssertions"]}
+    actor_by_id = {item["id"]: item for item in doc["actors"]}
     state_by_id = {item["id"]: item for item in doc["states"]}
     event_by_id = {item["id"]: item for item in doc["events"]}
+    timer_by_id = {item["id"]: item for item in doc["timers"]}
     task_by_id = {item["id"]: item for item in doc["tasks"]}
     invocation_by_id = {item["id"]: item for item in doc["ruleInvocations"]}
     evidence_by_id = {item["id"]: item for item in doc["evidenceReferences"]}
@@ -139,8 +141,10 @@ def _process_profile_semantics(path: Path, doc: dict[str, Any]) -> list[Validati
 
     for kind, records in (
         ("source assertion", doc["sourceAssertions"]),
+        ("actor", doc["actors"]),
         ("state", doc["states"]),
         ("event", doc["events"]),
+        ("timer", doc["timers"]),
         ("task", doc["tasks"]),
         ("rule invocation", doc["ruleInvocations"]),
         ("evidence reference", doc["evidenceReferences"]),
@@ -183,7 +187,17 @@ def _process_profile_semantics(path: Path, doc: dict[str, Any]) -> list[Validati
 
     for item in doc["states"]:
         refs_exist("source assertion", item["id"], item.get("sourceAssertionIds", []), source_by_id)
+    for item in doc["actors"]:
+        refs_exist(
+            "source assertion",
+            item["id"],
+            item.get("authoritySourceAssertionIds", []),
+            source_by_id,
+        )
     for item in doc["events"]:
+        refs_exist("actor", item["id"], [item["actorId"]], actor_by_id)
+        if item.get("timerId"):
+            refs_exist("timer", item["id"], [item["timerId"]], timer_by_id)
         refs_exist("source assertion", item["id"], item["sourceAssertionIds"], source_by_id)
         refs_exist(
             "evidence reference", item["id"], item.get("evidenceReferenceIds", []), evidence_by_id
@@ -196,6 +210,9 @@ def _process_profile_semantics(path: Path, doc: dict[str, Any]) -> list[Validati
                     f"{path}:events/{item['id']}", "observedAt precedes occurredAt", "time"
                 )
             )
+    for item in doc["timers"]:
+        refs_exist("event", item["id"], [item["startEventId"]], event_by_id)
+        refs_exist("source assertion", item["id"], item["sourceAssertionIds"], source_by_id)
     for item in doc["transitions"]:
         refs_exist("state", item["id"], [item["fromStateId"], item["toStateId"]], state_by_id)
         refs_exist("event", item["id"], [item["triggerEventId"]], event_by_id)

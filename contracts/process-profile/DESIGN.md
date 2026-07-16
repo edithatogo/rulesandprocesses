@@ -20,6 +20,12 @@ Agent-proposed and secondary-only assertions remain non-controlling.
 The deterministic validator rejects observed events recorded before occurrence,
 profiles observed before applicability, and reversed source intervals.
 
+Timers are declarations of a timing obligation, not an executable clock. A
+timer must reference a known start event, and its calendar or working-day
+semantics must be resolved by a released PIC parameter or deterministic rule
+invocation. This keeps platform adapters from silently changing statutory or
+policy timing.
+
 ## Projection boundary
 
 An adapter projects platform records into states, events, tasks, evidence, and

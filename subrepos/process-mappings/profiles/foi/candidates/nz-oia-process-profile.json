@@ -7,6 +7,12 @@
   "applicableAt": "2025-04-05T00:00:00Z",
   "observedAt": "2026-07-16T00:00:00Z",
   "sourceAssertions": [{"id": "foi-o/source/oia.official", "authority": "law", "sourceType": "official_primary", "reviewStatus": "official-primary", "assertion": "The Official Information Act 1982 official consolidation is the source spine for the OIA process profile.", "sourceUri": "https://www.legislation.govt.nz/act/public/1982/0156/latest/whole.html", "retrievedAt": "2026-07-16T00:00:00Z", "effectiveFrom": "2025-04-05", "effectiveTo": null, "controlling": true}],
+  "actors": [
+    {"id": "system/intake", "kind": "system", "name": "Intake system", "authoritySourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "role/caseworker", "kind": "role", "name": "Caseworker", "authoritySourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "role/decision-maker", "kind": "role", "name": "Decision-maker", "authoritySourceAssertionIds": ["foi-o/source/oia.official"]},
+    {"id": "foi-o/rules", "kind": "system", "name": "FOI-O deterministic rules", "authoritySourceAssertionIds": ["foi-o/source/oia.official"]}
+  ],
   "states": [
     {"id": "foi-o/state/request.received", "kind": "initial", "label": "Request received", "sourceAssertionIds": ["foi-o/source/oia.official"]},
     {"id": "foi-o/state/request.transferred", "kind": "intermediate", "label": "Request transferred", "sourceAssertionIds": ["foi-o/source/oia.official"]},
@@ -21,6 +27,7 @@
     {"id": "foi-o/event/refusal.recorded", "kind": "executed_action", "eventType": "RefusalRecorded", "occurredAt": "2026-07-17T02:00:00Z", "observedAt": "2026-07-17T02:00:01Z", "actorId": "role/decision-maker", "sourceAssertionIds": ["foi-o/source/oia.official"]},
     {"id": "foi-o/event/review.flagged", "kind": "derived_state", "eventType": "ReviewableOutcome", "occurredAt": "2026-07-18T02:00:00Z", "observedAt": "2026-07-18T02:00:01Z", "actorId": "foi-o/rules", "sourceAssertionIds": ["foi-o/source/oia.official"]}
   ],
+  "timers": [{"id": "foi-o/timer/response.deadline", "kind": "working_day_duration", "name": "Twenty working day response period", "startEventId": "foi-o/event/request.received", "duration": "20 working_days", "calendarId": "nz-oia/working-day-calendar", "sourceAssertionIds": ["foi-o/source/oia.official"]}],
   "transitions": [
     {"id": "foi-o/transition/received.transferred", "fromStateId": "foi-o/state/request.received", "toStateId": "foi-o/state/request.transferred", "triggerEventId": "foi-o/event/request.transferred", "sourceAssertionIds": ["foi-o/source/oia.official"]},
     {"id": "foi-o/transition/received.extended", "fromStateId": "foi-o/state/request.received", "toStateId": "foi-o/state/request.extended", "triggerEventId": "foi-o/event/response.extended", "sourceAssertionIds": ["foi-o/source/oia.official"]},
