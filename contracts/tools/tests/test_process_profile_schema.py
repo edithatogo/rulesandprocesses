@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from pic_contracts.validation import detect_contract, validate_file
+from pic_contracts.process_profile import normalize_trace
 
 
 ROOT = Path(__file__).parents[2] / "process-profile/0.1.0/examples"
@@ -31,3 +32,35 @@ def test_profile_rejects_event_observed_before_occurrence(tmp_path: Path) -> Non
     path.write_text(json.dumps(doc))
     report = validate_file(path)
     assert any("observedAt precedes occurredAt" in issue.message for issue in report.issues)
+
+
+def test_profile_rejects_unknown_transition_reference(tmp_path: Path) -> None:
+    doc = json.loads((ROOT / "valid/foi-o-baseline.json").read_text())
+    doc["transitions"][0]["toStateId"] = "foi-o/state/does-not-exist"
+    path = tmp_path / "pic-process-profile" / "profile.json"
+    path.parent.mkdir()
+    path.write_text(json.dumps(doc))
+    report = validate_file(path)
+    assert any("unknown state ID" in issue.message for issue in report.issues)
+
+
+def test_profile_rejects_human_task_with_non_certified_decision(tmp_path: Path) -> None:
+    doc = json.loads((ROOT / "valid/human-review.json").read_text())
+    doc["events"][0]["kind"] = "proposed_action"
+    path = tmp_path / "pic-process-profile" / "profile.json"
+    path.parent.mkdir()
+    path.write_text(json.dumps(doc))
+    report = validate_file(path)
+    assert any("certified human decision" in issue.message for issue in report.issues)
+
+
+def test_profile_normalizes_trace_deterministically() -> None:
+    doc = json.loads((ROOT / "valid/foi-o-baseline.json").read_text())
+    first = normalize_trace(doc, "foi-o/trace/request.001")
+    second = normalize_trace(doc, "foi-o/trace/request.001")
+    assert first == second
+    assert [event["id"] for event in first["events"]] == [
+        "foi-o/event/request.received",
+        "foi-o/event/response.deadline",
+        "foi-o/event/request.closed",
+    ]

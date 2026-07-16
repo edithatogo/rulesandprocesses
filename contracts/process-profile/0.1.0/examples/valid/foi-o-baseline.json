@@ -32,8 +32,8 @@
   "transitions": [
     {"id": "foi-o/transition/receive.close", "fromStateId": "foi-o/state/request.received", "toStateId": "foi-o/state/request.closed", "triggerEventId": "foi-o/event/request.closed", "sourceAssertionIds": ["foi-o/source/oia.official"]}
   ],
-  "tasks": [],
-  "ruleInvocations": [],
+  "tasks": [{"id": "foi-o/task/clock", "kind": "deterministic_rule_task", "name": "Calculate statutory clock", "ruleInvocationId": "foi-o/rule/clock", "sourceAssertionIds": ["foi-o/source/oia.official"]}],
+  "ruleInvocations": [{"id": "foi-o/rule/clock", "ruleId": "foi-o/rule/response_deadline", "deterministic": true, "fixtureRef": "pic-fixtures/0.1.0#foi-o/case.1", "parameterRefs": ["pic-parameters/0.2.0#foi-o/parameter.response_days"], "traceId": "foi-o/trace/request.001"}],
   "evidenceReferences": [
     {"id": "foi-o/evidence/request.log", "uri": "urn:sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "sourceAssertionIds": ["foi-o/source/oia.official"]}
   ],

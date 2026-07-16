@@ -31,22 +31,32 @@ under [#50](https://github.com/edithatogo/rac-conformance/issues/50).
 
 ## Phase 2 - Contract and Validator
 
-- [ ] Task: Write process-profile schema and validator tests
+- [x] Task: Write process-profile schema and validator tests
     - [ ] Add at least two valid examples covering FOI-O and a synthetic human-review process.
     - [ ] Add invalid examples for authority, temporal, transition, task-kind, source-state, and trace-link failures.
     - [ ] Add compatibility tests for existing PIC identifiers.
     - **Acceptance:** tests fail for the intended unsupported contract before implementation.
-- [ ] Task: Implement process-profile schemas and validator
+    - Evidence: `contracts/process-profile/0.1.0/examples/` and `contracts/tools/tests/test_process_profile_schema.py`.
+- [x] Task: Implement process-profile schemas and validator
     - [ ] Add versioned schemas, canonical examples, diagnostics, and CLI discovery.
     - [ ] Preserve all existing PIC validation behavior.
     - [ ] Produce deterministic normalized traces for comparison.
     - **Acceptance:** valid/invalid corpus and >=80% relevant coverage pass.
-- [ ] Task: Document semantics and projection rules
+    - Evidence: schema, `pic_contracts.validation`, and deterministic `normalize_trace` projection.
+- [x] Task: Document semantics and projection rules
     - [ ] Define normative lifecycle semantics and non-normative platform guidance.
     - [ ] Document representational loss and exception handling.
     - [ ] Add migration notes and changelog entries.
     - **Acceptance:** no platform-specific term is required to implement core semantics.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Contract and Validator' (Protocol in workflow.md)
+    - Evidence: `SPEC.md`, `DESIGN.md`, and `CHANGELOG.md`.
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Contract and Validator' (Protocol in workflow.md)
+
+> CHECKPOINT (2026-07-16): Phase 2 is complete. The versioned schema has two
+> valid examples and three invalid examples, semantic validation covers source
+> authority, time ordering, references, task kinds, and deterministic rule
+> links, and normalized traces are sorted deterministically. The full contract
+> corpus passes; repository-wide coverage is verified by the full `make check`
+> gate rather than the focused test invocation.
 
 ## Phase 3 - FOI-O Baseline Validation
 
