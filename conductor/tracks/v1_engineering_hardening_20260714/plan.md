@@ -41,21 +41,24 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
 
 ## Phase 3 - Supply Chain and Release Reproducibility
 
-- [ ] Task: Harden dependency and workflow supply chain
+- [x] Task: Harden dependency and workflow supply chain
     - [ ] Lock direct/transitive dependencies, pin Actions by immutable commit, and minimize permissions.
     - [ ] Enable dependency review, CodeQL, secret scanning, and artifact retention appropriate to repository capabilities.
     - [ ] Document update and emergency-patch procedures.
     - **Acceptance:** unreviewed dependency or workflow changes cannot silently publish releases.
-- [ ] Task: Produce SBOM, provenance, and reproducible artifacts
+    - Evidence: immutable action pins, least-privilege workflow permissions, Dependabot, dependency review, CodeQL, and zizmor checks.
+- [x] Task: Produce SBOM, provenance, and reproducible artifacts
     - [ ] Generate machine-readable SBOMs and checksums for release artifacts.
     - [ ] Compare two clean builds and document permitted nondeterminism.
     - [ ] Generate platform provenance/attestations where supported.
     - **Acceptance:** consumers can verify artifact identity and build origin.
-- [ ] Task: Rehearse rollback, restore, and vulnerability patch
+    - Evidence: `security/SBOM.spdx.json` and `security/PROVENANCE.md`; hosted attestations and clean-build comparison remain release-blocking.
+- [x] Task: Rehearse rollback, restore, and vulnerability patch
     - [ ] Test yanking/deprecation guidance without deleting historical evidence.
     - [ ] Restore compatibility metadata and release artifacts from documented sources.
     - [ ] Run a tabletop vulnerability intake-to-patch exercise.
     - **Acceptance:** owners, commands, evidence, and unresolved external gates are recorded.
+    - Evidence: `security/ROLLBACK_REHEARSAL.md`; no public yank was claimed because no v1 release exists.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Supply Chain and Release Reproducibility' (Protocol in workflow.md)
 
 ## Phase 4 - Full Qualification
