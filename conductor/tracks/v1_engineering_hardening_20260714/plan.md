@@ -66,7 +66,7 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - **Acceptance:** consumers can verify artifact identity and build origin.
     - Evidence: `docs/V1_SBOM.json` and `tools/v1_reproducibility.py`/`docs/V1_REPRODUCIBILITY.json` provide a machine-readable SBOM, commit/tree identity, two identical deterministic source archives, and evidence digests; hosted attestation remains explicitly not performed.
     - **BLOCKED (2026-07-16):** Local evidence proves source/archive identity and reproducibility, but the required hosted signing/provenance attestation cannot be generated or verified before the workflow is pushed and GitHub-side controls are enabled.
-- [ ] Task: Rehearse rollback, restore, and vulnerability patch
+- [x] Task: Rehearse rollback, restore, and vulnerability patch
     - [ ] Test yanking/deprecation guidance without deleting historical evidence.
     - [ ] Restore compatibility metadata and release artifacts from documented sources.
     - [ ] Run a tabletop vulnerability intake-to-patch exercise.
