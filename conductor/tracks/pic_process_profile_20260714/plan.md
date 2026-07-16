@@ -108,3 +108,6 @@ under [#50](https://github.com/edithatogo/rac-conformance/issues/50).
 > certification remains pending.
 > HUMAN DECISION (2026-07-16): Dylan approved Decision 2, covering the
 > distinction between observed events, executed actions, and derived signals.
+> HUMAN DECISION (2026-07-16): Dylan approved Decision 3, confirming that
+> reviewability remains a non-terminal derived signal and not a legal or
+> Ombudsman outcome.
