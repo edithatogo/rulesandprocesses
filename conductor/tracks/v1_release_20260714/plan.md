@@ -39,6 +39,7 @@ GitHub issue: [#46](https://github.com/edithatogo/rac-conformance/issues/46). De
     - **Acceptance:** no unresolved high/critical risk or unsupported capability claim remains.
     - **Evidence:** `V1_SECURITY_CLAIMS_REVIEW.md` records local checks and the remaining live advisory, hosted-CI, hardening, rights, and human-authorization limits.
     - **BLOCKED (2026-07-15):** the engineering-hardening track and external/live security checks are not complete, so residual risk cannot be certified for v1.
+    - Current evidence refresh: `V1_SECURITY_CLAIMS_REVIEW.md` now references the current hardening threat model, validation baselines, SBOM, and supply-chain audit rather than the historical candidate artifact set.
 - [ ] Task: [HUMAN] Approve v1.0 release candidate
     - [ ] Present complete gate, risk, compatibility, consumer, source, and publication-boundary packet.
     - [ ] Dylan approves release, requires fixes, or continues 0.x.
