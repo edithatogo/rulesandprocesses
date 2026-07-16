@@ -25,6 +25,16 @@ Each matrix job passed `make check`, generated the validation baseline, fuzz,
 mutation, reproducibility, and rollback reports, and uploaded all five JSON
 artifacts.
 
+The final documentation-bearing PR revision was independently rerun with the
+same matrix:
+
+- Workflow: [v1 Qualification run 29476864216](https://github.com/edithatogo/rac-conformance/actions/runs/29476864216)
+- Tested source commit: `307b7d767d070b36a272ef78a5aaaef0d8326ae7`
+- Result: `success`
+- Artifacts: Ubuntu/Python 3.12 `8366887820`, Ubuntu/Python 3.13 `8366889878`,
+  macOS/Python 3.12 `8366890389`, macOS/Python 3.13 `8366891290`
+- Artifact expiry: 2026-10-14
+
 ## Companion hosted controls
 
 The same pull request commit also passed:
