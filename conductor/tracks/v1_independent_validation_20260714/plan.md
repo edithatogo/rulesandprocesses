@@ -21,11 +21,12 @@ GitHub issue: [#45](https://github.com/edithatogo/rac-conformance/issues/45). De
     - [ ] Reject stale, incomplete, self-certified, or unverifiable submissions.
     - **Acceptance:** verifier emits deterministic evidence status and precise exceptions.
     - Evidence: `tools/independent_validation.py` and `tools/tests/test_independent_validation.py`.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Independence Contract and Implementer Kit' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Independence Contract and Implementer Kit' (Protocol in workflow.md)
 
 > CHECKPOINT (2026-07-16): Independence policy, clean-environment kit, result
 > schema, verifier, and explicit blocked ledger are implemented. No external
 > implementation result exists yet, so the v1 adoption gate remains blocked.
+> REVIEW (2026-07-16): Verifier tests pass; example result is correctly rejected.
 
 ## Phase 2 - Candidate Engagement
 

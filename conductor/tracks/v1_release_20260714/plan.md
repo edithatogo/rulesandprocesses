@@ -4,12 +4,13 @@ GitHub issue: [#46](https://github.com/edithatogo/rac-conformance/issues/46). De
 
 ## Phase 1 - Release Candidate Freeze
 
-- [x] Task: Audit all v1 gates and dependency evidence
+- [ ] Task: Audit all v1 gates and dependency evidence
     - [ ] Validate the machine-readable gate manifest and every linked artifact.
     - [ ] Recheck external URLs, hosted checks, human certifications, and evidence freshness.
     - [ ] Block release for any missing, stale, conflicting, or self-certified required gate.
     - **Acceptance:** the gate report is deterministic and has no unknown required status.
     - Evidence: `release/v1/gates.json` and `tools/v1_release_audit.py`; the report explicitly remains non-releasable.
+    > BLOCKED (2026-07-16): External URL freshness, hosted checks, human certifications, and upstream gates cannot be verified or completed from this local repository.
 - [ ] Task: Freeze normative surface and migration set
     - [ ] Freeze schemas, CLIs, canonicalization, identifiers, diagnostics, and compatibility promises.
     - [ ] Generate migrations from every supported 0.x version.
@@ -19,7 +20,11 @@ GitHub issue: [#46](https://github.com/edithatogo/rac-conformance/issues/46). De
     - [ ] Produce packages, source archives, SBOMs, checksums, provenance, and compatibility reports.
     - [ ] Compare reproducible builds and run all supported-platform matrices.
     - **Acceptance:** all release artifacts derive from the reviewed release commit.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Release Candidate Freeze' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Release Candidate Freeze' (Protocol in workflow.md)
+
+> CHECKPOINT (2026-07-16): The release audit is deterministic and reports nine
+> explicit gates. It correctly returns `releasable: false`; no release freeze
+> or v1.0 publication is claimed.
 
 ## Phase 2 - Qualification
 

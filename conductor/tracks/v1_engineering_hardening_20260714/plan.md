@@ -16,11 +16,12 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - [ ] Record reference hardware/runtime and variance policy.
     - **Acceptance:** budgets are measurable and cannot be weakened silently.
     - Evidence: `security/BASELINE.md` and `tools/validate_hardening_evidence.py`.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Threat Model and Baselines' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Threat Model and Baselines' (Protocol in workflow.md)
 
 > CHECKPOINT (2026-07-16): Trust boundaries, risk dispositions, parser resource
 > limits, and reference budgets are implemented. Hosted platform timing,
 > memory, and GitHub evidence remain required for full qualification.
+> REVIEW (2026-07-16): Targeted safety/property tests and full `make check` pass.
 
 ## Phase 2 - Adversarial and Semantic Testing
 
@@ -62,7 +63,11 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - [ ] Run a tabletop vulnerability intake-to-patch exercise.
     - **Acceptance:** owners, commands, evidence, and unresolved external gates are recorded.
     - Evidence: `security/ROLLBACK_REHEARSAL.md`; no public yank was claimed because no v1 release exists.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Supply Chain and Release Reproducibility' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Supply Chain and Release Reproducibility' (Protocol in workflow.md)
+
+> CHECKPOINT (2026-07-16): Local workflow pins, SPDX inventory, lockfile digest,
+> reproducibility procedure, and rollback tabletop packet are present. Hosted
+> attestations, clean-build comparison, and live rollback remain open.
 
 ## Phase 4 - Full Qualification
 
@@ -71,6 +76,7 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - [ ] Compare results to frozen budgets and baselines.
     - [ ] Resolve contributor-controlled failures and classify genuine external blockers.
     - **Acceptance:** release report links exact hosted and local evidence.
+    > BLOCKED (2026-07-16): Hosted platform matrix, mutation evidence, package attestations, and live rollback evidence are not available locally and cannot be fabricated.
 - [ ] Task: [HUMAN] Approve residual risk and signing posture
     - [ ] Present open risks, waivers, unsupported platforms, and signing/provenance evidence.
     - [ ] Dylan approves, rejects, or defers release-candidate qualification.

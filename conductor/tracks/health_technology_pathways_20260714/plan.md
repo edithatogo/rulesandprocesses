@@ -38,19 +38,22 @@ during the repository incubation governed by
 
 ## Phase 2 - Comparison Case Selection
 
-- [ ] Task: Produce comparison-case candidates
+- [x] Task: Produce comparison-case candidates
     - [ ] Identify publicly documented medicines/indications with aligned regulator and funding records in at least two jurisdictions.
     - [ ] Score source completeness, temporal comparability, indication alignment, public evidence, rights, and implementation value.
     - [ ] Include a no-selection outcome if no candidate supports defensible comparison.
     - **Acceptance:** each candidate has a source manifest and stated comparability limitations.
+    - Evidence: `comparison-candidates.json`; no candidate is selected or promoted.
 - [ ] Task: [HUMAN] Approve one comparison case and jurisdiction pair
     - [ ] Present ranked candidates, source gaps, sensitivity, and expected process coverage.
     - [ ] Dylan selects, defers, or rejects the case; no fixture promotion occurs here.
     - **Acceptance:** selection and reasons are recorded without implying clinical endorsement.
-- [ ] Task: Define independent-oracle and adjudication protocol
+    > BLOCKED (2026-07-16): Requires Dylan to select/defer/reject a candidate after direct source capture.
+- [x] Task: Define independent-oracle and adjudication protocol
     - [ ] Separate official process facts, public decision facts, project mappings, and unavailable deliberative evidence.
     - [ ] Define deterministic triangulation and focused human exception review.
     - **Acceptance:** agent-authored mappings cannot self-certify.
+    - Evidence: `ADJUDICATION_PROTOCOL.md`.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Comparison Case Selection' (Protocol in workflow.md)
 
 ## Phase 3 - Executable Comparative Profiles
