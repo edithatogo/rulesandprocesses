@@ -10,7 +10,8 @@ source.
 
 ## Review outcomes
 
-Use exactly one outcome per row:
+Use exactly one outcome per row. The structured response form is
+`HUMAN_CERTIFICATION_DECISIONS.template.json`.
 
 - `approve-bounded`: accept only within the stated source scope and loss;
 - `limit`: accept only with a narrower scope or explicit exception;
