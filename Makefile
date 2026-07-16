@@ -6,7 +6,7 @@ audit:
 	PYTHONPATH=. uv run python -m tools.repo_audit
 
 audit-test:
-	PYTHONPATH=. uv run --with pytest --with pyyaml pytest tools/tests
+	PYTHONPATH=contracts/tools/src:. uv run --with pytest --with pyyaml pytest tools/tests
 
 paper-artifacts:
 	PYTHONPATH=. uv run python -m tools.paper_artifacts --check
@@ -24,7 +24,7 @@ validate-examples:
 	cd contracts/tools && uv run python -m pic_contracts.validate_examples ../../contracts
 
 process-mappings-check:
-	PYTHONPATH=. uv run python tools/validate_process_mappings_contracts.py
+	PYTHONPATH=contracts/tools/src:. uv run python tools/validate_process_mappings_contracts.py
 
 converter-lint:
 	uv run --directory converters/fixtures --with ruff ruff check .

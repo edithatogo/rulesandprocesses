@@ -21,4 +21,9 @@ Based on active consumer requirements, the following packages are upgraded to `v
 
 All other contracts (`pic-semantics`, `pic-crosswalk`, `pic-fixtures`) remain at `v0.1` as no consumer feedback requires changes.
 
+`pic-process-profile` is independently versioned from the rule, parameter,
+fixture, and trace contracts. Its `0.1.0` lifecycle vocabulary is stable for
+the current FOI-O candidate; a breaking change to lifecycle or authority
+semantics requires a new major version under the same package.
+
 The Alaveteli request-state proposal is tracked in `contracts/FEEDBACK.md` as deferred evidence; it does not upgrade any PIC package until a named consumer requires it.

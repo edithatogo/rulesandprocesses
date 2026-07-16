@@ -10,6 +10,8 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
+from pic_contracts.validation import validate_file
+
 
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 IMMUTABLE = re.compile(r"^(?:v[0-9]+\.[0-9]+\.[0-9]+|[0-9a-f]{40})$")
@@ -123,12 +125,25 @@ def validate_manifest(manifest_path: Path, repository_root: Path) -> list[str]:
     return errors
 
 
+def validate_candidate_profiles(repository_root: Path) -> list[str]:
+    """Validate incubator profile candidates against the parent process contract."""
+    errors: list[str] = []
+    candidate_root = repository_root / "subrepos/process-mappings/profiles"
+    for path in sorted(candidate_root.glob("**/candidates/*.json")):
+        report = validate_file(path)
+        errors.extend(
+            f"{path}: {issue.code}: {issue.message}" for issue in report.issues
+        )
+    return errors
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("manifest", nargs="?", default="subrepos/process-mappings/schemas/contract-consumption.json")
     parser.add_argument("--repository-root", default=".")
     args = parser.parse_args(argv)
     errors = validate_manifest(Path(args.manifest), Path(args.repository_root))
+    errors.extend(validate_candidate_profiles(Path(args.repository_root)))
     if errors:
         for error in errors:
             print(f"ERROR: {error}")

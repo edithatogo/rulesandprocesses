@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from tools.validate_process_mappings_contracts import validate_manifest
+from tools.validate_process_mappings_contracts import validate_candidate_profiles, validate_manifest
 
 
 ROOT = Path(__file__).parents[2]
@@ -48,3 +48,7 @@ def test_manifest_requires_immutable_external_input_provenance(tmp_path: Path) -
     errors = validate_manifest(candidate, ROOT)
 
     assert any("input revision" in error for error in errors)
+
+
+def test_candidate_profiles_validate_against_parent_contract() -> None:
+    assert validate_candidate_profiles(ROOT) == []

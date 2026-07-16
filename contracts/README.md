@@ -12,6 +12,7 @@ Policy Interchange Contracts (PIC) are small, versioned JSON artifact contracts 
 | `pic-fixtures` | `0.1.0` | Engine-neutral test fixtures with value-state-aware inputs and expected outputs. |
 | `pic-traces` | `0.1.0` | Case-level decision traces and trace-equivalence claims. |
 | `pic-foio-compatibility` | `0.1.0` | Content-addressed FOI-O release, jurisdiction, legislation, archive/Hugging Face, NLP, and governance handshake. |
+| `pic-process-profile` | `0.1.0` | Platform-neutral states, events, transitions, human tasks, deterministic rule calls, evidence, authority, and normalized traces. |
 
 ## Ground Rules
 
@@ -20,6 +21,7 @@ Policy Interchange Contracts (PIC) are small, versioned JSON artifact contracts 
 - IDs are package-scoped and lowercase; no global registry or URI registry is required.
 - Golden fixtures are human-curated. AI-proposed candidates stay marked as `ai-proposed`.
 - No JSON-LD context, external-standard crosswalk, expression language, or runtime AI decision belongs in v0.1.
+- Process profiles remain identifiers and evidence links; BPMN, DMN, workflow runtimes, and domain legal or clinical judgement are not PIC core dependencies.
 
 ## Tooling
 
