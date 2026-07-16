@@ -2,7 +2,7 @@
   "schemaVersion": "process-mappings-contract-consumption.v0.1.0",
   "repository": {
     "name": "edithatogo/rac-conformance",
-    "revision": "a4604313b2b2eeafa9b495afd93992ec35575fcd",
+    "revision": "dbbbe9d9cb955d8bf7e046ee14e3f73fb8ab45fc",
     "purpose": "Released PIC contract source; definitions are not copied into the incubator."
   },
   "normativeContracts": [
@@ -12,7 +12,7 @@
     {"id": "pic-fixtures/0.1.0", "path": "contracts/pic-fixtures/0.1.0/schema.json", "sha256": "8cd8ea1c0e82de7fa76abc008a388985ee3b90f27e29e47f29f6d6973c5e15ac"},
     {"id": "pic-traces/0.2.0", "path": "contracts/pic-traces/0.2.0/schema.json", "sha256": "d62bea21adf3fc9315a6afe562f88a13baa1fcb3b5e81f45f1382dd5956691b5"},
     {"id": "pic-foio-compatibility/0.1.0", "path": "contracts/pic-foio-compatibility/0.1.0/schema.json", "sha256": "295fd487b700739676cee716499b12683747441b9196114c44e30dfad7cba639"},
-    {"id": "process-profile/0.1.0", "path": "contracts/process-profile/0.1.0/schema.json", "sha256": "8053771383e5c7748bf2b3971626c08ecce2fef7ac309ab98be5d18ff7c63e81"}
+    {"id": "process-profile/0.1.0", "path": "contracts/process-profile/0.1.0/schema.json", "sha256": "11c307bab305fe40e98036b8bc3b9eeff0679fd6b9bdc73af6c98b5d450b4bb8"}
   ],
   "inputs": [
     {
