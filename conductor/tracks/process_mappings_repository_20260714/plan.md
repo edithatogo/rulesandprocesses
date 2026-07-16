@@ -28,6 +28,13 @@ Phase 1 and establishes the implementation home required by
 
 ## Phase 2 - Parent Integration and Contract Discipline
 
+> CHECKPOINT (2026-07-16): `contract-consumption.json` pins the released PIC
+> v0.2.0 schemas by Git revision and SHA-256, and the deterministic verifier
+> reads the pinned revision rather than a newer working tree. The matrix records
+> FOI-O as semantic input and foi-process as execution/evidence input with
+> immutable revisions and schema digests. `make check` passed; substantive
+> profiles and extraction remain deferred.
+
 - [x] Task: Wire parent roadmap and repository boundaries
     - [x] Insert this track between the v1 foundation and process-profile implementation.
     - [x] Add `foi-process` as a current implementation/evidence consumer and the incubator as a provisional repository home.
