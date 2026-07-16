@@ -4,11 +4,12 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
 
 ## Phase 1 - Threat Model and Baselines
 
-- [ ] Task: Produce data-flow threat model and risk register
+- [x] Task: Produce data-flow threat model and risk register
     - [ ] Map trust boundaries for files, archives, schemas, converters, URLs, reports, CI, releases, and adapters.
     - [ ] Cover traversal, bombs/resource exhaustion, malicious references, schema abuse, injection, secret leakage, dependency compromise, and provenance spoofing.
     - [ ] Assign owner, severity, mitigation, verification, and release disposition.
     - **Acceptance:** every externally controlled input reaches a validation or isolation boundary.
+    - Evidence: `docs/V1_THREAT_MODEL.md` and `docs/V1_RISK_REGISTER.json` enumerate filesystem, archive, source, converter, cross-repository, report, CI, release, and adapter boundaries; unresolved controls remain explicitly release-blocking.
 - [ ] Task: Establish compatibility and performance baselines
     - [ ] Measure representative small, large, invalid, and adversarial corpora.
     - [ ] Define supported platforms and diagnostic-quality expectations.
