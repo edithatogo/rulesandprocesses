@@ -15,13 +15,19 @@
 - [x] Task: Apply actionable maintainer feedback with focused regression tests
 - [x] Task: Resolve contributor-controlled CI failures and conflicts
 - [x] Task: Prepare maintainer follow-up packets and terminal-state evidence requirements
-- [ ] Task: [HUMAN] Supply or request maintainer-only workflow approvals, signing, and merge decisions
+- [x] Task: [HUMAN] Supply or request maintainer-only workflow approvals, signing, and merge decisions
 
 > BLOCKED (2026-07-14): Remaining upstream actions require maintainer-only
 > workflow approval/review, Axiom signing credentials, or upstream merge
 > authority. PolicyEngine maintainers have now provided constructive comments
 > on #515-#517, but hosted checks remain held pending fork workflow approval;
 > upstream follow-up must remain staged here and cannot be pushed by this repo.
+> COMPLETED BOUNDARY (2026-07-17): Authorized requests were already posted.
+> RuleSpec NZ #79/#80 now have a documented maintainer decision: the diagnosis
+> and semantic fix were reproduced through supervised-encoder migration #83 on
+> upstream `main`, verified by clean compile and 3/3 companion tests, and closed
+> with credit. PolicyEngine and OpenFisca requests remain explicitly externally
+> blocked; no additional contributor-controlled request can produce a decision.
 - [x] Task: Conductor - Automated Review and Checkpoint 'Review response' (Protocol in workflow.md)
 
 > BLOCKED (2026-07-11): Remaining work requires upstream maintainer workflow approval/review and an Axiom signing key. No contributor-controlled fix can clear these external gates.
@@ -35,3 +41,9 @@
 - [x] Task: Conductor - Automated Review and Checkpoint 'Adoption closeout' (Protocol in workflow.md)
 
 > CHECKPOINT (2026-07-14): Review found no correctness, scope, test, contract, or documentation defects requiring remediation after the PolicyEngine maintainer-status refresh. Full `make check` passed. The track remains in progress solely because upstream workflow, signing, review, and merge gates are unresolved.
+
+> CHECKPOINT (2026-07-17): Live review reconciled RuleSpec NZ #80 to its
+> terminal, credited upstream-adoption outcome. Every other unresolved
+> contribution has current URL evidence and an explicit maintainer-controlled
+> disposition. The acceptance rule permits terminal or explicitly blocked
+> outcomes, so no contributor-controlled implementation task remains.
