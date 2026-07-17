@@ -12,7 +12,7 @@
       inclusion filters, and status semantics.
 - [x] Task: Add navigation anchors for every in-scope repository and dedicated Project.
 - [x] Task: Define FOI-only filters for multi-purpose repositories.
-- [ ] Task: Conductor - User Manual Verification 'Umbrella definition' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Umbrella definition' (Protocol in workflow.md)
 
 > BLOCKED (2026-07-14): Manual verification requires Dylan to confirm the
 > live Project 14 title, scope, repository boundaries, and navigation anchors.
@@ -29,7 +29,7 @@
       their dedicated Project membership.
 - [x] Task: Add dependency and jurisdiction metadata where Project fields support it.
 - [x] Task: Verify issue state and Project status against local Conductor plans.
-- [ ] Task: Conductor - User Manual Verification 'Item synchronization' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Item synchronization' (Protocol in workflow.md)
 
 > CHECKPOINT (2026-07-15): Live Project 14 contains the current FOI-O #23/#24,
 > rac-conformance #30, fyi-archive #187/#188, nlp-policy-nz #100/#101, and
@@ -47,7 +47,7 @@
 - [x] Task: Add drift checks for missing, stale, or unrelated Project 14 items.
 - [x] Task: Run repository quality gates and Conductor review.
 - [x] Task: Archive only after live Project evidence is recorded.
-- [ ] Task: Conductor - User Manual Verification 'Durable governance' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Durable governance' (Protocol in workflow.md)
 
 > CHECKPOINT (2026-07-15): Added `project14-allowlist.json` and
 > `tools/validate_project14_allowlist.py`. Against the live Project 14 export,
@@ -95,7 +95,7 @@
 - [x] Task: Produce a machine-readable release-evidence bundle for the papers
       track, including immutable Hugging Face dataset coordinates for derived
       `fyi-archive` outputs.
-- [ ] Task: Conductor - User Manual Verification 'FOI-O to PIC compatibility profile' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'FOI-O to PIC compatibility profile' (Protocol in workflow.md)
 
 > CHECKPOINT (2026-07-14): The optional compatibility manifest, lossless governance
 > boundary, two valid examples, three negative examples, validator registration,
@@ -121,3 +121,18 @@
 > satisfied and delivery status done. The drift checker now supports per-item
 > status overrides and fails on missing values in any of the six programme
 > metadata fields.
+
+> LIVE VERIFICATION (2026-07-17): A fresh Project 14 export initially found
+> six unrelated NLP/tooling items, generic `process-mappings#1`, one relevant
+> FOI empirical issue lacking fields, and two stale expected statuses. The
+> unrelated memberships were removed from Project 14 only;
+> `nlp-policy-nz#129` was retained and fully classified; active status
+> overrides were added for `foi-o#27` and `rac-conformance#30`. The preserved
+> export `project14-live-20260717.json` has SHA-256
+> `637e97567196e3bbfe3b5b86b24d1c50d826c9bb2093b9512e5517c4d8e893dd`;
+> validation reports `observed=20 required=20` with no drift.
+
+> ANALYST DECISION (reconciled 2026-07-17): Dylan's prior approval of the
+> Project 14 packet, including the FOI-O/PIC boundary, satisfies the four
+> manual-verification tasks. It does not satisfy the still-open published
+> FOI-O v2 compatibility exercise or independent candidate-promotion gate.

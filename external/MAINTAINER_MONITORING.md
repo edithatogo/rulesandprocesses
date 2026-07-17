@@ -1,12 +1,12 @@
 # Maintainer response monitoring
 
-Last checked: **2026-07-15** (live PR sweep: no unresolved contribution reached a terminal upstream outcome; Alaveteli remains closed without merge; RaC Conformance preparation PRs #80 and #81 merged; RuleSpec NZ still has failed hosted validation and `CHANGES_REQUESTED`).
+Last checked: **2026-07-17** (live PR sweep: RuleSpec NZ #79/#80 closed after the maintainer confirmed the fix was reproduced on upstream `main`; PolicyEngine #515-#517, OpenFisca #1382, and OpenFisca Aotearoa #200 remain externally blocked; Alaveteli remains closed without merge).
 
 Bot / author-only comments do **not** count as maintainer replies.
 
 | Target | URL | State | Implementation | Maintainer reply? | Next action |
 |---|---|---|---|---|---|
-| rulespec-nz KiwiSaver compile | https://github.com/TheAxiomFoundation/rulespec-nz/issues/79 | open | [PR #80](https://github.com/TheAxiomFoundation/rulespec-nz/pull/80) — `CHANGES_REQUESTED`; hosted `validate / validate` and `validate / validate (nz)` fail; local compile/Ruff/270-test evidence remains separate; **hard-blocked** on `AXIOM_ENCODE_APPLY_SIGNING_KEY` | No resolving maintainer action | Contributor may diagnose and stage any source-controlled fix; maintainer must approve workflows, provide signing, authorize the hosted re-run, and review/merge or decline |
+| rulespec-nz KiwiSaver compile | https://github.com/TheAxiomFoundation/rulespec-nz/issues/79 | **closed; resolved on upstream main** | [PR #80](https://github.com/TheAxiomFoundation/rulespec-nz/pull/80) closed with diagnosis/authorship credit after migration #83 reproduced the same semantic fix through the supervised encoder | Yes; maintainer confirmed clean compile and 3/3 companion tests | None; org-wide signed-manifest provisioning is tracked separately at `axiom-encode#1147` |
 | PE trace export | https://github.com/PolicyEngine/policyengine-core/issues/512 | open | [PR #515](https://github.com/PolicyEngine/policyengine-core/pull/515) — contributor follow-up posted 2026-07-15 addressing structured `TraceNode` fields and v1 documentation; no hosted checks | Yes (Max COMMENTED; follow-up addressed; workflow approval still pending) | Maintainer approves fork workflows, re-reviews, and merges/declines |
 | PE missingness | https://github.com/PolicyEngine/policyengine-core/issues/513 | open | [PR #516](https://github.com/PolicyEngine/policyengine-core/pull/516) — contributor follow-up posted 2026-07-15 addressing visible-branch reuse and value-state documentation; no hosted checks | Yes (Max COMMENTED; follow-up addressed; workflow approval still pending) | Maintainer approves fork workflows, re-reviews, and merges/declines |
 | PE YAML converter | https://github.com/PolicyEngine/policyengine-core/issues/514 | open | [PR #517](https://github.com/PolicyEngine/policyengine-core/pull/517) — contributor follow-up posted 2026-07-15 addressing source-code links and docs-build confirmation; no hosted checks | Yes (Max COMMENTED; follow-up addressed; workflow approval still pending) | Maintainer approves fork workflows, re-reviews, and merges/declines |
@@ -19,12 +19,15 @@ Bot / author-only comments do **not** count as maintainer replies.
 
 ## Hard external blockers (cannot clear from this agent)
 
-1. **`AXIOM_ENCODE_APPLY_SIGNING_KEY`** for [rulespec-nz#80](https://github.com/TheAxiomFoundation/rulespec-nz/pull/80) — asked [@MaxGhenis](https://github.com/MaxGhenis) to `sign-applied-files` on the PR branch. Fork SoT remains `edithatogo/rulespec-nz` @ `fix/kiwisaver-elective-rates-map`.
-2. **First-time fork workflow approval** on PolicyEngine PRs #515–#517 (empty check rollup until a maintainer approves Actions).
+1. **First-time fork workflow approval** on PolicyEngine PRs #515–#517 (empty check rollup until a maintainer approves Actions).
 
-3. **Maintainer review and hosted CI** remain unresolved for OpenFisca #1382
+2. **Maintainer review and hosted CI** remain unresolved for OpenFisca #1382
    (`REVIEW_REQUIRED`) and OpenFisca Aotearoa #200 (`REVIEW_REQUIRED`); neither
    has a contributor-controlled action that can produce an upstream outcome.
+
+RuleSpec NZ #80 is no longer a blocker: the shared-secret signing path was
+superseded by the supervised-encoder migration, and the maintainer confirmed
+the fix on upstream `main` before closing the PR with credit.
 
 ## Local demo / publication follow-through (this repo)
 

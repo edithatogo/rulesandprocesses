@@ -1,6 +1,6 @@
 # Maintainer follow-up packets
 
-Last prepared: **2026-07-11**.
+Last prepared: **2026-07-17**.
 
 This file is a contributor-controlled preparation artifact. It does not imply
 that any upstream maintainer has approved, reviewed, signed, or merged a
@@ -13,7 +13,7 @@ contribution.
 | PolicyEngine #515-#517 | Ask a maintainer to approve fork workflows, then request review of the addressed comments | PolicyEngine maintainer | Actions run IDs, review decision, merge/decline URL |
 | OpenFisca #1382 | Request maintainer review and upstream CI confirmation | OpenFisca maintainer | Review URL, check URLs, merge/decline URL |
 | Alaveteli #9356 | Ask whether the intended scope is documentation-only or the request-state hook, then run the agreed suite | Alaveteli maintainer | Scope decision, test output, review/merge URL |
-| RuleSpec NZ #80 | Request `sign-applied-files` using the authorized Axiom signing key | Axiom key holder/maintainer | Signed manifest commit, validation check, merge/decline URL |
+| RuleSpec NZ #80 | No further request; maintainer reproduced the fix through supervised-encoder migration #83 and closed with credit | Axiom maintainer | [PR closure evidence](https://github.com/TheAxiomFoundation/rulespec-nz/pull/80#issuecomment-4994318371) and [issue resolution](https://github.com/TheAxiomFoundation/rulespec-nz/issues/79#issuecomment-4994318722) |
 | OpenFisca Aotearoa #200 | Request maintainer review and CI confirmation | BetterRules maintainer | Review URL, check URLs, merge/decline URL |
 
 ## Follow-up protocol
@@ -27,8 +27,8 @@ contribution.
 5. Keep Project 19 status `In Progress` until each contribution has a terminal
    disposition.
 
-## Human gate
+## Analyst gate
 
-Sending these follow-ups is `[HUMAN]`. Agents may prepare and update this
+Sending these follow-ups is `[HUMAN]` (legacy machine marker). Agents may prepare and update this
 packet, but must not post comments, approve workflows, supply credentials, or
 merge external contributions.

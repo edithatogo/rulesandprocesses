@@ -107,6 +107,12 @@ GitHub subissue: [#31](https://github.com/edithatogo/rac-conformance/issues/31).
 > process-mappings, and broad release-qualification branch stacks were not
 > merged because they remain outside the focused core demonstrator scope.
 
+> BLOCKED RECHECK (2026-07-17): Live GitHub verification still shows `v0.8.1`
+> as the latest FOI-O release and issue #27 unchanged since the approved
+> remediation-basis comment. No complete release-evidence bundle or FOI-O v2
+> arXiv submission exists to trigger manuscript regeneration. The analyst must
+> keep the approved v0.3.0 package prepared but unsubmitted.
+
 ## Phase 4.8 - Programme citation and mirror reconciliation
 
 - [x] Task: Add or correct `CITATION.cff` metadata for every included FOI

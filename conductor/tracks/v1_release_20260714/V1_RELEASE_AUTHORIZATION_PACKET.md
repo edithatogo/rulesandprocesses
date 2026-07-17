@@ -22,7 +22,7 @@
 `DO NOT AUTHORIZE v1.0`: the current candidate must remain unpublished until
 the FOI-O
 release-evidence bundle, independent adoption, paper refresh, paper-programme
-submission authorization, Project 14 manual verification, Zenodo deposit, and
+submission authorization, Zenodo deposit, and
 engineering-hardening gates change state.
 
 ## Human decision checklist

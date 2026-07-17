@@ -90,12 +90,20 @@
       "id": "foi-governance-manual-verification",
       "owner": "dylan",
       "category": "human",
-      "status": "blocked",
+      "status": "pass",
       "dependencies": ["v1-governance-documents"],
       "source": "https://github.com/edithatogo/rac-conformance/issues/30",
-      "reason_code": "project14_manual_verification_pending",
-      "next_action": "Verify the live Project 14 scope, issue membership, fields, and navigation against HUMAN_VERIFICATION_PACKET.md.",
-      "observed_at": "2026-07-15"
+      "observed_at": "2026-07-17",
+      "evidence": [
+        {
+          "digest": "sha256:637e97567196e3bbfe3b5b86b24d1c50d826c9bb2093b9512e5517c4d8e893dd",
+          "observed_at": "2026-07-17"
+        },
+        {
+          "url": "https://github.com/edithatogo/rac-conformance/blob/main/conductor/tracks/foi_programme_governance_20260714/HUMAN_VERIFICATION_PACKET.md",
+          "observed_at": "2026-07-17"
+        }
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Project Tracks
 
-- [ ] **Track: Citation and Zenodo mirroring (deferred)**
+- [~] **Track: Citation and Zenodo mirroring (blocked on authenticated deposit)**
 Track ID: `citation_zenodo_mirroring_20260714`
 *Link: [./tracks/citation_zenodo_mirroring_20260714/](./tracks/citation_zenodo_mirroring_20260714/)*
 
@@ -25,17 +25,17 @@ Track ID: `foi_programme_quality_and_spacy_20260714`
 
 ---
 
-- [ ] **Track: External adoption completion (deferred)**
-*Link: [./tracks/external_adoption_20260711/](./tracks/external_adoption_20260711/)*
+- [x] **Track: External adoption completion**
+*Archived link: [./archive/external_adoption_20260711/](./archive/external_adoption_20260711/)*
 
 ---
 
-- [ ] **Track: Paper programme completion**
+- [~] **Track: Paper programme completion (blocked on FOI-O evidence)**
 *Link: [./tracks/papers_completion_20260711/](./tracks/papers_completion_20260711/)*
 
 ---
 
-- [ ] **Track: Govern and synchronize the focused Freedom of Information programme in GitHub Project 14 (deferred)**
+- [~] **Track: Govern and synchronize the focused Freedom of Information programme in GitHub Project 14 (blocked on FOI-O v2 exercise)**
 *Link: [./tracks/foi_programme_governance_20260714/](./tracks/foi_programme_governance_20260714/)*
 
 ---
@@ -126,10 +126,10 @@ GitHub issue: [#50](https://github.com/edithatogo/rac-conformance/issues/50)
 
 ---
 
-- [~] **Track: Define the platform-neutral PIC process profile**
+- [x] **Track: Define the platform-neutral PIC process profile**
 Track ID: `pic_process_profile_20260714`
 GitHub issue: [#40](https://github.com/edithatogo/rac-conformance/issues/40)
-*Link: [./tracks/pic_process_profile_20260714/](./tracks/pic_process_profile_20260714/)*
+*Archived link: [./archive/pic_process_profile_20260714/](./archive/pic_process_profile_20260714/)*
 
 ---
 
@@ -140,14 +140,14 @@ GitHub issue: [#41](https://github.com/edithatogo/rac-conformance/issues/41)
 
 ---
 
-- [ ] **Track: Compare medicine regulatory and payer pathways (deferred)**
+- [~] **Track: Compare medicine regulatory and payer pathways (candidate NZ/UK slice implemented; optional breadth and certification deferred)**
 Track ID: `health_technology_pathways_20260714`
 GitHub issue: [#42](https://github.com/edithatogo/rac-conformance/issues/42)
 *Link: [./tracks/health_technology_pathways_20260714/](./tracks/health_technology_pathways_20260714/)*
 
 ---
 
-- [ ] **Track: Prove PIC process portability with Camunda 8 (deferred)**
+- [~] **Track: Prove PIC process portability with Camunda 8 (architecture, scaffold, and deterministic worker implemented; remaining portability evidence deferred)**
 Track ID: `camunda_portability_20260714`
 GitHub issue: [#43](https://github.com/edithatogo/rac-conformance/issues/43)
 *Link: [./tracks/camunda_portability_20260714/](./tracks/camunda_portability_20260714/)*
@@ -185,7 +185,7 @@ their completed local phases are recorded in each plan, while human, hosted,
 upstream, and publication gates remain explicitly unchecked until proven.
 
 The active implementation priority is now the core model and FOI demonstrator
-track. Health-technology breadth, Camunda portability, independent adoption,
+track. Remaining health-technology breadth and certification, remaining Camunda portability evidence, independent adoption,
 process-mappings cutover, publication, Zenodo, and v1.0 release work are
 deferred under [DEFERRED_ROADMAP.md](./DEFERRED_ROADMAP.md) until their stated
 re-entry conditions are met.

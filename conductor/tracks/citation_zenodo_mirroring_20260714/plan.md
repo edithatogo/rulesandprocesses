@@ -28,3 +28,9 @@ GitHub issue: https://github.com/edithatogo/rac-conformance/issues/33
 > BLOCKED (2026-07-15): Publishing the RaC Conformance `v0.2.0` release in
 > Zenodo and verifying its version and concept DOIs require the human deposit
 > gate. No DOI will be inferred from FOI-O or another programme repository.
+
+> BLOCKED RECHECK (2026-07-17): The Zenodo public API still returns zero
+> records for the repository identifier. An authenticated Chrome tab titled
+> `New upload | Zenodo` exists, but browser policy prevented inspection or
+> publication. Its contents and release binding remain unverified; the analyst
+> must inspect or complete that upload before either DOI can be recorded.

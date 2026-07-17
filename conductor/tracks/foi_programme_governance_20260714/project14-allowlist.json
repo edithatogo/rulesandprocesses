@@ -2,8 +2,10 @@
   "project": 14,
   "expected_status": "Todo",
   "expected_status_overrides": {
+    "edithatogo/foi-o#27": "In Progress",
     "edithatogo/nlp-policy-nz#100": "Done",
     "edithatogo/nlp-policy-nz#101": "Done",
+    "edithatogo/rac-conformance#30": "In Progress",
     "edithatogo/rac-conformance#36": "Done"
   },
   "required_fields": [
@@ -30,6 +32,7 @@
     "edithatogo/fyi-archive#188",
     "edithatogo/nlp-policy-nz#100",
     "edithatogo/nlp-policy-nz#101",
+    "edithatogo/nlp-policy-nz#129",
     "edithatogo/legislation#62",
     "edithatogo/rac-conformance#30",
     "edithatogo/rac-conformance#31",
