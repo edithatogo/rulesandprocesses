@@ -12,6 +12,8 @@
 - [Tracks Registry](./tracks.md)
 - [Tracks Directory](./tracks/)
 - [v1.0 Evidence and Maturity Roadmap](./V1_ROADMAP.md)
+- [Focused core completion track](./tracks/core_model_demonstrator_20260717/)
+- [Deferred roadmap](./DEFERRED_ROADMAP.md)
 
 ## Background (read before implementing)
 - [Fable 5 independent review](../views/06_fable5_independent_review.md)

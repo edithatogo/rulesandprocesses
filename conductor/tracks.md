@@ -1,6 +1,6 @@
 # Project Tracks
 
-- [~] **Track: Citation and Zenodo mirroring**
+- [ ] **Track: Citation and Zenodo mirroring (deferred)**
 Track ID: `citation_zenodo_mirroring_20260714`
 *Link: [./tracks/citation_zenodo_mirroring_20260714/](./tracks/citation_zenodo_mirroring_20260714/)*
 
@@ -25,7 +25,7 @@ Track ID: `foi_programme_quality_and_spacy_20260714`
 
 ---
 
-- [~] **Track: External adoption completion**
+- [ ] **Track: External adoption completion (deferred)**
 *Link: [./tracks/external_adoption_20260711/](./tracks/external_adoption_20260711/)*
 
 ---
@@ -35,7 +35,7 @@ Track ID: `foi_programme_quality_and_spacy_20260714`
 
 ---
 
-- [~] **Track: Govern and synchronize the focused Freedom of Information programme in GitHub Project 14**
+- [ ] **Track: Govern and synchronize the focused Freedom of Information programme in GitHub Project 14 (deferred)**
 *Link: [./tracks/foi_programme_governance_20260714/](./tracks/foi_programme_governance_20260714/)*
 
 ---
@@ -112,6 +112,13 @@ GitHub issue: [#39](https://github.com/edithatogo/rac-conformance/issues/39)
 
 ---
 
+- [~] **Track: Complete the core model and FOI demonstrator**
+Track ID: `core_model_demonstrator_20260717`
+GitHub programme issue: [#38](https://github.com/edithatogo/rac-conformance/issues/38)
+*Link: [./tracks/core_model_demonstrator_20260717/](./tracks/core_model_demonstrator_20260717/)*
+
+---
+
 - [x] **Track: Incubate process-mappings as a provisional subrepo (canonical extraction deferred)**
 Track ID: `process_mappings_repository_20260714`
 GitHub issue: [#50](https://github.com/edithatogo/rac-conformance/issues/50)
@@ -133,14 +140,14 @@ GitHub issue: [#41](https://github.com/edithatogo/rac-conformance/issues/41)
 
 ---
 
-- [~] **Track: Compare medicine regulatory and payer pathways**
+- [ ] **Track: Compare medicine regulatory and payer pathways (deferred)**
 Track ID: `health_technology_pathways_20260714`
 GitHub issue: [#42](https://github.com/edithatogo/rac-conformance/issues/42)
 *Link: [./tracks/health_technology_pathways_20260714/](./tracks/health_technology_pathways_20260714/)*
 
 ---
 
-- [~] **Track: Prove PIC process portability with Camunda 8**
+- [ ] **Track: Prove PIC process portability with Camunda 8 (deferred)**
 Track ID: `camunda_portability_20260714`
 GitHub issue: [#43](https://github.com/edithatogo/rac-conformance/issues/43)
 *Link: [./tracks/camunda_portability_20260714/](./tracks/camunda_portability_20260714/)*
@@ -154,21 +161,21 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44)
 
 ---
 
-- [~] **Track: Obtain independent v1 validation and adoption evidence**
+- [ ] **Track: Obtain independent v1 validation and adoption evidence (deferred)**
 Track ID: `v1_independent_validation_20260714`
 GitHub issue: [#45](https://github.com/edithatogo/rac-conformance/issues/45)
 *Link: [./tracks/v1_independent_validation_20260714/](./tracks/v1_independent_validation_20260714/)*
 
 ---
 
-- [~] **Track: Qualify and release RaC Conformance v1.0**
+- [ ] **Track: Qualify and release RaC Conformance v1.0 (deferred)**
 Track ID: `v1_release_20260714`
 GitHub issue: [#46](https://github.com/edithatogo/rac-conformance/issues/46)
 *Link: [./tracks/v1_release_20260714/](./tracks/v1_release_20260714/)*
 
 ---
 
-## Program status (2026-07-14)
+## Program status (2026-07-17)
 
 The original evidence-first and v0.2 implementation roadmap is
 **complete/archived**. Existing citation, external-adoption, paper, and FOI
@@ -176,6 +183,12 @@ governance gates remain active above. The v1 evidence and maturity roadmap is
 registered as issues #38-#46 and #50. The v1 tracks are now in active progress:
 their completed local phases are recorded in each plan, while human, hosted,
 upstream, and publication gates remain explicitly unchecked until proven.
+
+The active implementation priority is now the core model and FOI demonstrator
+track. Health-technology breadth, Camunda portability, independent adoption,
+process-mappings cutover, publication, Zenodo, and v1.0 release work are
+deferred under [DEFERRED_ROADMAP.md](./DEFERRED_ROADMAP.md) until their stated
+re-entry conditions are met.
 
 arXiv submissions remain **deferred**; papers ledger:
 https://github.com/users/edithatogo/projects/20. External monitoring remains in
