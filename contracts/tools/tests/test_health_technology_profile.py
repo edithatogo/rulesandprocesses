@@ -88,7 +88,13 @@ def test_comparison_candidates_record_selection_without_fixture_promotion() -> N
         "pembrolizumab-adjuvant-stage-iii-melanoma"
     )
     assert candidates["humanDecision"]["jurisdictions"] == ["NZ", "UK"]
-    assert sum(item["status"] == "selected-human-approved" for item in candidates["candidates"]) == 1
+    assert (
+        sum(
+            item["status"] == "selected-human-approved"
+            for item in candidates["candidates"]
+        )
+        == 1
+    )
     assert sum(item["status"] == "not-selected" for item in candidates["candidates"]) == 2
     assert all(set(item["sourceIds"]) <= source_ids for item in candidates["candidates"])
     assert all("clinicalRecommendation" not in item for item in candidates["candidates"])
