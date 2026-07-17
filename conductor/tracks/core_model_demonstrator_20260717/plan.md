@@ -7,11 +7,12 @@ Consumes completed work from [#39](https://github.com/edithatogo/rac-conformance
 
 ## Phase 1 - Core contract audit
 
-- [ ] Task: Audit the released PIC contracts and validator corpus
-    - [ ] Confirm every core schema has valid and invalid examples.
-    - [ ] Confirm deterministic validation, diff, compatibility, and example commands pass.
-    - [ ] Confirm money remains decimal-string and no runtime AI dependency exists.
+- [x] Task: Audit the released PIC contracts and validator corpus
+    - [x] Confirm every core schema has valid and invalid examples.
+    - [x] Confirm deterministic validation, diff, compatibility, and example commands pass.
+    - [x] Confirm money remains decimal-string and no runtime AI dependency exists.
     - **Acceptance:** a clean checkout reproduces the core contract evidence without external repositories.
+    - **Evidence:** `CORE_CONTRACT_AUDIT.md`; `make check` passed on 2026-07-17.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Core contract audit'
 
 ## Phase 2 - Process-profile closure
