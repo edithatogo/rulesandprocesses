@@ -32,7 +32,11 @@ def test_candidate_traces_normalize_deterministically() -> None:
     for path in PROFILES:
         document = json.loads(path.read_text(encoding="utf-8"))
         trace_id = document["traces"][0]["id"]
-        assert normalize_trace(document, trace_id) == normalize_trace(document, trace_id)
+        original_normalized = normalize_trace(document, trace_id)
+        reordered_document = json.loads(path.read_text(encoding="utf-8"))
+        reordered_document["events"].reverse()
+        reordered_document["ruleInvocations"].reverse()
+        assert normalize_trace(reordered_document, trace_id) == original_normalized
 
 
 def test_candidate_profile_rejects_undated_controlling_assertion(tmp_path: Path) -> None:
