@@ -1,0 +1,1 @@
+Conductor review: replaced dynamic sys.path mutation with direct JSON Schema validation and an explicit local referencing registry for pic-semantics. Full make check passed: 71 root tests, 105 contract-tool tests, 25 converter tests, harness/study/demo suites.
