@@ -73,6 +73,6 @@ the human cutover decision.
 - [x] Approve repository creation and public visibility.
 - [x] Approve proposed owner, CODEOWNERS, branch protection, and security posture.
 - [x] Approve issue/project mapping and destination issue creation.
-- [ ] Approve initial versioning and release policy.
+- [ ] Approve initial versioning and release policy; see `VERSIONING_DECISION_PACKET.md`.
 - [x] Approve the migration commit from `EXTRACTION_REHEARSAL.json`.
 - [ ] Approve canonical cutover only after consumer migration, hosted CI, and clean-clone verification.

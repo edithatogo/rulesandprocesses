@@ -99,10 +99,14 @@ Phase 1 and establishes the implementation home required by
     - [ ] Update roadmap, issues, links, source manifests, and repository-boundary documentation.
     - [ ] Verify no automation writes to the retired location.
     - **Acceptance:** exactly one canonical writable source remains and parent checks pass.
-    > CHECKPOINT (2026-07-17): `subrepos/process-mappings/migration/CUTOVER_CONSUMER_INVENTORY.md`
+> CHECKPOINT (2026-07-17): `subrepos/process-mappings/migration/CUTOVER_CONSUMER_INVENTORY.md`
     > inventories the active profile, adapter, validator, test, documentation,
     > and release-gate consumers. It confirms that the parent subtree is still
     > the only writable source and that canonical cutover requires one reviewed
     > transaction updating readers before retiring the subtree. No cutover claim
-    > or human certification is made by this inventory.
+> or human certification is made by this inventory.
+    > CHECKPOINT (2026-07-17): `VERSIONING_DECISION_PACKET.md` records the
+    > current no-tag/no-release state and recommends a first public `0.1.0`
+    > pre-1.0 release only after canonical cutover certification. It does not
+    > create a tag or authorize publication.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 4 - Human Cutover and Parent Closeout' (Protocol in workflow.md)
