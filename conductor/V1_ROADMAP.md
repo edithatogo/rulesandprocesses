@@ -1,6 +1,11 @@
 # RaC Conformance v1.0 Evidence and Maturity Roadmap
 
 Status: Draft roadmap; implementation is governed by the linked Conductor tracks.
+Current focus decision: complete the core model and FOI demonstrator before
+re-entering breadth, portability, adoption, publication, or GA-release work.
+
+See [`DEFERRED_ROADMAP.md`](./DEFERRED_ROADMAP.md) for the explicit deferral
+ledger and re-entry conditions.
 
 GitHub programme issue: [#38](https://github.com/edithatogo/rac-conformance/issues/38).
 
