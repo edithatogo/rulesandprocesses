@@ -25,18 +25,18 @@ The repository now provides a bounded, deterministic core model demonstrator:
 
 | Claim | Evidence |
 | --- | --- |
-| Contract corpus is reproducible | `CORE_CONTRACT_AUDIT.md` |
-| Process profile is implementable and platform-neutral | `PROCESS_PROFILE_CLOSURE_AUDIT.md` |
-| FOI source/profile/execution chain is pinned | `FOI_DEMONSTRATOR_CHAIN.json`, `FOI_DEMONSTRATOR_CERTIFICATION_PACKET.md` |
-| Local hardening is qualified | `CORE_HARDENING_EVIDENCE.md` |
-| Deferred work and re-entry conditions are visible | `conductor/DEFERRED_ROADMAP.md` |
+| Contract corpus is reproducible | [CORE_CONTRACT_AUDIT.md](CORE_CONTRACT_AUDIT.md) |
+| Process profile is implementable and platform-neutral | [PROCESS_PROFILE_CLOSURE_AUDIT.md](PROCESS_PROFILE_CLOSURE_AUDIT.md) |
+| FOI source/profile/execution chain is pinned | [FOI_DEMONSTRATOR_CHAIN.json](FOI_DEMONSTRATOR_CHAIN.json), [FOI_DEMONSTRATOR_CERTIFICATION_PACKET.md](FOI_DEMONSTRATOR_CERTIFICATION_PACKET.md) |
+| Local hardening is qualified | [CORE_HARDENING_EVIDENCE.md](CORE_HARDENING_EVIDENCE.md) |
+| Deferred work and re-entry conditions are visible | [DEFERRED_ROADMAP.md](../../DEFERRED_ROADMAP.md) |
 
 ## Remaining gates
 
 ### Human gate
 
-Dylan must review `FOI_DEMONSTRATOR_CERTIFICATION_PACKET.md` and record one
-of `certified-bounded`, `rejected`, or `changes-requested`. This is the only
+Dylan must review [FOI_DEMONSTRATOR_CERTIFICATION_PACKET.md](FOI_DEMONSTRATOR_CERTIFICATION_PACKET.md)
+and record one of `certified-bounded`, `rejected`, or `changes-requested`. This is the only
 remaining decision for the bounded demonstrator itself.
 
 ### External or deferred gates
