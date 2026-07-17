@@ -86,6 +86,27 @@ GitHub subissue: [#31](https://github.com/edithatogo/rac-conformance/issues/31).
 > phase remains blocked until `foi-o#27` publishes the release-evidence bundle.
 > Publication remains human-authorized after the refresh.
 
+> PREPARATION (2026-07-15): Prepared the independent `Paper Programme
+> Submission Candidate v0.3.0` package across all three manuscripts and
+> submission packets. It preserves the current FOI-O evidence limitation and
+> advances venue/PDF/authorization decisions without claiming that #27 or any
+> external adoption proposal is accepted. The release-triggered refresh tasks
+> remain open for evidence reconciliation when #27 is accepted.
+
+> HUMAN APPROVAL (2026-07-15): Dylan approved package version `v0.3.0`.
+> This approves the prepared package only; venue selection, declarations, PDF
+> submission authorization, and any FOI-O evidence claims remain separate gates.
+
+> DECISION (2026-07-15): Dylan will not submit any paper in the v0.3.0 package
+> until the FOI-O v2 update has been submitted to arXiv. Keep all three paper
+> packets prepared, but retain the submission gate pending that prerequisite.
+
+> CHECKPOINT (2026-07-17): The approved v0.3.0 preparation package, including
+> its hashed A4 PDFs and explicit FOI-O v2 submission prerequisite, has been
+> reconciled onto current `origin/main`. Deferred health-technology, Camunda,
+> process-mappings, and broad release-qualification branch stacks were not
+> merged because they remain outside the focused core demonstrator scope.
+
 ## Phase 4.8 - Programme citation and mirror reconciliation
 
 - [x] Task: Add or correct `CITATION.cff` metadata for every included FOI
