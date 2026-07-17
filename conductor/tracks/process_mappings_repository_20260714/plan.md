@@ -90,13 +90,19 @@ Phase 1 and establishes the implementation home required by
     - [x] Run required hosted checks and independently clone/test the extracted repository.
     - [x] Record immutable migration commit and source-tree provenance.
     - **Acceptance:** the approved remote is reproducible, protected, and green; otherwise rollback is executed.
-    > EVIDENCE (2026-07-17): Public destination issue #1, migration commit
-    > `d0257c1a99068262ea257643f3d6bdb57f2baee6`, standalone check, clean clone,
-    > and `git fsck --full` passed. Parent remains the only canonical writable
-    > source until closeout.
+> EVIDENCE (2026-07-17): Public destination issue #1, migration commit
+> `d0257c1a99068262ea257643f3d6bdb57f2baee6`, standalone check, clean clone,
+> and `git fsck --full` passed. Parent remains the only canonical writable
+> source until closeout.
 - [ ] Task: Close the parent incubator without dual ownership
     - [ ] Remove the writable subtree or replace it with an intentional read-only reference after all parent consumers use the canonical remote.
     - [ ] Update roadmap, issues, links, source manifests, and repository-boundary documentation.
     - [ ] Verify no automation writes to the retired location.
     - **Acceptance:** exactly one canonical writable source remains and parent checks pass.
+    > CHECKPOINT (2026-07-17): `subrepos/process-mappings/migration/CUTOVER_CONSUMER_INVENTORY.md`
+    > inventories the active profile, adapter, validator, test, documentation,
+    > and release-gate consumers. It confirms that the parent subtree is still
+    > the only writable source and that canonical cutover requires one reviewed
+    > transaction updating readers before retiring the subtree. No cutover claim
+    > or human certification is made by this inventory.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 4 - Human Cutover and Parent Closeout' (Protocol in workflow.md)

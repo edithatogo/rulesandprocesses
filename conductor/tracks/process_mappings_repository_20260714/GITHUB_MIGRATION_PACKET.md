@@ -1,7 +1,7 @@
 # Process-mappings GitHub Migration Packet
 
 Status: **staged migration; public remote exists and hosted verification passed**.
-human approval was recorded before repository creation; canonical cutover still
+The packet records human approval before repository creation; canonical cutover still
 requires a separate closeout decision.
 
 This packet is prepared from `rac-conformance` issue [#50](https://github.com/edithatogo/rac-conformance/issues/50) and the dependent parent issues [#39](https://github.com/edithatogo/rac-conformance/issues/39), [#40](https://github.com/edithatogo/rac-conformance/issues/40), [#41](https://github.com/edithatogo/rac-conformance/issues/41), [#42](https://github.com/edithatogo/rac-conformance/issues/42), and [#43](https://github.com/edithatogo/rac-conformance/issues/43). The public remote exists; canonical parent cutover remains open.
@@ -10,14 +10,14 @@ This packet is prepared from `rac-conformance` issue [#50](https://github.com/ed
 
 | Field | Proposal | State before approval |
 |---|---|---|
-| Owner | `edithatogo` | proposed |
-| Name | `process-mappings` | proposed |
+| Owner | `edithatogo` | verified |
+| Name | `process-mappings` | verified |
 | URL | `https://github.com/edithatogo/process-mappings` | public remote exists; not yet canonical |
-| Visibility | Public, subject to source-rights review | proposed |
-| License | Apache-2.0, retaining source-specific rights notices | prepared in `LICENSE_BOUNDARY.md` |
-| Initial version | `0.1.0-incubation` or equivalent pre-1.0 release | human decision |
-| Canonical source | Future remote only after cutover | current source is this subtree |
-| Project | GitHub Project 19 | add/link only after repository creation |
+| Visibility | Public, subject to ongoing source-rights review | verified |
+| License | Apache-2.0, retaining source-specific rights notices | verified in destination |
+| Initial version | `0.1.0-incubation` or equivalent pre-1.0 release | human decision remains |
+| Canonical source | Future remote only after cutover | parent subtree remains authoritative |
+| Project | Project 19 and Project 14 | destination issue #1 linked |
 
 ## Files prepared
 
@@ -29,28 +29,36 @@ This packet is prepared from `rac-conformance` issue [#50](https://github.com/ed
 - `ci/check.sh` and `.github/workflows/standalone-check.yml`: dependency-free extracted-tree check.
 - `schemas/contract-consumption.json`: immutable PIC and upstream input ledger.
 
-## Required repository settings after approval
+## Hosted controls verified
 
-1. Create `edithatogo/process-mappings` with the approved visibility and Apache-2.0 license.
-2. Populate it from the filtered subtree commit in `EXTRACTION_REHEARSAL.json`; preserve the six-commit filtered history and record the migration commit.
-3. Configure `main` as the default branch, require pull requests, require the CODEOWNERS review, require conversation resolution, and require the standalone check.
-4. Enable dependency/security features supported by the repository plan, with least-privilege workflow permissions and immutable action references.
-5. Link the repository issues to Project 19 and create destination issues only after approving the mapping below.
-6. Set the canonical URL and release policy, then verify a clean clone and hosted CI before any parent cutover.
+1. `edithatogo/process-mappings` is public, uses `main`, and is licensed Apache-2.0.
+2. The destination contains the filtered history and immutable migration commit
+   `d0257c1a99068262ea257643f3d6bdb57f2baee6`.
+3. `main` requires pull requests, one CODEOWNER approval, conversation
+   resolution, and the standalone `check` status.
+4. Dependency review, secret scanning, push protection, and least-privilege
+   workflow settings are enabled where supported.
+5. Destination issue #1 is linked to Projects 19 and 14.
+6. A clean clone, `git fsck --full`, standalone verification, and hosted CI
+   passed.
+
+Canonical URL ownership and release policy remain subject to the separate
+cutover decision below.
 
 ## Parent-to-destination issue map
 
 | Parent issue | Destination issue proposal | Scope | Migration rule |
 |---|---|---|---|
-| `rac-conformance#50` | `process-mappings#1` | extraction governance and canonical cutover | preserve backlink; close parent only after cutover |
+| `rac-conformance#50` | `process-mappings#1` | extraction governance and canonical cutover | linked; keep parent open until cutover |
 | `rac-conformance#40` | `process-mappings#2` | profile implementation consumer surface | parent remains normative-contract owner |
 | `rac-conformance#41` | `process-mappings#3` | adverse-incident/open-disclosure profile | human/source gate remains explicit |
 | `rac-conformance#42` | `process-mappings#4` | health-technology pathways | source authority stays with named regulators/payers |
 | `rac-conformance#43` | `process-mappings#5` | optional Camunda adapter | adapter cannot redefine PIC |
 
-These are destination proposals, not created issues. No issue is migrated by
-an agent. Existing parent issue history remains authoritative until the human
-cutover decision and authenticated migration.
+Issue #1 is the created destination governance issue. Issues #2-#5 remain
+proposals and are deliberately not created until named consumers and profile
+scope require them. Existing parent issue history remains authoritative until
+the human cutover decision.
 
 ## Rollback and single-source rule
 
@@ -67,4 +75,4 @@ cutover decision and authenticated migration.
 - [x] Approve issue/project mapping and destination issue creation.
 - [ ] Approve initial versioning and release policy.
 - [x] Approve the migration commit from `EXTRACTION_REHEARSAL.json`.
-- [ ] Approve canonical cutover only after hosted CI and clean-clone verification.
+- [ ] Approve canonical cutover only after consumer migration, hosted CI, and clean-clone verification.
