@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 def test_current_release_audit_preserves_blockers():
     manifest = json.loads((ROOT / "conductor/v1-release-gates.json").read_text())
-    report = audit(manifest, as_of=date(2026, 7, 15))
+    report = audit(manifest, as_of=date(2026, 7, 17))
 
     assert report["manifestValid"] is True
     assert report["releaseDecision"] == "blocked"
@@ -20,7 +20,6 @@ def test_current_release_audit_preserves_blockers():
         "papers-refresh",
         "papers-programme-submission",
         "rac-zenodo-deposit",
-        "foi-governance-manual-verification",
     }
     assert report["networkChecks"] == "not-performed"
 

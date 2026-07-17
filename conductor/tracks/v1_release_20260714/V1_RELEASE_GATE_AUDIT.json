@@ -12,15 +12,6 @@
     },
     {
       "dependencies": [
-        "v1-governance-documents"
-      ],
-      "id": "foi-governance-manual-verification",
-      "nextAction": "Verify the live Project 14 scope, issue membership, fields, and navigation against HUMAN_VERIFICATION_PACKET.md.",
-      "reasonCode": "project14_manual_verification_pending",
-      "status": "blocked"
-    },
-    {
-      "dependencies": [
         "foi-o-27"
       ],
       "id": "foio-release-evidence-bundle",
@@ -68,9 +59,9 @@
     {
       "category": "human",
       "id": "foi-governance-manual-verification",
-      "observedAt": "2026-07-15",
+      "observedAt": "2026-07-17",
       "owner": "dylan",
-      "status": "blocked"
+      "status": "pass"
     },
     {
       "category": "external-release",
