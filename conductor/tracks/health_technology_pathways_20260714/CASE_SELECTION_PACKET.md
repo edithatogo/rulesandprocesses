@@ -1,6 +1,6 @@
 # Health-technology comparison-case selection packet
 
-Status: **ready for human selection; no case, jurisdiction pair, profile, or fixture is certified**.
+Status: **case selected; source verification, profile implementation, and fixture certification remain open**.
 
 This packet supports issue #42's human gate. Scores are evidence-readiness
 scores from `candidates/COMPARISON_CASE_CANDIDATES.json`, not clinical,
@@ -28,6 +28,11 @@ structure only. Confidential commercial arrangements, non-public deliberation,
 and unverified current restrictions remain unavailable.
 
 ## Human response
+
+**Decision recorded (2026-07-17):** Dylan approved
+`pembrolizumab-adjuvant-stage-iii-melanoma` for the NZ/UK pair. The selection
+is limited to publicly documented process structure and does not certify a
+clinical, funding, cost-effectiveness, or access conclusion.
 
 Choose one of:
 

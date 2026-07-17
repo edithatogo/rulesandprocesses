@@ -44,11 +44,15 @@ during the repository incubation governed by
     - [ ] Include a no-selection outcome if no candidate supports defensible comparison.
     - **Acceptance:** each candidate has a source manifest and stated comparability limitations.
     - Evidence: `comparison-candidates.json`; no candidate is selected or promoted.
-- [ ] Task: [HUMAN] Approve one comparison case and jurisdiction pair
-    - [ ] Present ranked candidates, source gaps, sensitivity, and expected process coverage.
-    - [ ] Dylan selects, defers, or rejects the case; no fixture promotion occurs here.
+- [x] Task: [HUMAN] Approve one comparison case and jurisdiction pair
+    - [x] Present ranked candidates, source gaps, sensitivity, and expected process coverage.
+    - [x] Dylan selects, defers, or rejects the case; no fixture promotion occurs here.
     - **Acceptance:** selection and reasons are recorded without implying clinical endorsement.
-    > BLOCKED (2026-07-16): Requires Dylan to select/defer/reject a candidate after direct source capture.
+    > HUMAN DECISION (2026-07-17): Dylan approved
+    > `pembrolizumab-adjuvant-stage-iii-melanoma` for NZ Medsafe/Pharmac versus
+    > UK MHRA/NICE. Approval authorizes source verification and candidate-profile
+    > implementation only; no fixture promotion or clinical/funding conclusion
+    > is authorized.
 - [x] Task: Define independent-oracle and adjudication protocol
     - [ ] Separate official process facts, public decision facts, project mappings, and unavailable deliberative evidence.
     - [ ] Define deterministic triangulation and focused human exception review.
