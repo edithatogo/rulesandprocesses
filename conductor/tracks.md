@@ -25,7 +25,7 @@ Track ID: `foi_programme_quality_and_spacy_20260714`
 
 ---
 
-- [ ] **Track: External adoption completion (deferred)**
+- [x] **Track: External adoption completion**
 *Link: [./tracks/external_adoption_20260711/](./tracks/external_adoption_20260711/)*
 
 ---
