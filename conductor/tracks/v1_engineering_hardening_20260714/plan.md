@@ -41,7 +41,11 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - [ ] Set justified thresholds and document equivalent/surviving mutations.
     - **Acceptance:** threshold failures block the release candidate unless explicitly waived with evidence.
     - **Evidence:** `tools/v1_mutation.py`, `docs/V1_MUTATION_GATE.json`, and the `v1-qualification` workflow. The runner is deterministic, uses committed validator examples as its oracle, requires every declared mutation to be killed, and treats equivalent mutants as zero-tolerance unless explicitly recorded.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Adversarial and Semantic Testing' (Protocol in workflow.md)
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Adversarial and Semantic Testing' (Protocol in workflow.md)
+
+> REVIEW CHECKPOINT (2026-07-17): Property, hostile-input, and deterministic
+> mutation evidence is present. `make v1-mutation` reports 3/3 declared
+> mutations killed; no equivalent mutant is accepted by the gate.
 
 ## Phase 3 - Supply Chain and Release Reproducibility
 
@@ -80,7 +84,10 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - [ ] Compare results to frozen budgets and baselines.
     - [ ] Resolve contributor-controlled failures and classify genuine external blockers.
     - **Acceptance:** release report links exact hosted and local evidence.
-    > BLOCKED (2026-07-16): Hosted platform matrix, mutation evidence, package attestations, and live rollback evidence are not available locally and cannot be fabricated.
+    > BLOCKED (2026-07-17): Remaining qualification evidence is limited to
+    > clean-build comparison, package attestations, live rollback evidence,
+    > and human residual-risk/signing approval. Mutation evidence is complete;
+    > it is no longer a blocker.
 - [ ] Task: [HUMAN] Approve residual risk and signing posture
     - [ ] Present open risks, waivers, unsupported platforms, and signing/provenance evidence.
     - [ ] Dylan approves, rejects, or defers release-candidate qualification.
