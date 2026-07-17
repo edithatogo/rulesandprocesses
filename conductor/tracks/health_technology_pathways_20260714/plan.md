@@ -43,7 +43,7 @@ during the repository incubation governed by
     - [ ] Score source completeness, temporal comparability, indication alignment, public evidence, rights, and implementation value.
     - [ ] Include a no-selection outcome if no candidate supports defensible comparison.
     - **Acceptance:** each candidate has a source manifest and stated comparability limitations.
-    - Evidence: `comparison-candidates.json`; no candidate is selected or promoted.
+    - Evidence: `comparison-candidates.json`; the selected candidate remains unpromoted and source-verification-gated.
 - [x] Task: [HUMAN] Approve one comparison case and jurisdiction pair
     - [x] Present ranked candidates, source gaps, sensitivity, and expected process coverage.
     - [x] Dylan selects, defers, or rejects the case; no fixture promotion occurs here.
@@ -53,6 +53,10 @@ during the repository incubation governed by
     > UK MHRA/NICE. Approval authorizes source verification and candidate-profile
     > implementation only; no fixture promotion or clinical/funding conclusion
     > is authorized.
+    > CHECKPOINT (2026-07-17): Reconciled `comparison-candidates.json` with the
+    > human decision. The machine-readable ledger now records the NZ/UK case as
+    > selected for source verification only; no executable profile or fixture is
+    > promoted.
 - [x] Task: Define independent-oracle and adjudication protocol
     - [ ] Separate official process facts, public decision facts, project mappings, and unavailable deliberative evidence.
     - [ ] Define deterministic triangulation and focused human exception review.

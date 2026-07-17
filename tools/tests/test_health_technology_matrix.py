@@ -39,10 +39,14 @@ def test_matrix_rejects_mbs_as_medicine_regulator(tmp_path: Path) -> None:
     assert any("MBS" in error for error in validate(root))
 
 
-def test_comparison_packet_does_not_promote_unselected_candidates() -> None:
+def test_comparison_packet_records_selection_without_promotion() -> None:
     packet = json.loads((ROOT / "comparison-candidates.json").read_text(encoding="utf-8"))
-    assert packet["selection"] == "none"
-    assert all(candidate["status"] == "deferred" for candidate in packet["candidates"])
+    assert packet["selection"] == "pembrolizumab-adjuvant-stage-iii-melanoma"
+    assert packet["selectionStatus"] == "human-selected-source-verification-authorized"
+    selected = next(candidate for candidate in packet["candidates"] if candidate["id"] == packet["selection"])
+    assert selected["status"] == "selected-source-verification-required"
+    assert "not certified" in packet["promotionBoundary"]
+    assert all(candidate["status"] == "not-selected" for candidate in packet["candidates"] if candidate is not selected)
 
 
 def test_source_manifest_rejects_malformed_source_entry(tmp_path: Path) -> None:
