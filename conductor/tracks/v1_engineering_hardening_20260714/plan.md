@@ -62,8 +62,9 @@ GitHub issue: [#44](https://github.com/edithatogo/rac-conformance/issues/44). De
     - **Acceptance:** consumers can verify artifact identity and build origin.
     - Evidence: `security/SBOM.spdx.json`, `security/PROVENANCE.md`, and
       `docs/V1_REPRODUCIBILITY.json`; two clean source-archive builds are
-      byte-identical for the current release commit. Hosted attestations and
-      package signing remain release-blocking.
+      byte-identical for evidence commit `e8da58f`. This does not establish
+      package reproducibility for the current tree. Hosted attestations,
+      final-tree reproduction, and package signing remain release-blocking.
 - [x] Task: Rehearse rollback, restore, and vulnerability patch
     - [ ] Test yanking/deprecation guidance without deleting historical evidence.
     - [ ] Restore compatibility metadata and release artifacts from documented sources.
