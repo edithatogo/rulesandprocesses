@@ -6,7 +6,17 @@ from jsonschema import Draft202012Validator
 from referencing import Registry, Resource
 
 ROOT = Path(__file__).parents[2]
-CHAIN = ROOT / "conductor/tracks/core_model_demonstrator_20260717/FOI_DEMONSTRATOR_CHAIN.json"
+TRACK_ID = "core_model_demonstrator_20260717"
+
+
+def _chain_path() -> Path:
+    candidates = [
+        ROOT / "conductor" / location / TRACK_ID / "FOI_DEMONSTRATOR_CHAIN.json"
+        for location in ("tracks", "archive")
+    ]
+    existing = [path for path in candidates if path.is_file()]
+    assert len(existing) == 1, "expected exactly one active or archived FOI chain"
+    return existing[0]
 
 
 def _sha256(path: Path) -> str:
@@ -18,7 +28,7 @@ def _load_json(path: Path) -> dict:
 
 
 def test_foi_demonstrator_chain_is_pinned_and_fail_closed() -> None:
-    chain = _load_json(CHAIN)
+    chain = _load_json(_chain_path())
     assert chain["status"] == "certified-bounded"
     assert chain["equivalenceClaim"] == "none"
     assert chain["profile"]["promotionStatus"] == "not-promoted"
