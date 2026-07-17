@@ -13,7 +13,10 @@ Consumes completed work from [#39](https://github.com/edithatogo/rac-conformance
     - [x] Confirm money remains decimal-string and no runtime AI dependency exists.
     - **Acceptance:** a clean checkout reproduces the core contract evidence without external repositories.
     - **Evidence:** `CORE_CONTRACT_AUDIT.md`; `make check` passed on 2026-07-17.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Core contract audit'
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Core contract audit'
+
+> CHECKPOINT (2026-07-17): Phase 1 audit was reviewed through PR #120; hosted
+> checks passed and review comments were fixed before merge.
 
 ## Phase 2 - Process-profile closure
 
@@ -23,7 +26,10 @@ Consumes completed work from [#39](https://github.com/edithatogo/rac-conformance
     - [x] Confirm normalized trace projection is deterministic and platform-neutral.
     - **Acceptance:** the profile contract is implementable without FOI-O, BPMN, or a workflow engine.
     - **Evidence:** `PROCESS_PROFILE_CLOSURE_AUDIT.md`; `contracts/tools/tests/test_process_profile_schema.py`; `make check` passed on 2026-07-17.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Process-profile closure'
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Process-profile closure'
+
+> CHECKPOINT (2026-07-17): Phase 2 closure audit was reviewed through PR #121;
+> the determinism regression was strengthened and all hosted checks passed.
 
 ## Phase 3 - FOI demonstrator certification
 
@@ -54,4 +60,9 @@ Consumes completed work from [#39](https://github.com/edithatogo/rac-conformance
     - [x] Link [DEFERRED_ROADMAP.md](../../DEFERRED_ROADMAP.md) for all excluded work.
     - **Acceptance:** a reviewer can distinguish model completeness, demonstration evidence, and deferred programme work.
     - **Evidence:** [CORE_READINESS_PACKET.md](CORE_READINESS_PACKET.md); human certification remains the explicit Phase 3 gate.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 4 - Local hardening and core readiness'
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 4 - Local hardening and core readiness'
+
+> CHECKPOINT (2026-07-17): Phase 4 evidence and readiness packet were reviewed
+> through PRs #123 and #124; hosted checks passed. Hosted attestations, signing,
+> live rollback, and human certification remain explicitly outside this local
+> checkpoint.
