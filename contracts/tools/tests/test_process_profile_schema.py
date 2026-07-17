@@ -87,9 +87,11 @@ def test_profile_rejects_human_task_with_non_certified_decision(tmp_path: Path) 
 def test_profile_normalizes_trace_deterministically() -> None:
     doc = json.loads((ROOT / "valid/foi-o-baseline.json").read_text())
     first = normalize_trace(doc, "foi-o/trace/request.001")
-    reordered = dict(doc)
-    reordered["events"] = list(reversed(doc["events"]))
-    reordered["traces"] = list(reversed(doc["traces"]))
+    reordered = {
+        **doc,
+        "events": doc["events"][::-1],
+        "traces": doc["traces"][::-1],
+    }
     second = normalize_trace(reordered, "foi-o/trace/request.001")
     assert first == second
     assert [event["id"] for event in first["events"]] == [
