@@ -47,6 +47,6 @@ Consumes completed work from [#39](https://github.com/edithatogo/rac-conformance
 - [ ] Task: Prepare core demonstrator readiness packet
     - [ ] State the core claims supported by each evidence level.
     - [ ] Link the FOI-O certification, normalized trace, validator corpus, and hardening evidence.
-    - [ ] Link `conductor/DEFERRED_ROADMAP.md` for all excluded work.
+    - [ ] Link [DEFERRED_ROADMAP.md](../../DEFERRED_ROADMAP.md) for all excluded work.
     - **Acceptance:** a reviewer can distinguish model completeness, demonstration evidence, and deferred programme work.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 4 - Local hardening and core readiness'
