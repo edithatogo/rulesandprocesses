@@ -1,0 +1,1 @@
+Conductor review: archival relocation verified. Certification resolver accepts exactly one active or archived record and rejects missing or duplicate records. Focused tests: 6 passed. Full make check passed on 2026-07-17.
