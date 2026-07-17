@@ -1,22 +1,28 @@
 # FOI-O v0.8.1 release-evidence handoff
 
-Status: candidate remediation only. This file is not an upstream release,
-evidence bundle, or publication claim.
+Status (rechecked 2026-07-17): candidate remediation approved by Dylan as the basis for upstream
+review. This file is not an upstream release, evidence bundle, or publication
+claim.
+
+FOI-O issue #27 remains open. No complete release-evidence bundle was observed
+in the issue state reviewed on 2026-07-17. Do not convert the published tag,
+DOIs, author comments, or detached candidate into empirical, migration,
+consumer-contract, or independent-validation evidence.
 
 ## Verified release input
 
 - Repository: <https://github.com/edithatogo/foi-o>
 - Tag: `v0.8.1`
-- Commit: [`d24ae6f9f2d9488052969f633d91eff4a9a47f58`](https://github.com/edithatogo/foi-o/commit/d24ae6f9f2d9488052969f633d91eff4a9a47f58)
-- Zenodo version DOI: [`10.5281/zenodo.21360138`](https://doi.org/10.5281/zenodo.21360138)
-- Zenodo concept DOI: [`10.5281/zenodo.21360137`](https://doi.org/10.5281/zenodo.21360137)
+- Commit: `d24ae6f9f2d9488052969f633d91eff4a9a47f58`
+- Zenodo version DOI: `10.5281/zenodo.21360138`
+- Zenodo concept DOI: `10.5281/zenodo.21360137`
 - Evidence-bundle gate: <https://github.com/edithatogo/foi-o/issues/27>
 
 ## Immutable-tag validation
 
 The tag was checked in a clean detached worktree with:
 
-```bash
+```text
 uv sync --extra dev --extra rdf
 uv run pytest -q
 ```
@@ -38,6 +44,13 @@ The candidate was then rechecked with the same environment and produced
 `280 passed, 2 skipped`. It has not been pushed to `foi-o` and does not replace
 the upstream tag.
 
+## Approval boundary
+
+On 2026-07-15 Dylan approved `995dbd2` as the remediation basis for a corrected
+immutable FOI-O release. The approval authorizes upstream review and application
+of that candidate; it does not approve the candidate for direct promotion,
+replace the `v0.8.1` tag, or certify the evidence bundle.
+
 ## Still required for #27
 
 The upstream release-evidence bundle must still include and substantiate the
@@ -49,7 +62,7 @@ open. This handoff does not certify any of those unfinished gates.
 
 ## Human boundary
 
-Dylan must decide whether to apply and review the candidate in the FOI-O
-repository, publish a corrected immutable release, and generate the accepted
-evidence bundle. No upstream branch, PR, release, dataset, or paper action is
-performed by this handoff.
+Upstream FOI-O work remains required to apply and review the candidate, publish
+a corrected immutable release, and generate the accepted evidence bundle. No
+upstream branch, PR, release, dataset, or paper action is performed by this
+handoff.
