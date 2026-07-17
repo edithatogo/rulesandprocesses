@@ -35,7 +35,7 @@ Track ID: `foi_programme_quality_and_spacy_20260714`
 
 ---
 
-- [ ] **Track: Govern and synchronize the focused Freedom of Information programme in GitHub Project 14 (deferred)**
+- [~] **Track: Govern and synchronize the focused Freedom of Information programme in GitHub Project 14 (blocked on FOI-O v2 exercise)**
 *Link: [./tracks/foi_programme_governance_20260714/](./tracks/foi_programme_governance_20260714/)*
 
 ---

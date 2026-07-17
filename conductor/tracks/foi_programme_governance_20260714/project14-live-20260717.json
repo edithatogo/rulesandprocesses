@@ -1,0 +1,540 @@
+{
+  "items": [
+    {
+      "content": {
+        "body": "Repository: https://github.com/edithatogo/fyi-cli\nDedicated board: https://github.com/users/edithatogo/projects/6\nSynchronization rule: mirror repository issues and pull requests into this umbrella board.",
+        "id": "DI_lAHOAOYc4M4BcSmozgKs4_U",
+        "title": "Dedicated project: fyi-cli Conductor Roadmap",
+        "type": "DraftIssue"
+      },
+      "id": "PVTI_lAHOAOYc4M4BcSmozgxjXgI",
+      "status": "Todo",
+      "title": "Dedicated project: fyi-cli Conductor Roadmap"
+    },
+    {
+      "content": {
+        "body": "Repository: https://github.com/edithatogo/fyi-archive\nDedicated board: https://github.com/users/edithatogo/projects/13\nSynchronization rule: mirror repository issues and pull requests into this umbrella board.",
+        "id": "DI_lAHOAOYc4M4BcSmozgKs4_g",
+        "title": "Dedicated project: fyi-archive Conductor Roadmap",
+        "type": "DraftIssue"
+      },
+      "id": "PVTI_lAHOAOYc4M4BcSmozgxjXgU",
+      "status": "Todo",
+      "title": "Dedicated project: fyi-archive Conductor Roadmap"
+    },
+    {
+      "content": {
+        "body": "Repository: https://github.com/edithatogo/foi-o\nDedicated board: https://github.com/users/edithatogo/projects/10\nSynchronization rule: mirror repository issues and pull requests into this umbrella board.",
+        "id": "DI_lAHOAOYc4M4BcSmozgKs4_8",
+        "title": "Dedicated project: foi-o Conductor Roadmap",
+        "type": "DraftIssue"
+      },
+      "id": "PVTI_lAHOAOYc4M4BcSmozgxjXkg",
+      "status": "Todo",
+      "title": "Dedicated project: foi-o Conductor Roadmap"
+    },
+    {
+      "content": {
+        "body": "Conductor track: `foi_o_v2_empirical_implementation_20260714`\n\nDefine and export the versioned FOI-O ontology, schema, codebook, provenance, and candidate-status contract needed for a reproducible re-extraction of a pinned `fyi-archive-nz` snapshot.\n\nArchitecture boundary:\n- `fyi-cli` owns capture from FYI/Alaveteli.\n- `fyi-archive` owns immutable manifests and derived-layer publication.\n- `nlp-policy-nz` owns ontology-pinned NER/NLP execution.\n- `fe-reader` is deferred and is not a dependency.\n\nAcceptance:\n- contract revisions are pin-able and machine-readable;\n- raw source labels and evidence remain preserved;\n- outputs remain candidate-only until human review;\n- re-extraction produces a delta against the initial ontology-based baseline;\n- no raw archive record is overwritten.\n\nRelated tracks:\n- `edithatogo/nlp-policy-nz:foio_archive_adapter_20260714`\n- `edithatogo/fyi-archive:foio_derived_reextraction_20260714`",
+        "number": 23,
+        "repository": "edithatogo/foi-o",
+        "title": "Track: FOI-O V2 extraction contract and governed archive re-extraction",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/foi-o/issues/23"
+      },
+      "delivery status": "todo",
+      "dependency": "fyi-archive#187; nlp-policy-nz#100",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgywzU0",
+      "jurisdiction": "NZ",
+      "labels": [
+        "conductor",
+        "track"
+      ],
+      "repository": "https://github.com/edithatogo/foi-o",
+      "repository role": "ontology",
+      "status": "Todo",
+      "title": "Track: FOI-O V2 extraction contract and governed archive re-extraction"
+    },
+    {
+      "content": {
+        "body": "Conductor track: `australian_jurisdiction_profiles_20260714`\n\nBuild evidence-backed Australian FOI profiles using a staged Commonwealth + NSW pilot followed by ACT, Queensland, Victoria, Western Australia, South Australia, Tasmania, and Northern Territory.\n\nKey boundaries:\n- consume pinned legal-source manifests from `edithatogo/legislation`;\n- consume public examples from `fyi-archive` without direct capture;\n- preserve a jurisdiction-neutral FOI-O core and explicit law-specific extensions;\n- preserve raw platform states and prohibit automated legal certification;\n- require source, temporal, rights, annotation, reliability, and human-review gates before validation claims.\n\nDepends on:\n- `edithatogo/legislation#62`\n- `edithatogo/fyi-archive:au_foi_corpus_readiness_20260714`",
+        "number": 24,
+        "repository": "edithatogo/foi-o",
+        "title": "Track: Australian FOI jurisdiction profiles",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/foi-o/issues/24"
+      },
+      "delivery status": "todo",
+      "dependency": "legislation#62; fyi-archive#188; nlp-policy-nz#101",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgywzWU",
+      "jurisdiction": "Cross-jurisdiction",
+      "labels": [
+        "conductor",
+        "track"
+      ],
+      "repository": "https://github.com/edithatogo/foi-o",
+      "repository role": "ontology",
+      "status": "Todo",
+      "title": "Track: Australian FOI jurisdiction profiles"
+    },
+    {
+      "content": {
+        "body": "Conductor track: `foio_derived_reextraction_20260714`\n\nAdd a derived-publication lane for candidate NER/NLP annotations produced by `nlp-policy-nz` from pinned FOI-O and `fyi-archive-nz` revisions.\n\nBoundaries:\n- raw manifests and WARC/WACZ remain immutable;\n- no NLP/model implementation is added to this repository;\n- derived records are separately versioned and independently verified;\n- Alaveteli remains an upstream source via `fyi-cli` capture;\n- `fe-reader` is not a dependency.\n\nAcceptance:\n- versioned derived-manifest schema and negative overwrite tests;\n- source/model/ontology/run provenance on every derived record;\n- dry-run and round-trip publication tests;\n- remote digest verification;\n- dataset-card disclosure that outputs are inferred candidates, not gold or certified legal findings;\n- baseline delta report for the planned re-extraction.\n\nDepends on:\n- `edithatogo/foi-o:foi_o_v2_empirical_implementation_20260714`\n- `edithatogo/nlp-policy-nz:foio_archive_adapter_20260714`",
+        "number": 187,
+        "repository": "edithatogo/fyi-archive",
+        "title": "Track: Publish FOI-O re-extraction as a versioned derived layer",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/fyi-archive/issues/187"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#23",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgywzXg",
+      "jurisdiction": "NZ",
+      "repository": "https://github.com/edithatogo/fyi-archive",
+      "repository role": "archive",
+      "status": "Todo",
+      "title": "Track: Publish FOI-O re-extraction as a versioned derived layer"
+    },
+    {
+      "content": {
+        "body": "Conductor track: `au_foi_corpus_readiness_20260714`\n\nProduce pinned, rights-aware, jurisdiction-stratified public request examples for FOI-O validation, beginning with an operator-approved Commonwealth + NSW pilot.\n\nAcceptance includes raw-state and correspondence preservation, attachments/WARC/WACZ completeness, rights and takedown records, outcome coverage reporting, jurisdiction isolation, remote digest verification, and explicit insufficiency reports. `fyi-cli` remains the only capture implementation. NLP candidates remain a separate derived layer.",
+        "number": 188,
+        "repository": "edithatogo/fyi-archive",
+        "title": "Track: Australian FOI corpus readiness",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/fyi-archive/issues/188"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#24; legislation#62",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgywzY4",
+      "jurisdiction": "Cross-jurisdiction",
+      "repository": "https://github.com/edithatogo/fyi-archive",
+      "repository role": "archive",
+      "status": "Todo",
+      "title": "Track: Australian FOI corpus readiness"
+    },
+    {
+      "content": {
+        "body": "Conductor track: `foio_archive_adapter_20260714`\n\nReuse the existing ingestion, NER/entity resolution, ontology mapping, serialization, and PROV-O pipeline to extract candidate FOI-O annotations from a pinned `fyi-archive-nz` snapshot.\n\nAcceptance:\n- pin source dataset and FOI-O contract revisions;\n- preserve source IDs, content digests, evidence spans, raw labels, uncertainty, and conflicts;\n- record model, pipeline, ontology, schema, codebook, and run provenance;\n- deterministic schema-valid fixture output;\n- structured comparison with the initial ontology-based baseline;\n- per-label precision, recall, F1, calibration, and coverage;\n- human review gates before any promotion from candidate status.\n\nOutput must conform to `edithatogo/fyi-archive:foio_derived_reextraction_20260714`. `fe-reader` and direct Alaveteli access are out of scope.",
+        "number": 100,
+        "repository": "edithatogo/nlp-policy-nz",
+        "title": "Track: Add FOI-O adapter for ontology-pinned fyi-archive extraction",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/nlp-policy-nz/issues/100"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#23; fyi-archive#187",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgywzao",
+      "jurisdiction": "NZ",
+      "linked pull requests": [
+        "https://github.com/edithatogo/nlp-policy-nz/pull/107"
+      ],
+      "repository": "https://github.com/edithatogo/nlp-policy-nz",
+      "repository role": "nlp",
+      "status": "Done",
+      "title": "Track: Add FOI-O adapter for ontology-pinned fyi-archive extraction"
+    },
+    {
+      "content": {
+        "body": "Conductor track: `foio_au_jurisdiction_adapter_20260714`\n\nExtend the FOI-O archive adapter with profile-isolated Australian extraction. Pilot Commonwealth and NSW, then add the other seven jurisdictions only after FOI-O profile and empirical gates pass.\n\nAcceptance includes pinned archive/legal/ontology/model revisions, jurisdiction routing and abstention, cross-profile contamination tests, candidate-only output, and per-jurisdiction precision, recall, F1, calibration, coverage, disagreement, and abstention reporting.",
+        "number": 101,
+        "repository": "edithatogo/nlp-policy-nz",
+        "title": "Track: FOI-O Australian jurisdiction extraction adapter",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/nlp-policy-nz/issues/101"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#24; fyi-archive#188",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgywzb4",
+      "jurisdiction": "Cross-jurisdiction",
+      "repository": "https://github.com/edithatogo/nlp-policy-nz",
+      "repository role": "nlp",
+      "status": "Done",
+      "title": "Track: FOI-O Australian jurisdiction extraction adapter"
+    },
+    {
+      "content": {
+        "body": "Conductor track: `foi_programme_governance_20260714`\n\nUse GitHub Project 14 as the focused FOI programme board across `foi-o`,\n`fyi-cli`, `fyi-archive`, `nlp-policy-nz`, `rac-conformance`, FOI-specific\n`legislation` work, and Alaveteli workflow/state intelligence.\n\nKeep repository-native Conductor plans authoritative, retain dedicated Project\nmembership, mirror only FOI-relevant items from multi-purpose repositories, and\nadd drift checks for missing, stale, or unrelated Project 14 items.\n\n## FOI-O to PIC pairing\n\nDefine an optional, versioned compatibility profile. FOI-O remains authoritative\nfor its runtime, schemas, ontology, codebook, and jurisdiction profiles; PIC is\nan interchange and conformance layer and is not a FOI-O runtime dependency.\n\nThe release handshake must pin:\n\n- FOI-O release/tag/SHA, capabilities, schemas, ontology, codebook, and migrations;\n- PIC package versions and compatibility results;\n- jurisdiction profile, calendar, applicable time, and observation time;\n- `edithatogo/legislation` source-pack revision and digest;\n- immutable `fyi-archive` raw provenance and Hugging Face derived-dataset\n  repository/revision/configuration/split/digest;\n- `nlp-policy-nz` pipeline/model version for derived candidates; and\n- evidence assertions, independent oracle, curator/reviewer, and promotion state.\n\nPreserve FOI-O epistemic, review, extraction, maturity, and certification axes;\ndo not collapse them into PIC `valueState`. Add offline validation, valid and\nnegative examples, a compatibility matrix, and cross-jurisdiction/time/digest\nleakage tests. Generated mappings, fixtures, parameters, and traces remain\ncandidates until independently reviewed.\n\nDetailed recommendations:\n`conductor/tracks/foi_programme_governance_20260714/foio-pic-integration.md`.\n",
+        "number": 30,
+        "repository": "edithatogo/rac-conformance",
+        "title": "Track: Freedom of Information programme governance",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/rac-conformance/issues/30"
+      },
+      "delivery status": "todo",
+      "dependency": "all FOI programme tracks",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgywzdM",
+      "jurisdiction": "Cross-jurisdiction",
+      "repository": "https://github.com/edithatogo/rac-conformance",
+      "repository role": "conformance",
+      "status": "In Progress",
+      "title": "Track: Freedom of Information programme governance"
+    },
+    {
+      "content": {
+        "body": "<!-- legislation-conductor-track-id: legislation-jurisdiction-mainstreaming -->\n\n## Conductor source\n\n- Track: `legislation-jurisdiction-mainstreaming`\n- Spec: `conductor/tracks/legislation-jurisdiction-mainstreaming/spec.md`\n- Plan: `conductor/tracks/legislation-jurisdiction-mainstreaming/plan.md`\n- Metadata: `conductor/tracks/legislation-jurisdiction-mainstreaming/metadata.json`\n- Local status: **planned**\n- Priority: **P0**\n\n## Operating rule\n\nThe repository-local specification and plan are authoritative. Keep this issue aligned with checked task status and evidence. External publication, deployment, registry submission, package rename, or compatibility removal remains gated by the applicable Conductor contracts and explicit approval.",
+        "number": 62,
+        "repository": "edithatogo/legislation",
+        "title": "Track: Australian Jurisdiction Mainstreaming",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/legislation/issues/62"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#24",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgywzeo",
+      "jurisdiction": "Cross-jurisdiction",
+      "labels": [
+        "conductor",
+        "roadmap",
+        "jurisdiction",
+        "P0"
+      ],
+      "repository": "https://github.com/edithatogo/legislation",
+      "repository role": "legislation",
+      "status": "Todo",
+      "title": "Track: Australian Jurisdiction Mainstreaming"
+    },
+    {
+      "content": {
+        "body": "Repository: https://github.com/edithatogo/nlp-policy-nz\nDedicated board: https://github.com/users/edithatogo/projects/3\nSynchronization rule: mirror FOI-relevant issues and pull requests only.",
+        "id": "DI_lAHOAOYc4M4BcSmozgKw-NY",
+        "title": "Dedicated project: nlp-policy-nz Conductor Roadmap",
+        "type": "DraftIssue"
+      },
+      "id": "PVTI_lAHOAOYc4M4BcSmozgywzow",
+      "status": "Todo",
+      "title": "Dedicated project: nlp-policy-nz Conductor Roadmap"
+    },
+    {
+      "content": {
+        "body": "Repository: https://github.com/edithatogo/rac-conformance\nDedicated board: https://github.com/users/edithatogo/projects/19\nSynchronization rule: mirror FOI programme governance and conformance items only.",
+        "id": "DI_lAHOAOYc4M4BcSmozgKw-Nc",
+        "title": "Dedicated project: RaC Conformance Delivery Dashboard",
+        "type": "DraftIssue"
+      },
+      "id": "PVTI_lAHOAOYc4M4BcSmozgywzqE",
+      "status": "Todo",
+      "title": "Dedicated project: RaC Conformance Delivery Dashboard"
+    },
+    {
+      "content": {
+        "body": "Repository: https://github.com/edithatogo/legislation\nDedicated board: https://github.com/users/edithatogo/projects/24\nSynchronization rule: mirror FOI legislation source and jurisdiction-provider items only.",
+        "id": "DI_lAHOAOYc4M4BcSmozgKw-Ng",
+        "title": "Dedicated project: Legislation Conductor Roadmap",
+        "type": "DraftIssue"
+      },
+      "id": "PVTI_lAHOAOYc4M4BcSmozgywzr0",
+      "status": "Todo",
+      "title": "Dedicated project: Legislation Conductor Roadmap"
+    },
+    {
+      "content": {
+        "body": "Repository: https://github.com/edithatogo/alaveteli\nRole: upstream workflow, request-state, and platform-semantics intelligence only.\nSynchronization rule: do not mirror general implementation issues; add only explicitly authorized FOI workflow-intelligence work.",
+        "id": "DI_lAHOAOYc4M4BcSmozgKw-Nk",
+        "title": "Reference source: Alaveteli workflow intelligence",
+        "type": "DraftIssue"
+      },
+      "id": "PVTI_lAHOAOYc4M4BcSmozgywzsY",
+      "status": "Todo",
+      "title": "Reference source: Alaveteli workflow intelligence"
+    },
+    {
+      "content": {
+        "body": "Parent track: #23\\n\\nDeliver the versioned FOI-O extraction/profile contract, capability declarations, migration and unknown-version behavior, plus contract tests for FOI-O, fyi-archive, nlp-policy-nz, and one read-only agent/MCP consumer.\\n\\nSource of truth: conductor/tracks/foi_o_v2_empirical_implementation_20260714/plan.md\\n\\nProvenance: adapts optional interoperability and consumer-driven contract patterns from edithatogo/rac-conformance without making PIC a runtime dependency.",
+        "number": 25,
+        "repository": "edithatogo/foi-o",
+        "title": "Phase: Versioned extraction contract and consumer conformance",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/foi-o/issues/25"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#23",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgyw15U",
+      "jurisdiction": "NZ",
+      "labels": [
+        "conductor",
+        "phase"
+      ],
+      "repository": "https://github.com/edithatogo/foi-o",
+      "repository role": "ontology",
+      "status": "Todo",
+      "title": "Phase: Versioned extraction contract and consumer conformance"
+    },
+    {
+      "content": {
+        "body": "Parent track: #23\\n\\nRe-extract the pinned archive snapshot without overwriting raw records; add independent event-time fixtures, deterministic source assertions, explicit exception reasons, dual annotation, adjudication, and reliability evidence.\\n\\nSource of truth: conductor/tracks/foi_o_v2_empirical_implementation_20260714/plan.md",
+        "number": 26,
+        "repository": "edithatogo/foi-o",
+        "title": "Phase: Governed re-extraction, triangulation, and independent fixtures",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/foi-o/issues/26"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#23; fyi-archive#187; nlp-policy-nz#100",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgyw17E",
+      "jurisdiction": "NZ",
+      "labels": [
+        "conductor",
+        "phase"
+      ],
+      "repository": "https://github.com/edithatogo/foi-o",
+      "repository role": "ontology",
+      "status": "Todo",
+      "title": "Phase: Governed re-extraction, triangulation, and independent fixtures"
+    },
+    {
+      "content": {
+        "body": "Parent track: #23\\n\\nGenerate an immutable release-evidence bundle with tag/SHA, contract versions, capabilities, tests, fixtures, provenance, empirical results, exceptions, migrations, and limitations. Trigger the RaC Conformance paper refresh only after publication of that bundle.\\n\\nSource of truth: conductor/tracks/foi_o_v2_empirical_implementation_20260714/plan.md",
+        "number": 27,
+        "repository": "edithatogo/foi-o",
+        "title": "Phase: FOI-O release evidence and RaC paper handoff",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/foi-o/issues/27"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#23; rac-conformance#31",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgyw19I",
+      "jurisdiction": "NZ",
+      "labels": [
+        "conductor",
+        "phase"
+      ],
+      "repository": "https://github.com/edithatogo/foi-o",
+      "repository role": "ontology",
+      "status": "In Progress",
+      "title": "Phase: FOI-O release evidence and RaC paper handoff"
+    },
+    {
+      "content": {
+        "body": "Parent track: #24\\n\\nDefine versioned jurisdiction/profile contracts, capability negotiation, source and rights manifests, PIC-compatible artifacts for named consumers, provenance, and cross-profile isolation tests.\\n\\nSource of truth: conductor/tracks/australian_jurisdiction_profiles_20260714/plan.md",
+        "number": 28,
+        "repository": "edithatogo/foi-o",
+        "title": "Phase: Australian profile and source contracts",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/foi-o/issues/28"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#24; legislation#62",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgyw1_M",
+      "jurisdiction": "Cross-jurisdiction",
+      "labels": [
+        "conductor",
+        "phase"
+      ],
+      "repository": "https://github.com/edithatogo/foi-o",
+      "repository role": "ontology",
+      "status": "Todo",
+      "title": "Phase: Australian profile and source contracts"
+    },
+    {
+      "content": {
+        "body": "Parent track: #24\\n\\nImplement and test separate Commonwealth FOI and NSW GIPA profiles, independent candidate-to-golden fixture packets, deterministic versus interpretive boundaries, consumer tests, and NZ regression gates.\\n\\nSource of truth: conductor/tracks/australian_jurisdiction_profiles_20260714/plan.md",
+        "number": 29,
+        "repository": "edithatogo/foi-o",
+        "title": "Phase: Commonwealth and NSW profile pilot",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/foi-o/issues/29"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#24; legislation#62",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgyw2B0",
+      "jurisdiction": "Cross-jurisdiction",
+      "labels": [
+        "conductor",
+        "phase"
+      ],
+      "repository": "https://github.com/edithatogo/foi-o",
+      "repository role": "ontology",
+      "status": "Todo",
+      "title": "Phase: Commonwealth and NSW profile pilot"
+    },
+    {
+      "content": {
+        "body": "Parent track: #24\\n\\nPredefine sampling, exclusions, annotation codebook, reliability thresholds, and units of analysis; build deterministic primary-source triangulation and a bounded human exception queue; evaluate the pilot profiles.\\n\\nSource of truth: conductor/tracks/australian_jurisdiction_profiles_20260714/plan.md",
+        "number": 30,
+        "repository": "edithatogo/foi-o",
+        "title": "Phase: Australian empirical validation and source triangulation",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/foi-o/issues/30"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#24; fyi-archive#188; nlp-policy-nz#101",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgyw2C8",
+      "jurisdiction": "Cross-jurisdiction",
+      "labels": [
+        "conductor",
+        "phase"
+      ],
+      "repository": "https://github.com/edithatogo/foi-o",
+      "repository role": "ontology",
+      "status": "Todo",
+      "title": "Phase: Australian empirical validation and source triangulation"
+    },
+    {
+      "content": {
+        "body": "Parent track: #24\\n\\nReview contract portability, reliability, exception burden, rights coverage, and consumer proof. Record a human go/no-go decision and required contract revisions before expanding to other jurisdictions.\\n\\nSource of truth: conductor/tracks/australian_jurisdiction_profiles_20260714/plan.md",
+        "number": 31,
+        "repository": "edithatogo/foi-o",
+        "title": "Phase: Commonwealth and NSW pilot go-no-go gate",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/foi-o/issues/31"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#24",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgyw2E0",
+      "jurisdiction": "Cross-jurisdiction",
+      "labels": [
+        "conductor",
+        "phase"
+      ],
+      "repository": "https://github.com/edithatogo/foi-o",
+      "repository role": "ontology",
+      "status": "Todo",
+      "title": "Phase: Commonwealth and NSW pilot go-no-go gate"
+    },
+    {
+      "content": {
+        "body": "Parent track: #24\\n\\nAdd ACT/Queensland, Victoria/Western Australia, and South Australia/Tasmania/Northern Territory as separately gated tranches with per-profile legal, temporal, rights, empirical, and conformance evidence.\\n\\nSource of truth: conductor/tracks/australian_jurisdiction_profiles_20260714/plan.md",
+        "number": 32,
+        "repository": "edithatogo/foi-o",
+        "title": "Phase: Remaining Australian jurisdiction tranches",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/foi-o/issues/32"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#24; legislation#62",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgyw2G4",
+      "jurisdiction": "Cross-jurisdiction",
+      "labels": [
+        "conductor",
+        "phase"
+      ],
+      "repository": "https://github.com/edithatogo/foi-o",
+      "repository role": "ontology",
+      "status": "Todo",
+      "title": "Phase: Remaining Australian jurisdiction tranches"
+    },
+    {
+      "content": {
+        "body": "Parent track: #24\\n\\nRun full quality/review gates, synchronize dependencies and Project 10, generate the immutable release-evidence bundle, and archive only profiles with complete legal, empirical, and human gates.\\n\\nSource of truth: conductor/tracks/australian_jurisdiction_profiles_20260714/plan.md",
+        "number": 33,
+        "repository": "edithatogo/foi-o",
+        "title": "Phase: Australian release evidence and programme closeout",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/foi-o/issues/33"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#24; rac-conformance#31",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgyw2Ig",
+      "jurisdiction": "Cross-jurisdiction",
+      "labels": [
+        "conductor",
+        "phase"
+      ],
+      "repository": "https://github.com/edithatogo/foi-o",
+      "repository role": "ontology",
+      "status": "Todo",
+      "title": "Phase: Australian release evidence and programme closeout"
+    },
+    {
+      "content": {
+        "body": "Parent paper programme: #24\n\nTrigger only after edithatogo/foi-o publishes the next immutable release and release-evidence bundle.\n\nRequired evidence:\n- release tag and commit SHA;\n- contract/schema versions and capability matrix;\n- migration and reproducibility commands;\n- tests, fixtures, provenance, empirical results, exception summary, and limitations.\n\nThen diff the evidence against manuscript claims, regenerate affected figures/tables/citations, run paper-artifact QA, and prepare the human submission approval packet.\n\nCross-repo provenance: edithatogo/foi-o#27 and conductor/tracks/foi_o_v2_empirical_implementation_20260714/.\n\n## Current status (2026-07-15)\n\nFOI-O v0.8.1 is now published at commit d24ae6f9f2d9488052969f633d91eff4a9a47f58, and its citation and Zenodo evidence is recorded. The immutable-release trigger is therefore partially satisfied, but the required release-evidence bundle remains pending in edithatogo/foi-o issue 27. No paper refresh or submission is authorized until that bundle is available and reviewed.",
+        "number": 31,
+        "repository": "edithatogo/rac-conformance",
+        "title": "Gate: Refresh papers after next foi-o release",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/rac-conformance/issues/31"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#27; papers_completion_20260711",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgyxxCY",
+      "jurisdiction": "Cross-jurisdiction",
+      "labels": [
+        "external-gate",
+        "human-gate",
+        "publication"
+      ],
+      "repository": "https://github.com/edithatogo/rac-conformance",
+      "repository role": "conformance",
+      "status": "Todo",
+      "title": "Gate: Refresh papers after next foi-o release"
+    },
+    {
+      "content": {
+        "body": "## Summary\n\n- complete the FOI quality, citation, Project 14 drift, and machine-readable release-evidence work\n- wrap PIC fixtures, parameters, and traces in a jurisdictional/bitemporal evidence envelope\n- add content-addressed offline compatibility validation and fail-closed independent-oracle promotion\n- provide a one-pass human verification packet while preserving the absent FOI-O V2 release as an explicit blocker\n\n## Issues\n\nProgresses #30, #31, and #33. These issues remain open where publication, release, or human verification is still required.\n\n## Validation\n\n- `make check`\n- 11 tools tests\n- 46 contract tests, 87.20% coverage\n- 25 converter tests\n- 20 harness tests\n- 33 SNAP tests\n- 16 NZ reconciliation tests\n- 6 service-boundary tests\n- 2 Docassemble tests\n- live Project 14 allowlist: 19 observed / 19 required\n\n## Remaining external gates\n\n- publish FOI-O V2 and its immutable release-evidence bundle\n- Dylan verifies the prepared Project 14/boundary packet and independently reviews any candidate promotion\n- Zenodo publication/DOI verification and manuscript authorization\n- upstream maintainer workflow, signing, review, and merge actions\n",
+        "number": 36,
+        "repository": "edithatogo/rac-conformance",
+        "title": "Complete repo-owned FOI programme blocker remediation",
+        "type": "PullRequest",
+        "url": "https://github.com/edithatogo/rac-conformance/pull/36"
+      },
+      "delivery status": "done",
+      "dependency": "foi-o#27; rac-conformance#30,#31,#33",
+      "evidence status": "reviewed",
+      "human gate": "satisfied",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgyyDq0",
+      "jurisdiction": "Cross-jurisdiction",
+      "repository": "https://github.com/edithatogo/rac-conformance",
+      "repository role": "conformance",
+      "status": "Done",
+      "title": "Complete repo-owned FOI programme blocker remediation"
+    },
+    {
+      "content": {
+        "body": "## Evidence-backed gap\n\nThe archive and Australian FOI-O adapters are deterministic candidate-generation contracts, but their current fixtures use placeholder revisions/hashes and synthetic sources. The independent panel therefore rejects legal-label promotion from the current evidence.\n\n## Scope\n- pin real immutable FOI-O, fyi-archive, legislation/profile and model revisions\n- build rights-cleared, jurisdiction-isolated held-out samples for NZ/archive, Australian Commonwealth and NSW\n- record reviewer/adjudicator identities, dates, disagreements and promotion decisions\n- publish per-family and per-jurisdiction precision, recall, F1, calibration, coverage and abstention reports\n- keep every output candidate-only until its jurisdiction gate passes\n\n## Acceptance\nNo promotion from placeholder or synthetic evidence. Each jurisdiction is independently reproducible and can abstain or remain unpromoted.",
+        "number": 129,
+        "repository": "edithatogo/nlp-policy-nz",
+        "title": "FOI-O empirical promotion evidence for NZ, Commonwealth and NSW",
+        "type": "Issue",
+        "url": "https://github.com/edithatogo/nlp-policy-nz/issues/129"
+      },
+      "delivery status": "todo",
+      "dependency": "foi-o#23/#24; fyi-archive#188; legislation#62",
+      "evidence status": "planned",
+      "human gate": "required",
+      "id": "PVTI_lAHOAOYc4M4BcSmozgy7Rss",
+      "jurisdiction": "Cross-jurisdiction",
+      "repository": "https://github.com/edithatogo/nlp-policy-nz",
+      "repository role": "nlp",
+      "status": "Todo",
+      "title": "FOI-O empirical promotion evidence for NZ, Commonwealth and NSW"
+    }
+  ],
+  "totalCount": 27
+}

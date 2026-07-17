@@ -21,7 +21,7 @@ programme status.
 | `FOI-GOV-LOCAL-02` | Allowlist and expected status overrides | [`project14-allowlist.json`](./project14-allowlist.json) | Repo-local expected state; compare with a newly exported Project 14 item list. |
 | `FOI-GOV-LOCAL-03` | Recorded implementation and blocker notes | [`plan.md`](./plan.md) | Historical checkpoints; not a current hosted-status assertion. |
 | `FOI-GOV-LOCAL-04` | FOI-O/PIC boundary and release-handshake requirements | [`foio-pic-integration.md`](./foio-pic-integration.md), [`github-issue.md`](./github-issue.md) | Analyst-facing design guidance; no published FOI-O V2 evidence. |
-| `FOI-GOV-LIVE-01` | Project 14 item/state/field verification | Analyst must attach the raw `gh project item-list` export, retrieval date, account, and validator output | Missing from this repository; the 2026-07-15 snapshot below is not a refresh. |
+| `FOI-GOV-LIVE-01` | Project 14 item/state/field verification | [`project14-live-20260717.json`](./project14-live-20260717.json), SHA-256 `637e97567196e3bbfe3b5b86b24d1c50d826c9bb2093b9512e5517c4d8e893dd` | Exported as `edithatogo` on 2026-07-17; validator reports `observed=20 required=20`. Recheck after board changes. |
 
 For every live decision, record the export path or attachment, retrieval date,
 authenticated account, validator command, and result. A URL alone is not enough
@@ -108,10 +108,10 @@ passes.
 
 | Section | Outcome (`approve` / `amend` / `defer`) | Evidence ID(s) checked | Correction or condition | Reviewer + date |
 |---|---|---|---|---|
-| 1. Umbrella definition |  |  |  |  |
-| 2. Item synchronization |  |  |  |  |
-| 3. Durable governance |  |  |  |  |
-| 4. FOI-O/PIC boundary |  |  |  |  |
+| 1. Umbrella definition | approve | `FOI-GOV-LOCAL-01`, `FOI-GOV-LIVE-01` | None | Dylan; prior approval reconciled 2026-07-17 |
+| 2. Item synchronization | approve | `FOI-GOV-LOCAL-02`, `FOI-GOV-LIVE-01` | Recheck after Project changes | Dylan; prior approval reconciled 2026-07-17 |
+| 3. Durable governance | approve | `FOI-GOV-LOCAL-02`, `FOI-GOV-LIVE-01` | Exact allowlist remains fail-closed | Dylan; prior approval reconciled 2026-07-17 |
+| 4. FOI-O/PIC boundary | approve | `FOI-GOV-LOCAL-04` | Published FOI-O v2 exercise and independent promotion review remain open | Dylan; prior approval reconciled 2026-07-17 |
 
 ## Approval record
 
