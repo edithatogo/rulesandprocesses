@@ -1,0 +1,1 @@
+Conductor phase review evidence: the FOI-O candidate, staged foi-process execution artifacts, and PIC trace were pinned and validated with equivalenceClaim none. Human certification remains required; no fixture or canonical profile was promoted. make check passed with 71 root tests, 105 contract-tool tests, 25 converter tests, and all harness/study/demo suites.
