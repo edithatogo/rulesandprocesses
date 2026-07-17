@@ -30,7 +30,7 @@ Track ID: `foi_programme_quality_and_spacy_20260714`
 
 ---
 
-- [ ] **Track: Paper programme completion**
+- [~] **Track: Paper programme completion (blocked on FOI-O evidence)**
 *Link: [./tracks/papers_completion_20260711/](./tracks/papers_completion_20260711/)*
 
 ---
