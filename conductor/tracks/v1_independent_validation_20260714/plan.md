@@ -66,6 +66,13 @@ GitHub issue: [#45](https://github.com/edithatogo/rac-conformance/issues/45). De
 - [x] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Candidate Engagement' (Protocol in workflow.md)
     - **REVIEW:** Authorized bounded requests are recorded; maintainer responses and qualifying evidence remain external dependencies.
 
+> STATUS RECHECK (2026-07-17): Local analyst review and upstream-status
+> packets are staged under `external/independent-validation/`. PolicyEngine
+> PRs #515-#517, OpenFisca core PR #1382, OpenFisca Aotearoa PR #200, and
+> FOI-O issue #27 remain open in the live snapshot. No independent result,
+> qualifying consumer, or FOI-O evidence bundle was added; the gate remains
+> blocked. Human outreach and submission authorization remain outstanding.
+
 ## Phase 3 - Result Verification and Feedback
 
 - [ ] Task: Verify independent results

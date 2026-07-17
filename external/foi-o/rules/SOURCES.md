@@ -2,6 +2,12 @@
 
 Verified by Codex on 2026-07-05 from New Zealand Legislation, Official Information Act 1982, latest version as at 5 April 2025.
 
+Freshness gate: this is a dated source snapshot, not a statement that the
+consolidated Act remains unchanged on 2026-07-17. Recheck the primary source
+and record a new verification date before using these rules in a new paper,
+upstream packet, or certification decision. If the primary source cannot be
+rechecked, mark the dependent claim `UNVERIFIED` and stop the handoff.
+
 Primary source URL: https://www.legislation.govt.nz/act/public/1982/0156/latest/DLM64785.html
 
 ## Consolidation Status
@@ -79,4 +85,3 @@ Implementation boundary: the module can flag deadline expiry from known dates. I
 - `OIA 1982 s 15, latest as at 2025-04-05`
 - `OIA 1982 s 15A, latest as at 2025-04-05`
 - `OIA 1982 s 28, latest as at 2025-04-05`
-

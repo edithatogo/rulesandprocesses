@@ -1,8 +1,13 @@
 # OpenFisca upstream implementation status
 
-**Updated:** 2026-07-17
+**Updated:** 2026-07-17 (live status recheck)
 **Actor:** agent session (edithatogo / fork-based PRs)  
 **Scope:** openfisca-core issues #1380 and #1381 only (not openfisca-aotearoa)
+
+PR #1382 remains open as of the recheck. Issue #1381 also remains open and its
+last visible activity is the author comment recorded in the issue thread. The
+query returned no listed checks. These are pending upstream conversations, not
+merged changes or independent validation evidence.
 
 ## Summary
 
@@ -99,16 +104,3 @@ Corpus (from issue): 10/10 selected openfisca-france YAML files convert under th
 1. **#1380:** Awaiting OpenFisca review / CI on PR #1382. Possible review feedback on API naming (`get_value_state` vs alternatives) or docs site coverage.
 2. **#1381:** Awaiting maintainer direction; then open a docs PR or tooling PR accordingly.
 3. Optional: mirror the same provenance API idea for PolicyEngine if not already covered by that track.
-
-## Independent-validation outreach
-
-On 2026-07-17, following explicit human authorization, the RaC Conformance
-project posted one bounded validation request on OpenFisca issue #1380:
-
-https://github.com/openfisca/openfisca-core/issues/1380#issuecomment-4998515274
-
-The request is limited to a maintainer-selected missingness case or read-only
-trace projection. It does not request PIC adoption, a code merge, or a change
-to OpenFisca calculation semantics. The response window is 14 days with at
-most one follow-up. Silence will be recorded as `unresponsive` and will not
-count toward v1 independent adoption.
