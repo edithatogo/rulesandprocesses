@@ -17,11 +17,12 @@ Consumes completed work from [#39](https://github.com/edithatogo/rac-conformance
 
 ## Phase 2 - Process-profile closure
 
-- [ ] Task: Audit `pic-process-profile/0.1.0` against its consumer inventory
-    - [ ] Confirm states, events, actors, timers, tasks, source assertions, exceptions, and traces have named consumers.
-    - [ ] Confirm controlling assertions fail closed on ineligible review state or missing effective date.
-    - [ ] Confirm normalized trace projection is deterministic and platform-neutral.
+- [x] Task: Audit `pic-process-profile/0.1.0` against its consumer inventory
+    - [x] Confirm states, events, actors, timers, tasks, source assertions, exceptions, and traces have named consumers.
+    - [x] Confirm controlling assertions fail closed on ineligible review state or missing effective date.
+    - [x] Confirm normalized trace projection is deterministic and platform-neutral.
     - **Acceptance:** the profile contract is implementable without FOI-O, BPMN, or a workflow engine.
+    - **Evidence:** `PROCESS_PROFILE_CLOSURE_AUDIT.md`; `contracts/tools/tests/test_process_profile_schema.py`; `make check` passed on 2026-07-17.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 2 - Process-profile closure'
 
 ## Phase 3 - FOI demonstrator certification
