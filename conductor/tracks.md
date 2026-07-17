@@ -1,6 +1,6 @@
 # Project Tracks
 
-- [ ] **Track: Citation and Zenodo mirroring (deferred)**
+- [~] **Track: Citation and Zenodo mirroring (blocked on authenticated deposit)**
 Track ID: `citation_zenodo_mirroring_20260714`
 *Link: [./tracks/citation_zenodo_mirroring_20260714/](./tracks/citation_zenodo_mirroring_20260714/)*
 
