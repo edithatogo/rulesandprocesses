@@ -48,7 +48,13 @@ Consumes completed work from [#39](https://github.com/edithatogo/rac-conformance
     > decision preserves `equivalenceClaim: none`, inferred execution
     > assertions, all representational losses and non-claims, and the
     > candidate's unpromoted status.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - FOI demonstrator certification'
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - FOI demonstrator certification'
+    - **REVIEW (2026-07-18):** The E1-E11 paths and digests were independently
+      checked, the staged `foi-process` evidence was verified against its
+      recorded upstream revision, and the certification regression preserves
+      inferred execution status, `equivalenceClaim: none`, all non-claims, and
+      the unpromoted candidate boundary. Focused tests and full `make check`
+      passed.
 
 ## Phase 4 - Local hardening and core readiness
 
