@@ -119,10 +119,15 @@ GitHub programme issue: [#38](https://github.com/edithatogo/rac-conformance/issu
 
 ---
 
-- [x] **Track: Incubate process-mappings as a provisional subrepo (canonical extraction deferred)**
+- [~] **Track: Complete process-mappings canonical cutover (remote created and verified; parent closeout pending)**
 Track ID: `process_mappings_repository_20260714`
 GitHub issue: [#50](https://github.com/edithatogo/rac-conformance/issues/50)
-*Archived link: [./archive/process_mappings_repository_20260714/](./archive/process_mappings_repository_20260714/)*
+*Active link: [./tracks/process_mappings_repository_20260714/](./tracks/process_mappings_repository_20260714/)*
+
+The [archived track snapshot](./archive/process_mappings_repository_20260714/)
+records the earlier decision to defer remote creation. The active track records
+the later approved staged creation and the still-pending single-source-of-truth
+cutover; the archive is historical evidence, not current status.
 
 ---
 
