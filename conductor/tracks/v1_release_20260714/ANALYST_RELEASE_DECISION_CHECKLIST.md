@@ -27,7 +27,7 @@ treated as published from this checklist.
 | R7 | [`V1_RELEASE_AUTHORIZATION_PACKET.md`](./V1_RELEASE_AUTHORIZATION_PACKET.md) | Re-pin at review | Publication/signing boundary and regeneration requirement. |
 | R8 | [`conductor/tracks/v1_release_20260714/spec.md`](./spec.md) | Re-pin at review | Normative release acceptance criteria and analyst gates. |
 | R9 | [`conductor/NEXTGEN_RELEASE_STATUS.md`](../../NEXTGEN_RELEASE_STATUS.md) | Re-pin at review | Programme-level external and analyst gate context. |
-| R10 | [`conductor/tracks/core_model_demonstrator_20260717/ANALYST_DECISION_PACKET.md`](../core_model_demonstrator_20260717/ANALYST_DECISION_PACKET.md) | This review set | FOI demonstrator boundary; it is not a release qualification result. |
+| R10 | [`conductor/archive/core_model_demonstrator_20260717/ANALYST_DECISION_PACKET.md`](../../archive/core_model_demonstrator_20260717/ANALYST_DECISION_PACKET.md) | This review set | FOI demonstrator boundary; it is not a release qualification result. |
 
 ## Residual release-risk review
 

@@ -39,12 +39,22 @@ Consumes completed work from [#39](https://github.com/edithatogo/rac-conformance
     - [x] Ensure no candidate fixture is promoted by the implementing agent.
     - **Acceptance:** the demonstrator has a reproducible source-to-profile-to-trace evidence chain.
     - **Evidence:** `FOI_DEMONSTRATOR_CHAIN.json`, `FOI_DEMONSTRATOR_CERTIFICATION_PACKET.md`, `external/foi-process/SUBMISSION.md`; `make check` passed on 2026-07-17.
-- [ ] Task: [HUMAN] Certify the FOI-O demonstrator boundary
-    - [ ] Review only the combined execution evidence, shared-concept boundary, representational losses, and non-claims; the exact profile's prior compatibility certification is not reopened.
-    - [ ] Record certification or required changes against immutable digests.
+- [x] Task: [HUMAN] Certify the FOI-O demonstrator boundary
+    - [x] Review only the combined execution evidence, shared-concept boundary, representational losses, and non-claims; the exact profile's prior compatibility certification is not reopened.
+    - [x] Record certification or required changes against immutable digests.
     - **Acceptance:** certification is explicit and does not claim legal authority or universal portability.
-    > BLOCKED (2026-07-17): Dylan must review `FOI_DEMONSTRATOR_CERTIFICATION_PACKET.md` and record the bounded certification decision. The implementing agent cannot certify the chain or promote the candidate.
-- [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - FOI demonstrator certification'
+    > ANALYST DECISION (2026-07-18): Dylan approved the E1-E11 digest-pinned
+    > chain as `bounded-compatible` against merged commit `8343ad5`. The
+    > decision preserves `equivalenceClaim: none`, inferred execution
+    > assertions, all representational losses and non-claims, and the
+    > candidate's unpromoted status.
+- [x] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - FOI demonstrator certification'
+    - **REVIEW (2026-07-18):** The E1-E11 paths and digests were independently
+      checked, the staged `foi-process` evidence was verified against its
+      recorded upstream revision, and the certification regression preserves
+      inferred execution status, `equivalenceClaim: none`, all non-claims, and
+      the unpromoted candidate boundary. Focused tests and full `make check`
+      passed.
 
 ## Phase 4 - Local hardening and core readiness
 
@@ -59,7 +69,7 @@ Consumes completed work from [#39](https://github.com/edithatogo/rac-conformance
     - [x] Link the FOI-O certification, normalized trace, validator corpus, and hardening evidence.
     - [x] Link [DEFERRED_ROADMAP.md](../../DEFERRED_ROADMAP.md) for all excluded work.
     - **Acceptance:** a reviewer can distinguish model completeness, demonstration evidence, and deferred programme work.
-    - **Evidence:** [CORE_READINESS_PACKET.md](CORE_READINESS_PACKET.md); human certification remains the explicit Phase 3 gate.
+    - **Evidence:** [CORE_READINESS_PACKET.md](CORE_READINESS_PACKET.md); bounded analyst certification was recorded in Phase 3 on 2026-07-18.
 - [x] Task: Conductor - Automated Review and Checkpoint 'Phase 4 - Local hardening and core readiness'
 
 > CHECKPOINT (2026-07-17): Phase 4 evidence and readiness packet were reviewed

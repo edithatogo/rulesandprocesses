@@ -112,10 +112,10 @@ GitHub issue: [#39](https://github.com/edithatogo/rac-conformance/issues/39)
 
 ---
 
-- [~] **Track: Complete the core model and FOI demonstrator**
+- [x] **Track: Complete the core model and FOI demonstrator**
 Track ID: `core_model_demonstrator_20260717`
 GitHub programme issue: [#38](https://github.com/edithatogo/rac-conformance/issues/38)
-*Link: [./tracks/core_model_demonstrator_20260717/](./tracks/core_model_demonstrator_20260717/)*
+*Archived link: [./archive/core_model_demonstrator_20260717/](./archive/core_model_demonstrator_20260717/)*
 
 ---
 

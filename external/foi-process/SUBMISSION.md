@@ -16,7 +16,7 @@ This directory is a read-only evidence snapshot staged for the
   `5e758674cbd1cbbd01a1b3c72d5dea6efe00bd06962893801c62222934a1c37f`.
 
 The copied bytes are hashed in
-`conductor/tracks/core_model_demonstrator_20260717/FOI_DEMONSTRATOR_CHAIN.json`.
+`conductor/archive/core_model_demonstrator_20260717/FOI_DEMONSTRATOR_CHAIN.json`.
 The generated trace declares `assertion_status: inferred` and an indicative
 deadline. It is execution/evidence input, not a legal conclusion or a PIC
 fixture promotion.
