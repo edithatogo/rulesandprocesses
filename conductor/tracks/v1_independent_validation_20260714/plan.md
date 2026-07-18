@@ -15,7 +15,12 @@ GitHub issue: [#45](https://github.com/edithatogo/rac-conformance/issues/45). De
     - [x] Remove assumptions about local paths, private services, or unpublished source material.
     - [x] Add a clean-environment rehearsal runner.
     - **Acceptance:** an uninvolved reviewer can reproduce the kit's reference run.
-    - **Evidence:** `conductor/tracks/v1_independent_validation_20260714/kit/` is self-contained for `pic-semantics/0.1.0`; `run_reference.py` imports only `jsonschema`, computes a kit digest, and labels its output `reference-runner-only`.
+    - **Evidence:** `independent/kit/` is the sole self-contained kit for `pic-semantics/0.1.0`; `run_reference.py` imports only `jsonschema`, verifies manifest-pinned artifact digests, computes a kit digest, and labels its output `reference-runner-only`.
+    > REMEDIATION CHECKPOINT (2026-07-18): Consolidated the divergent public
+    > and track-local kits into `independent/kit/`. The canonical kit now
+    > bundles the current contract byte-for-byte, pins every artifact digest,
+    > verifies those digests before execution, and is protected by uniqueness,
+    > source-drift, and clean-environment regression tests.
 - [x] Task: Build conformance evidence verifier
     - [x] Validate implementation identity, versions, environment, artifact digests, result signatures/checksums, and test outcomes.
     - [x] Reject stale, incomplete, self-certified, or unverifiable submissions.

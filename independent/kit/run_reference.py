@@ -12,18 +12,36 @@ from jsonschema import Draft202012Validator
 
 ROOT = Path(__file__).resolve().parent
 BUNDLE = ROOT / "bundle" / "pic-semantics-0.1.0"
+MANIFEST = ROOT / "manifest.json"
 
 
-def digest_tree() -> str:
+def verify_artifacts() -> list[dict[str, str]]:
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    verified = []
+    for artifact in manifest["artifacts"]:
+        path = (ROOT / artifact["path"]).resolve()
+        if ROOT.resolve() not in path.parents:
+            raise ValueError(f"artifact escapes kit: {artifact['path']}")
+        actual = hashlib.sha256(path.read_bytes()).hexdigest()
+        if actual != artifact["sha256"]:
+            raise ValueError(f"artifact digest mismatch: {artifact['path']}")
+        verified.append(artifact)
+    return verified
+
+
+def digest_tree(artifacts: list[dict[str, str]]) -> str:
     digest = hashlib.sha256()
-    for path in sorted(BUNDLE.rglob("*")):
-        if path.is_file():
-            digest.update(str(path.relative_to(BUNDLE)).encode())
-            digest.update(path.read_bytes())
+    for artifact in artifacts:
+        digest.update(artifact["path"].encode())
+        digest.update(b"\0")
+        digest.update(artifact["sha256"].encode())
+        digest.update(b"\n")
     return digest.hexdigest()
 
 
 def run() -> dict:
+    artifacts = verify_artifacts()
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     schema = json.loads((BUNDLE / "schema.json").read_text())
     validator = Draft202012Validator(schema)
     results = []
@@ -35,8 +53,8 @@ def run() -> dict:
             results.append({"path": str(path.relative_to(ROOT)), "expectedValid": expected_valid, "passed": passed, "errorCount": len(errors)})
     return {
         "schemaVersion": "independent-kit-result.v1",
-        "kitVersion": "independent-kit/0.1.0",
-        "kitDigestSha256": digest_tree(),
+        "kitVersion": manifest["kitVersion"],
+        "kitDigestSha256": digest_tree(artifacts),
         "results": results,
         "status": "pass" if all(result["passed"] for result in results) else "fail",
         "independenceStatus": "reference-runner-only",

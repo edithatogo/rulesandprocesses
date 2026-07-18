@@ -22,7 +22,7 @@ review.
 ## Reproduction and evidence
 
 Use the self-contained kit from
-`conductor/tracks/v1_independent_validation_20260714/kit/` and provide a
+`independent/kit/` and provide a
 submission matching `SUBMISSION_SCHEMA.json`, including source revision,
 repository and artifact digests, clean environment, command, output checksums,
 maintainer acknowledgement, and freshness date.

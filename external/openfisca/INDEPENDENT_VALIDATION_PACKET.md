@@ -28,7 +28,7 @@ deterministic evidence verifier.
 ## Reproduction and evidence
 
 Use the self-contained kit from
-`conductor/tracks/v1_independent_validation_20260714/kit/` and provide a
+`independent/kit/` and provide a
 submission matching `SUBMISSION_SCHEMA.json`. The packet must include pinned
 source revision, clean environment, command, input/result checksums,
 acknowledgement, and maintenance owner. A local fork or screenshot is not

@@ -28,7 +28,7 @@ kit, expected-result policy, and verifier.
 
 ## Reproduction and evidence
 
-Use `conductor/tracks/v1_independent_validation_20260714/kit/` from a pinned
+Use `independent/kit/` from a pinned
 release archive. The maintainer should provide a submission matching
 `SUBMISSION_SCHEMA.json`, including a clean-checkout command, kit digest,
 implementation digest, result digest, acknowledgement URL, and freshness date.
