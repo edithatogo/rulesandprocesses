@@ -102,6 +102,12 @@ GitHub issue: [#45](https://github.com/edithatogo/rac-conformance/issues/45). De
     - [ ] Link qualifying, partial, declined, unresponsive, and blocked outcomes.
     - [ ] Keep Project 19 and the machine-readable gate manifest synchronized.
     - **Acceptance:** public status is no stronger than external evidence.
+    > CONTRIBUTOR CHECKPOINT (2026-07-18): The candidate registry and dated
+    > status snapshot now deterministically generate
+    > `independent/STATUS_LEDGER.json`; CI rejects candidate, date, governing
+    > issue, gate-status, or qualifying-consumer drift. The release gate now
+    > points to issue #45 and the v2 evidence contract. This task remains open
+    > for future external outcomes; no qualifying adoption is claimed.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Result Verification and Feedback' (Protocol in workflow.md)
 
 ## Phase 4 - v1 Independence Certification
