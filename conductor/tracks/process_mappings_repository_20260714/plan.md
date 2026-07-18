@@ -110,6 +110,13 @@ Phase 1 and establishes the implementation home required by
     > the only writable source and that canonical cutover requires one reviewed
     > transaction updating readers before retiring the subtree. No cutover claim
 > or human certification is made by this inventory.
+    > CHECKPOINT (2026-07-18): A digest-pinned destination synchronization
+    > bundle is staged under `external/process-mappings/`. It captures eight
+    > changed files and four destination-missing health-technology candidates
+    > against destination base `d0257c1` and parent source `cac2d3c`. Repository
+    > rules prohibit agent push to the external repository, so canonical cutover
+    > remains blocked until that bundle is independently applied, reviewed,
+    > merged, and verified in `edithatogo/process-mappings`.
     > CHECKPOINT (2026-07-17): `VERSIONING_DECISION_PACKET.md` records the
     > current no-tag/no-release state and recommends a first public `0.1.0`
     > pre-1.0 release only after canonical cutover certification. It does not
