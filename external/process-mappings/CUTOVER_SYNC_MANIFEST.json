@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "process-mappings-cutover-sync.v1",
+  "status": "prepared-not-submitted",
+  "destination": "https://github.com/edithatogo/process-mappings",
+  "destinationBaseCommit": "d0257c1a99068262ea257643f3d6bdb57f2baee6",
+  "parentSourceBaseCommit": "cac2d3c6660b2b8c848c13038189f33c26fe0a2c",
+  "files": [
+    {"path": "LICENSE_BOUNDARY.md", "beforeSha256": "df708f746e844e28c5dd07a9a61d0bcfe9d97277c02bbf56b18072cc68872fa5", "afterSha256": "d033774035ec74db7dcdbc4571ab4de91f9ae4877fb3e84b7b12dcfa4ef6c0fb"},
+    {"path": "STATUS.md", "beforeSha256": "2acbe267224eabceba5328023c96f70eb4c49bb26a9bdec254bd36874cfd6cce", "afterSha256": "38bcaf1331b2ab5075dba0c259b9414dc52459a93ea5e4fd8552f57b1eaed062"},
+    {"path": "migration/DEFERRED_CUTOVER_DECISION.md", "beforeSha256": "2916d16701f4ad97ebd72ac3bbcf4086f7ae226669db84b49a66408dc877f3b8", "afterSha256": "a4eec9d499790f44b55b4ef38c5b36e50366c34d6132244e79727e7ada889b9f"},
+    {"path": "migration/GITHUB_MIGRATION_PACKET.md", "beforeSha256": "f1ed1983502523ff87760345b4c1a7e02b9fbb3e7a310d92f0056f005ef509cd", "afterSha256": "46da9b0cecda00801127cab3a879e752aaac91407a4d54736cb0e4baa2658f0e"},
+    {"path": "migration/REHEARSAL_REPORT.json", "beforeSha256": "65970134f0b796259c1b1a87c76cb99b12a98201cb1fa181f87d25e6bf82502f", "afterSha256": "b66b730d8a4f14b19eedbe5f789c74f6b722ecbfd66dad4c0946ddbb6ba5861f"},
+    {"path": "profiles/health-technology/README.md", "beforeSha256": "2ddfb4ca7bd70d7b1922a58d3d9158f120e2c3f271c854602b4af99b5c887283", "afterSha256": "9fb3309be321081df5cf8d13dbeffe299c51833da14b572d26ea28134c5cdf6e"},
+    {"path": "profiles/health-technology/candidates/SOURCE_SPINE.json", "beforeSha256": "83b4f6c34cbc10ec93ad5af00530b81f2ec44dd61f7998ec1516001c55eeec6a", "afterSha256": "94df2cc35e633aed80e1f39696b86cdc7af0f040d5e0db8606af0a2044331e92"},
+    {"path": "profiles/health-technology/comparison-candidates.json", "beforeSha256": "536abfd66bb471b984431ba5a07c51281c0ceaa1116f4488b62b47326f438ecf", "afterSha256": "f7c1b65d76e77740bade70f9cc10732c945837f9bd13d076920cd1fdb403381d"},
+    {"path": "profiles/health-technology/candidates/nz-pembrolizumab-adjuvant.json", "beforeSha256": null, "afterSha256": "2fe033b62fb388bea299065e2adb42086e6e74b010f2c86c936899d601f1c236"},
+    {"path": "profiles/health-technology/candidates/nz-pembrolizumab-pathway.json", "beforeSha256": null, "afterSha256": "e04638d7a0d2d744a80f9bded12a238b242bbbc43a1d7a445a5dd318133a06cb"},
+    {"path": "profiles/health-technology/candidates/uk-pembrolizumab-adjuvant.json", "beforeSha256": null, "afterSha256": "4ef21abee71b962bd41d4c8ff5261f1985d7e153dccb8d33f87c9e2e730cf939"},
+    {"path": "profiles/health-technology/candidates/uk-pembrolizumab-pathway.json", "beforeSha256": null, "afterSha256": "f4a936d64616367134ab8847037a55b8ecaf9689b32bb57c957010c3164a1682"}
+  ],
+  "promotion": "none",
+  "canonicalCutover": "not-authorized-by-this-submission"
+}

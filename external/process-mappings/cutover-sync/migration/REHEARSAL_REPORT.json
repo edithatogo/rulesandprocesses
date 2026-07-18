@@ -1,0 +1,115 @@
+{
+  "procedure": "local-process-mappings-extraction-rehearsal",
+  "sourceCommit": "19d497e0c0bbe8c10bfd9cf90ea4394744a3f614",
+  "sourceTree": "901ad0922de0da4bb5f2986c04aba1d67e214608",
+  "historySplitCommit": "9e6f30ce4fe308c2cf6e833f8b64bcc6efc1a951",
+  "trackedFileCount": 83,
+  "fileManifestSha256": "514ec0df83facce1f63d3468e936b29e3dde013a11dbac53a2ce8505c73b5edf",
+  "parentLicenseSha256": "db3c7186f3e87713b0acbee2321b9af9a0795c5c87b7836540c0c5c42e3ff964",
+  "transformedLinks": [
+    "LICENSE_BOUNDARY.md: ../../LICENSE -> LICENSE"
+  ],
+  "checks": [
+    {
+      "id": "tracked-tree",
+      "status": "pass",
+      "detail": "83 tracked files copied"
+    },
+    {
+      "id": "source-commit",
+      "status": "pass",
+      "detail": "19d497e0c0bbe8c10bfd9cf90ea4394744a3f614"
+    },
+    {
+      "id": "source-tree",
+      "status": "pass",
+      "detail": "901ad0922de0da4bb5f2986c04aba1d67e214608"
+    },
+    {
+      "id": "history-preservation",
+      "status": "pass",
+      "detail": "9e6f30ce4fe308c2cf6e833f8b64bcc6efc1a951"
+    },
+    {
+      "id": "license-transfer",
+      "status": "pass",
+      "detail": "db3c7186f3e87713b0acbee2321b9af9a0795c5c87b7836540c0c5c42e3ff964"
+    },
+    {
+      "id": "standalone-git-commit",
+      "status": "pass",
+      "detail": "local commit created"
+    },
+    {
+      "id": "independent-clone",
+      "status": "pass",
+      "detail": "local clone completed"
+    },
+    {
+      "id": "link-audit",
+      "status": "pass",
+      "detail": "all local Markdown links resolve"
+    },
+    {
+      "id": "provenance-files",
+      "status": "pass",
+      "detail": "source manifest and consumption manifest present"
+    },
+    {
+      "id": "standalone-ci",
+      "status": "pass",
+      "detail": "Standalone check passed on public destination main"
+    },
+    {
+      "id": "local-installation",
+      "status": "not-applicable",
+      "detail": "incubator contains no installable runtime package"
+    },
+    {
+      "id": "dependency-updates",
+      "status": "deferred",
+      "detail": "destination dependency policy must be configured after cutover"
+    },
+    {
+      "id": "issue-migration",
+      "status": "drafted",
+      "detail": "migration packet preserves parent issue cross-references"
+    },
+    {
+      "id": "source-reference-portability",
+      "status": "pass",
+      "detail": "FOI-O profile references use pinned durable locators"
+    },
+    {
+      "id": "parent-consumption-evidence",
+      "status": "pass",
+      "detail": "parent manifest retains local paths and pinned portable locators"
+    },
+    {
+      "id": "remote-creation",
+      "status": "pass",
+      "detail": "https://github.com/edithatogo/process-mappings created public on 2026-07-17"
+    },
+    {
+      "id": "rollback",
+      "status": "defined",
+      "detail": "retain parent subtree until hosted clone and checks pass"
+    }
+  ],
+  "remoteCreated": true,
+  "remoteUrl": "https://github.com/edithatogo/process-mappings",
+  "migrationCommit": "d0257c1a99068262ea257643f3d6bdb57f2baee6",
+  "hostedCloneCommit": "d0257c1a99068262ea257643f3d6bdb57f2baee6",
+  "hostedIssue": "https://github.com/edithatogo/process-mappings/issues/1",
+  "hostedControls": {
+    "public": true,
+    "requiredStatusChecks": ["check"],
+    "codeOwnerReview": true,
+    "conversationResolution": true,
+    "branchProtection": true
+  },
+  "rollback": {
+    "beforeCutover": "delete temporary extraction and keep parent subtree authoritative",
+    "afterCutover": "restore parent reference only after canonical clone verification"
+  }
+}
