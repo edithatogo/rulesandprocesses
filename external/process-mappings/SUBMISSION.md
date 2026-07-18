@@ -6,7 +6,7 @@ Status: prepared; not submitted or applied to the destination repository.
 
 - Repository: `https://github.com/edithatogo/process-mappings`
 - Required base commit: `d0257c1a99068262ea257643f3d6bdb57f2baee6`
-- Parent source commit: `cac2d3c6660b2b8c848c13038189f33c26fe0a2c`
+- Parent source base commit: `cac2d3c6660b2b8c848c13038189f33c26fe0a2c`
 - Destination issue: `edithatogo/process-mappings#1`
 - Parent issue: `edithatogo/rac-conformance#50`
 
@@ -41,4 +41,3 @@ destination canonical.
   reviewed and merged.
 - Repository rules prohibit this agent from pushing this cross-repository
   submission directly.
-

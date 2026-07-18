@@ -17,6 +17,7 @@ PROFILES = (
 def test_candidate_profiles_validate_without_controlling_assertions() -> None:
     for path in PROFILES:
         document = json.loads(path.read_text(encoding="utf-8"))
+        assert document["profileId"] == f"health-technology/process.{path.stem}"
         report = validate_file(path)
         assert report.ok, report.to_dict()
         assert validate_candidate_document(document) == []

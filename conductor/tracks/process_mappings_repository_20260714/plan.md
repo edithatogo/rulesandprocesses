@@ -113,7 +113,8 @@ Phase 1 and establishes the implementation home required by
     > CHECKPOINT (2026-07-18): A digest-pinned destination synchronization
     > bundle is staged under `external/process-mappings/`. It captures eight
     > changed files and four destination-missing health-technology candidates
-    > against destination base `d0257c1` and parent source `cac2d3c`. Repository
+    > against destination base `d0257c1` and parent source base `cac2d3c`.
+    > Repository
     > rules prohibit agent push to the external repository, so canonical cutover
     > remains blocked until that bundle is independently applied, reviewed,
     > merged, and verified in `edithatogo/process-mappings`.

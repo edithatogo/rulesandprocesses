@@ -1,6 +1,6 @@
 {
   "conformsTo": "pic-process-profile/0.1.0",
-  "profileId": "health-technology/process.uk-pembrolizumab-adjuvant",
+  "profileId": "health-technology/process.uk-pembrolizumab-pathway",
   "profileVersion": "0.1.0",
   "processDefinitionVersion": "0.1.0",
   "jurisdiction": "UK",
