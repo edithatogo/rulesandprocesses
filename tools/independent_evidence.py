@@ -17,6 +17,7 @@ TRACK = ROOT / "conductor/tracks/v1_independent_validation_20260714"
 SCHEMA = TRACK / "SUBMISSION_SCHEMA.json"
 CRITERIA = TRACK / "INDEPENDENCE_CRITERIA.json"
 KIT = ROOT / "independent/kit"
+TRUSTED_ATTESTATIONS = ROOT / "independent/TRUSTED_ATTESTATIONS.json"
 NONQUALIFYING_OUTCOMES = {"partial", "conflicting", "withdrawn", "declined", "unresponsive"}
 
 
@@ -46,6 +47,19 @@ def _kit_digest(manifest: dict) -> str:
     return digest.hexdigest()
 
 
+def _verify_kit_artifacts(manifest: dict) -> list[str]:
+    diagnostics = []
+    for artifact in manifest["artifacts"]:
+        path = (KIT / artifact["path"]).resolve()
+        if KIT.resolve() not in path.parents or not path.is_file():
+            diagnostics.append(f"kit artifact is missing or unsafe: {artifact['path']}")
+            continue
+        actual = hashlib.sha256(path.read_bytes()).hexdigest()
+        if actual != artifact["sha256"]:
+            diagnostics.append(f"kit artifact digest mismatch: {artifact['path']}")
+    return diagnostics
+
+
 def _verify_artifact(name: str, artifact: dict, evidence_root: Path) -> str | None:
     root = evidence_root.resolve()
     path = (root / artifact["path"]).resolve()
@@ -67,6 +81,7 @@ def classify(
     *,
     evidence_root: Path | None = None,
     today: dt.date | None = None,
+    trusted_attestations: set[str] | None = None,
 ) -> dict:
     """Return structural, evidence, and release-qualification status."""
     schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
@@ -91,13 +106,20 @@ def classify(
     today = today or dt.date.today()
     criteria = json.loads(CRITERIA.read_text(encoding="utf-8"))
     manifest = json.loads((KIT / "manifest.json").read_text(encoding="utf-8"))
+    if trusted_attestations is None:
+        trust = json.loads(TRUSTED_ATTESTATIONS.read_text(encoding="utf-8"))
+        trusted_attestations = set(trust["approvedSha256"])
     verification_exceptions: list[str] = []
     qualification_exceptions: list[str] = []
 
     expected_kit_digest = _kit_digest(manifest)
+    verification_exceptions.extend(_verify_kit_artifacts(manifest))
     if packet["kitDigestSha256"] != expected_kit_digest:
         verification_exceptions.append("kit digest mismatch")
+    if packet["contractVersions"] != [manifest["contract"]]:
+        verification_exceptions.append("contract versions do not match the canonical kit")
 
+    result_artifact_verified = False
     if evidence_root is None:
         verification_exceptions.append("evidence root is required")
     else:
@@ -108,6 +130,8 @@ def classify(
             diagnostic = _verify_artifact(name, artifact, evidence_root)
             if diagnostic:
                 verification_exceptions.append(diagnostic)
+            elif name == "result":
+                result_artifact_verified = True
 
     expected_cases = {
         artifact["path"]
@@ -125,7 +149,7 @@ def classify(
         verification_exceptions.append("test cases are unexpected: " + ", ".join(unexpected))
     if any(result["status"] != "pass" for result in packet["tests"]):
         verification_exceptions.append("one or more test cases did not pass")
-    if evidence_root is not None:
+    if evidence_root is not None and result_artifact_verified:
         result_path = (evidence_root.resolve() / packet["artifacts"]["result"]["path"]).resolve()
         if result_path.is_file():
             try:
@@ -133,10 +157,51 @@ def classify(
             except (UnicodeDecodeError, json.JSONDecodeError, ValueError):
                 verification_exceptions.append("result artifact is not valid JSON")
             else:
-                if result_document.get("status") != "pass":
-                    verification_exceptions.append("result artifact does not report a pass")
-                if set(result_document.get("cases", [])) != set(case_ids):
-                    verification_exceptions.append("result artifact case set does not match submission")
+                expected_result = {
+                    "schemaVersion": "rac-independent-execution-result.v1",
+                    "implementationId": packet["implementationId"],
+                    "sourceRevision": packet["sourceRevision"],
+                    "kitDigestSha256": packet["kitDigestSha256"],
+                    "status": "pass",
+                    "tests": packet["tests"],
+                }
+                if not isinstance(result_document, dict):
+                    verification_exceptions.append("result artifact root is not an object")
+                elif result_document != expected_result:
+                    verification_exceptions.append("result artifact does not match the submitted execution result")
+
+    if evidence_root is not None:
+        result_digest = packet["artifacts"]["result"]["sha256"]
+        bindings = {
+            "acknowledgement": {
+                "schemaVersion": "rac-independent-acknowledgement.v1",
+                "implementationId": packet["implementationId"],
+                "sourceRevision": packet["sourceRevision"],
+                "resultSha256": result_digest,
+                "status": "confirmed",
+            },
+            "attestation": {
+                "schemaVersion": "rac-independent-attestation.v1",
+                "implementationId": packet["implementationId"],
+                "sourceRevision": packet["sourceRevision"],
+                "resultSha256": result_digest,
+                "issuerControl": "external",
+            },
+        }
+        for role, expected in bindings.items():
+            path = (evidence_root.resolve() / packet["artifacts"][role]["path"]).resolve()
+            if path.is_file():
+                try:
+                    document = _load_json(path)
+                except (UnicodeDecodeError, json.JSONDecodeError, ValueError):
+                    verification_exceptions.append(f"{role} artifact is not valid JSON")
+                    continue
+                if not isinstance(document, dict) or any(
+                    document.get(key) != value for key, value in expected.items()
+                ):
+                    verification_exceptions.append(f"{role} artifact is not bound to the submission")
+        if packet["artifacts"]["attestation"]["sha256"] not in trusted_attestations:
+            qualification_exceptions.append("attestation is not analyst-trusted")
 
     if packet["organisation"]["controlRelationship"] != "external":
         qualification_exceptions.append("organisation is not independently controlled")
@@ -163,10 +228,10 @@ def classify(
     expires_at = freshness_date + dt.timedelta(days=freshness_days)
 
     declared = packet["outcome"]
-    if declared in NONQUALIFYING_OUTCOMES:
-        status = declared
-    elif verification_exceptions:
+    if verification_exceptions:
         status = "rejected"
+    elif declared in NONQUALIFYING_OUTCOMES:
+        status = declared
     elif qualification_exceptions:
         status = "partial"
     else:

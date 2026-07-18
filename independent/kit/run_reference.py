@@ -11,7 +11,6 @@ from jsonschema import Draft202012Validator
 
 
 ROOT = Path(__file__).resolve().parent
-BUNDLE = ROOT / "bundle" / "pic-semantics-0.1.0"
 MANIFEST = ROOT / "manifest.json"
 
 
@@ -26,6 +25,16 @@ def verify_artifacts() -> list[dict[str, str]]:
         if actual != artifact["sha256"]:
             raise ValueError(f"artifact digest mismatch: {artifact['path']}")
         verified.append(artifact)
+    declared_bundle = {
+        artifact["path"] for artifact in verified if artifact["path"].startswith("bundle/")
+    }
+    discovered_bundle = {
+        str(path.relative_to(ROOT))
+        for path in (ROOT / "bundle").rglob("*")
+        if path.is_file()
+    }
+    if discovered_bundle != declared_bundle:
+        raise ValueError("bundle contents do not match manifest")
     return verified
 
 
@@ -42,20 +51,27 @@ def digest_tree(artifacts: list[dict[str, str]]) -> str:
 def run() -> dict:
     artifacts = verify_artifacts()
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    schema = json.loads((BUNDLE / "schema.json").read_text())
+    schema_artifact = next(item for item in artifacts if item["role"] == "schema")
+    schema = json.loads((ROOT / schema_artifact["path"]).read_text())
     validator = Draft202012Validator(schema)
     results = []
-    for corpus, expected_valid in (("valid", True), ("invalid", False)):
-        for path in sorted((BUNDLE / "examples" / corpus).glob("*.json")):
-            document = json.loads(path.read_text())
-            errors = sorted(validator.iter_errors(document), key=lambda error: list(error.path))
-            passed = not errors if expected_valid else bool(errors)
-            results.append({"path": str(path.relative_to(ROOT)), "expectedValid": expected_valid, "passed": passed, "errorCount": len(errors)})
+    for artifact in artifacts:
+        if artifact["role"] not in {"valid", "invalid"}:
+            continue
+        expected_valid = artifact["role"] == "valid"
+        document = json.loads((ROOT / artifact["path"]).read_text())
+        errors = sorted(validator.iter_errors(document), key=lambda error: list(error.path))
+        passed = not errors if expected_valid else bool(errors)
+        results.append({"path": artifact["path"], "expectedValid": expected_valid, "passed": passed, "errorCount": len(errors)})
     return {
         "schemaVersion": "independent-kit-result.v1",
         "kitVersion": manifest["kitVersion"],
         "kitDigestSha256": digest_tree(artifacts),
-        "results": results,
+        "tests": [
+            {"caseId": result["path"], "status": "pass" if result["passed"] else "fail"}
+            for result in results
+        ],
+        "details": results,
         "status": "pass" if all(result["passed"] for result in results) else "fail",
         "independenceStatus": "reference-runner-only",
     }

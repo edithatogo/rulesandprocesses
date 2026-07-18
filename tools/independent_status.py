@@ -31,20 +31,34 @@ def build_ledger(registry: dict, snapshot: dict) -> dict:
         }
         for candidate in registry["candidates"]
     ]
+    requirements = {
+        "maintainedConsumers": 3,
+        "domainClasses": 2,
+        "externalImplementation": 1,
+    }
+    qualifying = snapshot.get("qualifyingConsumers", [])
+    maintained = [consumer for consumer in qualifying if consumer.get("maintained") is True]
+    domains = {consumer.get("domainClass") for consumer in maintained if consumer.get("domainClass")}
+    external = [consumer for consumer in maintained if consumer.get("externalOrganisation") is True]
+    satisfied = (
+        len(maintained) >= requirements["maintainedConsumers"]
+        and len(domains) >= requirements["domainClasses"]
+        and len(external) >= requirements["externalImplementation"]
+    )
     return {
         "schemaVersion": "rac-independent-adoption-ledger.v0.2.0",
         "updatedAt": snapshot["asOf"],
         "governingIssue": GOVERNING_ISSUE,
         "evidenceContract": "rac-independent-submission.v2",
-        "requiredForV1": {
-            "maintainedConsumers": 3,
-            "domainClasses": 2,
-            "externalImplementation": 1,
-        },
-        "qualifyingConsumers": [],
+        "requiredForV1": requirements,
+        "qualifyingConsumers": qualifying,
         "candidates": candidates,
-        "gate": snapshot["gate"],
-        "reason": "No independently controlled v2 evidence bundle has been submitted, verified, and acknowledged.",
+        "gate": "satisfied" if satisfied else "blocked_pending_external_evidence",
+        "reason": (
+            "Published v2 evidence satisfies the independent-adoption thresholds."
+            if satisfied
+            else "No sufficient set of independently controlled v2 evidence bundles has been verified and acknowledged."
+        ),
     }
 
 
@@ -66,8 +80,9 @@ def validate() -> list[str]:
     else:
         if adoption.get("source") != GOVERNING_ISSUE:
             errors.append("independent-adoption gate does not point to issue 45")
-        if adoption.get("status") != "blocked":
-            errors.append("independent-adoption gate must remain blocked without qualifying evidence")
+        expected_status = "pass" if ledger.get("gate") == "satisfied" else "blocked"
+        if adoption.get("status") != expected_status:
+            errors.append("independent-adoption gate status does not match the evidence ledger")
         if adoption.get("observed_at") != snapshot.get("asOf"):
             errors.append("independent-adoption gate observation date is not synchronized")
     if snapshot.get("externalEvidence") == "absent" and ledger.get("qualifyingConsumers"):

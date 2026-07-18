@@ -23,9 +23,11 @@ review.
 
 Use the self-contained kit from
 `independent/kit/` and provide a
-submission matching `SUBMISSION_SCHEMA.json`, including source revision,
-repository and artifact digests, clean environment, command, output checksums,
-maintainer acknowledgement, and freshness date.
+submission matching `independent/kit/result.schema.json`, including source revision,
+contract and kit versions, independent codebase/oracle/fixture controls,
+clean-checkout argv and date, complete case outcomes, limitations, unresolved
+mismatches, and distinct digest-pinned source, input, result, acknowledgement,
+and external-owner attestation artifacts.
 
 ## Maintenance and exit path
 

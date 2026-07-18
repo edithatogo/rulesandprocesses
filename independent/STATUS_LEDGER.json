@@ -34,5 +34,5 @@
     }
   ],
   "gate": "blocked_pending_external_evidence",
-  "reason": "No independently controlled v2 evidence bundle has been submitted, verified, and acknowledged."
+  "reason": "No sufficient set of independently controlled v2 evidence bundles has been verified and acknowledged."
 }

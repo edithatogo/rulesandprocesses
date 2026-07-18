@@ -29,10 +29,12 @@ deterministic evidence verifier.
 
 Use the self-contained kit from
 `independent/kit/` and provide a
-submission matching `SUBMISSION_SCHEMA.json`. The packet must include pinned
-source revision, clean environment, command, input/result checksums,
-acknowledgement, and maintenance owner. A local fork or screenshot is not
-qualifying evidence.
+submission matching `independent/kit/result.schema.json`. The packet must include pinned
+source revision, contract and kit versions, independent codebase/oracle/fixture
+controls, clean-checkout argv and date, complete case outcomes, limitations,
+unresolved mismatches, and distinct digest-pinned source, input, result,
+acknowledgement, and external-owner attestation artifacts. A local fork or
+screenshot is not qualifying evidence.
 
 ## Maintenance and exit path
 

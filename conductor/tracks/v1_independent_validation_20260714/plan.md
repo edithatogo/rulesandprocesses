@@ -35,6 +35,12 @@ GitHub issue: [#45](https://github.com/edithatogo/rac-conformance/issues/45). De
     > legacy verifier delegates to this fail-closed path.
 - [x] Task: Conductor - Automated Review and Checkpoint 'Phase 1 - Independence Contract and Implementer Kit' (Protocol in workflow.md)
     - **CHECKPOINT:** Policy, self-contained kit, deterministic verifier, and clean-room agent rehearsal are complete. Local tests and the clean evaluator run pass; semantic integrity, external implementation, external acknowledgement, and v1 adoption remain deferred to later phases.
+    > AUTOMATED REVIEW (2026-07-19): Three independent review lanes found and
+    > remediated contract-version, kit-integrity, path-boundary, result-binding,
+    > attestation-trust, status-transition, and documentation defects. The
+    > canonical kit now hashes all normative and executable files and executes
+    > only manifested cases. External attestation requires an analyst-trusted
+    > digest; the trust registry remains empty, so no qualification is claimed.
 
 ## Phase 2 - Candidate Engagement
 
@@ -107,7 +113,9 @@ GitHub issue: [#45](https://github.com/edithatogo/rac-conformance/issues/45). De
     > `independent/STATUS_LEDGER.json`; CI rejects candidate, date, governing
     > issue, gate-status, or qualifying-consumer drift. The release gate now
     > points to issue #45 and the v2 evidence contract. This task remains open
-    > for future external outcomes; no qualifying adoption is claimed.
+    > for future external outcomes and Project 19 reconciliation, which is not
+    > covered without a pinned project snapshot; no qualifying adoption is
+    > claimed.
 - [ ] Task: Conductor - Automated Review and Checkpoint 'Phase 3 - Result Verification and Feedback' (Protocol in workflow.md)
 
 ## Phase 4 - v1 Independence Certification

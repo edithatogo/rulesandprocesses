@@ -30,8 +30,11 @@ kit, expected-result policy, and verifier.
 
 Use `independent/kit/` from a pinned
 release archive. The maintainer should provide a submission matching
-`SUBMISSION_SCHEMA.json`, including a clean-checkout command, kit digest,
-implementation digest, result digest, acknowledgement URL, and freshness date.
+`independent/kit/result.schema.json`. The v2 bundle includes the full source
+revision, contract and kit versions, independent codebase/oracle/fixture
+controls, clean-checkout argv and date, complete case outcomes, limitations,
+unresolved mismatches, and five distinct digest-pinned local artifacts:
+source, input, result, acknowledgement, and external-owner attestation.
 Screenshots, a local fork, or a narrative response do not qualify.
 
 ## Maintenance and exit path
