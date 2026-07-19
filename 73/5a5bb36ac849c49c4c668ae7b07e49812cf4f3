@@ -1,0 +1,1 @@
+Task evidence: OpenFisca Core PR #10 merged as 2ef28f27 and PR #4 merged as cb677211; all focused, version, Conda, lint, Linux, and Windows checks passed. AS_OF=2026-07-19 make check passed in RaC.
