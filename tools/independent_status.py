@@ -77,6 +77,13 @@ def build_ledger(
             "organisation": candidate["organisation"],
             "status": candidate["status"],
             **({"outreachUrl": candidate["outreachUrl"]} if candidate.get("outreachUrl") else {}),
+            **({"responseUrl": candidate["responseUrl"]} if candidate.get("responseUrl") else {}),
+            **({"respondedAt": candidate["respondedAt"]} if candidate.get("respondedAt") else {}),
+            **(
+                {"followUpAllowed": candidate["followUpAllowed"]}
+                if "followUpAllowed" in candidate
+                else {}
+            ),
         }
         for candidate in registry["candidates"]
     ]

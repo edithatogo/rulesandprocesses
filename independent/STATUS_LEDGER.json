@@ -25,7 +25,10 @@
       "id": "openfisca-core",
       "organisation": "OpenFisca",
       "status": "declined",
-      "outreachUrl": "https://github.com/openfisca/openfisca-core/issues/1380#issuecomment-4998515274"
+      "outreachUrl": "https://github.com/openfisca/openfisca-core/issues/1380#issuecomment-4998515274",
+      "responseUrl": "https://github.com/openfisca/openfisca-core/issues/1380#issuecomment-5043413144",
+      "respondedAt": "2026-07-22",
+      "followUpAllowed": false
     },
     {
       "id": "openfisca-aotearoa",

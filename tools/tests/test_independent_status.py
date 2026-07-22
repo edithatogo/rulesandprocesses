@@ -47,6 +47,7 @@ def test_declined_candidate_requires_response_evidence_and_closed_outreach() -> 
         "candidates": [
             {
                 "id": "declined-target",
+                "organisation": "Declined target",
                 "status": "declined",
                 "responseUrl": "https://example.org/response",
                 "respondedAt": "2026-07-22",
@@ -56,6 +57,14 @@ def test_declined_candidate_requires_response_evidence_and_closed_outreach() -> 
     }
 
     assert validate_candidate_states(registry) == []
+
+    ledger = build_ledger(
+        registry,
+        {"asOf": "2026-07-22", "externalEvidence": "absent"},
+    )
+    assert ledger["candidates"][0]["responseUrl"] == "https://example.org/response"
+    assert ledger["candidates"][0]["respondedAt"] == "2026-07-22"
+    assert ledger["candidates"][0]["followUpAllowed"] is False
 
 
 def test_declined_candidate_rejects_pending_outreach_fields() -> None:
